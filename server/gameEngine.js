@@ -23,13 +23,14 @@ function setRoomTimer(room, durationSeconds, callback) {
 
 export function startGame(room, totalRounds, io, emitRoomUpdate) {
     const connectedPlayers = Object.values(room.players).filter((p) => p.connected);
-    if (connectedPlayers.length < 3) {
-        return { error: 'Need at least 3 players to start' };
+    if (connectedPlayers.length < 2) {
+        return { error: 'Need at least 2 players to start' };
     }
     if (totalRounds < 1 || totalRounds > 3) {
         return { error: 'Rounds must be between 1 and 3' };
     }
 
+    room.mode = connectedPlayers.length === 2 ? 'coop' : 'competitive';
     room.totalRounds = totalRounds;
     room.currentRoundNumber = 1;
     room.hotSeatIndex = 0;
@@ -228,23 +229,11 @@ export function scoreGuesserPosition(actualRanking, guesserGuess, positionIndex)
 
 export function scoreHotSeatPosition(actualRanking, allGuesses, positionIndex) {
     const actualCardId = actualRanking[positionIndex];
-    const anyExact = Object.values(allGuesses).some(
-        (guess) => guess.indexOf(actualCardId) === positionIndex
-    );
-    return anyExact ? 1 : 0;
-}
-
-// Award spotlight player +5 for each guesser who got a perfect score (10/10)
-export function scoreSpotlightBonus(actualRanking, allGuesses) {
-    let bonus = 0;
+    let count = 0;
     for (const guess of Object.values(allGuesses)) {
-        let total = 0;
-        for (let i = 0; i < actualRanking.length; i++) {
-            total += scoreGuesserPosition(actualRanking, guess, i);
-        }
-        if (total === 10) bonus += 5;
+        if (guess.indexOf(actualCardId) === positionIndex) count++;
     }
-    return bonus;
+    return count;
 }
 
 function revealPosition(room, positionIndex) {
@@ -279,7 +268,7 @@ function revealPosition(room, positionIndex) {
     room.hotSeat.revealedPositions.push(positionIndex);
     room.hotSeat.revealIndex = room.hotSeat.revealedPositions.length;
 
-    // After all 5 revealed, award spotlight bonus for perfect guessers
+    // After all 5 revealed, track perfect guessers for display (no bonus)
     if (room.hotSeat.revealIndex >= 5) {
         const perfectIds = [];
         for (const [id, guess] of Object.entries(allGuesses)) {
@@ -290,13 +279,6 @@ function revealPosition(room, positionIndex) {
             if (total === 10) perfectIds.push(id);
         }
         room.hotSeat.perfectGuessers = perfectIds;
-
-        const bonus = perfectIds.length * 5;
-        if (bonus > 0) {
-            hotSeatPlayer.score += bonus;
-            room.hotSeat.roundScores[room.hotSeat.playerId] =
-                (room.hotSeat.roundScores[room.hotSeat.playerId] || 0) + bonus;
-        }
     }
 }
 
@@ -441,6 +423,7 @@ export function playAgain(room, io, emitRoomUpdate) {
 
     // Reset game state, keep players
     room.phase = 'lobby';
+    room.mode = null;
     room.currentRoundNumber = 0;
     room.hotSeatIndex = 0;
     room.roundType = null;

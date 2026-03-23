@@ -252,8 +252,7 @@ export default function RevealScreen() {
                                 <p className="text-amber font-bold text-sm mb-1">&#x1F3AF; Perfect Guess!</p>
                                 {[...perfectGuessers].map(id => (
                                     <p key={id} className="text-charcoal text-sm font-medium">
-                                        {room.players[id]?.name}
-                                        <span className="text-charcoal/50 text-xs ml-1">(+5 to {hotSeatName})</span>
+                                        {room.players[id]?.name} got all 5 right!
                                     </p>
                                 ))}
                             </div>

@@ -41,13 +41,28 @@ export default function LobbyScreen() {
                         <span className={`transition-transform ${rulesOpen ? 'rotate-180' : ''}`}>&#x25BC;</span>
                     </button>
                     {rulesOpen && (
-                        <ol className="mt-2 space-y-1 text-charcoal/60 text-sm list-decimal list-inside bg-surface rounded-xl p-4">
-                            <li>Each player gets a category and 5 cards to rank privately.</li>
-                            <li>One player goes into the <span className="font-semibold text-amber">Spotlight</span>.</li>
-                            <li>Everyone else guesses how the Spotlight player ranked their cards.</li>
-                            <li>Guessers: <span className="font-semibold">+2</span> exact, <span className="font-semibold">+1</span> off by one, <span className="font-semibold">+0</span> otherwise.</li>
-                            <li>Spotlight: <span className="font-semibold">+5</span> for each guesser who gets all 5 right.</li>
-                        </ol>
+                        <div className="mt-2 bg-surface rounded-xl p-4 space-y-4">
+                            <div>
+                                <h4 className="text-charcoal/70 text-xs uppercase tracking-wide font-semibold mb-1">3+ Players &mdash; Competitive</h4>
+                                <ol className="space-y-1 text-charcoal/60 text-sm list-decimal list-inside">
+                                    <li>Each player gets a category and 5 cards to rank privately.</li>
+                                    <li>One player enters the <span className="font-semibold text-amber">Spotlight</span>. Everyone else guesses how they ranked.</li>
+                                    <li>The Spotlight player reveals their order one by one and explains their choices.</li>
+                                    <li>Guessers: <span className="font-semibold">+2</span> exact, <span className="font-semibold">+1</span> off by one. Spotlight: <span className="font-semibold">+1</span> per exact match by any guesser.</li>
+                                    <li>Everyone takes a turn in the Spotlight. After all rounds, the highest score wins!</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h4 className="text-charcoal/70 text-xs uppercase tracking-wide font-semibold mb-1">2 Players &mdash; Duo Mode</h4>
+                                <ol className="space-y-1 text-charcoal/60 text-sm list-decimal list-inside">
+                                    <li>You each get a category and 5 cards to rank privately.</li>
+                                    <li>Take turns in the Spotlight &mdash; your partner guesses your ranking.</li>
+                                    <li>The Spotlight player reveals their order and explains their choices.</li>
+                                    <li>Guessers: <span className="font-semibold">+2</span> exact, <span className="font-semibold">+1</span> off by one. Spotlight: <span className="font-semibold">+1</span> per card your partner places exactly right.</li>
+                                    <li>After all rounds, see how strong your connection is!</li>
+                                </ol>
+                            </div>
+                        </div>
                     )}
                 </div>
 
@@ -110,12 +125,17 @@ export default function LobbyScreen() {
                         </div>
                         <Button
                             onClick={() => startGame(totalRounds, timerSeconds)}
-                            disabled={playerCount < 3}
+                            disabled={playerCount < 2}
                         >
-                            {playerCount < 3
-                                ? `Need ${3 - playerCount} more player${3 - playerCount > 1 ? 's' : ''}`
+                            {playerCount < 2
+                                ? 'Need 1 more player'
                                 : 'Start Game'}
                         </Button>
+                        {playerCount >= 2 && (
+                            <p className="text-charcoal/40 text-xs text-center mt-1 font-medium">
+                                {playerCount === 2 ? '🤝 Duo Mode' : '⚔️ Competitive'}
+                            </p>
+                        )}
                     </div>
                 )}
 

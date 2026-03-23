@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { shuffle } from './deckManager.js';
 
 const rooms = new Map();
 const socketToRoom = new Map();
@@ -183,11 +184,11 @@ export function handleDisconnect(socketId, io, emitRoomUpdate) {
         const updatedRoom = removePlayer(socketId, io);
         if (!updatedRoom) return;
 
-        // If fewer than 3 connected players remain, end game
+        // If fewer than 2 connected players remain, end game
         const connectedCount = Object.values(updatedRoom.players).filter(
             (p) => p.connected
         ).length;
-        if (connectedCount < 3) {
+        if (connectedCount < 2) {
             updatedRoom.phase = 'game_end';
         }
 
@@ -202,6 +203,7 @@ export function filterRoomForPlayer(room, socketId) {
         code: room.code,
         hostId: room.hostId,
         phase: room.phase,
+        mode: room.mode || null,
         playerOrder: room.playerOrder,
         hotSeatIndex: room.hotSeatIndex,
         currentRoundNumber: room.currentRoundNumber,
@@ -247,6 +249,9 @@ export function filterRoomForPlayer(room, socketId) {
     if (room.hotSeat && (room.phase === 'guessing' || room.phase === 'reveal' || room.phase === 'scores')) {
         const hotSeatPlayer = room.players[room.hotSeat.playerId];
         if (hotSeatPlayer) {
+            const baseCards = room.hotSeat.shuffledCards || hotSeatPlayer.cards;
+            // Each guesser gets a unique shuffle; non-guessing phases keep stable order
+            const isGuesser = room.phase === 'guessing' && socketId !== room.hotSeat.playerId;
             filtered.hotSeat = {
                 playerId: room.hotSeat.playerId,
                 revealIndex: room.hotSeat.revealIndex,
@@ -255,7 +260,7 @@ export function filterRoomForPlayer(room, socketId) {
                 perfectGuessers: room.hotSeat.perfectGuessers || [],
                 readyPlayers: room.hotSeat.readyPlayers || [],
                 assignment: hotSeatPlayer.assignment,
-                cards: room.hotSeat.shuffledCards || hotSeatPlayer.cards,
+                cards: isGuesser ? shuffle([...baseCards]) : baseCards,
             };
 
             // During reveal: include revealed cards by position + player's own guess
