@@ -13,13 +13,12 @@ function SortableCard({ id, text, rank }) {
 
     const baseTransform = CSS.Transform.toString(transform);
     const style = {
-        transform: isDragging
-            ? `${baseTransform} rotate(3deg) scale(1.03)`
-            : baseTransform,
-        transition: isDragging ? transition : `${transition}, transform 150ms cubic-bezier(0.25, 1, 0.5, 1)`,
+        transform: baseTransform,
+        transition: isDragging ? 'none' : 'transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease, opacity 150ms ease',
         zIndex: isDragging ? 50 : 'auto',
+        opacity: isDragging ? 0.95 : 1,
         boxShadow: isDragging
-            ? '0 8px 24px rgba(0,0,0,0.15)'
+            ? '0 12px 28px rgba(0,0,0,0.12)'
             : '0 2px 8px rgba(0,0,0,0.08)',
     };
 

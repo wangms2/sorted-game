@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { shuffle } from './deckManager.js';
 
 const rooms = new Map();
 const socketToRoom = new Map();
@@ -247,6 +248,9 @@ export function filterRoomForPlayer(room, socketId) {
     if (room.hotSeat && (room.phase === 'guessing' || room.phase === 'reveal' || room.phase === 'scores')) {
         const hotSeatPlayer = room.players[room.hotSeat.playerId];
         if (hotSeatPlayer) {
+            const baseCards = room.hotSeat.shuffledCards || hotSeatPlayer.cards;
+            // Each guesser gets a unique shuffle; non-guessing phases keep stable order
+            const isGuesser = room.phase === 'guessing' && socketId !== room.hotSeat.playerId;
             filtered.hotSeat = {
                 playerId: room.hotSeat.playerId,
                 revealIndex: room.hotSeat.revealIndex,
@@ -255,7 +259,7 @@ export function filterRoomForPlayer(room, socketId) {
                 perfectGuessers: room.hotSeat.perfectGuessers || [],
                 readyPlayers: room.hotSeat.readyPlayers || [],
                 assignment: hotSeatPlayer.assignment,
-                cards: room.hotSeat.shuffledCards || hotSeatPlayer.cards,
+                cards: isGuesser ? shuffle([...baseCards]) : baseCards,
             };
 
             // During reveal: include revealed cards by position + player's own guess
