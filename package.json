@@ -1,0 +1,12 @@
+{
+    "name": "sorted",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "install:all": "cd server && npm install && cd ../client && npm install",
+        "build": "cd client && npm run build",
+        "start": "cd server && node index.js",
+        "dev": "cd server && npm run dev"
+    }
+}

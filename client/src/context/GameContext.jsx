@@ -1,0 +1,105 @@
+import { createContext, useState, useCallback, useEffect, useRef } from 'react';
+import useSocket from '../hooks/useSocket.js';
+import { EVENTS } from '@shared/socketEvents.js';
+
+export const GameContext = createContext(null);
+
+export function GameProvider({ children }) {
+    const [room, setRoom] = useState(null);
+    const [error, setError] = useState(null);
+    const errorTimerRef = useRef(null);
+
+    const handleRoomUpdate = useCallback(({ room: roomData }) => {
+        setRoom(roomData);
+        // Persist session info for reconnection
+        const myPlayer = Object.values(roomData.players).find((p) => p.sessionToken);
+        if (myPlayer) {
+            sessionStorage.setItem('rankit_sessionToken', myPlayer.sessionToken);
+            sessionStorage.setItem('rankit_roomCode', roomData.code);
+        }
+        // Update URL with room code for shareable links
+        const url = new URL(window.location);
+        if (roomData.code && url.searchParams.get('room') !== roomData.code) {
+            url.searchParams.set('room', roomData.code);
+            window.history.replaceState({}, '', url);
+        }
+    }, []);
+
+    const handleError = useCallback(({ message }) => {
+        setError(message);
+        clearTimeout(errorTimerRef.current);
+        errorTimerRef.current = setTimeout(() => setError(null), 4000);
+    }, []);
+
+    const { emit, tryReconnect, disconnect } = useSocket(handleRoomUpdate, handleError);
+
+    // Attempt reconnection on mount
+    useEffect(() => {
+        tryReconnect();
+    }, [tryReconnect]);
+
+    const createRoom = useCallback(
+        (playerName) => emit(EVENTS.CREATE_ROOM, { playerName }),
+        [emit]
+    );
+
+    const joinRoom = useCallback(
+        (roomCode, playerName) => emit(EVENTS.JOIN_ROOM, { roomCode, playerName }),
+        [emit]
+    );
+
+    const startGame = useCallback(
+        (totalRounds, timerSeconds) => emit(EVENTS.START_GAME, { totalRounds, timerSeconds }),
+        [emit]
+    );
+
+    const submitRanking = useCallback(
+        (ranking) => emit(EVENTS.SUBMIT_RANKING, { ranking }),
+        [emit]
+    );
+
+    const submitGuess = useCallback(
+        (guess) => emit(EVENTS.SUBMIT_GUESS, { guess }),
+        [emit]
+    );
+
+    const revealNext = useCallback((positionIndex) => emit(EVENTS.REVEAL_NEXT, { positionIndex }), [emit]);
+
+    const advanceRound = useCallback(() => emit(EVENTS.ADVANCE_ROUND), [emit]);
+
+    const playAgain = useCallback(() => emit(EVENTS.PLAY_AGAIN), [emit]);
+
+    const leaveRoom = useCallback(() => {
+        disconnect();
+        setRoom(null);
+        sessionStorage.removeItem('rankit_sessionToken');
+        sessionStorage.removeItem('rankit_roomCode');
+        // Clear room code from URL
+        const url = new URL(window.location);
+        url.searchParams.delete('room');
+        window.history.replaceState({}, '', url.pathname);
+    }, [disconnect]);
+
+    const clearError = useCallback(() => setError(null), []);
+
+    return (
+        <GameContext.Provider
+            value={{
+                room,
+                error,
+                createRoom,
+                joinRoom,
+                startGame,
+                submitRanking,
+                submitGuess,
+                revealNext,
+                advanceRound,
+                playAgain,
+                leaveRoom,
+                clearError,
+            }}
+        >
+            {children}
+        </GameContext.Provider>
+    );
+}
