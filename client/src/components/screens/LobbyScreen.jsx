@@ -4,11 +4,31 @@ import PageLayout from '../ui/PageLayout.jsx';
 import Card from '../ui/Card.jsx';
 import Button from '../ui/Button.jsx';
 
+const TIMER_OPTIONS = [
+    { val: 30, label: '30s' },
+    { val: 45, label: '45s' },
+    { val: 60, label: '60s' },
+    { val: 90, label: '90s' },
+    { val: 120, label: '120s' },
+    { val: 0, label: '∞' },
+];
+
+function estimateMinutes(playerCount, rounds, timerSeconds) {
+    const timerDuration = timerSeconds || 60; // assume ~60s pace if no timer
+    const revealDiscussion = 135; // ~2 min reveal + 15s scores
+    const perRound = timerDuration + playerCount * (timerDuration + revealDiscussion);
+    return Math.round((perRound * rounds) / 60);
+}
+
 export default function LobbyScreen() {
     const { room, isHost, players, playerCount, startGame, leaveRoom } = useGameState();
     const [totalRounds, setTotalRounds] = useState(1);
+    const [customRounds, setCustomRounds] = useState('');
+    const [showCustom, setShowCustom] = useState(false);
     const [timerSeconds, setTimerSeconds] = useState(60);
     const [rulesOpen, setRulesOpen] = useState(false);
+
+    const timerIndex = TIMER_OPTIONS.findIndex((o) => o.val === timerSeconds);
 
     if (!room) return null;
 
@@ -89,14 +109,15 @@ export default function LobbyScreen() {
 
                 {isHost && (
                     <div className="space-y-4">
+                        {/* Rounds */}
                         <div>
                             <label className="text-charcoal/50 text-sm block mb-1 font-medium">Rounds</label>
                             <div className="flex gap-2">
                                 {[1, 2, 3].map((n) => (
                                     <button
                                         key={n}
-                                        onClick={() => setTotalRounds(n)}
-                                        className={`flex-1 py-2 rounded-xl font-semibold transition cursor-pointer ${totalRounds === n
+                                        onClick={() => { setTotalRounds(n); setShowCustom(false); }}
+                                        className={`flex-1 py-2 rounded-xl font-semibold transition cursor-pointer ${!showCustom && totalRounds === n
                                             ? 'bg-amber text-white'
                                             : 'bg-surface text-charcoal hover:bg-surface/70'
                                             }`}
@@ -104,25 +125,78 @@ export default function LobbyScreen() {
                                         {n}
                                     </button>
                                 ))}
+                                <button
+                                    onClick={() => setShowCustom(!showCustom)}
+                                    className={`flex-1 py-2 rounded-xl font-semibold transition cursor-pointer ${showCustom
+                                        ? 'bg-amber text-white'
+                                        : 'bg-surface text-charcoal hover:bg-surface/70'
+                                        }`}
+                                >
+                                    #
+                                </button>
                             </div>
+                            {showCustom && (
+                                <input
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                    value={customRounds}
+                                    onChange={(e) => {
+                                        const v = e.target.value;
+                                        setCustomRounds(v);
+                                        const n = parseInt(v, 10);
+                                        if (n >= 1 && n <= 10) setTotalRounds(n);
+                                    }}
+                                    placeholder="1–10"
+                                    className="mt-2 w-full py-2 px-3 rounded-xl bg-surface text-charcoal text-center font-semibold outline-none focus:ring-2 focus:ring-amber/50"
+                                />
+                            )}
                         </div>
+
+                        {/* Timer — discrete slider */}
                         <div>
-                            <label className="text-charcoal/50 text-sm block mb-1 font-medium">Timer</label>
-                            <div className="flex gap-2">
-                                {[{ val: 45, label: '45s' }, { val: 60, label: '60s' }, { val: 90, label: '90s' }].map(({ val, label }) => (
-                                    <button
-                                        key={val}
-                                        onClick={() => setTimerSeconds(val)}
-                                        className={`flex-1 py-2 rounded-xl font-semibold transition cursor-pointer ${timerSeconds === val
-                                            ? 'bg-amber text-white'
-                                            : 'bg-surface text-charcoal hover:bg-surface/70'
-                                            }`}
-                                    >
-                                        {label}
-                                    </button>
-                                ))}
+                            <label className="text-charcoal/50 text-sm block mb-2 font-medium">Timer</label>
+                            <div className="relative px-2">
+                                {/* Track */}
+                                <div className="absolute top-[9px] left-2 right-2 h-1 bg-surface rounded-full" />
+                                <div
+                                    className="absolute top-[9px] left-2 h-1 bg-amber rounded-full transition-all"
+                                    style={{ width: `${(timerIndex / (TIMER_OPTIONS.length - 1)) * 100}%` }}
+                                />
+                                {/* Tick marks + labels */}
+                                <div className="relative flex justify-between">
+                                    {TIMER_OPTIONS.map((opt, i) => (
+                                        <button
+                                            key={opt.val}
+                                            onClick={() => setTimerSeconds(opt.val)}
+                                            className="flex flex-col items-center cursor-pointer group"
+                                        >
+                                            <div
+                                                className={`w-5 h-5 rounded-full border-2 transition ${i <= timerIndex
+                                                    ? 'bg-amber border-amber'
+                                                    : 'bg-white border-surface group-hover:border-amber/50'
+                                                    }`}
+                                            />
+                                            <span className={`text-xs mt-1 font-medium transition ${timerSeconds === opt.val
+                                                ? 'text-amber'
+                                                : 'text-charcoal/40'
+                                                }`}>
+                                                {opt.label}
+                                            </span>
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         </div>
+
+                        {/* Time estimate */}
+                        {playerCount >= 2 && (
+                            <p className="text-charcoal/40 text-xs text-center font-medium">
+                                ~{estimateMinutes(playerCount, totalRounds, timerSeconds)} min
+                                {totalRounds > 1 ? ` · ~${estimateMinutes(playerCount, 1, timerSeconds)} min/round` : ''}
+                            </p>
+                        )}
+
                         <Button
                             onClick={() => startGame(totalRounds, timerSeconds)}
                             disabled={playerCount < 2}
