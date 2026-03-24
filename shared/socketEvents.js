@@ -3,12 +3,16 @@ export const EVENTS = {
     CREATE_ROOM: 'create_room',
     JOIN_ROOM: 'join_room',
     RECONNECT: 'reconnect',
+    REJOIN_AS: 'rejoin_as',
+    JOIN_AS_GUESSER: 'join_as_guesser',
     START_GAME: 'start_game',
+    UPDATE_SETTINGS: 'update_settings',
     SUBMIT_RANKING: 'submit_ranking',
     SUBMIT_GUESS: 'submit_guess',
     REVEAL_NEXT: 'reveal_next',
     ADVANCE_ROUND: 'advance_round',
     PLAY_AGAIN: 'play_again',
+    KICK_PLAYER: 'kick_player',
 
     // Server → Client
     ROOM_UPDATED: 'room_updated',

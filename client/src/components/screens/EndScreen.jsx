@@ -25,54 +25,132 @@ export default function EndScreen() {
 
     if (!room) return null;
 
+    const isCoop = room.mode === 'coop';
     const leaderboard = [...players].sort((a, b) => b.score - a.score);
     const winner = leaderboard[0];
     const isTie = leaderboard.length > 1 && leaderboard[0].score === leaderboard[1].score;
 
+    // Coop: calculate connection percentage
+    // Each player guesses the other's 5 cards: max 5×2 = 10 points per turn
+    // Two turns per round (each guesses the other) = 20 max per round
+    const maxPerRound = 20;
+    const totalRounds = room.totalRounds || 1;
+    const maxScore = maxPerRound * totalRounds;
+    const combinedScore = players.reduce((sum, p) => sum + p.score, 0);
+    const connectionPct = Math.min(100, Math.round((combinedScore / maxScore) * 100));
+
+    function getConnectionLabel(pct) {
+        if (pct >= 90) return { emoji: '💕', label: 'Soulmates' };
+        if (pct >= 70) return { emoji: '🤝', label: 'Best Friends' };
+        if (pct >= 50) return { emoji: '😊', label: 'Getting There' };
+        if (pct >= 25) return { emoji: '🌱', label: 'Room to Grow' };
+        return { emoji: '🔮', label: 'Full of Surprises' };
+    }
+
+    const connection = getConnectionLabel(connectionPct);
+    const coopStats = room.coopStats || { exact: 0, offByOne: 0, missed: 0 };
+    const totalCards = coopStats.exact + coopStats.offByOne + coopStats.missed;
+
     return (
         <PageLayout>
             <div className="w-full max-w-md animate-fade-in">
-                {/* Winner announcement */}
-                <div className="text-center mb-6">
-                    <div className="text-6xl mb-3">&#x1F3C6;</div>
-                    <h2 className="font-display text-3xl font-bold text-charcoal mb-2">Game Over!</h2>
-                    {isTie ? (
-                        <p className="text-charcoal/60 text-lg font-medium">It&apos;s a tie!</p>
-                    ) : (
-                        <p className="text-charcoal/60 text-lg font-medium">
-                            <span className="font-display text-amber font-bold">{winner?.name}</span> wins with {winner?.score} points!
-                        </p>
-                    )}
-                </div>
+                {isCoop ? (
+                    <>
+                        {/* Coop result */}
+                        <div className="text-center mb-6">
+                            <div className="text-6xl mb-3">{connection.emoji}</div>
+                            <h2 className="font-display text-3xl font-bold text-charcoal mb-2">{connection.label}</h2>
+                            <p className="text-charcoal/60 text-lg font-medium">
+                                Connection Score: <span className="font-display text-amber font-bold">{combinedScore}</span>
+                            </p>
+                            <p className="text-charcoal/40 text-sm mt-1">{connectionPct}% connection</p>
+                        </div>
 
-                {/* Final leaderboard */}
-                <Card className="mb-6">
-                    <h3 className="text-charcoal/40 text-sm uppercase tracking-wide mb-3 text-center font-medium">
-                        Final Standings
-                    </h3>
-                    <div className="space-y-3">
-                        {leaderboard.map((player, i) => {
-                            const isWinner = i === 0 && !isTie;
-                            return (
-                                <div
-                                    key={player.id}
-                                    className={`flex items-center gap-3 px-3 py-2 rounded-xl
-                                        ${isWinner ? 'bg-amber-light border-2 border-amber' : ''}`}
-                                >
-                                    <span className="text-amber font-bold w-8 text-right">
-                                        {i === 0 ? '\u{1F947}' : i === 1 ? '\u{1F948}' : i === 2 ? '\u{1F949}' : `${i + 1}.`}
-                                    </span>
-                                    <span className={`flex-1 font-medium ${isWinner ? 'text-charcoal text-lg' : 'text-charcoal'}`}>
-                                        {player.name}
-                                    </span>
-                                    <span className={`font-bold ${isWinner ? 'text-amber text-xl' : 'text-charcoal text-lg'}`}>
-                                        <CountUpNumber value={player.score} />
-                                    </span>
+                        <Card className="mb-6">
+                            <h3 className="text-charcoal/40 text-sm uppercase tracking-wide mb-3 text-center font-medium">
+                                Breakdown
+                            </h3>
+                            {totalCards > 0 && (
+                                <div className="flex justify-center gap-6 mb-4">
+                                    <div className="text-center">
+                                        <span className="text-amber font-bold text-2xl">
+                                            <CountUpNumber value={coopStats.exact} />
+                                        </span>
+                                        <p className="text-charcoal/40 text-xs font-medium">Exact (+2)</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <span className="text-amber/60 font-bold text-2xl">
+                                            <CountUpNumber value={coopStats.offByOne} />
+                                        </span>
+                                        <p className="text-charcoal/40 text-xs font-medium">Off by 1 (+1)</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <span className="text-charcoal/30 font-bold text-2xl">
+                                            <CountUpNumber value={coopStats.missed} />
+                                        </span>
+                                        <p className="text-charcoal/40 text-xs font-medium">Missed (+0)</p>
+                                    </div>
                                 </div>
-                            );
-                        })}
-                    </div>
-                </Card>
+                            )}
+                            <div className="space-y-3">
+                                {players.map((player) => (
+                                    <div key={player.id} className="flex items-center gap-3 px-3 py-2">
+                                        <span className="text-charcoal flex-1 font-medium">{player.name}</span>
+                                        <span className="text-amber font-bold text-lg">
+                                            <CountUpNumber value={player.score} />
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </Card>
+                    </>
+                ) : (
+                    <>
+                        {/* Competitive result */}
+                        <div className="text-center mb-6">
+                            <div className="text-6xl mb-3">&#x1F3C6;</div>
+                            <h2 className="font-display text-3xl font-bold text-charcoal mb-2">Game Over!</h2>
+                            {isTie ? (
+                                <p className="text-charcoal/60 text-lg font-medium">It&apos;s a tie!</p>
+                            ) : (
+                                <p className="text-charcoal/60 text-lg font-medium">
+                                    <span className="font-display text-amber font-bold">{winner?.name}</span> wins with {winner?.score} points!
+                                </p>
+                            )}
+                        </div>
+
+                        <Card className="mb-6">
+                            <h3 className="text-charcoal/40 text-sm uppercase tracking-wide mb-3 text-center font-medium">
+                                Final Standings
+                            </h3>
+                            <div className="space-y-3">
+                                {leaderboard.map((player, i) => {
+                                    const isWinner = i === 0 && !isTie;
+                                    return (
+                                        <div
+                                            key={player.id}
+                                            className={`flex items-center gap-3 px-3 py-2 rounded-xl
+                                                ${isWinner ? 'bg-amber-light border-2 border-amber' : ''}`}
+                                        >
+                                            <span className="text-amber font-bold w-8 text-right">
+                                                {i === 0 ? '\u{1F947}' : i === 1 ? '\u{1F948}' : i === 2 ? '\u{1F949}' : `${i + 1}.`}
+                                            </span>
+                                            <span className={`flex-1 font-medium ${isWinner ? 'text-charcoal text-lg' : 'text-charcoal'}`}>
+                                                {player.name}
+                                                {player.guesserOnly && (
+                                                    <span className="ml-2 text-xs text-charcoal/40 font-normal">guesser</span>
+                                                )}
+                                            </span>
+                                            <span className={`font-bold ${isWinner ? 'text-amber text-xl' : 'text-charcoal text-lg'}`}>
+                                                <CountUpNumber value={player.score} />
+                                            </span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </Card>
+                    </>
+                )}
 
                 {/* Action buttons */}
                 <div className="space-y-3">

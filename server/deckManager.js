@@ -30,65 +30,49 @@ function shuffle(array) {
 export function dealRound(room) {
     const playerIds = room.playerOrder.filter(
         (id) => room.players[id] && room.players[id].connected
+            && !room.players[id].guesserOnly && !room.players[id].pendingMidGameChoice
     );
     const numPlayers = playerIds.length;
 
-    // Decide round type: roughly alternate, starting with category
-    const isCategory = room.currentRoundNumber % 2 === 1;
-    room.roundType = isCategory ? 'category' : 'situation';
+    // Build a combined pool of all unused categories and situations
+    const availableCats = deckData.categories.filter(
+        (c) => !room.usedCategoryIds.includes(c.id)
+    );
+    const availableSits = deckData.situations.filter(
+        (s) => !room.usedSituationIds.includes(s.id)
+    );
+    let pool = shuffle([...availableCats, ...availableSits]);
 
-    if (isCategory) {
-        // Pick N unused categories
-        const available = deckData.categories.filter(
-            (c) => !room.usedCategoryIds.includes(c.id)
-        );
-        // Fallback: if not enough unused, allow reuse
-        const pool = available.length >= numPlayers
-            ? shuffle(available).slice(0, numPlayers)
-            : shuffle([...deckData.categories]).slice(0, numPlayers);
-
-        playerIds.forEach((socketId, i) => {
-            const cat = pool[i];
-            const cards = shuffle(cat.cards).slice(0, 5);
-            room.players[socketId].assignment = {
-                type: 'category',
-                id: cat.id,
-                name: cat.name,
-                scale: cat.scale,
-            };
-            room.players[socketId].cards = cards;
-            room.players[socketId].ranking = null;
-            room.players[socketId].hasRanked = false;
-            room.players[socketId].currentGuess = null;
-            room.players[socketId].hasGuessed = false;
-            room.usedCategoryIds.push(cat.id);
-        });
-    } else {
-        // Pick N unused situations
-        const available = deckData.situations.filter(
-            (s) => !room.usedSituationIds.includes(s.id)
-        );
-        const pool = available.length >= numPlayers
-            ? shuffle(available).slice(0, numPlayers)
-            : shuffle([...deckData.situations]).slice(0, numPlayers);
-
-        playerIds.forEach((socketId, i) => {
-            const sit = pool[i];
-            const cards = shuffle(sit.cards).slice(0, 5);
-            room.players[socketId].assignment = {
-                type: 'situation',
-                id: sit.id,
-                name: sit.name,
-                scale: sit.prompt,
-            };
-            room.players[socketId].cards = cards;
-            room.players[socketId].ranking = null;
-            room.players[socketId].hasRanked = false;
-            room.players[socketId].currentGuess = null;
-            room.players[socketId].hasGuessed = false;
-            room.usedSituationIds.push(sit.id);
-        });
+    // Fallback: if not enough unused, allow reuse from full deck
+    if (pool.length < numPlayers) {
+        pool = shuffle([...deckData.categories, ...deckData.situations]);
     }
+
+    const selected = pool.slice(0, numPlayers);
+
+    playerIds.forEach((socketId, i) => {
+        const entry = selected[i];
+        const isCategory = entry.scale !== undefined; // categories have 'scale', situations have 'prompt'
+        const cards = shuffle(entry.cards).slice(0, 5);
+
+        room.players[socketId].assignment = {
+            type: isCategory ? 'category' : 'situation',
+            id: entry.id,
+            name: entry.name,
+            scale: isCategory ? entry.scale : entry.prompt,
+        };
+        room.players[socketId].cards = cards;
+        room.players[socketId].ranking = null;
+        room.players[socketId].hasRanked = false;
+        room.players[socketId].currentGuess = null;
+        room.players[socketId].hasGuessed = false;
+
+        if (isCategory) {
+            room.usedCategoryIds.push(entry.id);
+        } else {
+            room.usedSituationIds.push(entry.id);
+        }
+    });
 }
 
 export { deckData, categoriesById, situationsById, shuffle };
