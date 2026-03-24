@@ -28,7 +28,7 @@ export default function HotSeatWaitingScreen() {
                 </p>
 
                 <div className="mb-6">
-                    <Timer timerEndAt={room.timerEndAt} />
+                    <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.guessingTimerSeconds} />
                 </div>
 
                 {/* Progress */}

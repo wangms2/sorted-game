@@ -9,6 +9,7 @@ export const EVENTS = {
     REVEAL_NEXT: 'reveal_next',
     ADVANCE_ROUND: 'advance_round',
     PLAY_AGAIN: 'play_again',
+    KICK_PLAYER: 'kick_player',
 
     // Server → Client
     ROOM_UPDATED: 'room_updated',

@@ -19,7 +19,7 @@ export default function App() {
             case 'ranking':
                 return <RankingScreen />;
             case 'guessing':
-                return isHotSeat ? <HotSeatWaitingScreen /> : <GuessingScreen />;
+                return (isHotSeat && room.mode !== 'coop') ? <HotSeatWaitingScreen /> : <GuessingScreen />;
             case 'reveal':
                 return <RevealScreen />;
             case 'scores':
