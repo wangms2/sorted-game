@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useGameState from '../../hooks/useGameState.js';
 
 export default function HostSidebar() {
-    const { room, players, isHost, kickPlayer, endGame, playAgain } = useGameState();
+    const { room, players, isHost, kickPlayer, endGame } = useGameState();
     const [open, setOpen] = useState(false);
 
     if (!isHost || !room || room.phase === 'lobby' || room.phase === 'game_end') return null;
@@ -83,12 +83,6 @@ export default function HostSidebar() {
                                     className="w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium text-charcoal hover:bg-surface transition cursor-pointer"
                                 >
                                     🏁 End Game
-                                </button>
-                                <button
-                                    onClick={() => { playAgain(); setOpen(false); }}
-                                    className="w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium text-charcoal hover:bg-surface transition cursor-pointer"
-                                >
-                                    🔄 Back to Lobby
                                 </button>
                             </div>
                         </div>
