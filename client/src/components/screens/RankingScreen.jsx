@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { DndContext, closestCenter, PointerSensor, TouchSensor, KeyboardSensor, useSensors, useSensor } from '@dnd-kit/core';
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -54,6 +54,17 @@ export default function RankingScreen() {
     const { room, myPlayer, submitRanking, players } = useGameState();
     const [items, setItems] = useState(() => myPlayer?.cards?.map((c) => c.id) || []);
     const [pulsing, setPulsing] = useState(false);
+    const itemsRef = useRef(items);
+    itemsRef.current = items;
+
+    // Auto-submit current order if phase transitions away before lock-in
+    const hasRankedRef = useRef(myPlayer?.hasRanked);
+    hasRankedRef.current = myPlayer?.hasRanked;
+    useEffect(() => {
+        if (room?.phase !== 'ranking' && !hasRankedRef.current) {
+            submitRanking(itemsRef.current);
+        }
+    }, [room?.phase, submitRanking]);
 
     const sensors = useSensors(
         useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -100,7 +111,7 @@ export default function RankingScreen() {
                     <p className="text-charcoal/50 mb-6">Waiting for others to finish ranking...</p>
 
                     <div className="mb-6">
-                        <Timer timerEndAt={room.timerEndAt} />
+                        <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.rankingTimerSeconds} />
                     </div>
 
                     {unranked.length > 0 && (
@@ -129,7 +140,7 @@ export default function RankingScreen() {
                 {/* Header */}
                 <div className="text-center mb-4">
                     <div className="mb-3">
-                        <Timer timerEndAt={room.timerEndAt} />
+                        <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.rankingTimerSeconds} />
                     </div>
                     <h2 className="font-display text-2xl font-bold text-charcoal mb-1">{assignment?.name}</h2>
                     <p className="text-charcoal/50 text-sm">{assignment?.scale}</p>

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { DndContext, closestCenter, PointerSensor, TouchSensor, KeyboardSensor, useSensors, useSensor } from '@dnd-kit/core';
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -13,13 +13,12 @@ function SortableCard({ id, text, rank }) {
 
     const baseTransform = CSS.Transform.toString(transform);
     const style = {
-        transform: isDragging
-            ? `${baseTransform} rotate(3deg) scale(1.03)`
-            : baseTransform,
-        transition: isDragging ? transition : `${transition}, transform 150ms cubic-bezier(0.25, 1, 0.5, 1)`,
+        transform: baseTransform,
+        transition: isDragging ? 'none' : 'transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease, opacity 150ms ease',
         zIndex: isDragging ? 50 : 'auto',
+        opacity: isDragging ? 0.95 : 1,
         boxShadow: isDragging
-            ? '0 8px 24px rgba(0,0,0,0.15)'
+            ? '0 12px 28px rgba(0,0,0,0.12)'
             : '0 2px 8px rgba(0,0,0,0.08)',
     };
 
@@ -56,6 +55,17 @@ export default function GuessingScreen() {
     const [pulsing, setPulsing] = useState(false);
 
     const [items, setItems] = useState(() => hotSeat?.cards?.map((c) => c.id) || []);
+    const itemsRef = useRef(items);
+    itemsRef.current = items;
+
+    // Auto-submit current order if phase transitions away before lock-in
+    const hasGuessedRef = useRef(myPlayer?.hasGuessed);
+    hasGuessedRef.current = myPlayer?.hasGuessed;
+    useEffect(() => {
+        if (room?.phase !== 'guessing' && !hasGuessedRef.current) {
+            submitGuess(itemsRef.current);
+        }
+    }, [room?.phase, submitGuess]);
 
     const sensors = useSensors(
         useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -89,14 +99,16 @@ export default function GuessingScreen() {
     if (!room || !myPlayer || !hotSeat) return null;
 
     const hasGuessed = myPlayer.hasGuessed;
-    const hotSeatPlayer = room.players[hotSeat.playerId];
-    const hotSeatName = hotSeatPlayer?.name || 'Unknown';
+    const isCoop = room.mode === 'coop';
+    const targetPlayerId = hotSeat.targetPlayerId || hotSeat.playerId;
+    const targetPlayer = room.players[targetPlayerId];
+    const targetName = targetPlayer?.name || 'Unknown';
     const assignment = hotSeat.assignment;
 
     // After locking in, show waiting state
     if (hasGuessed) {
         const unguessed = players.filter(
-            (p) => !p.hasGuessed && p.connected && p.id !== hotSeat.playerId
+            (p) => !p.hasGuessed && p.connected && (isCoop || p.id !== hotSeat.playerId)
         );
         return (
             <PageLayout>
@@ -106,7 +118,7 @@ export default function GuessingScreen() {
                     <p className="text-charcoal/50 mb-6">Waiting for others to finish guessing...</p>
 
                     <div className="mb-6">
-                        <Timer timerEndAt={room.timerEndAt} />
+                        <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.guessingTimerSeconds} />
                     </div>
 
                     {unguessed.length > 0 && (
@@ -135,10 +147,10 @@ export default function GuessingScreen() {
                 {/* Header */}
                 <div className="text-center mb-4">
                     <div className="mb-3">
-                        <Timer timerEndAt={room.timerEndAt} />
+                        <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.guessingTimerSeconds} />
                     </div>
                     <p className="text-charcoal/50 text-sm uppercase tracking-wide mb-1 font-medium">
-                        Guess <span className="text-charcoal font-display font-bold text-lg normal-case">{hotSeatName}</span>&apos;s ranking
+                        Guess <span className="text-charcoal font-display font-bold text-lg normal-case">{targetName}</span>&apos;s ranking
                     </p>
                     <h2 className="font-display text-2xl font-bold text-charcoal mb-1">{assignment?.name}</h2>
                     <p className="text-charcoal/50 text-sm">{assignment?.scale}</p>

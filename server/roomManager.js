@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { shuffle } from './deckManager.js';
 
 const rooms = new Map();
 const socketToRoom = new Map();
@@ -64,10 +65,16 @@ export function joinRoom(code, playerName, socketId) {
     const upperCode = code.toUpperCase();
     const room = rooms.get(upperCode);
     if (!room) return { error: 'Room not found' };
-    if (room.phase !== 'lobby') return { error: 'Game already started' };
     if (Object.keys(room.players).length >= 10) return { error: 'Room is full' };
 
     const player = createPlayer(playerName, socketId);
+
+    // Mid-game join: mark as spectator so they don't block current phase
+    if (room.phase !== 'lobby') {
+        player.hasRanked = true;
+        player.hasGuessed = true;
+    }
+
     room.players[socketId] = player;
     room.playerOrder.push(socketId);
     socketToRoom.set(socketId, upperCode);
@@ -117,6 +124,9 @@ export function reconnectPlayer(sessionToken, roomCode, newSocketId) {
     // Update hotSeat playerId if needed
     if (room.hotSeat && room.hotSeat.playerId === oldSocketId) {
         room.hotSeat.playerId = newSocketId;
+    }
+    if (room.hotSeat && room.hotSeat.coopSecondId === oldSocketId) {
+        room.hotSeat.coopSecondId = newSocketId;
     }
 
     // Update roundScores keys
@@ -176,6 +186,15 @@ export function handleDisconnect(socketId, io, emitRoomUpdate) {
 
     // Mid-game: mark disconnected, start 60s timer
     player.connected = false;
+
+    // Immediately transfer host if the host disconnected
+    if (room.hostId === socketId) {
+        const nextHost = room.playerOrder.find(
+            (id) => id !== socketId && room.players[id]?.connected
+        );
+        if (nextHost) room.hostId = nextHost;
+    }
+
     emitRoomUpdate(io, room);
 
     const timerId = setTimeout(() => {
@@ -183,11 +202,11 @@ export function handleDisconnect(socketId, io, emitRoomUpdate) {
         const updatedRoom = removePlayer(socketId, io);
         if (!updatedRoom) return;
 
-        // If fewer than 3 connected players remain, end game
+        // If fewer than 2 connected players remain, end game
         const connectedCount = Object.values(updatedRoom.players).filter(
             (p) => p.connected
         ).length;
-        if (connectedCount < 3) {
+        if (connectedCount < 2) {
             updatedRoom.phase = 'game_end';
         }
 
@@ -202,6 +221,8 @@ export function filterRoomForPlayer(room, socketId) {
         code: room.code,
         hostId: room.hostId,
         phase: room.phase,
+        mode: room.mode || null,
+        coopStats: room.coopStats || null,
         playerOrder: room.playerOrder,
         hotSeatIndex: room.hotSeatIndex,
         currentRoundNumber: room.currentRoundNumber,
@@ -245,8 +266,80 @@ export function filterRoomForPlayer(room, socketId) {
 
     // During guessing/reveal/scores: include hot seat info
     if (room.hotSeat && (room.phase === 'guessing' || room.phase === 'reveal' || room.phase === 'scores')) {
+        const isCoop = room.mode === 'coop';
         const hotSeatPlayer = room.players[room.hotSeat.playerId];
-        if (hotSeatPlayer) {
+
+        if (isCoop) {
+            const isSecondReveal = room.hotSeat.coopPhase === 'reveal_second';
+            // During guessing: each player guesses the OTHER player's ranking
+            // During reveal: show whose ranking is being revealed
+            const revealPlayerId = isSecondReveal ? room.hotSeat.coopSecondId : room.hotSeat.playerId;
+            const revealPlayer = room.players[revealPlayerId];
+            const guesserId = isSecondReveal ? room.hotSeat.playerId : room.hotSeat.coopSecondId;
+
+            if (room.phase === 'guessing') {
+                // Each player sees the OTHER player's cards (shuffled) and assignment
+                const otherId = socketId === room.hotSeat.playerId
+                    ? room.hotSeat.coopSecondId
+                    : room.hotSeat.playerId;
+                const otherPlayer = room.players[otherId];
+                // Use the pre-shuffled cards for this player's target
+                const otherShuffledCards = otherId === room.hotSeat.playerId
+                    ? room.hotSeat.shuffledCards
+                    : room.hotSeat.coopSecondShuffledCards;
+
+                filtered.hotSeat = {
+                    playerId: room.hotSeat.playerId,
+                    coopSecondId: room.hotSeat.coopSecondId,
+                    coopPhase: room.hotSeat.coopPhase,
+                    revealIndex: room.hotSeat.revealIndex,
+                    revealedPositions: [],
+                    roundScores: room.hotSeat.roundScores,
+                    perfectGuessers: [],
+                    readyPlayers: room.hotSeat.readyPlayers || [],
+                    // Show the OTHER player's assignment and cards for guessing
+                    assignment: otherPlayer.assignment,
+                    cards: shuffle([...otherShuffledCards]),
+                    targetPlayerId: otherId,
+                };
+            } else {
+                // reveal or scores phase
+                filtered.hotSeat = {
+                    playerId: room.hotSeat.playerId,
+                    coopSecondId: room.hotSeat.coopSecondId,
+                    coopPhase: room.hotSeat.coopPhase,
+                    revealIndex: room.hotSeat.revealIndex,
+                    revealedPositions: room.hotSeat.revealedPositions || [],
+                    roundScores: room.hotSeat.roundScores,
+                    perfectGuessers: room.hotSeat.perfectGuessers || [],
+                    readyPlayers: room.hotSeat.readyPlayers || [],
+                    assignment: revealPlayer.assignment,
+                    cards: revealPlayerId === room.hotSeat.playerId
+                        ? room.hotSeat.shuffledCards
+                        : room.hotSeat.coopSecondShuffledCards,
+                    targetPlayerId: revealPlayerId,
+                };
+
+                // Include revealed ranking
+                const fullRanking = revealPlayer.ranking || [];
+                const positions = room.hotSeat.revealedPositions || [];
+                const revealed = {};
+                for (const pos of positions) {
+                    revealed[pos] = fullRanking[pos];
+                }
+                filtered.hotSeat.revealedRanking = revealed;
+
+                // Include the guesser's guess
+                const guesserPlayer = room.players[guesserId];
+                if (guesserPlayer && guesserPlayer.currentGuess) {
+                    filtered.hotSeat.myGuess = guesserPlayer.currentGuess;
+                    filtered.hotSeat.guesserId = guesserId;
+                }
+            }
+        } else if (hotSeatPlayer) {
+            const baseCards = room.hotSeat.shuffledCards || hotSeatPlayer.cards;
+            // Each guesser gets a unique shuffle; non-guessing phases keep stable order
+            const isGuesser = room.phase === 'guessing' && socketId !== room.hotSeat.playerId;
             filtered.hotSeat = {
                 playerId: room.hotSeat.playerId,
                 revealIndex: room.hotSeat.revealIndex,
@@ -255,7 +348,7 @@ export function filterRoomForPlayer(room, socketId) {
                 perfectGuessers: room.hotSeat.perfectGuessers || [],
                 readyPlayers: room.hotSeat.readyPlayers || [],
                 assignment: hotSeatPlayer.assignment,
-                cards: room.hotSeat.shuffledCards || hotSeatPlayer.cards,
+                cards: isGuesser ? shuffle([...baseCards]) : baseCards,
             };
 
             // During reveal: include revealed cards by position + player's own guess

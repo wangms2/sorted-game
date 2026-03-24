@@ -26,6 +26,14 @@ export function GameProvider({ children }) {
     }, []);
 
     const handleError = useCallback(({ message }) => {
+        // Clear stale session if room/session no longer exists
+        if (message === 'Room not found' || message === 'Session not found') {
+            sessionStorage.removeItem('rankit_sessionToken');
+            sessionStorage.removeItem('rankit_roomCode');
+            const url = new URL(window.location);
+            url.searchParams.delete('room');
+            window.history.replaceState({}, '', url.pathname);
+        }
         setError(message);
         clearTimeout(errorTimerRef.current);
         errorTimerRef.current = setTimeout(() => setError(null), 4000);
@@ -69,6 +77,11 @@ export function GameProvider({ children }) {
 
     const playAgain = useCallback(() => emit(EVENTS.PLAY_AGAIN), [emit]);
 
+    const kickPlayer = useCallback(
+        (targetId) => emit(EVENTS.KICK_PLAYER, { targetId }),
+        [emit]
+    );
+
     const leaveRoom = useCallback(() => {
         disconnect();
         setRoom(null);
@@ -95,6 +108,7 @@ export function GameProvider({ children }) {
                 revealNext,
                 advanceRound,
                 playAgain,
+                kickPlayer,
                 leaveRoom,
                 clearError,
             }}

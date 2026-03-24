@@ -54,6 +54,7 @@ export default function useSocket(onRoomUpdate, onError) {
     const disconnect = useCallback(() => {
         const s = getSocket();
         if (s.connected) s.disconnect();
+        socket = null; // Reset so next getSocket() creates a fresh connection
     }, []);
 
     return { emit, tryReconnect, disconnect };

@@ -10,6 +10,7 @@ import {
     joinRoom,
     getRoomBySocketId,
     reconnectPlayer,
+    removePlayer,
     handleDisconnect,
     emitRoomUpdate,
 } from './roomManager.js';
@@ -112,8 +113,8 @@ io.on('connection', (socket) => {
         if (room.hostId !== socket.id) { socket.emit(EVENTS.ERROR, { message: 'Only host can start' }); return; }
         if (room.phase !== 'lobby') { socket.emit(EVENTS.ERROR, { message: 'Game already started' }); return; }
 
-        // Apply timer setting if provided (30, 60, or 90 seconds)
-        const allowedTimers = [30, 45, 60, 90];
+        // Apply timer setting if provided (0 = no timer)
+        const allowedTimers = [0, 30, 45, 60, 90, 120];
         if (typeof timerSeconds === 'number' && allowedTimers.includes(timerSeconds)) {
             room.settings.rankingTimerSeconds = timerSeconds;
             room.settings.guessingTimerSeconds = timerSeconds;
@@ -180,6 +181,34 @@ io.on('connection', (socket) => {
         const result = playAgain(room, io, emitRoomUpdate);
         if (result.error) { socket.emit(EVENTS.ERROR, { message: result.error }); return; }
         emitRoomUpdate(io, room);
+    });
+
+    socket.on(EVENTS.KICK_PLAYER, (data) => {
+        const { targetId } = data || {};
+        const room = getRoomBySocketId(socket.id);
+        if (!room) { socket.emit(EVENTS.ERROR, { message: 'Not in a room' }); return; }
+        if (room.hostId !== socket.id) { socket.emit(EVENTS.ERROR, { message: 'Only host can kick' }); return; }
+        if (targetId === socket.id) { socket.emit(EVENTS.ERROR, { message: 'Cannot kick yourself' }); return; }
+        if (!room.players[targetId]) { socket.emit(EVENTS.ERROR, { message: 'Player not found' }); return; }
+
+        // If kicking the hot seat player during reveal, auto-reveal remaining
+        const wasHotSeatInReveal = room.phase === 'reveal' &&
+            room.hotSeat && room.hotSeat.playerId === targetId;
+
+        const updatedRoom = removePlayer(targetId, io);
+        if (!updatedRoom) return;
+
+        // End game if fewer than 2 connected players
+        const connectedCount = Object.values(updatedRoom.players).filter(p => p.connected).length;
+        if (connectedCount < 2 && updatedRoom.phase !== 'lobby') {
+            updatedRoom.phase = 'game_end';
+        }
+
+        if (wasHotSeatInReveal) {
+            scheduleAutoReveal(updatedRoom, io, emitRoomUpdate);
+        }
+
+        emitRoomUpdate(io, updatedRoom);
     });
 
     socket.on('disconnect', () => {
