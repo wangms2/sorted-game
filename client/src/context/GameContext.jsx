@@ -26,6 +26,14 @@ export function GameProvider({ children }) {
     }, []);
 
     const handleError = useCallback(({ message }) => {
+        // Clear stale session if room/session no longer exists
+        if (message === 'Room not found' || message === 'Session not found') {
+            sessionStorage.removeItem('rankit_sessionToken');
+            sessionStorage.removeItem('rankit_roomCode');
+            const url = new URL(window.location);
+            url.searchParams.delete('room');
+            window.history.replaceState({}, '', url.pathname);
+        }
         setError(message);
         clearTimeout(errorTimerRef.current);
         errorTimerRef.current = setTimeout(() => setError(null), 4000);
@@ -53,6 +61,11 @@ export function GameProvider({ children }) {
         [emit]
     );
 
+    const updateSettings = useCallback(
+        (totalRounds, timerSeconds) => emit(EVENTS.UPDATE_SETTINGS, { totalRounds, timerSeconds }),
+        [emit]
+    );
+
     const submitRanking = useCallback(
         (ranking) => emit(EVENTS.SUBMIT_RANKING, { ranking }),
         [emit]
@@ -68,6 +81,21 @@ export function GameProvider({ children }) {
     const advanceRound = useCallback(() => emit(EVENTS.ADVANCE_ROUND), [emit]);
 
     const playAgain = useCallback(() => emit(EVENTS.PLAY_AGAIN), [emit]);
+
+    const kickPlayer = useCallback(
+        (targetId) => emit(EVENTS.KICK_PLAYER, { targetId }),
+        [emit]
+    );
+
+    const rejoinAs = useCallback(
+        (targetPlayerId) => emit(EVENTS.REJOIN_AS, { targetPlayerId }),
+        [emit]
+    );
+
+    const joinAsGuesser = useCallback(
+        () => emit(EVENTS.JOIN_AS_GUESSER),
+        [emit]
+    );
 
     const leaveRoom = useCallback(() => {
         disconnect();
@@ -90,11 +118,15 @@ export function GameProvider({ children }) {
                 createRoom,
                 joinRoom,
                 startGame,
+                updateSettings,
                 submitRanking,
                 submitGuess,
                 revealNext,
                 advanceRound,
                 playAgain,
+                kickPlayer,
+                rejoinAs,
+                joinAsGuesser,
                 leaveRoom,
                 clearError,
             }}

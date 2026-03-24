@@ -3,6 +3,7 @@ import { io } from 'socket.io-client';
 import { EVENTS } from '@shared/socketEvents.js';
 
 let socket = null;
+let listenersAttached = false;
 
 function getSocket() {
     if (!socket) {
@@ -10,6 +11,7 @@ function getSocket() {
             autoConnect: false,
             transports: ['websocket', 'polling'],
         });
+        listenersAttached = false;
     }
     return socket;
 }
@@ -20,26 +22,25 @@ export default function useSocket(onRoomUpdate, onError) {
     onRoomUpdateRef.current = onRoomUpdate;
     onErrorRef.current = onError;
 
+    const ensureListeners = useCallback((s) => {
+        if (listenersAttached) return;
+        s.on(EVENTS.ROOM_UPDATED, (data) => onRoomUpdateRef.current?.(data));
+        s.on(EVENTS.ERROR, (data) => onErrorRef.current?.(data));
+        listenersAttached = true;
+    }, []);
+
     useEffect(() => {
         const s = getSocket();
-
-        const handleRoomUpdate = (data) => onRoomUpdateRef.current?.(data);
-        const handleError = (data) => onErrorRef.current?.(data);
-
-        s.on(EVENTS.ROOM_UPDATED, handleRoomUpdate);
-        s.on(EVENTS.ERROR, handleError);
-
+        ensureListeners(s);
         if (!s.connected) s.connect();
-
-        return () => {
-            s.off(EVENTS.ROOM_UPDATED, handleRoomUpdate);
-            s.off(EVENTS.ERROR, handleError);
-        };
-    }, []);
+    }, [ensureListeners]);
 
     const emit = useCallback((event, data) => {
-        getSocket().emit(event, data);
-    }, []);
+        const s = getSocket();
+        ensureListeners(s);
+        if (!s.connected) s.connect();
+        s.emit(event, data);
+    }, [ensureListeners]);
 
     const tryReconnect = useCallback(() => {
         const sessionToken = sessionStorage.getItem('rankit_sessionToken');
@@ -54,6 +55,8 @@ export default function useSocket(onRoomUpdate, onError) {
     const disconnect = useCallback(() => {
         const s = getSocket();
         if (s.connected) s.disconnect();
+        socket = null;
+        listenersAttached = false;
     }, []);
 
     return { emit, tryReconnect, disconnect };

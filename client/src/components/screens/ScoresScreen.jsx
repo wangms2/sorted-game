@@ -23,6 +23,7 @@ function CountUpNumber({ value }) {
 export default function ScoresScreen() {
     const { room, isHost, players, advanceRound } = useGameState();
     const hotSeat = room?.hotSeat;
+    const isCoop = room?.mode === 'coop';
 
     if (!room) return null;
 
@@ -88,24 +89,40 @@ export default function ScoresScreen() {
                     </Card>
                 )}
 
-                {/* Cumulative leaderboard */}
+                {/* Cumulative leaderboard / Connection Score */}
                 <Card className="mb-5">
-                    <h3 className="text-charcoal/40 text-sm uppercase tracking-wide mb-3 text-center font-medium">
-                        Overall Standings
-                    </h3>
-                    <div className="space-y-2">
-                        {leaderboard.map((player, i) => (
-                            <div key={player.id} className="flex items-center gap-3 px-2 py-1">
-                                <span className="text-amber font-bold w-6 text-right text-sm">
-                                    {i === 0 ? '\u{1F947}' : i === 1 ? '\u{1F948}' : i === 2 ? '\u{1F949}' : `${i + 1}.`}
+                    {isCoop ? (
+                        <>
+                            <h3 className="text-charcoal/40 text-sm uppercase tracking-wide mb-3 text-center font-medium">
+                                Connection Score
+                            </h3>
+                            <div className="text-center">
+                                <span className="font-display text-4xl font-bold text-amber">
+                                    <CountUpNumber value={players.reduce((sum, p) => sum + p.score, 0)} />
                                 </span>
-                                <span className="text-charcoal flex-1 font-medium">{player.name}</span>
-                                <span className="text-charcoal font-bold">
-                                    <CountUpNumber value={player.score} />
-                                </span>
+                                <p className="text-charcoal/50 text-sm mt-1 font-medium">combined points</p>
                             </div>
-                        ))}
-                    </div>
+                        </>
+                    ) : (
+                        <>
+                            <h3 className="text-charcoal/40 text-sm uppercase tracking-wide mb-3 text-center font-medium">
+                                Overall Standings
+                            </h3>
+                            <div className="space-y-2">
+                                {leaderboard.map((player, i) => (
+                                    <div key={player.id} className="flex items-center gap-3 px-2 py-1">
+                                        <span className="text-amber font-bold w-6 text-right text-sm">
+                                            {i === 0 ? '\u{1F947}' : i === 1 ? '\u{1F948}' : i === 2 ? '\u{1F949}' : `${i + 1}.`}
+                                        </span>
+                                        <span className="text-charcoal flex-1 font-medium">{player.name}</span>
+                                        <span className="text-charcoal font-bold">
+                                            <CountUpNumber value={player.score} />
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </>
+                    )}
                 </Card>
 
                 {/* What's next info + host advance button */}
