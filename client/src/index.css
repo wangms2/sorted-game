@@ -179,3 +179,17 @@ body {
 @utility animate-pulse-bar {
     animation: pulse-bar 1s ease-in-out infinite;
 }
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@utility animate-slide-in-right {
+    animation: slide-in-right 200ms ease-out both;
+}

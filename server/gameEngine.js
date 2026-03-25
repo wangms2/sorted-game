@@ -2,7 +2,7 @@ import { dealRound, shuffle } from './deckManager.js';
 
 const timers = new Map(); // roomCode -> timeoutId
 
-function clearRoomTimer(roomCode) {
+export function clearRoomTimer(roomCode) {
     const timerId = timers.get(roomCode);
     if (timerId) {
         clearTimeout(timerId);
@@ -23,18 +23,24 @@ function setRoomTimer(room, durationSeconds, callback) {
 
 export function startGame(room, totalRounds, io, emitRoomUpdate) {
     const connectedPlayers = Object.values(room.players).filter((p) => p.connected);
-    if (connectedPlayers.length < 3) {
-        return { error: 'Need at least 3 players to start' };
+    if (connectedPlayers.length < 2) {
+        return { error: 'Need at least 2 players to start' };
     }
-    if (totalRounds < 1 || totalRounds > 3) {
-        return { error: 'Rounds must be between 1 and 3' };
+    if (totalRounds < 1 || totalRounds > 10) {
+        return { error: 'Rounds must be between 1 and 10' };
     }
 
+    room.mode = connectedPlayers.length === 2 ? 'coop' : 'competitive';
     room.totalRounds = totalRounds;
     room.currentRoundNumber = 1;
     room.hotSeatIndex = 0;
     room.usedCategoryIds = [];
     room.usedSituationIds = [];
+    room.coopStats = { exact: 0, offByOne: 0, missed: 0 };
+    room.gameHistory = [];
+
+    // Shuffle spotlight order
+    room.playerOrder = shuffle([...room.playerOrder]);
 
     // Reset all scores
     for (const player of Object.values(room.players)) {
@@ -44,9 +50,11 @@ export function startGame(room, totalRounds, io, emitRoomUpdate) {
     dealRound(room);
     room.phase = 'ranking';
 
-    setRoomTimer(room, room.settings.rankingTimerSeconds, () => {
-        handleRankingTimeout(room, io, emitRoomUpdate);
-    });
+    if (room.settings.rankingTimerSeconds > 0) {
+        setRoomTimer(room, room.settings.rankingTimerSeconds, () => {
+            handleRankingTimeout(room, io, emitRoomUpdate);
+        });
+    }
 
     return {};
 }
@@ -71,13 +79,14 @@ export function submitRanking(room, socketId, ranking) {
 
     player.ranking = ranking;
     player.hasRanked = true;
+    player._rankedAt = Date.now();
 
     return {};
 }
 
 export function checkAllRanked(room, io, emitRoomUpdate) {
     const allRanked = Object.values(room.players)
-        .filter((p) => p.connected)
+        .filter((p) => p.connected && !p.pendingMidGameChoice)
         .every((p) => p.hasRanked);
 
     if (allRanked) {
@@ -102,11 +111,17 @@ function handleRankingTimeout(room, io, emitRoomUpdate) {
 }
 
 export function startGuessingPhase(room, io, emitRoomUpdate) {
+    // Coop 2-player: both guess each other simultaneously
+    if (room.mode === 'coop') {
+        startCoopGuessingPhase(room, io, emitRoomUpdate);
+        return;
+    }
+
     const hotSeatPlayerId = room.playerOrder[room.hotSeatIndex];
     const hotSeatPlayer = room.players[hotSeatPlayerId];
 
-    if (!hotSeatPlayer || !hotSeatPlayer.connected) {
-        // Skip disconnected hot seat players
+    if (!hotSeatPlayer || !hotSeatPlayer.connected || hotSeatPlayer.guesserOnly) {
+        // Skip disconnected or guesser-only hot seat players
         if (advanceHotSeat(room, io, emitRoomUpdate)) return;
         // If no more players, handled by advanceHotSeat
         return;
@@ -125,22 +140,73 @@ export function startGuessingPhase(room, io, emitRoomUpdate) {
 
     // Initialize round scores to 0 for all connected players
     for (const [id, player] of Object.entries(room.players)) {
-        if (player.connected) {
+        if (player.connected && !player.pendingMidGameChoice) {
             room.hotSeat.roundScores[id] = 0;
         }
     }
 
     // Reset guesses for all players
     for (const player of Object.values(room.players)) {
+        if (player.pendingMidGameChoice) continue; // pending players stay blocked
         player.currentGuess = null;
+        player.draftGuess = null;
         player.hasGuessed = false;
     }
     // Hot seat player doesn't guess
     hotSeatPlayer.hasGuessed = true;
 
-    setRoomTimer(room, room.settings.guessingTimerSeconds, () => {
-        handleGuessingTimeout(room, io, emitRoomUpdate);
-    });
+    if (room.settings.guessingTimerSeconds > 0) {
+        setRoomTimer(room, room.settings.guessingTimerSeconds, () => {
+            handleGuessingTimeout(room, io, emitRoomUpdate);
+        });
+    }
+
+    emitRoomUpdate(io, room);
+}
+
+function startCoopGuessingPhase(room, io, emitRoomUpdate) {
+    const [idA, idB] = room.playerOrder.filter(id => room.players[id]?.connected);
+    const playerA = room.players[idA];
+    const playerB = room.players[idB];
+
+    if (!playerA || !playerB) return;
+
+    room.phase = 'guessing';
+
+    // Track ranking submission order for reveal ordering
+    const aRankedFirst = playerA._rankedAt <= playerB._rankedAt;
+    const firstId = aRankedFirst ? idA : idB;
+    const secondId = aRankedFirst ? idB : idA;
+
+    room.hotSeat = {
+        playerId: firstId, // Who reveals first
+        coopSecondId: secondId,
+        coopPhase: 'guessing', // guessing → reveal_first → reveal_second
+        revealIndex: 0,
+        revealedPositions: [],
+        roundScores: {},
+        readyPlayers: [],
+        perfectGuessers: [],
+        shuffledCards: shuffle(room.players[firstId].cards),
+        coopSecondShuffledCards: shuffle(room.players[secondId].cards),
+    };
+
+    // Initialize round scores
+    room.hotSeat.roundScores[idA] = 0;
+    room.hotSeat.roundScores[idB] = 0;
+
+    // Both players guess — neither is pre-marked
+    for (const player of Object.values(room.players)) {
+        player.currentGuess = null;
+        player.draftGuess = null;
+        player.hasGuessed = false;
+    }
+
+    if (room.settings.guessingTimerSeconds > 0) {
+        setRoomTimer(room, room.settings.guessingTimerSeconds, () => {
+            handleGuessingTimeout(room, io, emitRoomUpdate);
+        });
+    }
 
     emitRoomUpdate(io, room);
 }
@@ -149,23 +215,39 @@ export function submitGuess(room, socketId, guess) {
     if (room.phase !== 'guessing') return { error: 'Not in guessing phase' };
     if (!Array.isArray(guess)) return { error: 'Invalid guess format' };
 
-    if (room.hotSeat && room.hotSeat.playerId === socketId) {
-        return { error: 'Hot seat player cannot guess' };
-    }
-
     const player = room.players[socketId];
     if (!player) return { error: 'Player not found' };
     if (player.hasGuessed) return { error: 'Already submitted guess' };
 
-    // Validate guess contains exactly the hot seat player's card IDs
-    const hotSeatPlayer = room.players[room.hotSeat.playerId];
-    const hotSeatCardIds = hotSeatPlayer.cards.map((c) => c.id).sort();
-    const guessIds = [...guess].sort();
-    if (
-        guess.length !== hotSeatCardIds.length ||
-        !guessIds.every((id, i) => id === hotSeatCardIds[i])
-    ) {
-        return { error: 'Invalid guess: must contain exactly the hot seat cards' };
+    if (room.mode === 'coop') {
+        // In coop, each player guesses the OTHER player's cards
+        const otherId = socketId === room.hotSeat.playerId
+            ? room.hotSeat.coopSecondId
+            : room.hotSeat.playerId;
+        const otherPlayer = room.players[otherId];
+        const otherCardIds = otherPlayer.cards.map((c) => c.id).sort();
+        const guessIds = [...guess].sort();
+        if (
+            guess.length !== otherCardIds.length ||
+            !guessIds.every((id, i) => id === otherCardIds[i])
+        ) {
+            return { error: 'Invalid guess: must contain exactly the other player\'s cards' };
+        }
+    } else {
+        if (room.hotSeat && room.hotSeat.playerId === socketId) {
+            return { error: 'Hot seat player cannot guess' };
+        }
+
+        // Validate guess contains exactly the hot seat player's card IDs
+        const hotSeatPlayer = room.players[room.hotSeat.playerId];
+        const hotSeatCardIds = hotSeatPlayer.cards.map((c) => c.id).sort();
+        const guessIds = [...guess].sort();
+        if (
+            guess.length !== hotSeatCardIds.length ||
+            !guessIds.every((id, i) => id === hotSeatCardIds[i])
+        ) {
+            return { error: 'Invalid guess: must contain exactly the hot seat cards' };
+        }
     }
 
     player.currentGuess = guess;
@@ -176,7 +258,7 @@ export function submitGuess(room, socketId, guess) {
 
 export function checkAllGuessed(room, io, emitRoomUpdate) {
     const allGuessed = Object.values(room.players)
-        .filter((p) => p.connected)
+        .filter((p) => p.connected && !p.pendingMidGameChoice)
         .every((p) => p.hasGuessed);
 
     if (allGuessed) {
@@ -184,10 +266,18 @@ export function checkAllGuessed(room, io, emitRoomUpdate) {
         room.timerEndAt = null;
         room.phase = 'reveal';
 
-        // If hot seat disconnected during guessing, auto-reveal after 10s
-        const hotSeatPlayer = room.players[room.hotSeat.playerId];
-        if (hotSeatPlayer && !hotSeatPlayer.connected) {
-            scheduleAutoReveal(room, io, emitRoomUpdate);
+        if (room.mode === 'coop') {
+            // Start revealing the first player's ranking
+            room.hotSeat.coopPhase = 'reveal_first';
+            room.hotSeat.revealIndex = 0;
+            room.hotSeat.revealedPositions = [];
+            room.hotSeat.readyPlayers = [];
+        } else {
+            // If hot seat disconnected during guessing, auto-reveal after 10s
+            const hotSeatPlayer = room.players[room.hotSeat.playerId];
+            if (hotSeatPlayer && !hotSeatPlayer.connected) {
+                scheduleAutoReveal(room, io, emitRoomUpdate);
+            }
         }
 
         emitRoomUpdate(io, room);
@@ -197,12 +287,35 @@ export function checkAllGuessed(room, io, emitRoomUpdate) {
 }
 
 function handleGuessingTimeout(room, io, emitRoomUpdate) {
+    if (room.mode === 'coop') {
+        // Auto-submit for both players who haven't guessed
+        const firstId = room.hotSeat.playerId;
+        const secondId = room.hotSeat.coopSecondId;
+        for (const player of Object.values(room.players)) {
+            if (!player.hasGuessed && player.connected) {
+                // Use draft guess (synced from client) if available, otherwise fall back to dealt order
+                const otherId = player.id === firstId ? secondId : firstId;
+                const otherPlayer = room.players[otherId];
+                player.currentGuess = player.draftGuess || otherPlayer.cards.map((c) => c.id);
+                player.hasGuessed = true;
+            }
+        }
+        room.timerEndAt = null;
+        room.phase = 'reveal';
+        room.hotSeat.coopPhase = 'reveal_first';
+        room.hotSeat.revealIndex = 0;
+        room.hotSeat.revealedPositions = [];
+        room.hotSeat.readyPlayers = [];
+        emitRoomUpdate(io, room);
+        return;
+    }
+
     // Auto-submit for players who haven't guessed
     const hotSeatPlayer = room.players[room.hotSeat.playerId];
     for (const player of Object.values(room.players)) {
         if (!player.hasGuessed && player.connected && player.id !== room.hotSeat.playerId) {
-            // Default guess: shuffled card order
-            player.currentGuess = hotSeatPlayer.cards.map((c) => c.id);
+            // Use draft guess (synced from client) if available, otherwise fall back to dealt order
+            player.currentGuess = player.draftGuess || hotSeatPlayer.cards.map((c) => c.id);
             player.hasGuessed = true;
         }
     }
@@ -228,83 +341,152 @@ export function scoreGuesserPosition(actualRanking, guesserGuess, positionIndex)
 
 export function scoreHotSeatPosition(actualRanking, allGuesses, positionIndex) {
     const actualCardId = actualRanking[positionIndex];
-    const anyExact = Object.values(allGuesses).some(
-        (guess) => guess.indexOf(actualCardId) === positionIndex
-    );
-    return anyExact ? 1 : 0;
-}
-
-// Award spotlight player +5 for each guesser who got a perfect score (10/10)
-export function scoreSpotlightBonus(actualRanking, allGuesses) {
-    let bonus = 0;
+    let count = 0;
     for (const guess of Object.values(allGuesses)) {
-        let total = 0;
-        for (let i = 0; i < actualRanking.length; i++) {
-            total += scoreGuesserPosition(actualRanking, guess, i);
-        }
-        if (total === 10) bonus += 5;
+        if (guess.indexOf(actualCardId) === positionIndex) count++;
     }
-    return bonus;
+    return count;
 }
 
 function revealPosition(room, positionIndex) {
-    const hotSeatPlayer = room.players[room.hotSeat.playerId];
-    const actualRanking = hotSeatPlayer.ranking;
+    const isCoop = room.mode === 'coop';
+    const isSecondReveal = isCoop && room.hotSeat.coopPhase === 'reveal_second';
 
-    // Collect all guesses (non-hot-seat players with guesses)
-    const allGuesses = {};
-    for (const [id, player] of Object.entries(room.players)) {
-        if (id !== room.hotSeat.playerId && player.currentGuess) {
-            allGuesses[id] = player.currentGuess;
+    // In coop second reveal, we're revealing the second player's ranking
+    const revealPlayerId = isSecondReveal ? room.hotSeat.coopSecondId : room.hotSeat.playerId;
+    const revealPlayer = room.players[revealPlayerId];
+    const actualRanking = revealPlayer.ranking;
+
+    if (isCoop) {
+        // In coop, the guesser is the OTHER player
+        const guesserId = isSecondReveal ? room.hotSeat.playerId : room.hotSeat.coopSecondId;
+        const guesser = room.players[guesserId];
+        if (guesser && guesser.currentGuess) {
+            const points = scoreGuesserPosition(actualRanking, guesser.currentGuess, positionIndex);
+            // Track cumulative coop stats
+            if (points === 2) room.coopStats.exact++;
+            else if (points === 1) room.coopStats.offByOne++;
+            else room.coopStats.missed++;
+            if (points > 0) {
+                guesser.score += points;
+                room.hotSeat.roundScores[guesserId] = (room.hotSeat.roundScores[guesserId] || 0) + points;
+            }
         }
-    }
-
-    // Score guessers for this position
-    for (const [id, guess] of Object.entries(allGuesses)) {
-        const points = scoreGuesserPosition(actualRanking, guess, positionIndex);
-        if (points > 0) {
-            room.players[id].score += points;
-            room.hotSeat.roundScores[id] = (room.hotSeat.roundScores[id] || 0) + points;
+    } else {
+        // Competitive mode
+        const allGuesses = {};
+        for (const [id, player] of Object.entries(room.players)) {
+            if (id !== room.hotSeat.playerId && player.currentGuess) {
+                allGuesses[id] = player.currentGuess;
+            }
         }
-    }
 
-    // Score hot seat player for this position
-    const hotSeatPoints = scoreHotSeatPosition(actualRanking, allGuesses, positionIndex);
-    if (hotSeatPoints > 0) {
-        hotSeatPlayer.score += hotSeatPoints;
-        room.hotSeat.roundScores[room.hotSeat.playerId] =
-            (room.hotSeat.roundScores[room.hotSeat.playerId] || 0) + hotSeatPoints;
+        // Score guessers for this position
+        for (const [id, guess] of Object.entries(allGuesses)) {
+            const points = scoreGuesserPosition(actualRanking, guess, positionIndex);
+            if (points > 0) {
+                room.players[id].score += points;
+                room.hotSeat.roundScores[id] = (room.hotSeat.roundScores[id] || 0) + points;
+            }
+        }
+
+        // Score hot seat player for this position
+        const hotSeatPoints = scoreHotSeatPosition(actualRanking, allGuesses, positionIndex);
+        if (hotSeatPoints > 0) {
+            revealPlayer.score += hotSeatPoints;
+            room.hotSeat.roundScores[room.hotSeat.playerId] =
+                (room.hotSeat.roundScores[room.hotSeat.playerId] || 0) + hotSeatPoints;
+        }
     }
 
     room.hotSeat.revealedPositions.push(positionIndex);
     room.hotSeat.revealIndex = room.hotSeat.revealedPositions.length;
 
-    // After all 5 revealed, award spotlight bonus for perfect guessers
+    // After all 5 revealed, track perfect guessers for display (no bonus)
     if (room.hotSeat.revealIndex >= 5) {
-        const perfectIds = [];
-        for (const [id, guess] of Object.entries(allGuesses)) {
-            let total = 0;
-            for (let i = 0; i < actualRanking.length; i++) {
-                total += scoreGuesserPosition(actualRanking, guess, i);
+        if (isCoop) {
+            const guesserId = isSecondReveal ? room.hotSeat.playerId : room.hotSeat.coopSecondId;
+            const guesser = room.players[guesserId];
+            if (guesser && guesser.currentGuess) {
+                let total = 0;
+                for (let i = 0; i < actualRanking.length; i++) {
+                    total += scoreGuesserPosition(actualRanking, guesser.currentGuess, i);
+                }
+                if (total === 10) room.hotSeat.perfectGuessers.push(guesserId);
             }
-            if (total === 10) perfectIds.push(id);
+        } else {
+            const allGuesses = {};
+            for (const [id, player] of Object.entries(room.players)) {
+                if (id !== room.hotSeat.playerId && player.currentGuess) {
+                    allGuesses[id] = player.currentGuess;
+                }
+            }
+            const perfectIds = [];
+            for (const [id, guess] of Object.entries(allGuesses)) {
+                let total = 0;
+                for (let i = 0; i < actualRanking.length; i++) {
+                    total += scoreGuesserPosition(actualRanking, guess, i);
+                }
+                if (total === 10) perfectIds.push(id);
+            }
+            room.hotSeat.perfectGuessers = perfectIds;
         }
-        room.hotSeat.perfectGuessers = perfectIds;
 
-        const bonus = perfectIds.length * 5;
-        if (bonus > 0) {
-            hotSeatPlayer.score += bonus;
-            room.hotSeat.roundScores[room.hotSeat.playerId] =
-                (room.hotSeat.roundScores[room.hotSeat.playerId] || 0) + bonus;
+        // Record spotlight summary for end-game insights
+        if (!room.gameHistory) room.gameHistory = [];
+        const historyGuessScores = {};
+        const historyGuesses = {};
+        if (isCoop) {
+            const gId = isSecondReveal ? room.hotSeat.playerId : room.hotSeat.coopSecondId;
+            const g = room.players[gId];
+            if (g && g.currentGuess) {
+                let ex = 0, ob = 0, mi = 0;
+                for (let i = 0; i < actualRanking.length; i++) {
+                    const pts = scoreGuesserPosition(actualRanking, g.currentGuess, i);
+                    if (pts === 2) ex++; else if (pts === 1) ob++; else mi++;
+                }
+                historyGuessScores[gId] = { points: ex * 2 + ob, exact: ex, offByOne: ob, missed: mi };
+                historyGuesses[gId] = [...g.currentGuess];
+            }
+        } else {
+            for (const [id, player] of Object.entries(room.players)) {
+                if (id !== room.hotSeat.playerId && player.currentGuess) {
+                    let ex = 0, ob = 0, mi = 0;
+                    for (let i = 0; i < actualRanking.length; i++) {
+                        const pts = scoreGuesserPosition(actualRanking, player.currentGuess, i);
+                        if (pts === 2) ex++; else if (pts === 1) ob++; else mi++;
+                    }
+                    historyGuessScores[id] = { points: ex * 2 + ob, exact: ex, offByOne: ob, missed: mi };
+                    historyGuesses[id] = [...player.currentGuess];
+                }
+            }
         }
+        const spotlightPlayer = room.players[revealPlayerId];
+        room.gameHistory.push({
+            spotlightId: revealPlayerId,
+            assignmentName: spotlightPlayer?.assignment?.name || '',
+            guessScores: historyGuessScores,
+            guesses: historyGuesses,
+        });
     }
 }
 
 export function revealNext(room, socketId, io, emitRoomUpdate, positionIndex) {
     if (room.phase !== 'reveal') return { error: 'Not in reveal phase' };
-    if (!room.hotSeat || room.hotSeat.playerId !== socketId) {
-        return { error: 'Only the hot seat player can reveal' };
+
+    if (room.mode === 'coop') {
+        // In coop, the person being revealed (spotlight) controls the reveal
+        const isSecondReveal = room.hotSeat.coopPhase === 'reveal_second';
+        const revealerId = isSecondReveal ? room.hotSeat.coopSecondId : room.hotSeat.playerId;
+        if (socketId !== revealerId) {
+            return { error: 'Only the spotlight player can reveal' };
+        }
+    } else {
+        if (!room.hotSeat || room.hotSeat.playerId !== socketId) {
+            return { error: 'Only the hot seat player can reveal' };
+        }
     }
+
     if (room.hotSeat.revealIndex >= 5) return { error: 'All cards already revealed' };
 
     // Validate positionIndex — fall back to next unrevealed position in order
@@ -360,13 +542,27 @@ export function playerReady(room, socketId, io, emitRoomUpdate) {
         room.hotSeat.readyPlayers.push(socketId);
     }
 
-    // Check if all connected players are ready
+    // Check if all connected players are ready (exclude pending mid-game joiners)
     const connectedIds = Object.entries(room.players)
-        .filter(([, p]) => p.connected)
+        .filter(([, p]) => p.connected && !p.pendingMidGameChoice)
         .map(([id]) => id);
     const allReady = connectedIds.every(id => room.hotSeat.readyPlayers.includes(id));
 
     if (allReady) {
+        // Coop: transition from reveal_first → reveal_second
+        if (room.mode === 'coop' && room.hotSeat.coopPhase === 'reveal_first') {
+            room.hotSeat.coopPhase = 'reveal_second';
+            room.hotSeat.revealIndex = 0;
+            room.hotSeat.revealedPositions = [];
+            room.hotSeat.readyPlayers = [];
+            room.hotSeat.perfectGuessers = [];
+
+            // Swap guesses: now the second player's ranking is revealed,
+            // and the first player is the guesser
+            emitRoomUpdate(io, room);
+            return {};
+        }
+
         return advanceFromScores(room, io, emitRoomUpdate);
     }
 
@@ -394,13 +590,39 @@ export function advanceFromScores(room, io, emitRoomUpdate) {
 
 // Returns true if it handled the transition (emitted update), false otherwise
 function advanceHotSeat(room, io, emitRoomUpdate) {
+    // In coop mode, both players already guessed each other — skip hot seat rotation
+    if (room.mode === 'coop') {
+        if (room.currentRoundNumber < room.totalRounds) {
+            room.currentRoundNumber++;
+            room.hotSeatIndex = 0;
+            dealRound(room);
+            room.phase = 'ranking';
+
+            if (room.settings.rankingTimerSeconds > 0) {
+                setRoomTimer(room, room.settings.rankingTimerSeconds, () => {
+                    handleRankingTimeout(room, io, emitRoomUpdate);
+                });
+            }
+
+            emitRoomUpdate(io, room);
+            return true;
+        }
+
+        // All rounds done
+        room.phase = 'game_end';
+        room.hotSeat = null;
+        emitRoomUpdate(io, room);
+        return true;
+    }
+
     room.hotSeatIndex++;
 
-    // Skip disconnected/removed players
+    // Skip disconnected/removed/guesser-only players
     while (
         room.hotSeatIndex < room.playerOrder.length &&
         (!room.players[room.playerOrder[room.hotSeatIndex]] ||
-            !room.players[room.playerOrder[room.hotSeatIndex]].connected)
+            !room.players[room.playerOrder[room.hotSeatIndex]].connected ||
+            room.players[room.playerOrder[room.hotSeatIndex]].guesserOnly)
     ) {
         room.hotSeatIndex++;
     }
@@ -419,9 +641,11 @@ function advanceHotSeat(room, io, emitRoomUpdate) {
         dealRound(room);
         room.phase = 'ranking';
 
-        setRoomTimer(room, room.settings.rankingTimerSeconds, () => {
-            handleRankingTimeout(room, io, emitRoomUpdate);
-        });
+        if (room.settings.rankingTimerSeconds > 0) {
+            setRoomTimer(room, room.settings.rankingTimerSeconds, () => {
+                handleRankingTimeout(room, io, emitRoomUpdate);
+            });
+        }
 
         emitRoomUpdate(io, room);
         return true;
@@ -441,6 +665,7 @@ export function playAgain(room, io, emitRoomUpdate) {
 
     // Reset game state, keep players
     room.phase = 'lobby';
+    room.mode = null;
     room.currentRoundNumber = 0;
     room.hotSeatIndex = 0;
     room.roundType = null;
@@ -448,6 +673,8 @@ export function playAgain(room, io, emitRoomUpdate) {
     room.usedSituationIds = [];
     room.hotSeat = null;
     room.timerEndAt = null;
+    room.coopStats = { exact: 0, offByOne: 0, missed: 0 };
+    room.gameHistory = [];
 
     for (const player of Object.values(room.players)) {
         player.score = 0;
@@ -457,6 +684,8 @@ export function playAgain(room, io, emitRoomUpdate) {
         player.hasRanked = false;
         player.currentGuess = null;
         player.hasGuessed = false;
+        player.guesserOnly = false;
+        player.pendingMidGameChoice = false;
     }
 
     // Remove disconnected players

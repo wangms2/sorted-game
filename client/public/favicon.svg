@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#FAF7F2"/>
+  <!-- Back card, tilted left -->
+  <g transform="translate(32,34) rotate(-12)">
+    <rect x="-14" y="-18" width="28" height="36" rx="4" fill="#F0EBE3" stroke="#E8732A" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="16" fill="#C5611F">3</text>
+  </g>
+  <!-- Middle card, slight tilt -->
+  <g transform="translate(32,32) rotate(0)">
+    <rect x="-14" y="-18" width="28" height="36" rx="4" fill="#FFFFFF" stroke="#E8732A" stroke-width="1.5"/>
+    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="16" fill="#E8732A">1</text>
+  </g>
+  <!-- Front card, tilted right -->
+  <g transform="translate(32,34) rotate(12)">
+    <rect x="-14" y="-18" width="28" height="36" rx="4" fill="#E8732A"/>
+    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">2</text>
+  </g>
+  <!-- Fun sparkle -->
+  <circle cx="52" cy="10" r="2.5" fill="#E8732A"/>
+  <circle cx="12" cy="12" r="1.5" fill="#E8732A" opacity="0.5"/>
+</svg>
