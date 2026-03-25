@@ -8178,6 +8178,2181 @@
           "text": "Swimming"
         }
       ]
+    },
+    {
+      "id": "personal_interests",
+      "name": "Personal Interests",
+      "scale": "How much this is part of who you are",
+      "cards": [
+        {
+          "id": "personal_interests_001",
+          "text": "True crime podcasts"
+        },
+        {
+          "id": "personal_interests_002",
+          "text": "Your collection of house plants"
+        },
+        {
+          "id": "personal_interests_003",
+          "text": "Competitive video games"
+        },
+        {
+          "id": "personal_interests_004",
+          "text": "Fantasy football"
+        },
+        {
+          "id": "personal_interests_005",
+          "text": "Vinyl records"
+        },
+        {
+          "id": "personal_interests_006",
+          "text": "Hot sauce as a hobby"
+        },
+        {
+          "id": "personal_interests_007",
+          "text": "Dungeons & Dragons campaigns"
+        },
+        {
+          "id": "personal_interests_008",
+          "text": "Your sourdough starter"
+        },
+        {
+          "id": "personal_interests_009",
+          "text": "Birdwatching"
+        },
+        {
+          "id": "personal_interests_010",
+          "text": "Jigsaw puzzles"
+        },
+        {
+          "id": "personal_interests_011",
+          "text": "Your Peloton streaks"
+        },
+        {
+          "id": "personal_interests_012",
+          "text": "K-pop stan account"
+        },
+        {
+          "id": "personal_interests_013",
+          "text": "Vintage clothing finds"
+        },
+        {
+          "id": "personal_interests_014",
+          "text": "Your personal website"
+        },
+        {
+          "id": "personal_interests_015",
+          "text": "Learning a new language"
+        },
+        {
+          "id": "personal_interests_016",
+          "text": "Board game nights"
+        },
+        {
+          "id": "personal_interests_017",
+          "text": "Your signature cocktail recipe"
+        },
+        {
+          "id": "personal_interests_018",
+          "text": "DIY home renovation"
+        },
+        {
+          "id": "personal_interests_019",
+          "text": "Your skincare routine"
+        },
+        {
+          "id": "personal_interests_020",
+          "text": "Speedrunning any game"
+        }
+      ]
+    },
+    {
+      "id": "coffee_orders",
+      "name": "Coffee & Tea Orders",
+      "scale": "How essential this drink is to your day",
+      "cards": [
+        {
+          "id": "coffee_orders_001",
+          "text": "Black coffee, no sugar"
+        },
+        {
+          "id": "coffee_orders_002",
+          "text": "Vanilla oat milk latte"
+        },
+        {
+          "id": "coffee_orders_003",
+          "text": "Iced americano with an extra shot"
+        },
+        {
+          "id": "coffee_orders_004",
+          "text": "Chai latte with extra foam"
+        },
+        {
+          "id": "coffee_orders_005",
+          "text": "Cold brew, always"
+        },
+        {
+          "id": "coffee_orders_006",
+          "text": "Matcha green tea latte"
+        },
+        {
+          "id": "coffee_orders_007",
+          "text": "French press at home"
+        },
+        {
+          "id": "coffee_orders_008",
+          "text": "Whatever's on tap at the coffee shop"
+        },
+        {
+          "id": "coffee_orders_009",
+          "text": "Loose leaf Earl Grey"
+        },
+        {
+          "id": "coffee_orders_010",
+          "text": "Flavored syrup coffee from a gas station"
+        },
+        {
+          "id": "coffee_orders_011",
+          "text": "Nitro cold brew"
+        },
+        {
+          "id": "coffee_orders_012",
+          "text": "Japanese iced coffee"
+        },
+        {
+          "id": "coffee_orders_013",
+          "text": "Golden milk turmeric latte"
+        },
+        {
+          "id": "coffee_orders_014",
+          "text": "Drip coffee with cream and sugar"
+        },
+        {
+          "id": "coffee_orders_015",
+          "text": "Espresso affogato style"
+        },
+        {
+          "id": "coffee_orders_016",
+          "text": "Jasmine pearl tea"
+        },
+        {
+          "id": "coffee_orders_017",
+          "text": "Vietnamese iced coffee"
+        },
+        {
+          "id": "coffee_orders_018",
+          "text": "Half-caf, because why not"
+        },
+        {
+          "id": "coffee_orders_019",
+          "text": "Flat white with oat milk"
+        },
+        {
+          "id": "coffee_orders_020",
+          "text": "Coffee with a shot of bourbon"
+        }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "name": "Sandwiches",
+      "scale": "How much you crave this right now",
+      "cards": [
+        {
+          "id": "sandwiches_001",
+          "text": "Turkey and swiss on sourdough"
+        },
+        {
+          "id": "sandwiches_002",
+          "text": "Grilled cheese with tomato soup"
+        },
+        {
+          "id": "sandwiches_003",
+          "text": "Italian sub with everything"
+        },
+        {
+          "id": "sandwiches_004",
+          "text": "Reuben with thousand island dressing"
+        },
+        {
+          "id": "sandwiches_005",
+          "text": "BLT with extra bacon"
+        },
+        {
+          "id": "sandwiches_006",
+          "text": "Peanut butter and honey"
+        },
+        {
+          "id": "sandwiches_007",
+          "text": "Cuban sandwich pressed perfectly"
+        },
+        {
+          "id": "sandwiches_008",
+          "text": "Club sandwich three decks high"
+        },
+        {
+          "id": "sandwiches_009",
+          "text": "Caprese on a baguette"
+        },
+        {
+          "id": "sandwiches_010",
+          "text": "Tuna salad on toast"
+        },
+        {
+          "id": "sandwiches_011",
+          "text": "French dip with au jus"
+        },
+        {
+          "id": "sandwiches_012",
+          "text": "Veggie wrap with hummus"
+        },
+        {
+          "id": "sandwiches_013",
+          "text": "Philly cheesesteak"
+        },
+        {
+          "id": "sandwiches_014",
+          "text": "Egg salad on rye"
+        },
+        {
+          "id": "sandwiches_015",
+          "text": "Chicken Caesar wrap"
+        },
+        {
+          "id": "sandwiches_016",
+          "text": "Porchetta sandwich"
+        },
+        {
+          "id": "sandwiches_017",
+          "text": "Fried fish sandwich with tartar"
+        },
+        {
+          "id": "sandwiches_018",
+          "text": "Croque Monsieur"
+        },
+        {
+          "id": "sandwiches_019",
+          "text": "Breakfast sandwich on a bagel"
+        },
+        {
+          "id": "sandwiches_020",
+          "text": "Muffaletta from New Orleans"
+        }
+      ]
+    },
+    {
+      "id": "neighborhoods",
+      "name": "Neighborhood Types",
+      "scale": "How much you'd enjoy living here",
+      "cards": [
+        {
+          "id": "neighborhoods_001",
+          "text": "Walkable downtown loft"
+        },
+        {
+          "id": "neighborhoods_002",
+          "text": "Quiet cul-de-sac suburbia"
+        },
+        {
+          "id": "neighborhoods_003",
+          "text": "Hipster area with coffee shops on every corner"
+        },
+        {
+          "id": "neighborhoods_004",
+          "text": "Beachfront bungalow"
+        },
+        {
+          "id": "neighborhoods_005",
+          "text": "Urban high-rise with skyline views"
+        },
+        {
+          "id": "neighborhoods_006",
+          "text": "Historic village with stone cottages"
+        },
+        {
+          "id": "neighborhoods_007",
+          "text": "Mountain town cabin"
+        },
+        {
+          "id": "neighborhoods_008",
+          "text": "Gentrified formerly rough area"
+        },
+        {
+          "id": "neighborhoods_009",
+          "text": "College town near campus"
+        },
+        {
+          "id": "neighborhoods_010",
+          "text": "Gated golf course community"
+        },
+        {
+          "id": "neighborhoods_011",
+          "text": "Working farm on acres of land"
+        },
+        {
+          "id": "neighborhoods_012",
+          "text": "City block with everyone knowing each other"
+        },
+        {
+          "id": "neighborhoods_013",
+          "text": "Artist loft in a converted warehouse"
+        },
+        {
+          "id": "neighborhoods_014",
+          "text": "Retirement community with activities"
+        },
+        {
+          "id": "neighborhoods_015",
+          "text": "Tiny house village"
+        },
+        {
+          "id": "neighborhoods_016",
+          "text": "Brownstone Brooklyn"
+        },
+        {
+          "id": "neighborhoods_017",
+          "text": "Mid-century modern suburb"
+        },
+        {
+          "id": "neighborhoods_018",
+          "text": "Lake house community"
+        },
+        {
+          "id": "neighborhoods_019",
+          "text": "Village in the Italian countryside"
+        },
+        {
+          "id": "neighborhoods_020",
+          "text": "Tokyo side street with ramen shops"
+        }
+      ]
+    },
+    {
+      "id": "summer_activities",
+      "name": "Summer Activities",
+      "scale": "How much you look forward to this",
+      "cards": [
+        {
+          "id": "summer_act_001",
+          "text": " backyard BBQ with friends"
+        },
+        {
+          "id": "summer_act_002",
+          "text": "Beach day with umbrella and books"
+        },
+        {
+          "id": "summer_act_003",
+          "text": "Outdoor movie screening"
+        },
+        {
+          "id": "summer_act_004",
+          "text": "Farmers market on a Saturday morning"
+        },
+        {
+          "id": "summer_act_005",
+          "text": "Rooftop bar hopping"
+        },
+        {
+          "id": "summer_act_006",
+          "text": "Camping under the stars"
+        },
+        {
+          "id": "summer_act_007",
+          "text": "Farmers market at night"
+        },
+        {
+          "id": "summer_act_008",
+          "text": "Kayaking on a calm lake"
+        },
+        {
+          "id": "summer_act_009",
+          "text": "Live outdoor concert"
+        },
+        {
+          "id": "summer_act_010",
+          "text": "Cornhole tournament"
+        },
+        {
+          "id": "summer_act_011",
+          "text": "Swimming in a natural watering hole"
+        },
+        {
+          "id": "summer_act_012",
+          "text": "Picnic in the park with charcuterie"
+        },
+        {
+          "id": "summer_act_013",
+          "text": "Hiking to a waterfall"
+        },
+        {
+          "id": "summer_act_014",
+          "text": "Beach volleyball at sunset"
+        },
+        {
+          "id": "summer_act_015",
+          "text": "Lazy river on an inner tube"
+        },
+        {
+          "id": "summer_act_016",
+          "text": "Night baseball game with fireworks"
+        },
+        {
+          "id": "summer_act_017",
+          "text": " Outdoor farmers market visit"
+        },
+        {
+          "id": "summer_act_018",
+          "text": "Ziplining through trees"
+        },
+        {
+          "id": "summer_act_019",
+          "text": "Sunset sailing trip"
+        },
+        {
+          "id": "summer_act_020",
+          "text": "Late-night stargazing in a field"
+        }
+      ]
+    },
+    {
+      "id": "internet_humor",
+      "name": "Internet Humor",
+      "scale": "How funny you find this",
+      "cards": [
+        {
+          "id": "internet_humor_001",
+          "text": "Doge meme"
+        },
+        {
+          "id": "internet_humor_002",
+          "text": "Mlm vibes that are too accurate"
+        },
+        {
+          "id": "internet_humor_003",
+          "text": "Cats being weird in short videos"
+        },
+        {
+          "id": "internet_humor_004",
+          "text": "Deep-fried memes that hurt to look at"
+        },
+        {
+          "id": "internet_humor_005",
+          "text": "Wholesome posts about strangers helping"
+        },
+        {
+          "id": "internet_humor_006",
+          "text": "Parody accounts that nail the original"
+        },
+        {
+          "id": "internet_humor_007",
+          "text": "TikTok sounds used in unexpected ways"
+        },
+        {
+          "id": "internet_humor_008",
+          "text": "Subtle shift in company logos"
+        },
+        {
+          "id": "internet_humor_009",
+          "text": "Deadpan screenshots of texts"
+        },
+        {
+          "id": "internet_humor_010",
+          "text": "Obscure Wikipedia articles that are wild"
+        },
+        {
+          "id": "internet_humor_011",
+          "text": "Screen recordings of apps crashing"
+        },
+        {
+          "id": "internet_humor_012",
+          "text": "People absolutely losing it over nothing"
+        },
+        {
+          "id": "internet_humor_013",
+          "text": "Absurdist humor in replies to news stories"
+        },
+        {
+          "id": "internet_humor_014",
+          "text": "Perfect shitposting"
+        },
+        {
+          "id": "internet_humor_015",
+          "text": "Instagram comments from parasocial fans"
+        },
+        {
+          "id": "internet_humor_016",
+          "text": "Screenshot of someone deleting their old posts"
+        },
+        {
+          "id": "internet_humor_017",
+          "text": "Auto-correct fails that are better than intended"
+        },
+        {
+          "id": "internet_humor_018",
+          "text": "People recognizing songs in random places"
+        },
+        {
+          "id": "internet_humor_019",
+          "text": "AI-generated nonsense descriptions"
+        },
+        {
+          "id": "internet_humor_020",
+          "text": "This is fine frog in flames meme"
+        }
+      ]
+    },
+    {
+      "id": "fitness_activities",
+      "name": "Fitness Activities",
+      "scale": "How much you enjoy working out",
+      "cards": [
+        {
+          "id": "fitness_001",
+          "text": "Weightlifting heavy things"
+        },
+        {
+          "id": "fitness_002",
+          "text": "5K morning run with podcasts"
+        },
+        {
+          "id": "fitness_003",
+          "text": "Hot yoga with bad wifi so you can't escape"
+        },
+        {
+          "id": "fitness_004",
+          "text": "Rock climbing at the gym"
+        },
+        {
+          "id": "fitness_005",
+          "text": "Peloton ride that destroys you"
+        },
+        {
+          "id": "fitness_006",
+          "text": "Lap swimming at the community pool"
+        },
+        {
+          "id": "fitness_007",
+          "text": "CrossFit with a friend who motivates you"
+        },
+        {
+          "id": "fitness_008",
+          "text": "Basketball with coworkers at lunch"
+        },
+        {
+          "id": "fitness_009",
+          "text": "Dancing in your living room"
+        },
+        {
+          "id": "fitness_010",
+          "text": "Long nature hike with elevation gain"
+        },
+        {
+          "id": "fitness_011",
+          "text": "HIIT workout finishing at sunrise"
+        },
+        {
+          "id": "fitness_012",
+          "text": "Golf walking the whole course"
+        },
+        {
+          "id": "fitness_013",
+          "text": "Boxing bag session after a bad day"
+        },
+        {
+          "id": "fitness_014",
+          "text": "Pickleball with competitive neighbors"
+        },
+        {
+          "id": "fitness_015",
+          "text": "Cycling to work rain or shine"
+        },
+        {
+          "id": "fitness_016",
+          "text": "Swimming laps in an outdoor pool"
+        },
+        {
+          "id": "fitness_017",
+          "text": "Power vinyasa with your favorite instructor"
+        },
+        {
+          "id": "fitness_018",
+          "text": "Soccer in a rec league"
+        },
+        {
+          "id": "fitness_019",
+          "text": "Tennis matches that go to tiebreaks"
+        },
+        {
+          "id": "fitness_020",
+          "text": "SoulCycle with the motivational instructor"
+        }
+      ]
+    },
+    {
+      "id": "grocery_items",
+      "name": "Grocery Store Items",
+      "scale": "How often you buy this",
+      "cards": [
+        {
+          "id": "grocery_items_001",
+          "text": "Sourdough bread"
+        },
+        {
+          "id": "grocery_items_002",
+          "text": "Pre-washed salad mix"
+        },
+        {
+          "id": "grocery_items_003",
+          "text": "Fancy cheese you eat alone at night"
+        },
+        {
+          "id": "grocery_items_004",
+          "text": "Chicken breast for meal prep"
+        },
+        {
+          "id": "grocery_items_005",
+          "text": "Impulsive snack aisle finds"
+        },
+        {
+          "id": "grocery_items_006",
+          "text": "Too many ripe bananas for banana bread"
+        },
+        {
+          "id": "grocery_items_007",
+          "text": "Sparkling water by the case"
+        },
+        {
+          "id": "grocery_items_008",
+          "text": "A single avocado because they're expensive"
+        },
+        {
+          "id": "grocery_items_009",
+          "text": "Ice cream for emotional reasons"
+        },
+        {
+          "id": "grocery_items_010",
+          "text": "Frozen pizza for lazy nights"
+        },
+        {
+          "id": "grocery_items_011",
+          "text": "Organic everything because of Instagram"
+        },
+        {
+          "id": "grocery_items_012",
+          "text": "Dollar section flowers every visit"
+        },
+        {
+          "id": "grocery_items_013",
+          "text": "Eggs you actually remember to buy"
+        },
+        {
+          "id": "grocery_items_014",
+          "text": "Deli ham sliced paper thin"
+        },
+        {
+          "id": "grocery_items_015",
+          "text": "Fancy olive oil you'll never cook with"
+        },
+        {
+          "id": "grocery_items_016",
+          "text": "Onions, potatoes, and carrots for soups"
+        },
+        {
+          "id": "grocery_items_017",
+          "text": "Energy drinks you know aren't good for you"
+        },
+        {
+          "id": "grocery_items_018",
+          "text": "Baby carrots you pretend to eat healthy with"
+        },
+        {
+          "id": "grocery_items_019",
+          "text": "Gourmet chocolate you hide from roommates"
+        },
+        {
+          "id": "grocery_items_020",
+          "text": "A rotisserie chicken for an easy dinner"
+        }
+      ]
+    },
+    {
+      "id": "streaming_platforms",
+      "name": "Streaming Platforms",
+      "scale": "How much you use this service",
+      "cards": [
+        {
+          "id": "streaming_001",
+          "text": "Netflix for the 47th rewatch"
+        },
+        {
+          "id": "streaming_002",
+          "text": "YouTube algorithm keeping you up"
+        },
+        {
+          "id": "streaming_003",
+          "text": "Hulu with live sports ads"
+        },
+        {
+          "id": "streaming_004",
+          "text": "Disney+ for the kids' sanity"
+        },
+        {
+          "id": "streaming_005",
+          "text": "HBO Max for prestige dramas"
+        },
+        {
+          "id": "streaming_006",
+          "text": "Amazon Prime Video you forgot you had"
+        },
+        {
+          "id": "streaming_007",
+          "text": "Paramount+ for Star Trek marathons"
+        },
+        {
+          "id": "streaming_008",
+          "text": "Peacock for sports you can't find elsewhere"
+        },
+        {
+          "id": "streaming_009",
+          "text": "Apple TV+ for the Ted Lasso effect"
+        },
+        {
+          "id": "streaming_010",
+          "text": "Crunchyroll for anime binges"
+        },
+        {
+          "id": "streaming_011",
+          "text": "Funimation if you're old school"
+        },
+        {
+          "id": "streaming_012",
+          "text": "Twitch streams while you work"
+        },
+        {
+          "id": "streaming_013",
+          "text": "Criterion Channel for film snobbery"
+        },
+        {
+          "id": "streaming_014",
+          "text": "tubi you found randomly"
+        },
+        {
+          "id": "streaming_015",
+          "text": "Roku Channel when bored at 2am"
+        },
+        {
+          "id": "streaming_016",
+          "text": "Pluto TV for background noise"
+        },
+        {
+          "id": "streaming_017",
+          "text": "Shudder for horror you can't sleep after"
+        },
+        {
+          "id": "streaming_018",
+          "text": "Showtime you share your parents' password"
+        },
+        {
+          "id": "streaming_019",
+          "text": "Discovery+ for reality TV detox"
+        },
+        {
+          "id": "streaming_020",
+          "text": "BritBox for cozy British mysteries"
+        }
+      ]
+    },
+    {
+      "id": "car_types",
+      "name": "Car Types",
+      "scale": "How much you want this as your daily car",
+      "cards": [
+        {
+          "id": "car_types_001",
+          "text": "Vintage Land Cruiser that never breaks"
+        },
+        {
+          "id": "car_types_002",
+          "text": "Tesla Model 3 for tech cred"
+        },
+        {
+          "id": "car_types_003",
+          "text": "Mini Cooper for city parking wins"
+        },
+        {
+          "id": "car_types_004",
+          "text": "Toyota Tacoma for weekend adventures"
+        },
+        {
+          "id": "car_types_005",
+          "text": "Volvo wagon for safe family vibes"
+        },
+        {
+          "id": "car_types_006",
+          "text": "Ford Bronco for convertible top drama"
+        },
+        {
+          "id": "car_types_007",
+          "text": "Honda Civic that runs forever"
+        },
+        {
+          "id": "car_types_008",
+          "text": "Porsche 911 you can almost afford"
+        },
+        {
+          "id": "car_types_009",
+          "text": "Subaru Outback for hiking access"
+        },
+        {
+          "id": "car_types_010",
+          "text": "Mazda MX-5 Miata for weekend drives"
+        },
+        {
+          "id": "car_types_011",
+          "text": "GMC Sierra for hauling everything"
+        },
+        {
+          "id": "car_types_012",
+          "text": "Fiat 500 for tiny European charm"
+        },
+        {
+          "id": "car_types_013",
+          "text": "Rivian R1T for glamping on the trail"
+        },
+        {
+          "id": "car_types_014",
+          "text": "Lexus RX for quiet luxury"
+        },
+        {
+          "id": "car_types_015",
+          "text": "Jeep Wrangler for top-down summers"
+        },
+        {
+          "id": "car_types_016",
+          "text": "Toyota Prius for save-the-planet irony"
+        },
+        {
+          "id": "car_types_017",
+          "text": "Camry that just works forever"
+        },
+        {
+          "id": "car_types_018",
+          "text": "Chevy Corvette Stingray mid-engine dreams"
+        },
+        {
+          "id": "car_types_019",
+          "text": "Kia Telluride for soccer mom energy"
+        },
+        {
+          "id": "car_types_020",
+          "text": "Nissan Leaf if you never road trip"
+        }
+      ]
+    },
+    {
+      "id": "home_rooms",
+      "name": "Rooms in a Home",
+      "scale": "How essential this room is",
+      "cards": [
+        {
+          "id": "home_rooms_001",
+          "text": "Kitchen for midnight snack runs"
+        },
+        {
+          "id": "home_rooms_002",
+          "text": "Bedroom sanctuary with blackout curtains"
+        },
+        {
+          "id": "home_rooms_003",
+          "text": "Bathroom with good water pressure"
+        },
+        {
+          "id": "home_rooms_004",
+          "text": "Home office with natural light"
+        },
+        {
+          "id": "home_rooms_005",
+          "text": "Living room for movie nights"
+        },
+        {
+          "id": "home_rooms_006",
+          "text": "Laundry room you actually organized"
+        },
+        {
+          "id": "home_rooms_007",
+          "text": "Dining room for holiday gatherings"
+        },
+        {
+          "id": "home_rooms_008",
+          "text": "Basement for storage or man cave"
+        },
+        {
+          "id": "home_rooms_009",
+          "text": "Garage with your workshop setup"
+        },
+        {
+          "id": "home_rooms_010",
+          "text": "Front porch for morning coffee"
+        },
+        {
+          "id": "home_rooms_011",
+          "text": "Back patio for grilling season"
+        },
+        {
+          "id": "home_rooms_012",
+          "text": "Closet you can actually walk into"
+        },
+        {
+          "id": "home_rooms_013",
+          "text": "Guest room nobody uses"
+        },
+        {
+          "id": "home_rooms_014",
+          "text": "Attic for holiday decorations"
+        },
+        {
+          "id": "home_rooms_015",
+          "text": "Mudroom for shoes and jackets"
+        },
+        {
+          "id": "home_rooms_016",
+          "text": "Sunroom for plant babies and reading"
+        },
+        {
+          "id": "home_rooms_017",
+          "text": "Game room for ping pong and cards"
+        },
+        {
+          "id": "home_rooms_018",
+          "text": "Kitchen island for spreading out"
+        },
+        {
+          "id": "home_rooms_019",
+          "text": "Hallway you finally hung art in"
+        },
+        {
+          "id": "home_rooms_020",
+          "text": "Pantry organized by category"
+        }
+      ]
+    },
+    {
+      "id": "winter_activities",
+      "name": "Winter Activities",
+      "scale": "How much you enjoy this",
+      "cards": [
+        {
+          "id": "winter_act_001",
+          "text": "Building a snowman with the family"
+        },
+        {
+          "id": "winter_act_002",
+          "text": "Sledding down the biggest hill"
+        },
+        {
+          "id": "winter_act_003",
+          "text": "Ice skating at an outdoor rink"
+        },
+        {
+          "id": "winter_act_004",
+          "text": "Hot cocoa with marshmallows after being out"
+        },
+        {
+          "id": "winter_act_005",
+          "text": "Skiing down a black diamond"
+        },
+        {
+          "id": "winter_act_006",
+          "text": "Snowboarding through fresh powder"
+        },
+        {
+          "id": "winter_act_007",
+          "text": " fireplace that actually works well"
+        },
+        {
+          "id": "winter_act_008",
+          "text": "Ice fishing at dawn with a thermos"
+        },
+        {
+          "id": "winter_act_009",
+          "text": "Winter hike with crampons and layers"
+        },
+        {
+          "id": "winter_act_010",
+          "text": "Snowball fight with neighbors"
+        },
+        {
+          "id": "winter_act_011",
+          "text": "Hot tub under falling snow"
+        },
+        {
+          "id": "winter_act_012",
+          "text": "Ice skating at the local rink"
+        },
+        {
+          "id": "winter_act_013",
+          "text": "Decorating the tree badly together"
+        },
+        {
+          "id": "winter_act_014",
+          "text": "Shoveling your driveway before neighbors wake"
+        },
+        {
+          "id": "winter_act_015",
+          "text": "Winter camping that tests your gear"
+        },
+        {
+          "id": "winter_act_016",
+          "text": "Ice bar with your ridiculous friends"
+        },
+        {
+          "id": "winter_act_017",
+          "text": "Cookie exchange you stress about baking"
+        },
+        {
+          "id": "winter_act_018",
+          "text": "Snowshoeing through quiet trails"
+        },
+        {
+          "id": "winter_act_019",
+          "text": "Ice climbing a frozen waterfall"
+        },
+        {
+          "id": "winter_act_020",
+          "text": "Cross-country skiing through pines"
+        }
+      ]
+    },
+    {
+      "id": "sports_teams",
+      "name": "Sports & Teams",
+      "scale": "How much you care about this",
+      "cards": [
+        {
+          "id": "sports_001",
+          "text": "Your city's NBA team"
+        },
+        {
+          "id": "sports_002",
+          "text": "The underdog college team you adopted"
+        },
+        {
+          "id": "sports_003",
+          "text": "Premier League club you don't even live near"
+        },
+        {
+          "id": "sports_004",
+          "text": "Your alma mater's football team"
+        },
+        {
+          "id": "sports_005",
+          "text": "MLB team you've watched since childhood"
+        },
+        {
+          "id": "sports_006",
+          "text": "NFL team passed down generations"
+        },
+        {
+          "id": "sports_007",
+          "text": "Local NHL hockey team that fights hard"
+        },
+        {
+          "id": "sports_008",
+          "text": "NWSL women's soccer champions"
+        },
+        {
+          "id": "sports_009",
+          "text": "Formula 1 team you have strong opinions about"
+        },
+        {
+          "id": "sports_010",
+          "text": "International cricket team you follow"
+        },
+        {
+          "id": "sports_011",
+          "text": "Olympic athletes you root for"
+        },
+        {
+          "id": "sports_012",
+          "text": "Your friend's rec league championship"
+        },
+        {
+          "id": "sports_013",
+          "text": "Tennis player with your exact style"
+        },
+        {
+          "id": "sports_014",
+          "text": "Golf pro you watch every tournament"
+        },
+        {
+          "id": "sports_015",
+          "text": "Esports org you casually follow"
+        },
+        {
+          "id": "sports_016",
+          "text": "College basketball bracket you obsessed over"
+        },
+        {
+          "id": "sports_017",
+          "text": "Local minor league baseball team"
+        },
+        {
+          "id": "sports_018",
+          "text": "The national team during the World Cup"
+        },
+        {
+          "id": "sports_019",
+          "text": "Boxer you watched from their first fight"
+        },
+        {
+          "id": "sports_020",
+          "text": "Darts championship you don't understand but enjoy"
+        }
+      ]
+    },
+    {
+      "id": "first_date",
+      "name": "First Date Ideas",
+      "scale": "How great of a first date this would be",
+      "cards": [
+        {
+          "id": "first_date_001",
+          "text": "Rooftop drinks with skyline views"
+        },
+        {
+          "id": "first_date_002",
+          "text": "Trivia night at a local bar"
+        },
+        {
+          "id": "first_date_003",
+          "text": "Walking dogs at the shelter together"
+        },
+        {
+          "id": "first_date_004",
+          "text": "Cooking a new recipe together"
+        },
+        {
+          "id": "first_date_005",
+          "text": "Sunset picnic in the park"
+        },
+        {
+          "id": "first_date_006",
+          "text": "Arcade with drinks and competition"
+        },
+        {
+          "id": "first_date_007",
+          "text": "Museum you actually want to see"
+        },
+        {
+          "id": "first_date_008",
+          "text": "Coffee shop to break the ice"
+        },
+        {
+          "id": "first_date_009",
+          "text": "Hike that ends at a waterfall"
+        },
+        {
+          "id": "first_date_010",
+          "text": "Live music at an intimate venue"
+        },
+        {
+          "id": "first_date_011",
+          "text": "Art class with wine involved"
+        },
+        {
+          "id": "first_date_012",
+          "text": "Food hall exploring different stalls"
+        },
+        {
+          "id": "first_date_013",
+          "text": "Bookstore browsing then discuss"
+        },
+        {
+          "id": "first_date_014",
+          "text": "Farmers market stroll holding produce"
+        },
+        {
+          "id": "first_date_015",
+          "text": "Mini golf with playful banter"
+        },
+        {
+          "id": "first_date_016",
+          "text": "Jazz club with candlelight"
+        },
+        {
+          "id": "first_date_017",
+          "text": "Pottery class that's messy and fun"
+        },
+        {
+          "id": "first_date_018",
+          "text": "Comedy show to avoid awkward silences"
+        },
+        {
+          "id": "first_date_019",
+          "text": "Botanical garden in the afternoon"
+        },
+        {
+          "id": "first_date_020",
+          "text": "Escape room solving with chemistry"
+        }
+      ]
+    },
+    {
+      "id": "houseplants",
+      "name": "Houseplants",
+      "scale": "How much you want this plant",
+      "cards": [
+        {
+          "id": "houseplants_001",
+          "text": "Monstera deliciosa you can't kill"
+        },
+        {
+          "id": "houseplants_002",
+          "text": "Fiddle leaf fig that costs $200"
+        },
+        {
+          "id": "houseplants_003",
+          "text": "Snake plant you forget exists"
+        },
+        {
+          "id": "houseplants_004",
+          "text": "Pothos trailing from the bookshelf"
+        },
+        {
+          "id": "houseplants_005",
+          "text": "Peace lily that thrives on neglect"
+        },
+        {
+          "id": "houseplants_006",
+          "text": "Rubber plant getting too tall"
+        },
+        {
+          "id": "houseplants_007",
+          "text": "Spider plant with all the babies"
+        },
+        {
+          "id": "houseplants_008",
+          "text": "Aloe vera you actually use sometimes"
+        },
+        {
+          "id": "houseplants_009",
+          "text": "ZZ plant for your dark corners"
+        },
+        {
+          "id": "houseplants_010",
+          "text": "Bird of paradise that might flower"
+        },
+        {
+          "id": "houseplants_011",
+          "text": "Calathea with dramatic leaf movements"
+        },
+        {
+          "id": "houseplants_012",
+          "text": "String of pearls on a high shelf"
+        },
+        {
+          "id": "houseplants_013",
+          "text": "Chinese evergreen that tolerates everything"
+        },
+        {
+          "id": "houseplants_014",
+          "text": "Boston fern for bathroom humidity"
+        },
+        {
+          "id": "houseplants_015",
+          "text": "Jade plant from your grandmother"
+        },
+        {
+          "id": "houseplants_016",
+          "text": "Philodendron heartleaf on a trellis"
+        },
+        {
+          "id": "houseplants_017",
+          "text": "Dracaena marginata for corner drama"
+        },
+        {
+          "id": "houseplants_018",
+          "text": "English ivy cascading from a basket"
+        },
+        {
+          "id": "houseplants_019",
+          "text": "Croton with insane leaf colors"
+        },
+        {
+          "id": "houseplants_020",
+          "text": "Prayer plant that closes at night"
+        }
+      ]
+    },
+    {
+      "id": "study_spots",
+      "name": "Study/Work Spots",
+      "scale": "How productive you are here",
+      "cards": [
+        {
+          "id": "study_spots_001",
+          "text": "Quiet corner of the public library"
+        },
+        {
+          "id": "study_spots_002",
+          "text": "Coffee shop with your usual order"
+        },
+        {
+          "id": "study_spots_003",
+          "text": "Desk at home with everything organized"
+        },
+        {
+          "id": "study_spots_004",
+          "text": "University study room you booked"
+        },
+        {
+          "id": "study_spots_005",
+          "text": "Park bench with beautiful weather"
+        },
+        {
+          "id": "study_spots_006",
+          "text": "Co-working space you pay too much for"
+        },
+        {
+          "id": "study_spots_007",
+          "text": "Kitchen table you'll abandon soon"
+        },
+        {
+          "id": "study_spots_008",
+          "text": "Bed with laptop and too many pillows"
+        },
+        {
+          "id": "study_spots_009",
+          "text": "University campus green under a tree"
+        },
+        {
+          "id": "study_spots_010",
+          "text": "Bookstore cafe with good wifi"
+        },
+        {
+          "id": "study_spots_011",
+          "text": "Hotel lobby you work from secretly"
+        },
+        {
+          "id": "study_spots_012",
+          "text": "Home office with door closed"
+        },
+        {
+          "id": "study_spots_013",
+          "text": "Dorm common room with distractions"
+        },
+        {
+          "id": "study_spots_014",
+          "text": "Garden patio with white noise"
+        },
+        {
+          "id": "study_spots_015",
+          "text": "24-hour diner with bottomless coffee"
+        },
+        {
+          "id": "study_spots_016",
+          "text": "Window seat at a brunch restaurant"
+        },
+        {
+          "id": "study_spots_017",
+          "text": "Standing desk you assembled wrong"
+        },
+        {
+          "id": "study_spots_018",
+          "text": "Couch with perfect lighting and snacks"
+        },
+        {
+          "id": "study_spots_019",
+          "text": "Empty classroom after hours"
+        },
+        {
+          "id": "study_spots_020",
+          "text": "Laundromat watching others work"
+        }
+      ]
+    },
+    {
+      "id": "commute",
+      "name": "Commute Styles",
+      "scale": "How much you dread this commute",
+      "cards": [
+        {
+          "id": "commute_001",
+          "text": "Door-to-door 15 minute drive"
+        },
+        {
+          "id": "commute_002",
+          "text": "Train with a guaranteed seat and wifi"
+        },
+        {
+          "id": "commute_003",
+          "text": "Bus where you can read or sleep"
+        },
+        {
+          "id": "commute_004",
+          "text": "Bicycle lane through the city"
+        },
+        {
+          "id": "commute_005",
+          "text": "Carpool with good podcast company"
+        },
+        {
+          "id": "commute_006",
+          "text": "Subway where you can stand close to others"
+        },
+        {
+          "id": "commute_007",
+          "text": "Walk through a quiet neighborhood"
+        },
+        {
+          "id": "commute_008",
+          "text": "Motorcycle lane-splitting in traffic"
+        },
+        {
+          "id": "commute_009",
+          "text": "Electric scooter to the train station"
+        },
+        {
+          "id": "commute_010",
+          "text": "Ferry with morning coffee and views"
+        },
+        {
+          "id": "commute_011",
+          "text": "Tram through downtown"
+        },
+        {
+          "id": "commute_012",
+          "text": "Scooter cutting through gridlock"
+        },
+        {
+          "id": "commute_013",
+          "text": "Long highway commute with audiobooks"
+        },
+        {
+          "id": "commute_014",
+          "text": "Train where you know everyone's seat"
+        },
+        {
+          "id": "commute_015",
+          "text": "Shuttle with coworkers you tolerate"
+        },
+        {
+          "id": "commute_016",
+          "text": "Skateboard to the train then regret"
+        },
+        {
+          "id": "commute_017",
+          "text": "Carpool karaoke becoming a thing"
+        },
+        {
+          "id": "commute_018",
+          "text": "Rideshare where you don't talk to driver"
+        },
+        {
+          "id": "commute_019",
+          "text": "E-bike that gets there faster than cars"
+        },
+        {
+          "id": "commute_020",
+          "text": "Work from home pajamas commute"
+        }
+      ]
+    },
+    {
+      "id": "party_themes",
+      "name": "Party Themes",
+      "scale": "How much fun you'd have at this party",
+      "cards": [
+        {
+          "id": "party_themes_001",
+          "text": "80s neon and big hair"
+        },
+        {
+          "id": "party_themes_002",
+          "text": "Tiki bar tropical escape"
+        },
+        {
+          "id": "party_themes_003",
+          "text": "Decade dress-up you pick"
+        },
+        {
+          "id": "party_themes_004",
+          "text": "Masquerade ball mysterious vibes"
+        },
+        {
+          "id": "party_themes_005",
+          "text": "Pajama party like it's 6th grade"
+        },
+        {
+          "id": "party_themes_006",
+          "text": "Murder mystery dinner party"
+        },
+        {
+          "id": "party_themes_007",
+          "text": "White elephant gift exchange chaos"
+        },
+        {
+          "id": "party_themes_008",
+          "text": "Cocktail competition with your signature drink"
+        },
+        {
+          "id": "party_themes_009",
+          "text": "Karaoke night with bad song choices"
+        },
+        {
+          "id": "party_themes_010",
+          "text": "Costume party with no budget limit"
+        },
+        {
+          "id": "party_themes_011",
+          "text": "Game night with board games and snacks"
+        },
+        {
+          "id": "party_themes_012",
+          "text": "Prohibition-era speakeasy"
+        },
+        {
+          "id": "party_themes_013",
+          "text": "Mexican fiesta with margaritas"
+        },
+        {
+          "id": "party_themes_014",
+          "text": "Outdoor movie screening with blankets"
+        },
+        {
+          "id": "party_themes_015",
+          "text": "Paint and sip evening"
+        },
+        {
+          "id": "party_themes_016",
+          "text": "Spa night face masks and robes"
+        },
+        {
+          "id": "party_themes_017",
+          "text": "International food potluck"
+        },
+        {
+          "id": "party_themes_018",
+          "text": "Superhero versus villain showdown"
+        },
+        {
+          "id": "party_themes_019",
+          "text": "Glow-in-the-dark dance party"
+        },
+        {
+          "id": "party_themes_020",
+          "text": "Roast session among close friends"
+        }
+      ]
+    },
+    {
+      "id": "sunday_routine",
+      "name": "Ways to Spend a Sunday",
+      "scale": "How ideal this sounds for a Sunday",
+      "cards": [
+        {
+          "id": "sunday_001",
+          "text": "Sleeping in until noon"
+        },
+        {
+          "id": "sunday_002",
+          "text": "Farmers market before the crowds"
+        },
+        {
+          "id": "sunday_003",
+          "text": "Brunch with bottomless mimosas"
+        },
+        {
+          "id": "sunday_004",
+          "text": "Meal prep for the week ahead"
+        },
+        {
+          "id": "sunday_005",
+          "text": "Long hike that clears your head"
+        },
+        {
+          "id": "sunday_006",
+          "text": "Couch playoff football all day"
+        },
+        {
+          "id": "sunday_007",
+          "text": "Lazy reading with no phone"
+        },
+        {
+          "id": "sunday_008",
+          "text": "Power cleaning the whole apartment"
+        },
+        {
+          "id": "sunday_009",
+          "text": "Coffee and crossword puzzle in bed"
+        },
+        {
+          "id": "sunday_010",
+          "text": "Video games with no time limit"
+        },
+        {
+          "id": "sunday_011",
+          "text": "Family dinner prep for the week"
+        },
+        {
+          "id": "sunday_012",
+          "text": "Sunset drive with good music"
+        },
+        {
+          "id": "sunday_013",
+          "text": "Grocery shopping at 7am no crowds"
+        },
+        {
+          "id": "sunday_014",
+          "text": "Laundry and true crime podcasts"
+        },
+        {
+          "id": "sunday_015",
+          "text": "Volunteering at a local charity"
+        },
+        {
+          "id": "sunday_016",
+          "text": "Window shopping at the mall"
+        },
+        {
+          "id": "sunday_017",
+          "text": "Sports game watching with friends"
+        },
+        {
+          "id": "sunday_018",
+          "text": "Self-care day with face masks"
+        },
+        {
+          "id": "sunday_019",
+          "text": "Road trip to somewhere you've never been"
+        },
+        {
+          "id": "sunday_020",
+          "text": "Nothing scheduled all day"
+        }
+      ]
+    },
+    {
+      "id": "sleeping_habits",
+      "name": "Sleeping Habits",
+      "scale": "How much this describes how you sleep",
+      "cards": [
+        {
+          "id": "sleeping_001",
+          "text": "Starfish position taking the whole bed"
+        },
+        {
+          "id": "sleeping_002",
+          "text": "Cold room with heavy blankets"
+        },
+        {
+          "id": "sleeping_003",
+          "text": "White noise machine on"
+        },
+        {
+          "id": "sleeping_004",
+          "text": "Phone in bed doom scrolling"
+        },
+        {
+          "id": "sleeping_005",
+          "text": "Sleep with a pillow between your knees"
+        },
+        {
+          "id": "sleeping_006",
+          "text": "Fan on year-round for white noise"
+        },
+        {
+          "id": "sleeping_007",
+          "text": "Read until you pass out"
+        },
+        {
+          "id": "sleeping_008",
+          "text": "Partner stealing the covers"
+        },
+        {
+          "id": "sleeping_009",
+          "text": "Sleep texting you don't remember"
+        },
+        {
+          "id": "sleeping_010",
+          "text": "Multiple pillows for no reason"
+        },
+        {
+          "id": "sleeping_011",
+          "text": "Room completely pitch black"
+        },
+        {
+          "id": "sleeping_012",
+          "text": "Sleep with the TV on for background noise"
+        },
+        {
+          "id": "sleeping_013",
+          "text": "Curled up in a ball under covers"
+        },
+        {
+          "id": "sleeping_014",
+          "text": "Alarm snoozed four times already"
+        },
+        {
+          "id": "sleeping_015",
+          "text": "Sleep talking and mumbling"
+        },
+        {
+          "id": "sleeping_016",
+          "text": "Perfect temperature you dialed in"
+        },
+        {
+          "id": "sleeping_017",
+          "text": "Can fall asleep anywhere instantly"
+        },
+        {
+          "id": "sleeping_018",
+          "text": "Sleep walking or sitting up confused"
+        },
+        {
+          "id": "sleeping_019",
+          "text": "Pets taking up most of the bed"
+        },
+        {
+          "id": "sleeping_020",
+          "text": "Memory foam everything"
+        }
+      ]
+    },
+    {
+      "id": "ways_to_relax",
+      "name": "Ways to Relax",
+      "scale": "How much this relaxes you",
+      "cards": [
+        {
+          "id": "relax_001",
+          "text": "Taking a long hot bath"
+        },
+        {
+          "id": "relax_002",
+          "text": "Guided meditation before bed"
+        },
+        {
+          "id": "relax_003",
+          "text": "Getting a massage"
+        },
+        {
+          "id": "relax_004",
+          "text": "Sitting in complete silence"
+        },
+        {
+          "id": "relax_005",
+          "text": "Coloring in an adult coloring book"
+        },
+        {
+          "id": "relax_006",
+          "text": "Watching comfort TV you know by heart"
+        },
+        {
+          "id": "relax_007",
+          "text": "Taking a nap in the afternoon"
+        },
+        {
+          "id": "relax_008",
+          "text": "Going for a slow walk nowhere"
+        },
+        {
+          "id": "relax_009",
+          "text": "Journaling your thoughts"
+        },
+        {
+          "id": "relax_010",
+          "text": "Having a long conversation with a friend"
+        },
+        {
+          "id": "relax_011",
+          "text": "Being in nature without your phone"
+        },
+        {
+          "id": "relax_012",
+          "text": "Stretching out your whole body"
+        },
+        {
+          "id": "relax_013",
+          "text": "Watching the rain from a window"
+        },
+        {
+          "id": "relax_014",
+          "text": "Decluttering a junk drawer"
+        },
+        {
+          "id": "relax_015",
+          "text": "Playing with a pet for an hour"
+        },
+        {
+          "id": "relax_016",
+          "text": "Drinking tea while reading"
+        },
+        {
+          "id": "relax_017",
+          "text": "Doing absolutely nothing for a whole day"
+        },
+        {
+          "id": "relax_018",
+          "text": "Listening to music while cooking"
+        },
+        {
+          "id": "relax_019",
+          "text": "Aromatherapy with essential oils"
+        },
+        {
+          "id": "relax_020",
+          "text": "Swimming laps in a quiet pool"
+        }
+      ]
+    },
+    {
+      "id": "podcasts",
+      "name": "Podcast Types",
+      "scale": "How much you enjoy this type of podcast",
+      "cards": [
+        {
+          "id": "podcasts_001",
+          "text": "True crime with plot twists"
+        },
+        {
+          "id": "podcasts_002",
+          "text": "Comedy banter between friends"
+        },
+        {
+          "id": "podcasts_003",
+          "text": "News recap for the week"
+        },
+        {
+          "id": "podcasts_004",
+          "text": "Business and entrepreneurship deep dives"
+        },
+        {
+          "id": "podcasts_005",
+          "text": "Personal finance for beginners"
+        },
+        {
+          "id": "podcasts_006",
+          "text": "History storytime that feels like fiction"
+        },
+        {
+          "id": "podcasts_007",
+          "text": "Interview with interesting humans"
+        },
+        {
+          "id": "podcasts_008",
+          "text": "Pop culture hot takes"
+        },
+        {
+          "id": "podcasts_009",
+          "text": "Tech news and gadget reviews"
+        },
+        {
+          "id": "podcasts_010",
+          "text": "Sports analysis over analyzed"
+        },
+        {
+          "id": "podcasts_011",
+          "text": "Self-improvement you pretend to follow"
+        },
+        {
+          "id": "podcasts_012",
+          "text": "Fiction audio drama that hooks you"
+        },
+        {
+          "id": "podcasts_013",
+          "text": "Philosophy讨论 for people who read Nietzsche"
+        },
+        {
+          "id": "podcasts_014",
+          "text": "Parenting stories that make you laugh cry"
+        },
+        {
+          "id": "podcasts_015",
+          "text": "Food criticism and restaurant gossip"
+        },
+        {
+          "id": "podcasts_016",
+          "text": "Travel stories from adventurous people"
+        },
+        {
+          "id": "podcasts_017",
+          "text": "Science explained in under 30 minutes"
+        },
+        {
+          "id": "podcasts_018",
+          "text": "Celebrity gossip you can't unhear"
+        },
+        {
+          "id": "podcasts_019",
+          "text": "Cryptid hunting and conspiracy theories"
+        },
+        {
+          "id": "podcasts_020",
+          "text": "Short daily news while getting ready"
+        }
+      ]
+    },
+    {
+      "id": "self_care",
+      "name": "Self-Care Practices",
+      "scale": "How much this recharges you",
+      "cards": [
+        {
+          "id": "self_care_001",
+          "text": "Saying no to plans without guilt"
+        },
+        {
+          "id": "self_care_002",
+          "text": "Full skincare routine from 10-step regimen"
+        },
+        {
+          "id": "self_care_003",
+          "text": "Digital detox for 24 hours"
+        },
+        {
+          "id": "self_care_004",
+          "text": "Cooking a nice meal just for yourself"
+        },
+        {
+          "id": "self_care_005",
+          "text": "Therapy appointment you actually kept"
+        },
+        {
+          "id": "self_care_006",
+          "text": "Going to bed at a reasonable hour"
+        },
+        {
+          "id": "self_care_007",
+          "text": "Unpopular opinions and boundaries set clearly"
+        },
+        {
+          "id": "self_care_008",
+          "text": "Exercise even when you don't want to"
+        },
+        {
+          "id": "self_care_009",
+          "text": "A long shower with music playing"
+        },
+        {
+          "id": "self_care_010",
+          "text": "Cleaning your space until it sparkles"
+        },
+        {
+          "id": "self_care_011",
+          "text": "Wearing real pants when you don't have to"
+        },
+        {
+          "id": "self_care_012",
+          "text": "Leaving a bad situation immediately"
+        },
+        {
+          "id": "self_care_013",
+          "text": "A doctor's appointment you postponed"
+        },
+        {
+          "id": "self_care_014",
+          "text": "Ordering takeout because cooking is too much"
+        },
+        {
+          "id": "self_care_015",
+          "text": "Napping in the middle of the day"
+        },
+        {
+          "id": "self_care_016",
+          "text": "Hanging with a pet when you need oxytocin"
+        },
+        {
+          "id": "self_care_017",
+          "text": "Turning off notifications for a weekend"
+        },
+        {
+          "id": "self_care_018",
+          "text": "Going for a drive with no destination"
+        },
+        {
+          "id": "self_care_019",
+          "text": "Throwing out old clothes that don't spark joy"
+        },
+        {
+          "id": "self_care_020",
+          "text": "Hydrating properly for once"
+        }
+      ]
+    },
+    {
+      "id": "bbq_foods",
+      "name": "BBQ Foods",
+      "scale": "How much you're craving this",
+      "cards": [
+        {
+          "id": "bbq_001",
+          "text": "Smoked brisket with bark falling off"
+        },
+        {
+          "id": "bbq_002",
+          "text": "Pulled pork shoulder so tender"
+        },
+        {
+          "id": "bbq_003",
+          "text": "Beef short ribs on the bone"
+        },
+        {
+          "id": "bbq_004",
+          "text": "Smoked sausage links with char"
+        },
+        {
+          "id": "bbq_005",
+          "text": "Charcoal-grilled chicken legs"
+        },
+        {
+          "id": "bbq_006",
+          "text": "Pork spare ribs with sticky glaze"
+        },
+        {
+          "id": "bbq_007",
+          "text": "Smoked gouda mac and cheese"
+        },
+        {
+          "id": "bbq_008",
+          "text": "Baked beans slow-cooked for hours"
+        },
+        {
+          "id": "bbq_009",
+          "text": "Corn on the cob with compound butter"
+        },
+        {
+          "id": "bbq_010",
+          "text": "Coleslaw creamy and tangy"
+        },
+        {
+          "id": "bbq_011",
+          "text": "Smoked turkey breast that's juicy"
+        },
+        {
+          "id": "bbq_012",
+          "text": "Jalapeño poppers with cream cheese"
+        },
+        {
+          "id": "bbq_013",
+          "text": "Pit beef from Maryland"
+        },
+        {
+          "id": "bbq_014",
+          "text": "Beef ribs big enough to share"
+        },
+        {
+          "id": "bbq_015",
+          "text": "Smoked lamb chops with rosemary"
+        },
+        {
+          "id": "bbq_016",
+          "text": "Brisket burnt ends caramelized"
+        },
+        {
+          "id": "bbq_017",
+          "text": "Pork belly slices crispy edges"
+        },
+        {
+          "id": "bbq_018",
+          "text": "Smoked gouda and onion dip"
+        },
+        {
+          "id": "bbq_019",
+          "text": "Applewood smoked pork loin"
+        },
+        {
+          "id": "bbq_020",
+          "text": "Smoked salmon with cream cheese"
+        }
+      ]
+    },
+    {
+      "id": "new_experiences",
+      "name": "New Experiences",
+      "scale": "How excited you are to try this",
+      "cards": [
+        {
+          "id": "new_exp_001",
+          "text": "Learn to surf in Bali"
+        },
+        {
+          "id": "new_exp_002",
+          "text": "Safari in Tanzania at dawn"
+        },
+        {
+          "id": "new_exp_003",
+          "text": "Northern Lights from an igloo"
+        },
+        {
+          "id": "new_exp_004",
+          "text": "Eat at a Michelin 3-star restaurant"
+        },
+        {
+          "id": "new_exp_005",
+          "text": "Fly a small plane over mountains"
+        },
+        {
+          "id": "new_exp_006",
+          "text": "Attend a Formula 1 race weekend"
+        },
+        {
+          "id": "new_exp_007",
+          "text": "Go to the Olympics in person"
+        },
+        {
+          "id": "new_exp_008",
+          "text": "See Broadway show in NYC"
+        },
+        {
+          "id": "new_exp_009",
+          "text": "Dive the Great Barrier Reef"
+        },
+        {
+          "id": "new_exp_010",
+          "text": "Stay in an overwater bungalow"
+        },
+        {
+          "id": "new_exp_011",
+          "text": "Go to a World Cup match"
+        },
+        {
+          "id": "new_exp_012",
+          "text": "Helicopter over Grand Canyon"
+        },
+        {
+          "id": "new_exp_013",
+          "text": "Train ride through the Swiss Alps"
+        },
+        {
+          "id": "new_exp_014",
+          "text": "Cherry blossom season in Japan"
+        },
+        {
+          "id": "new_exp_015",
+          "text": "Hot air balloon over Cappadocia"
+        },
+        {
+          "id": "new_exp_016",
+          "text": "Scuba dive with whale sharks"
+        },
+        {
+          "id": "new_exp_017",
+          "text": "Stay in a treehouse resort"
+        },
+        {
+          "id": "new_exp_018",
+          "text": "See the pyramids of Giza at sunrise"
+        },
+        {
+          "id": "new_exp_019",
+          "text": "Attend a TED Talk live"
+        },
+        {
+          "id": "new_exp_020",
+          "text": "Sleep in an ice hotel in Sweden"
+        }
+      ]
     }
   ],
   "situations": [
@@ -12869,6 +15044,2181 @@
         {
           "id": "sit_internet_dies_015",
           "text": "Feel secretly relieved"
+        }
+      ]
+    },
+    {
+      "id": "sit_personal_interests",
+      "name": "Personal Interests",
+      "prompt": "Your friend is looking for a new hobby. Rank these for them.",
+      "cards": [
+        {
+          "id": "sit_personal_interests_001",
+          "text": "Pottery or ceramics classes"
+        },
+        {
+          "id": "sit_personal_interests_002",
+          "text": "Learning a new language"
+        },
+        {
+          "id": "sit_personal_interests_003",
+          "text": "Photography walks"
+        },
+        {
+          "id": "sit_personal_interests_004",
+          "text": "Cooking or baking experiments"
+        },
+        {
+          "id": "sit_personal_interests_005",
+          "text": "Hiking or nature trails"
+        },
+        {
+          "id": "sit_personal_interests_006",
+          "text": "Board games or puzzle nights"
+        },
+        {
+          "id": "sit_personal_interests_007",
+          "text": "Playing guitar or ukulele"
+        },
+        {
+          "id": "sit_personal_interests_008",
+          "text": "Painting or sketching"
+        },
+        {
+          "id": "sit_personal_interests_009",
+          "text": "Yoga or Pilates"
+        },
+        {
+          "id": "sit_personal_interests_010",
+          "text": "Gardening or plant care"
+        },
+        {
+          "id": "sit_personal_interests_011",
+          "text": "Creative writing or journaling"
+        },
+        {
+          "id": "sit_personal_interests_012",
+          "text": "Rock climbing or bouldering"
+        },
+        {
+          "id": "sit_personal_interests_013",
+          "text": "Video gaming or esports"
+        },
+        {
+          "id": "sit_personal_interests_014",
+          "text": "Bird watching or nature spotting"
+        },
+        {
+          "id": "sit_personal_interests_015",
+          "text": "DIY woodworking projects"
+        },
+        {
+          "id": "sit_personal_interests_016",
+          "text": "Meditation or mindfulness"
+        },
+        {
+          "id": "sit_personal_interests_017",
+          "text": "Book club membership"
+        },
+        {
+          "id": "sit_personal_interests_018",
+          "text": "Dance classes"
+        },
+        {
+          "id": "sit_personal_interests_019",
+          "text": "Astronomy or star gazing"
+        },
+        {
+          "id": "sit_personal_interests_020",
+          "text": "Vintage thrifting or collecting"
+        }
+      ]
+    },
+    {
+      "id": "sit_coffee_orders",
+      "name": "Coffee & Tea Orders",
+      "prompt": "Your friend just discovered a new coffee shop. Rank their drink options.",
+      "cards": [
+        {
+          "id": "sit_coffee_orders_001",
+          "text": "Classic espresso shot"
+        },
+        {
+          "id": "sit_coffee_orders_002",
+          "text": "Vanilla latte with oat milk"
+        },
+        {
+          "id": "sit_coffee_orders_003",
+          "text": "Iced caramel macchiato"
+        },
+        {
+          "id": "sit_coffee_orders_004",
+          "text": "Pour-over single origin"
+        },
+        {
+          "id": "sit_coffee_orders_005",
+          "text": "Matcha green tea latte"
+        },
+        {
+          "id": "sit_coffee_orders_006",
+          "text": "Chai tea latte with spice"
+        },
+        {
+          "id": "sit_coffee_orders_007",
+          "text": "Cold brew with vanilla"
+        },
+        {
+          "id": "sit_coffee_orders_008",
+          "text": "Flat white with whole milk"
+        },
+        {
+          "id": "sit_coffee_orders_009",
+          "text": "Hot chocolate with whipped cream"
+        },
+        {
+          "id": "sit_coffee_orders_010",
+          "text": "Americano with extra shot"
+        },
+        {
+          "id": "sit_coffee_orders_011",
+          "text": "Honey lavender latte"
+        },
+        {
+          "id": "sit_coffee_orders_012",
+          "text": "Dirty chai with espresso"
+        },
+        {
+          "id": "sit_coffee_orders_013",
+          "text": "French press dark roast"
+        },
+        {
+          "id": "sit_coffee_orders_014",
+          "text": "Peppermint white chocolate mocha"
+        },
+        {
+          "id": "sit_coffee_orders_015",
+          "text": "Cold foam nitro brew"
+        },
+        {
+          "id": "sit_coffee_orders_016",
+          "text": "Earl grey tea with honey"
+        },
+        {
+          "id": "sit_coffee_orders_017",
+          "text": "Cortado with breve"
+        },
+        {
+          "id": "sit_coffee_orders_018",
+          "text": "Seasonal pumpkin spice latte"
+        },
+        {
+          "id": "sit_coffee_orders_019",
+          "text": "Japanese iced coffee"
+        },
+        {
+          "id": "sit_coffee_orders_020",
+          "text": "London fog with earl grey"
+        }
+      ]
+    },
+    {
+      "id": "sit_sandwiches",
+      "name": "Sandwiches",
+      "prompt": "You're extremely hungry. Rank these sandwiches.",
+      "cards": [
+        {
+          "id": "sit_sandwiches_001",
+          "text": "Philly cheesesteak with peppers"
+        },
+        {
+          "id": "sit_sandwiches_002",
+          "text": "Turkey club with bacon and avocado"
+        },
+        {
+          "id": "sit_sandwiches_003",
+          "text": "Italian hero with salami and provolone"
+        },
+        {
+          "id": "sit_sandwiches_004",
+          "text": "Grilled cheese with tomato soup"
+        },
+        {
+          "id": "sit_sandwiches_005",
+          "text": "BLT with extra crispy bacon"
+        },
+        {
+          "id": "sit_sandwiches_006",
+          "text": "French dip with au jus"
+        },
+        {
+          "id": "sit_sandwiches_007",
+          "text": "Crispy chicken sandwich with pickles"
+        },
+        {
+          "id": "sit_sandwiches_008",
+          "text": "Tuna salad on sourdough"
+        },
+        {
+          "id": "sit_sandwiches_009",
+          "text": "Pastrami on rye with mustard"
+        },
+        {
+          "id": "sit_sandwiches_010",
+          "text": "Caprese with fresh mozzarella and basil"
+        },
+        {
+          "id": "sit_sandwiches_011",
+          "text": "Smoked brisket on a brioche bun"
+        },
+        {
+          "id": "sit_sandwiches_012",
+          "text": "Eggsalad on soft white bread"
+        },
+        {
+          "id": "sit_sandwiches_013",
+          "text": "BBQ pulled pork with coleslaw"
+        },
+        {
+          "id": "sit_sandwiches_014",
+          "text": "Veggie hummus wrap with falafel"
+        },
+        {
+          "id": "sit_sandwiches_015",
+          "text": "Monte Cristo with ham and swiss"
+        },
+        {
+          "id": "sit_sandwiches_016",
+          "text": "Porchetta sandwich with rosemary"
+        },
+        {
+          "id": "sit_sandwiches_017",
+          "text": "Cajun fried catfish po boy"
+        },
+        {
+          "id": "sit_sandwiches_018",
+          "text": "Soft shell crab on a brioche roll"
+        },
+        {
+          "id": "sit_sandwiches_019",
+          "text": "French baguette with brie and apples"
+        },
+        {
+          "id": "sit_sandwiches_020",
+          "text": "Reuben with sauerkraut and thousand island"
+        }
+      ]
+    },
+    {
+      "id": "sit_neighborhoods",
+      "name": "Neighborhood Types",
+      "prompt": "You're moving to a new city. Rank these neighborhood types.",
+      "cards": [
+        {
+          "id": "sit_neighborhoods_001",
+          "text": "Vibrant downtown loft district"
+        },
+        {
+          "id": "sit_neighborhoods_002",
+          "text": "Quiet suburban cul-de-sac"
+        },
+        {
+          "id": "sit_neighborhoods_003",
+          "text": "Walkable historic district with old homes"
+        },
+        {
+          "id": "sit_neighborhoods_004",
+          "text": "Trendy arts district near galleries"
+        },
+        {
+          "id": "sit_neighborhoods_005",
+          "text": "Waterfront or beach community"
+        },
+        {
+          "id": "sit_neighborhoods_006",
+          "text": "Family-friendly suburb with good schools"
+        },
+        {
+          "id": "sit_neighborhoods_007",
+          "text": "Urban high-rise with rooftop pools"
+        },
+        {
+          "id": "sit_neighborhoods_008",
+          "text": "College town with coffee shops and bookstores"
+        },
+        {
+          "id": "sit_neighborhoods_009",
+          "text": "Gentrifying neighborhood with new restaurants"
+        },
+        {
+          "id": "sit_neighborhoods_010",
+          "text": "Country setting with large properties"
+        },
+        {
+          "id": "sit_neighborhoods_011",
+          "text": "Mixed-use development with shops below"
+        },
+        {
+          "id": "sit_neighborhoods_012",
+          "text": "Gated community with golf course"
+        },
+        {
+          "id": "sit_neighborhoods_013",
+          "text": "Ethnic enclave with authentic cuisine"
+        },
+        {
+          "id": "sit_neighborhoods_014",
+          "text": "Hillside with mountain views"
+        },
+        {
+          "id": "sit_neighborhoods_015",
+          "text": "Mid-century modern neighborhood"
+        },
+        {
+          "id": "sit_neighborhoods_016",
+          "text": "New construction planned community"
+        },
+        {
+          "id": "sit_neighborhoods_017",
+          "text": "converted warehouse district lofts"
+        },
+        {
+          "id": "sit_neighborhoods_018",
+          "text": "Tree-lined Victorian street"
+        },
+        {
+          "id": "sit_neighborhoods_019",
+          "text": "Student housing near campus"
+        },
+        {
+          "id": "sit_neighborhoods_020",
+          "text": "Eco-village with community gardens"
+        }
+      ]
+    },
+    {
+      "id": "sit_summer_activities",
+      "name": "Summer Activities",
+      "prompt": "It's the perfect summer day. Rank these activities.",
+      "cards": [
+        {
+          "id": "sit_summer_act_001",
+          "text": "Beach day with umbrella and SPF"
+        },
+        {
+          "id": "sit_summer_act_002",
+          "text": "Backyard BBQ with friends"
+        },
+        {
+          "id": "sit_summer_act_003",
+          "text": "Floating on an inner tube in a lake"
+        },
+        {
+          "id": "sit_summer_act_004",
+          "text": "Farmers market and brunch crawl"
+        },
+        {
+          "id": "sit_summer_act_005",
+          "text": "Outdoor concert or music festival"
+        },
+        {
+          "id": "sit_summer_act_006",
+          "text": "Road trip with the windows down"
+        },
+        {
+          "id": "sit_summer_act_007",
+          "text": "Camping and stargazing by a fire"
+        },
+        {
+          "id": "sit_summer_act_008",
+          "text": "Trying a new restaurant patio"
+        },
+        {
+          "id": "sit_summer_act_009",
+          "text": "Kayaking or paddleboarding"
+        },
+        {
+          "id": "sit_summer_act_010",
+          "text": "Late-afternoon baseball game"
+        },
+        {
+          "id": "sit_summer_act_011",
+          "text": "Hiking to a swimming hole"
+        },
+        {
+          "id": "sit_summer_act_012",
+          "text": " Outdoor movie screening in the park"
+        },
+        {
+          "id": "sit_summer_act_013",
+          "text": "Happy hour on a rooftop bar"
+        },
+        {
+          "id": "sit_summer_act_014",
+          "text": "Water park or splash pad"
+        },
+        {
+          "id": "sit_summer_act_015",
+          "text": "Jamming at an outdoor jam session"
+        },
+        {
+          "id": "sit_summer_act_016",
+          "text": "Exploring a local flea market"
+        },
+        {
+          "id": "sit_summer_act_017",
+          "text": "Sunset photography walk"
+        },
+        {
+          "id": "sit_summer_act_018",
+          "text": "DIY home improvement project"
+        },
+        {
+          "id": "sit_summer_act_019",
+          "text": "Late-night bonfire with s'mores"
+        },
+        {
+          "id": "sit_summer_act_020",
+          "text": "Morning yoga in the park"
+        }
+      ]
+    },
+    {
+      "id": "sit_internet_humor",
+      "name": "Internet Humor",
+      "prompt": "Rank these internet humor styles by how much they make you laugh.",
+      "cards": [
+        {
+          "id": "sit_internet_humor_001",
+          "text": "Relatable relationship memes"
+        },
+        {
+          "id": "sit_internet_humor_002",
+          "text": "Wholesome animal pictures with captions"
+        },
+        {
+          "id": "sit_internet_humor_003",
+          "text": "Sarcastic observational tweets"
+        },
+        {
+          "id": "sit_internet_humor_004",
+          "text": "Unexpected plot twist videos"
+        },
+        {
+          "id": "sit_internet_humor_005",
+          "text": "Deep-fried overly edited memes"
+        },
+        {
+          "id": "sit_internet_humor_006",
+          "text": "Comedy sketches by YouTubers"
+        },
+        {
+          "id": "sit_internet_humor_007",
+          "text": "Ironically bad movie reviews"
+        },
+        {
+          "id": "sit_internet_humor_008",
+          "text": "Cats doing inexplicable things"
+        },
+        {
+          "id": "sit_internet_humor_009",
+          "text": "Deadpan one-liners from sitcoms"
+        },
+        {
+          "id": "sit_internet_humor_010",
+          "text": "Ridiculous change-my-mind posts"
+        },
+        {
+          "id": "sit_internet_humor_011",
+          "text": "Satisfying ASMR compilation fails"
+        },
+        {
+          "id": "sit_internet_humor_012",
+          "text": "Cronchy food videos with ASMR"
+        },
+        {
+          "id": "sit_internet_humor_013",
+          "text": "Parody advertisements"
+        },
+        {
+          "id": "sit_internet_humor_014",
+          "text": "Screenshot of chaotic group chats"
+        },
+        {
+          "id": "sit_internet_humor_015",
+          "text": "Self-deprecating confessional posts"
+        },
+        {
+          "id": "sit_internet_humor_016",
+          "text": "Dark humor about everyday annoyances"
+        },
+        {
+          "id": "sit_internet_humor_017",
+          "text": "Cursed images that shouldn't exist"
+        },
+        {
+          "id": "sit_internet_humor_018",
+          "text": "TikTok dance challenges explained"
+        },
+        {
+          "id": "sit_internet_humor_019",
+          "text": "Drunk texts that were sent by mistake"
+        },
+        {
+          "id": "sit_internet_humor_020",
+          "text": "Absurd hypothetical scenario debates"
+        }
+      ]
+    },
+    {
+      "id": "sit_fitness_activities",
+      "name": "Fitness Activities",
+      "prompt": "You're joining a gym. Rank these workout options.",
+      "cards": [
+        {
+          "id": "sit_fitness_001",
+          "text": "High-intensity interval training"
+        },
+        {
+          "id": "sit_fitness_002",
+          "text": "Olympic weightlifting with a trainer"
+        },
+        {
+          "id": "sit_fitness_003",
+          "text": "Indoor cycling studio with loud music"
+        },
+        {
+          "id": "sit_fitness_004",
+          "text": "Yoga flow class at sunrise"
+        },
+        {
+          "id": "sit_fitness_005",
+          "text": "Lap swimming in an Olympic pool"
+        },
+        {
+          "id": "sit_fitness_006",
+          "text": "Rock climbing gym with bouldering"
+        },
+        {
+          "id": "sit_fitness_007",
+          "text": "Boxing or kickboxing cardio"
+        },
+        {
+          "id": "sit_fitness_008",
+          "text": "CrossFit-style functional training"
+        },
+        {
+          "id": "sit_fitness_009",
+          "text": "Tennis or racquetball with a partner"
+        },
+        {
+          "id": "sit_fitness_010",
+          "text": "Basketball pickup games"
+        },
+        {
+          "id": "sit_fitness_011",
+          "text": "Pilates reformer machines"
+        },
+        {
+          "id": "sit_fitness_012",
+          "text": "Sauna and steam room recovery"
+        },
+        {
+          "id": "sit_fitness_013",
+          "text": "Zumba or dance fitness class"
+        },
+        {
+          "id": "sit_fitness_014",
+          "text": "Trail running on uneven terrain"
+        },
+        {
+          "id": "sit_fitness_015",
+          "text": "Personalized macro-based strength program"
+        },
+        {
+          "id": "sit_fitness_016",
+          "text": "Gymnastics rings and bodyweight skills"
+        },
+        {
+          "id": "sit_fitness_017",
+          "text": "Rowing machine intervals"
+        },
+        {
+          "id": "sit_fitness_018",
+          "text": "Stretching and mobility work"
+        },
+        {
+          "id": "sit_fitness_019",
+          "text": "Barre or ballet-inspired toning"
+        },
+        {
+          "id": "sit_fitness_020",
+          "text": "Breakfast burrito after the workout"
+        }
+      ]
+    },
+    {
+      "id": "sit_grocery_items",
+      "name": "Grocery Store Items",
+      "prompt": "You're shopping for the week. Rank these items by how often you buy them.",
+      "cards": [
+        {
+          "id": "sit_grocery_items_001",
+          "text": "Bananas"
+        },
+        {
+          "id": "sit_grocery_items_002",
+          "text": "Coffee or tea"
+        },
+        {
+          "id": "sit_grocery_items_003",
+          "text": "Eggs"
+        },
+        {
+          "id": "sit_grocery_items_004",
+          "text": "Bread or tortillas"
+        },
+        {
+          "id": "sit_grocery_items_005",
+          "text": "Chicken breast or ground turkey"
+        },
+        {
+          "id": "sit_grocery_items_006",
+          "text": "Pre-washed salad greens"
+        },
+        {
+          "id": "sit_grocery_items_007",
+          "text": "Greek yogurt or cottage cheese"
+        },
+        {
+          "id": "sit_grocery_items_008",
+          "text": "Pasta and jarred marinara sauce"
+        },
+        {
+          "id": "sit_grocery_items_009",
+          "text": "Sparkling water or seltzer"
+        },
+        {
+          "id": "sit_grocery_items_010",
+          "text": "Cheese (variety pack)"
+        },
+        {
+          "id": "sit_grocery_items_011",
+          "text": "Snack chips or crackers"
+        },
+        {
+          "id": "sit_grocery_items_012",
+          "text": "Frozen pizza or TV dinners"
+        },
+        {
+          "id": "sit_grocery_items_013",
+          "text": "Avocados (the ripe ones)"
+        },
+        {
+          "id": "sit_grocery_items_014",
+          "text": "Olive oil and vinegar"
+        },
+        {
+          "id": "sit_grocery_items_015",
+          "text": "Almond butter or peanut butter"
+        },
+        {
+          "id": "sit_grocery_items_016",
+          "text": "Dark chocolate bar"
+        },
+        {
+          "id": "sit_grocery_items_017",
+          "text": "Fresh berries (on sale)"
+        },
+        {
+          "id": "sit_grocery_items_018",
+          "text": "Rice or quinoa"
+        },
+        {
+          "id": "sit_grocery_items_019",
+          "text": "Sourdough bread (the good kind)"
+        },
+        {
+          "id": "sit_grocery_items_020",
+          "text": "Fancy cheese for the weekend"
+        }
+      ]
+    },
+    {
+      "id": "sit_streaming_platforms",
+      "name": "Streaming Platforms",
+      "prompt": "You're subscribing to one new streaming service. Rank these options.",
+      "cards": [
+        {
+          "id": "sit_streaming_001",
+          "text": "Netflix for prestige dramas"
+        },
+        {
+          "id": "sit_streaming_002",
+          "text": "HBO Max for classic films"
+        },
+        {
+          "id": "sit_streaming_003",
+          "text": "Hulu with live TV sports"
+        },
+        {
+          "id": "sit_streaming_004",
+          "text": "Disney+ for family favorites"
+        },
+        {
+          "id": "sit_streaming_005",
+          "text": "Amazon Prime for variety"
+        },
+        {
+          "id": "sit_streaming_006",
+          "text": "Paramount+ for sports and news"
+        },
+        {
+          "id": "sit_streaming_007",
+          "text": "Apple TV+ for originals"
+        },
+        {
+          "id": "sit_streaming_008",
+          "text": "Peacock for comedy and sports"
+        },
+        {
+          "id": "sit_streaming_009",
+          "text": "Criterion Channel for film nerds"
+        },
+        {
+          "id": "sit_streaming_010",
+          "text": "Shudder for horror films"
+        },
+        {
+          "id": "sit_streaming_011",
+          "text": "Mubi for arthouse cinema"
+        },
+        {
+          "id": "sit_streaming_012",
+          "text": "Crunchyroll for anime"
+        },
+        {
+          "id": "sit_streaming_013",
+          "text": "Discovery+ for reality TV"
+        },
+        {
+          "id": "sit_streaming_014",
+          "text": "Starz for premium originals"
+        },
+        {
+          "id": "sit_streaming_015",
+          "text": "Showtime for bold series"
+        },
+        {
+          "id": "sit_streaming_016",
+          "text": "ESPN+ for niche sports"
+        },
+        {
+          "id": "sit_streaming_017",
+          "text": "Britbox for British detective shows"
+        },
+        {
+          "id": "sit_streaming_018",
+          "text": "CuriosityStream for documentaries"
+        },
+        {
+          "id": "sit_streaming_019",
+          "text": "Funimation for dubs and subs"
+        },
+        {
+          "id": "sit_streaming_020",
+          "text": " Tubi for free movies"
+        }
+      ]
+    },
+    {
+      "id": "sit_car_types",
+      "name": "Car Types",
+      "prompt": "You're buying a new car. Rank these types.",
+      "cards": [
+        {
+          "id": "sit_car_types_001",
+          "text": "Electric vehicle with autopilot"
+        },
+        {
+          "id": "sit_car_types_002",
+          "text": "Pickup truck for weekend projects"
+        },
+        {
+          "id": "sit_car_types_003",
+          "text": "Compact hybrid for commuting"
+        },
+        {
+          "id": "sit_car_types_004",
+          "text": "Luxury sedan with leather seats"
+        },
+        {
+          "id": "sit_car_types_005",
+          "text": "Convertible for scenic drives"
+        },
+        {
+          "id": "sit_car_types_006",
+          "text": "SUV with third-row seating"
+        },
+        {
+          "id": "sit_car_types_007",
+          "text": "Vintage restoration project"
+        },
+        {
+          "id": "sit_car_types_008",
+          "text": "Sports car with manual transmission"
+        },
+        {
+          "id": "sit_car_types_009",
+          "text": "Minivan for the whole family"
+        },
+        {
+          "id": "sit_car_types_010",
+          "text": "Station wagon with roof racks"
+        },
+        {
+          "id": "sit_car_types_011",
+          "text": "4x4 off-road vehicle"
+        },
+        {
+          "id": "sit_car_types_012",
+          "text": "Subcompact for city parking"
+        },
+        {
+          "id": "sit_car_types_013",
+          "text": "Crossover with good mileage"
+        },
+        {
+          "id": "sit_car_types_014",
+          "text": "Muscle car with rumbling exhaust"
+        },
+        {
+          "id": "sit_car_types_015",
+          "text": "Self-driving robotaxi subscription"
+        },
+        {
+          "id": "sit_car_types_016",
+          "text": "Camper van for road trips"
+        },
+        {
+          "id": "sit_car_types_017",
+          "text": "Zippy small hatchback"
+        },
+        {
+          "id": "sit_car_types_018",
+          "text": "Full-size truck for heavy towing"
+        },
+        {
+          "id": "sit_car_types_019",
+          "text": "Classic American land yacht"
+        },
+        {
+          "id": "sit_car_types_020",
+          "text": "Three-row family hauler"
+        }
+      ]
+    },
+    {
+      "id": "sit_home_rooms",
+      "name": "Rooms in a Home",
+      "prompt": "You're designing your dream home. Rank these rooms by importance.",
+      "cards": [
+        {
+          "id": "sit_home_rooms_001",
+          "text": "Chef's kitchen with double ovens"
+        },
+        {
+          "id": "sit_home_rooms_002",
+          "text": "Primary bedroom with walk-in closet"
+        },
+        {
+          "id": "sit_home_rooms_003",
+          "text": "Home office with good lighting"
+        },
+        {
+          "id": "sit_home_rooms_004",
+          "text": "Cozy living room with fireplace"
+        },
+        {
+          "id": "sit_home_rooms_005",
+          "text": "Screened-in porch for morning coffee"
+        },
+        {
+          "id": "sit_home_rooms_006",
+          "text": "Home theater with reclining seats"
+        },
+        {
+          "id": "sit_home_rooms_007",
+          "text": "Gym or yoga room"
+        },
+        {
+          "id": "sit_home_rooms_008",
+          "text": "Gourmet bathroom with soaking tub"
+        },
+        {
+          "id": "sit_home_rooms_009",
+          "text": "Laundry room with folding station"
+        },
+        {
+          "id": "sit_home_rooms_010",
+          "text": "Formal dining room for holidays"
+        },
+        {
+          "id": "sit_home_rooms_011",
+          "text": "Game room with pool table"
+        },
+        {
+          "id": "sit_home_rooms_012",
+          "text": "Mudroom with cubbies and hooks"
+        },
+        {
+          "id": "sit_home_rooms_013",
+          "text": "Library with floor-to-ceiling shelves"
+        },
+        {
+          "id": "sit_home_rooms_014",
+          "text": "Guest bedroom and bathroom"
+        },
+        {
+          "id": "sit_home_rooms_015",
+          "text": "Wine cellar or tasting room"
+        },
+        {
+          "id": "sit_home_rooms_016",
+          "text": "Art studio with north-facing windows"
+        },
+        {
+          "id": "sit_home_rooms_017",
+          "text": "Second living area for kids"
+        },
+        {
+          "id": "sit_home_rooms_018",
+          "text": "Pantry the size of a small room"
+        },
+        {
+          "id": "sit_home_rooms_019",
+          "text": "Entryway with built-in bench"
+        },
+        {
+          "id": "sit_home_rooms_020",
+          "text": "Sunroom with plants everywhere"
+        }
+      ]
+    },
+    {
+      "id": "sit_winter_activities",
+      "name": "Winter Activities",
+      "prompt": "It's a snowy winter day. Rank these activities.",
+      "cards": [
+        {
+          "id": "sit_winter_act_001",
+          "text": "Skiing or snowboarding downhill"
+        },
+        {
+          "id": "sit_winter_act_002",
+          "text": "Building a snowman with the family"
+        },
+        {
+          "id": "sit_winter_act_003",
+          "text": "Hot cocoa and a good book by the fire"
+        },
+        {
+          "id": "sit_winter_act_004",
+          "text": "Ice skating at a local rink"
+        },
+        {
+          "id": "sit_winter_act_005",
+          "text": "Cross-country skiing on trails"
+        },
+        {
+          "id": "sit_winter_act_006",
+          "text": "Snowshoeing through quiet woods"
+        },
+        {
+          "id": "sit_winter_act_007",
+          "text": "Soup simmering on the stove all day"
+        },
+        {
+          "id": "sit_winter_act_008",
+          "text": "Sledding down a big hill"
+        },
+        {
+          "id": "sit_winter_act_009",
+          "text": "Ice fishing on a frozen lake"
+        },
+        {
+          "id": "sit_winter_act_010",
+          "text": "Winter hiking with crampons"
+        },
+        {
+          "id": "sit_winter_act_011",
+          "text": "Binge-watching a new series indoors"
+        },
+        {
+          "id": "sit_winter_act_012",
+          "text": "Ice climbing with ropes and gear"
+        },
+        {
+          "id": "sit_winter_act_013",
+          "text": "Snow tubing at a resort"
+        },
+        {
+          "id": "sit_winter_act_014",
+          "text": "Making mulled wine or cider"
+        },
+        {
+          "id": "sit_winter_act_015",
+          "text": "Cozy brunch with friends"
+        },
+        {
+          "id": "sit_winter_act_016",
+          "text": "Ice sculpting or winter crafts"
+        },
+        {
+          "id": "sit_winter_act_017",
+          "text": "Dog sledding adventure"
+        },
+        {
+          "id": "sit_winter_act_018",
+          "text": "Curling league night"
+        },
+        {
+          "id": "sit_winter_act_019",
+          "text": "Late night drives to see lights"
+        },
+        {
+          "id": "sit_winter_act_020",
+          "text": "Winter camping with a fire pit"
+        }
+      ]
+    },
+    {
+      "id": "sit_sports_teams",
+      "name": "Sports & Teams",
+      "prompt": "You're starting a new sports fandom. Rank these options.",
+      "cards": [
+        {
+          "id": "sit_sports_001",
+          "text": "Local NBA team with die-hard fans"
+        },
+        {
+          "id": "sit_sports_002",
+          "text": "International soccer club dynasty"
+        },
+        {
+          "id": "sit_sports_003",
+          "text": "College football team with traditions"
+        },
+        {
+          "id": "sit_sports_004",
+          "text": "NHL hockey with fights and fast plays"
+        },
+        {
+          "id": "sit_sports_005",
+          "text": "MLB team with historic stadium"
+        },
+        {
+          "id": "sit_sports_006",
+          "text": "Tennis Grand Slam tournament follower"
+        },
+        {
+          "id": "sit_sports_007",
+          "text": "Formula 1 racing team"
+        },
+        {
+          "id": "sit_sports_008",
+          "text": "NFL team with passionate tailgates"
+        },
+        {
+          "id": "sit_sports_009",
+          "text": "WNBA women's basketball team"
+        },
+        {
+          "id": "sit_sports_010",
+          "text": "Golf major championships fan"
+        },
+        {
+          "id": "sit_sports_011",
+          "text": "CrossFit Games competitor supporter"
+        },
+        {
+          "id": "sit_sports_012",
+          "text": "Esports organization with big tournaments"
+        },
+        {
+          "id": "sit_sports_013",
+          "text": "Olympic sport and national team"
+        },
+        {
+          "id": "sit_sports_014",
+          "text": "PGA Tour weekly tournament viewer"
+        },
+        {
+          "id": "sit_sports_015",
+          "text": "Cycling Tour de France follower"
+        },
+        {
+          "id": "sit_sports_016",
+          "text": "Motocross or Supercross fan"
+        },
+        {
+          "id": "sit_sports_017",
+          "text": "Minor league baseball underdog"
+        },
+        {
+          "id": "sit_sports_018",
+          "text": "Surf league and tropical events"
+        },
+        {
+          "id": "sit_sports_019",
+          "text": "Women's soccer World Cup fan"
+        },
+        {
+          "id": "sit_sports_020",
+          "text": "Bowl game college basketball"
+        }
+      ]
+    },
+    {
+      "id": "sit_first_date",
+      "name": "First Date Ideas",
+      "prompt": "You're planning a first date. Rank these ideas.",
+      "cards": [
+        {
+          "id": "sit_first_date_001",
+          "text": "Dinner at a critically acclaimed restaurant"
+        },
+        {
+          "id": "sit_first_date_002",
+          "text": "Walk through a botanical garden"
+        },
+        {
+          "id": "sit_first_date_003",
+          "text": "Trivia night at a local bar"
+        },
+        {
+          "id": "sit_first_date_004",
+          "text": "Mini golf with silly obstacles"
+        },
+        {
+          "id": "sit_first_date_005",
+          "text": "Museum exhibit opening night"
+        },
+        {
+          "id": "sit_first_date_006",
+          "text": "Sunset picnic at the beach"
+        },
+        {
+          "id": "sit_first_date_007",
+          "text": "Live music at an intimate venue"
+        },
+        {
+          "id": "sit_first_date_008",
+          "text": "Cooking class together"
+        },
+        {
+          "id": "sit_first_date_009",
+          "text": "Art class with wine and canvas"
+        },
+        {
+          "id": "sit_first_date_010",
+          "text": "Walk around a weekend flea market"
+        },
+        {
+          "id": "sit_first_date_011",
+          "text": "Coffee shop first meeting"
+        },
+        {
+          "id": "sit_first_date_012",
+          "text": " Axe throwing with good instruction"
+        },
+        {
+          "id": "sit_first_date_013",
+          "text": "Rooftop cocktails with skyline view"
+        },
+        {
+          "id": "sit_first_date_014",
+          "text": "Bookstore browsing then tea"
+        },
+        {
+          "id": "sit_first_date_015",
+          "text": "Bowling alley retro vibes"
+        },
+        {
+          "id": "sit_first_date_016",
+          "text": "Escape room teamwork challenge"
+        },
+        {
+          "id": "sit_first_date_017",
+          "text": "Outdoor movie screening"
+        },
+        {
+          "id": "sit_first_date_018",
+          "text": "Farmers market stroll and brunch"
+        },
+        {
+          "id": "sit_first_date_019",
+          "text": "Concert in the park (free)"
+        },
+        {
+          "id": "sit_first_date_020",
+          "text": "Sunrise hike to a viewpoint"
+        }
+      ]
+    },
+    {
+      "id": "sit_houseplants",
+      "name": "Houseplants",
+      "prompt": "You're decorating your apartment with plants. Rank these options.",
+      "cards": [
+        {
+          "id": "sit_houseplants_001",
+          "text": "Low-maintenance pothos trailing from shelf"
+        },
+        {
+          "id": "sit_houseplants_002",
+          "text": "Fiddle leaf fig as a statement piece"
+        },
+        {
+          "id": "sit_houseplants_003",
+          "text": "Snake plant that thrives on neglect"
+        },
+        {
+          "id": "sit_houseplants_004",
+          "text": "Monstera with dramatic split leaves"
+        },
+        {
+          "id": "sit_houseplants_005",
+          "text": "Mini succulent collection on windowsill"
+        },
+        {
+          "id": "sit_houseplants_006",
+          "text": "Peace lily with white flowers"
+        },
+        {
+          "id": "sit_houseplants_007",
+          "text": "Spider plant that babies off"
+        },
+        {
+          "id": "sit_houseplants_008",
+          "text": "Rubber tree with dark glossy leaves"
+        },
+        {
+          "id": "sit_houseplants_009",
+          "text": "Prickly pear cactus in terra cotta"
+        },
+        {
+          "id": "sit_houseplants_010",
+          "text": "ZZ plant for the darkest corner"
+        },
+        {
+          "id": "sit_houseplants_011",
+          "text": "Boston fern in the bathroom"
+        },
+        {
+          "id": "sit_houseplants_012",
+          "text": "String of pearls hanging planter"
+        },
+        {
+          "id": "sit_houseplants_013",
+          "text": "Calathea with patterned leaves"
+        },
+        {
+          "id": "sit_houseplants_014",
+          "text": "Bird of paradise for tropical vibes"
+        },
+        {
+          "id": "sit_houseplants_015",
+          "text": "Chinese money plant as a gift"
+        },
+        {
+          "id": "sit_houseplants_016",
+          "text": "Alocasia with arrow-shaped leaves"
+        },
+        {
+          "id": "sit_houseplants_017",
+          "text": "Croton with fiery fall colors"
+        },
+        {
+          "id": "sit_houseplants_018",
+          "text": "English ivy climbing a shelf"
+        },
+        {
+          "id": "sit_houseplants_019",
+          "text": "Dracaena marginata for height"
+        },
+        {
+          "id": "sit_houseplants_020",
+          "text": "Aloe vera for burns and decor"
+        }
+      ]
+    },
+    {
+      "id": "sit_study_spots",
+      "name": "Study/Work Spots",
+      "prompt": "You need to focus on a big project. Rank these spots.",
+      "cards": [
+        {
+          "id": "sit_study_spots_001",
+          "text": "Quiet corner of a coffee shop"
+        },
+        {
+          "id": "sit_study_spots_002",
+          "text": "Library carrels with zero distractions"
+        },
+        {
+          "id": "sit_study_spots_003",
+          "text": "Home office with door closed"
+        },
+        {
+          "id": "sit_study_spots_004",
+          "text": "Co-working space with phone booths"
+        },
+        {
+          "id": "sit_study_spots_005",
+          "text": "University commons with ambient noise"
+        },
+        {
+          "id": "sit_study_spots_006",
+          "text": "Park bench with headphones in"
+        },
+        {
+          "id": "sit_study_spots_007",
+          "text": "Kitchen table with good lighting"
+        },
+        {
+          "id": "sit_study_spots_008",
+          "text": "24-hour diner with bottomless coffee"
+        },
+        {
+          "id": "sit_study_spots_009",
+          "text": "Bookstore cafe with pastries"
+        },
+        {
+          "id": "sit_study_spots_010",
+          "text": "Bedroom with covers pulled back"
+        },
+        {
+          "id": "sit_study_spots_011",
+          "text": "Empty classroom after hours"
+        },
+        {
+          "id": "sit_study_spots_012",
+          "text": "Rooftop deck with breeze and shade"
+        },
+        {
+          "id": "sit_study_spots_013",
+          "text": "Basement with no cell signal"
+        },
+        {
+          "id": "sit_study_spots_014",
+          "text": "Campus outdoor seating area"
+        },
+        {
+          "id": "sit_study_spots_015",
+          "text": "Public park pavilion on a quiet day"
+        },
+        {
+          "id": "sit_study_spots_016",
+          "text": "Hotel lobby with soft classical music"
+        },
+        {
+          "id": "sit_study_spots_017",
+          "text": "Community center reading room"
+        },
+        {
+          "id": "sit_study_spots_018",
+          "text": "Early morning gym then coffee shop"
+        },
+        {
+          "id": "sit_study_spots_019",
+          "text": "Ferry or train with a window seat"
+        },
+        {
+          "id": "sit_study_spots_020",
+          "text": "Garden greenhouse in winter sun"
+        }
+      ]
+    },
+    {
+      "id": "sit_commute",
+      "name": "Commute Styles",
+      "prompt": "You got a new job. Rank these commute styles.",
+      "cards": [
+        {
+          "id": "sit_commute_001",
+          "text": "15-minute walk through residential streets"
+        },
+        {
+          "id": "sit_commute_002",
+          "text": "Door-to-door express bus with WiFi"
+        },
+        {
+          "id": "sit_commute_003",
+          "text": "Scenic ferry crossing with coffee"
+        },
+        {
+          "id": "sit_commute_004",
+          "text": "Crosstown subway with a good podcast"
+        },
+        {
+          "id": "sit_commute_005",
+          "text": "High-speed rail with workspace car"
+        },
+        {
+          "id": "sit_commute_006",
+          "text": "Drive alone with audiobooks"
+        },
+        {
+          "id": "sit_commute_007",
+          "text": "Carpool with coworkers who chat"
+        },
+        {
+          "id": "sit_commute_008",
+          "text": "Bike lane cycling with good locks"
+        },
+        {
+          "id": "sit_commute_009",
+          "text": "E-scooter to the train station"
+        },
+        {
+          "id": "sit_commute_010",
+          "text": "Tram or light rail with a seat"
+        },
+        {
+          "id": "sit_commute_011",
+          "text": "Long drive alone for the paycheck"
+        },
+        {
+          "id": "sit_commute_012",
+          "text": "Stadium shuttle for game-day chaos"
+        },
+        {
+          "id": "sit_commute_013",
+          "text": "Ferry to waterfront office building"
+        },
+        {
+          "id": "sit_commute_014",
+          "text": "Motorcycle lane splitting in traffic"
+        },
+        {
+          "id": "sit_commute_015",
+          "text": "Remote work once a week"
+        },
+        {
+          "id": "sit_commute_016",
+          "text": "Rideshare shared with strangers"
+        },
+        {
+          "id": "sit_commute_017",
+          "text": "Train station parking and rail pass"
+        },
+        {
+          "id": "sit_commute_018",
+          "text": "Longboard or skateboard commute"
+        },
+        {
+          "id": "sit_commute_019",
+          "text": "Teletransportation (if it existed)"
+        },
+        {
+          "id": "sit_commute_020",
+          "text": "Relocation to within running distance"
+        }
+      ]
+    },
+    {
+      "id": "sit_party_themes",
+      "name": "Party Themes",
+      "prompt": "You're throwing a party. Rank these themes.",
+      "cards": [
+        {
+          "id": "sit_party_themes_001",
+          "text": "80s neon and cassette tape nostalgia"
+        },
+        {
+          "id": "sit_party_themes_002",
+          "text": "Tropical luau with tiki torches"
+        },
+        {
+          "id": "sit_party_themes_003",
+          "text": "Murder mystery dinner theater"
+        },
+        {
+          "id": "sit_party_themes_004",
+          "text": "Black tie masquerade ball"
+        },
+        {
+          "id": "sit_party_themes_005",
+          "text": "Decades night (everyone picks era)"
+        },
+        {
+          "id": "sit_party_themes_006",
+          "text": "Pasta bar and Italian cinema"
+        },
+        {
+          "id": "sit_party_themes_007",
+          "text": "Cactus and succulents garden party"
+        },
+        {
+          "id": "sit_party_themes_008",
+          "text": "Super Bowl watch party"
+        },
+        {
+          "id": "sit_party_themes_009",
+          "text": "Cocktail competition with prizes"
+        },
+        {
+          "id": "sit_party_themes_010",
+          "text": "Outdoor movie night with blankets"
+        },
+        {
+          "id": "sit_party_themes_011",
+          "text": "Costume party with mystery guest"
+        },
+        {
+          "id": "sit_party_themes_012",
+          "text": "Wine and cheese pairing night"
+        },
+        {
+          "id": "sit_party_themes_013",
+          "text": "Karaoke night at a private venue"
+        },
+        {
+          "id": "sit_party_themes_014",
+          "text": "Spa day with face masks and robes"
+        },
+        {
+          "id": "sit_party_themes_015",
+          "text": "BBQ and bourbon tasting backyard"
+        },
+        {
+          "id": "sit_party_themes_016",
+          "text": "Paint and sip with instructor"
+        },
+        {
+          "id": "sit_party_themes_017",
+          "text": "Dress as your favorite character"
+        },
+        {
+          "id": "sit_party_themes_018",
+          "text": "Roaring 20s Gatsby speakeasy"
+        },
+        {
+          "id": "sit_party_themes_019",
+          "text": "Retro video game tournament"
+        },
+        {
+          "id": "sit_party_themes_020",
+          "text": "Cloffice (clothes office) theme"
+        }
+      ]
+    },
+    {
+      "id": "sit_sunday_routine",
+      "name": "Ways to Spend a Sunday",
+      "prompt": "It's a perfect lazy Sunday. Rank these ways to spend it.",
+      "cards": [
+        {
+          "id": "sit_sunday_001",
+          "text": "Sleeping in until 10am"
+        },
+        {
+          "id": "sit_sunday_002",
+          "text": "Farmers market with fresh squeezes"
+        },
+        {
+          "id": "sit_sunday_003",
+          "text": "Streaming movies in pajamas"
+        },
+        {
+          "id": "sit_sunday_004",
+          "text": "Long hike with a summit snack"
+        },
+        {
+          "id": "sit_sunday_005",
+          "text": "Cooking a big brunch from scratch"
+        },
+        {
+          "id": "sit_sunday_006",
+          "text": "Getting lost in a good bookstore"
+        },
+        {
+          "id": "sit_sunday_007",
+          "text": "Doing absolutely nothing productive"
+        },
+        {
+          "id": "sit_sunday_008",
+          "text": "Video games with snacks nearby"
+        },
+        {
+          "id": "sit_sunday_009",
+          "text": "Visiting family for a meal"
+        },
+        {
+          "id": "sit_sunday_010",
+          "text": "Golf nine holes in the morning"
+        },
+        {
+          "id": "sit_sunday_011",
+          "text": "Deep cleaning the apartment"
+        },
+        {
+          "id": "sit_sunday_012",
+          "text": "Sunday night prep for the week"
+        },
+        {
+          "id": "sit_sunday_013",
+          "text": "Live sports at a local bar"
+        },
+        {
+          "id": "sit_sunday_014",
+          "text": "Napping in a hammock outside"
+        },
+        {
+          "id": "sit_sunday_015",
+          "text": "Window shopping with no intent"
+        },
+        {
+          "id": "sit_sunday_016",
+          "text": "Bath bombs and a good bath"
+        },
+        {
+          "id": "sit_sunday_017",
+          "text": "Working on a personal project"
+        },
+        {
+          "id": "sit_sunday_018",
+          "text": "Brunch with friends downtown"
+        },
+        {
+          "id": "sit_sunday_019",
+          "text": "Road trip to somewhere new"
+        },
+        {
+          "id": "sit_sunday_020",
+          "text": "Planning next week's adventures"
+        }
+      ]
+    },
+    {
+      "id": "sit_sleeping_habits",
+      "name": "Sleeping Habits",
+      "prompt": "Rank these sleeping habits by how much they describe you.",
+      "cards": [
+        {
+          "id": "sit_sleeping_001",
+          "text": "Night owl until 2am"
+        },
+        {
+          "id": "sit_sleeping_002",
+          "text": "Early bird up with the sunrise"
+        },
+        {
+          "id": "sit_sleeping_003",
+          "text": "Phone scrolling in bed for hours"
+        },
+        {
+          "id": "sit_sleeping_004",
+          "text": "White noise machine or fan"
+        },
+        {
+          "id": "sit_sleeping_005",
+          "text": "Multiple pillows for support"
+        },
+        {
+          "id": "sit_sleeping_006",
+          "text": "Weighted blanket for comfort"
+        },
+        {
+          "id": "sit_sleeping_007",
+          "text": "Sleep with TV on for background"
+        },
+        {
+          "id": "sit_sleeping_008",
+          "text": "Bed only for sleep (not work)"
+        },
+        {
+          "id": "sit_sleeping_009",
+          "text": "Consistent bedtime routine nightly"
+        },
+        {
+          "id": "sit_sleeping_010",
+          "text": "Caffeine cutoff at 2pm sharp"
+        },
+        {
+          "id": "sit_sleeping_011",
+          "text": "Reading a chapter before lights out"
+        },
+        {
+          "id": "sit_sleeping_012",
+          "text": "Temperature set to 65 degrees"
+        },
+        {
+          "id": "sit_sleeping_013",
+          "text": "Sleep with pets in the bed"
+        },
+        {
+          "id": "sit_sleeping_014",
+          "text": "Weekend sleep-in to catch up"
+        },
+        {
+          "id": "sit_sleeping_015",
+          "text": "Blackout curtains essential"
+        },
+        {
+          "id": "sit_sleeping_016",
+          "text": "Alarm snoozed three times minimum"
+        },
+        {
+          "id": "sit_sleeping_017",
+          "text": "Sleep mask for travel naps"
+        },
+        {
+          "id": "sit_sleeping_018",
+          "text": "Ceiling fan rotation year-round"
+        },
+        {
+          "id": "sit_sleeping_019",
+          "text": "Midnight snack before bed"
+        },
+        {
+          "id": "sit_sleeping_020",
+          "text": "Power down screen time an hour before"
+        }
+      ]
+    },
+    {
+      "id": "sit_ways_to_relax",
+      "name": "Ways to Relax",
+      "prompt": "You have one hour to unwind. Rank these options.",
+      "cards": [
+        {
+          "id": "sit_relax_001",
+          "text": "Guided meditation with app"
+        },
+        {
+          "id": "sit_relax_002",
+          "text": "Hot shower with eucalyptus"
+        },
+        {
+          "id": "sit_relax_003",
+          "text": "Stretching or gentle yoga"
+        },
+        {
+          "id": "sit_relax_004",
+          "text": "Tea ceremony with loose leaf"
+        },
+        {
+          "id": "sit_relax_005",
+          "text": "Journaling about your day"
+        },
+        {
+          "id": "sit_relax_006",
+          "text": "Coloring book or adult activity"
+        },
+        {
+          "id": "sit_relax_007",
+          "text": "Napping face down for 20 minutes"
+        },
+        {
+          "id": "sit_relax_008",
+          "text": "Walking without destination"
+        },
+        {
+          "id": "sit_relax_009",
+          "text": "Listening to lo-fi beats"
+        },
+        {
+          "id": "sit_relax_010",
+          "text": "Calling a friend who gets you"
+        },
+        {
+          "id": "sit_relax_011",
+          "text": "Floating in a pool or bath"
+        },
+        {
+          "id": "sit_relax_012",
+          "text": "Watching calming nature documentaries"
+        },
+        {
+          "id": "sit_relax_013",
+          "text": "Organizing a small drawer or space"
+        },
+        {
+          "id": "sit_relax_014",
+          "text": "Aromatherapy with essential oils"
+        },
+        {
+          "id": "sit_relax_015",
+          "text": "Sitting in a parked car alone"
+        },
+        {
+          "id": "sit_relax_016",
+          "text": "Putting phone on airplane mode"
+        },
+        {
+          "id": "sit_relax_017",
+          "text": "Petting a dog or cat for minutes"
+        },
+        {
+          "id": "sit_relax_018",
+          "text": "Window gazing at the rain"
+        },
+        {
+          "id": "sit_relax_019",
+          "text": "Slow dance in the kitchen alone"
+        },
+        {
+          "id": "sit_relax_020",
+          "text": "Staring at a fireplace or candle"
+        }
+      ]
+    },
+    {
+      "id": "sit_podcasts",
+      "name": "Podcast Types",
+      "prompt": "You're starting a new podcast. Rank these genres.",
+      "cards": [
+        {
+          "id": "sit_podcasts_001",
+          "text": "True crime deep dives"
+        },
+        {
+          "id": "sit_podcasts_002",
+          "text": "Comedy interviews and banter"
+        },
+        {
+          "id": "sit_podcasts_003",
+          "text": "Business and entrepreneurship"
+        },
+        {
+          "id": "sit_podcasts_004",
+          "text": "History with narrative storytelling"
+        },
+        {
+          "id": "sit_podcasts_005",
+          "text": "Pop culture and celebrity gossip"
+        },
+        {
+          "id": "sit_podcasts_006",
+          "text": "Self-improvement and habits"
+        },
+        {
+          "id": "sit_podcasts_007",
+          "text": "Food and restaurant explorations"
+        },
+        {
+          "id": "sit_podcasts_008",
+          "text": "Sports analysis and hot takes"
+        },
+        {
+          "id": "sit_podcasts_009",
+          "text": "Fiction audio drama series"
+        },
+        {
+          "id": "sit_podcasts_010",
+          "text": "Science explained simply"
+        },
+        {
+          "id": "sit_podcasts_011",
+          "text": "Parenting and family advice"
+        },
+        {
+          "id": "sit_podcasts_012",
+          "text": "Audiobooks and literary discussions"
+        },
+        {
+          "id": "sit_podcasts_013",
+          "text": "Conspiracy theories and mysteries"
+        },
+        {
+          "id": "sit_podcasts_014",
+          "text": "Personal finance and investing"
+        },
+        {
+          "id": "sit_podcasts_015",
+          "text": "Relationship and dating advice"
+        },
+        {
+          "id": "sit_podcasts_016",
+          "text": "Travel and location-based stories"
+        },
+        {
+          "id": "sit_podcasts_017",
+          "text": "Politics without the rage bait"
+        },
+        {
+          "id": "sit_podcasts_018",
+          "text": "Craft beer and brewing culture"
+        },
+        {
+          "id": "sit_podcasts_019",
+          "text": "Mental health and therapy chats"
+        },
+        {
+          "id": "sit_podcasts_020",
+          "text": "Short news in 10 minutes"
+        }
+      ]
+    },
+    {
+      "id": "sit_self_care",
+      "name": "Self-Care Practices",
+      "prompt": "You need to recharge. Rank these self-care options.",
+      "cards": [
+        {
+          "id": "sit_self_care_001",
+          "text": "Full eight hours of uninterrupted sleep"
+        },
+        {
+          "id": "sit_self_care_002",
+          "text": "Saying no to plans without guilt"
+        },
+        {
+          "id": "sit_self_care_003",
+          "text": "Digital detox for 24 hours"
+        },
+        {
+          "id": "sit_self_care_004",
+          "text": "Getting a massage or acupuncture"
+        },
+        {
+          "id": "sit_self_care_005",
+          "text": "Cooking a healthy meal from scratch"
+        },
+        {
+          "id": "sit_self_care_006",
+          "text": "Airing out your living space"
+        },
+        {
+          "id": "sit_self_care_007",
+          "text": "Taking a mental health day off"
+        },
+        {
+          "id": "sit_self_care_008",
+          "text": "Moving your body even a little"
+        },
+        {
+          "id": "sit_self_care_009",
+          "text": "Crying it out then taking a bath"
+        },
+        {
+          "id": "sit_self_care_010",
+          "text": "Splurging on the nice version of something"
+        },
+        {
+          "id": "sit_self_care_011",
+          "text": "Seeing a therapist regularly"
+        },
+        {
+          "id": "sit_self_care_012",
+          "text": "Boundary setting with loud family"
+        },
+        {
+          "id": "sit_self_care_013",
+          "text": "Unfollowing draining social accounts"
+        },
+        {
+          "id": "sit_self_care_014",
+          "text": "Screaming into a pillow hard"
+        },
+        {
+          "id": "sit_self_care_015",
+          "text": "Reconnecting with an old friend"
+        },
+        {
+          "id": "sit_self_care_016",
+          "text": "Wearing the comfiest clothes possible"
+        },
+        {
+          "id": "sit_self_care_017",
+          "text": "Learning to say 'I need help'"
+        },
+        {
+          "id": "sit_self_care_018",
+          "text": "Going to bed at a reasonable hour"
+        },
+        {
+          "id": "sit_self_care_019",
+          "text": "Staring at the ceiling doing nothing"
+        },
+        {
+          "id": "sit_self_care_020",
+          "text": "Asking for what you actually want"
+        }
+      ]
+    },
+    {
+      "id": "sit_bbq_foods",
+      "name": "BBQ Foods",
+      "prompt": "It's a perfect BBQ day. Rank these foods.",
+      "cards": [
+        {
+          "id": "sit_bbq_001",
+          "text": "Brisket with perfect smoke ring"
+        },
+        {
+          "id": "sit_bbq_002",
+          "text": "Classic American hamburger with cheese"
+        },
+        {
+          "id": "sit_bbq_003",
+          "text": "BBQ pulled pork shoulder"
+        },
+        {
+          "id": "sit_bbq_004",
+          "text": "Homemade coleslaw with tangy dressing"
+        },
+        {
+          "id": "sit_bbq_005",
+          "text": "Smoked pork ribs with dry rub"
+        },
+        {
+          "id": "sit_bbq_006",
+          "text": "Grilled corn on the cob with butter"
+        },
+        {
+          "id": "sit_bbq_007",
+          "text": "Mac and cheese from a cast iron"
+        },
+        {
+          "id": "sit_bbq_008",
+          "text": "Charred andouille sausage links"
+        },
+        {
+          "id": "sit_bbq_009",
+          "text": "BBQ chicken thighs with sauce"
+        },
+        {
+          "id": "sit_bbq_010",
+          "text": "Baked beans slow-cooked with bacon"
+        },
+        {
+          "id": "sit_bbq_011",
+          "text": "Grilled pineapple rings"
+        },
+        {
+          "id": "sit_bbq_012",
+          "text": "Smoked beef back ribs"
+        },
+        {
+          "id": "sit_bbq_013",
+          "text": "Deviled eggs from the deviled eggs tray"
+        },
+        {
+          "id": "sit_bbq_014",
+          "text": "Watermelon slices with mint"
+        },
+        {
+          "id": "sit_bbq_015",
+          "text": "Grilled vegetable skewers with pesto"
+        },
+        {
+          "id": "sit_bbq_016",
+          "text": "Jalapeno poppers with cream cheese"
+        },
+        {
+          "id": "sit_bbq_017",
+          "text": "Smoked brisket burnt ends"
+        },
+        {
+          "id": "sit_bbq_018",
+          "text": "Cornbread with honey butter"
+        },
+        {
+          "id": "sit_bbq_019",
+          "text": "Turkey leg at the renaissance faire"
+        },
+        {
+          "id": "sit_bbq_020",
+          "text": "Loaded baked potato with all the toppings"
+        }
+      ]
+    },
+    {
+      "id": "sit_new_experiences",
+      "name": "New Experiences",
+      "prompt": "You're feeling adventurous. Rank these new experiences.",
+      "cards": [
+        {
+          "id": "sit_new_exp_001",
+          "text": "Skydiving from 14,000 feet"
+        },
+        {
+          "id": "sit_new_exp_002",
+          "text": "Eating street food in a foreign country"
+        },
+        {
+          "id": "sit_new_exp_003",
+          "text": "Learning to surf at a beginner wave"
+        },
+        {
+          "id": "sit_new_exp_004",
+          "text": "Attending a silent meditation retreat"
+        },
+        {
+          "id": "sit_new_exp_005",
+          "text": "Seeing a Broadway show in NYC"
+        },
+        {
+          "id": "sit_new_exp_006",
+          "text": "Going to a nude beach for the first time"
+        },
+        {
+          "id": "sit_new_exp_007",
+          "text": "Taking a multi-day train journey"
+        },
+        {
+          "id": "sit_new_exp_008",
+          "text": "Trying hallucinogenic mushrooms legally"
+        },
+        {
+          "id": "sit_new_exp_009",
+          "text": "Going to a costume rave or EDM festival"
+        },
+        {
+          "id": "sit_new_exp_010",
+          "text": "Swimming with whale sharks"
+        },
+        {
+          "id": "sit_new_exp_011",
+          "text": "Attending an Ig Nobel ceremony"
+        },
+        {
+          "id": "sit_new_exp_012",
+          "text": "Backpacking through hostels in Europe"
+        },
+        {
+          "id": "sit_new_exp_013",
+          "text": "Hot air balloon ride at sunrise"
+        },
+        {
+          "id": "sit_new_exp_014",
+          "text": "Sleeping in an ice hotel"
+        },
+        {
+          "id": "sit_new_exp_015",
+          "text": "Going to a pottery throwing class"
+        },
+        {
+          "id": "sit_new_exp_016",
+          "text": "Bungee jumping off a bridge"
+        },
+        {
+          "id": "sit_new_exp_017",
+          "text": "Cave diving in underground rivers"
+        },
+        {
+          "id": "sit_new_exp_018",
+          "text": "Road trip on Route 66 with no plan"
+        },
+        {
+          "id": "sit_new_exp_019",
+          "text": "Ziplining through a rainforest canopy"
+        },
+        {
+          "id": "sit_new_exp_020",
+          "text": "Attending a professional wrestling match"
         }
       ]
     }
