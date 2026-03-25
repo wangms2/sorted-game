@@ -312,10 +312,10 @@ function handleGuessingTimeout(room, io, emitRoomUpdate) {
 
     // Auto-submit for players who haven't guessed
     const hotSeatPlayer = room.players[room.hotSeat.playerId];
-    for (const player of Object.values(room.players)) {
+    for (const player of Object.entries(room.players)) {
         if (!player.hasGuessed && player.connected && player.id !== room.hotSeat.playerId) {
-            // Use draft guess (synced from client) if available, otherwise fall back to dealt order
-            player.currentGuess = player.draftGuess || hotSeatPlayer.cards.map((c) => c.id);
+            // Use draft guess (synced from client) if available, otherwise fall back to shuffled cards dealt to guessers
+            player.currentGuess = player.draftGuess || (room.hotSeat.shuffledCards || hotSeatPlayer.cards).map((c) => c.id);
             player.hasGuessed = true;
         }
     }
