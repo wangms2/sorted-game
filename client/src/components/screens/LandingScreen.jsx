@@ -115,6 +115,14 @@ export default function LandingScreen() {
                     </form>
                 )}
             </Card>
+            <a
+                href="https://ko-fi.com/sortedgame"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 text-sm text-charcoal/25 hover:text-charcoal/50 transition-colors"
+            >
+                ♡ support sorted!
+            </a>
         </PageLayout>
     );
 }
