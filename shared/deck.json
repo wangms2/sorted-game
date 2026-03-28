@@ -1394,7 +1394,7 @@
     {
       "id": "workouts",
       "name": "Workout Types",
-      "scale": "How likely you are to actually do this",
+      "scale": "How likely you'd do this regularly",
       "cards": [
         {
           "id": "wrk_001",
@@ -2250,7 +2250,7 @@
     {
       "id": "college",
       "name": "College Experiences",
-      "scale": "How essential this is to the college experience",
+      "scale": "How essential this is to college",
       "cards": [
         {
           "id": "col_001",

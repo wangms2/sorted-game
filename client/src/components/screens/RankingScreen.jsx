@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { DndContext, closestCenter, PointerSensor, TouchSensor, KeyboardSensor, useSensors, useSensor } from '@dnd-kit/core';
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -29,13 +29,13 @@ function SortableCard({ id, text, rank }) {
             style={style}
             {...attributes}
             {...listeners}
-            className={`flex items-center gap-3 bg-card border-4 border-charcoal rounded-xl px-4 py-3 cursor-grab active:cursor-grabbing select-none touch-none
+            className={`flex items-center gap-3 bg-card border-4 border-charcoal rounded-xl px-4 py-2.5 cursor-grab active:cursor-grabbing select-none touch-none
                 ${isDragging ? 'border-amber' : ''}`}
         >
             <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-amber text-white font-bold text-sm">
                 {rank}
             </span>
-            <span className="text-charcoal font-medium text-lg">{text}</span>
+            <span className="text-charcoal font-medium text-base">{text}</span>
             <span className="ml-auto text-charcoal/30">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                     <circle cx="7" cy="5" r="1.5" />
@@ -54,6 +54,17 @@ export default function RankingScreen() {
     const { room, myPlayer, submitRanking, players } = useGameState();
     const [items, setItems] = useState(() => myPlayer?.cards?.map((c) => c.id) || []);
     const [pulsing, setPulsing] = useState(false);
+    const itemsRef = useRef(items);
+    itemsRef.current = items;
+
+    // Auto-submit current order if phase transitions away before lock-in
+    const hasRankedRef = useRef(myPlayer?.hasRanked);
+    hasRankedRef.current = myPlayer?.hasRanked;
+    useEffect(() => {
+        if (room?.phase !== 'ranking' && !hasRankedRef.current) {
+            submitRanking(itemsRef.current);
+        }
+    }, [room?.phase, submitRanking]);
 
     const sensors = useSensors(
         useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -100,7 +111,7 @@ export default function RankingScreen() {
                     <p className="text-charcoal/50 mb-6">Waiting for others to finish ranking...</p>
 
                     <div className="mb-6">
-                        <Timer timerEndAt={room.timerEndAt} />
+                        <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.rankingTimerSeconds} />
                     </div>
 
                     {unranked.length > 0 && (
@@ -124,15 +135,16 @@ export default function RankingScreen() {
 
     // Ranking UI
     return (
-        <PageLayout>
+        <PageLayout className="items-start">
             <div className="w-full max-w-md animate-fade-in">
                 {/* Header */}
                 <div className="text-center mb-4">
                     <div className="mb-3">
-                        <Timer timerEndAt={room.timerEndAt} />
+                        <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.rankingTimerSeconds} />
                     </div>
                     <h2 className="font-display text-2xl font-bold text-charcoal mb-1">{assignment?.name}</h2>
-                    <p className="text-charcoal/50 text-sm">{assignment?.scale}</p>
+                    <p className="text-charcoal text-sm">{assignment?.scale}</p>
+                    <p className="text-charcoal/40 text-xs mt-2">Rank these for yourself — others will try to guess your order</p>
                 </div>
 
                 {/* Scale labels */}
@@ -159,18 +171,20 @@ export default function RankingScreen() {
                     </DndContext>
                 </div>
 
-                <div className="flex justify-between text-xs text-charcoal/40 px-2 mb-4 font-medium">
+                <div className="flex justify-between text-xs text-charcoal/40 px-2 mb-2 font-medium">
                     <span>&#x2B07; Least</span>
                     <span></span>
                 </div>
 
                 {/* Lock In button */}
-                <Button
-                    onClick={handleLockIn}
-                    className={pulsing ? 'animate-pulse-amber' : ''}
-                >
-                    Lock In Ranking
-                </Button>
+                <div className="sticky bottom-0 bg-cream pt-2 pb-4">
+                    <Button
+                        onClick={handleLockIn}
+                        className={pulsing ? 'animate-pulse-amber' : ''}
+                    >
+                        Lock In Ranking
+                    </Button>
+                </div>
             </div>
         </PageLayout>
     );

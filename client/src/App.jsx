@@ -7,19 +7,22 @@ import HotSeatWaitingScreen from './components/screens/HotSeatWaitingScreen.jsx'
 import RevealScreen from './components/screens/RevealScreen.jsx';
 import ScoresScreen from './components/screens/ScoresScreen.jsx';
 import EndScreen from './components/screens/EndScreen.jsx';
+import MidGameJoinScreen from './components/screens/MidGameJoinScreen.jsx';
+import HostSidebar from './components/ui/HostSidebar.jsx';
 
 export default function App() {
-    const { room, currentPhase, isHotSeat, error, clearError } = useGameState();
+    const { room, currentPhase, isHotSeat, myPlayer, error, clearError } = useGameState();
 
     const screen = (() => {
         if (!room) return <LandingScreen />;
+        if (myPlayer?.pendingMidGameChoice) return <MidGameJoinScreen />;
         switch (currentPhase) {
             case 'lobby':
                 return <LobbyScreen />;
             case 'ranking':
                 return <RankingScreen />;
             case 'guessing':
-                return isHotSeat ? <HotSeatWaitingScreen /> : <GuessingScreen />;
+                return (isHotSeat && room.mode !== 'coop') ? <HotSeatWaitingScreen /> : <GuessingScreen />;
             case 'reveal':
                 return <RevealScreen />;
             case 'scores':
@@ -34,6 +37,7 @@ export default function App() {
     return (
         <>
             {screen}
+            <HostSidebar />
             {error && (
                 <div
                     onClick={clearError}

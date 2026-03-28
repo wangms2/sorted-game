@@ -10,8 +10,11 @@ import {
     joinRoom,
     getRoomBySocketId,
     reconnectPlayer,
+    removePlayer,
     handleDisconnect,
     emitRoomUpdate,
+    rejoinAsPlayer,
+    joinAsGuesser,
 } from './roomManager.js';
 import {
     startGame,
@@ -25,6 +28,7 @@ import {
     playAgain,
     scheduleAutoReveal,
     cancelAutoReveal,
+    clearRoomTimer,
 } from './gameEngine.js';
 
 const app = express();
@@ -36,6 +40,8 @@ const io = new Server(httpServer, {
         origin: '*',
         methods: ['GET', 'POST'],
     },
+    pingInterval: 25000,
+    pingTimeout: 120000,
 });
 
 app.get('/health', (_req, res) => {
@@ -51,6 +57,27 @@ app.get('*', (_req, res, next) => {
     if (_req.path.startsWith('/socket.io') || _req.path === '/health') return next();
     res.sendFile(path.join(clientDist, 'index.html'));
 });
+
+// Send live guess preview to the spotlight player (competitive mode only)
+function emitGuessPreview(io, room, bypassThrottle) {
+    if (room.mode === 'coop' || room.phase !== 'guessing' || !room.hotSeat) return;
+    const now = Date.now();
+    if (!bypassThrottle && room._lastPreviewEmit && now - room._lastPreviewEmit < 150) return;
+    room._lastPreviewEmit = now;
+
+    const hotSeatSocketId = room.hotSeat.playerId;
+    const hotSeatSocket = io.sockets.sockets.get(hotSeatSocketId);
+    if (!hotSeatSocket) return;
+
+    const drafts = {};
+    for (const [id, player] of Object.entries(room.players)) {
+        if (id === hotSeatSocketId || !player.connected || player.pendingMidGameChoice) continue;
+        const guess = player.hasGuessed ? player.currentGuess : player.draftGuess;
+        if (!guess) continue;
+        drafts[id] = { guess, locked: player.hasGuessed };
+    }
+    hotSeatSocket.emit(EVENTS.GUESS_PREVIEW, { drafts });
+}
 
 io.on('connection', (socket) => {
     console.log(`Connected: ${socket.id}`);
@@ -112,15 +139,40 @@ io.on('connection', (socket) => {
         if (room.hostId !== socket.id) { socket.emit(EVENTS.ERROR, { message: 'Only host can start' }); return; }
         if (room.phase !== 'lobby') { socket.emit(EVENTS.ERROR, { message: 'Game already started' }); return; }
 
-        // Apply timer setting if provided (30, 60, or 90 seconds)
-        const allowedTimers = [30, 45, 60, 90];
-        if (typeof timerSeconds === 'number' && allowedTimers.includes(timerSeconds)) {
-            room.settings.rankingTimerSeconds = timerSeconds;
-            room.settings.guessingTimerSeconds = timerSeconds;
+        // Use pendingSettings (already validated via UPDATE_SETTINGS), with fallback to event payload
+        const pending = room.pendingSettings || {};
+        const finalRounds = typeof totalRounds === 'number' ? totalRounds : (pending.totalRounds || 1);
+        const finalTimer = typeof timerSeconds === 'number' ? timerSeconds : (pending.timerSeconds ?? 60);
+
+        // Apply timer setting if provided (0 = no timer)
+        const allowedTimers = [0, 30, 45, 60, 90, 120];
+        if (allowedTimers.includes(finalTimer)) {
+            room.settings.rankingTimerSeconds = finalTimer;
+            room.settings.guessingTimerSeconds = finalTimer;
         }
 
-        const result = startGame(room, typeof totalRounds === 'number' ? totalRounds : 1, io, emitRoomUpdate);
+        const result = startGame(room, finalRounds, io, emitRoomUpdate);
         if (result.error) { socket.emit(EVENTS.ERROR, { message: result.error }); return; }
+        emitRoomUpdate(io, room);
+    });
+
+    socket.on(EVENTS.UPDATE_SETTINGS, (data) => {
+        const room = getRoomBySocketId(socket.id);
+        if (!room) return;
+        if (room.hostId !== socket.id) return;
+        if (room.phase !== 'lobby') return;
+
+        const { totalRounds, timerSeconds } = data || {};
+        if (!room.pendingSettings) room.pendingSettings = { totalRounds: 1, timerSeconds: 60 };
+
+        if (typeof totalRounds === 'number' && totalRounds >= 1 && totalRounds <= 10) {
+            room.pendingSettings.totalRounds = totalRounds;
+        }
+        const allowedTimers = [0, 30, 45, 60, 90, 120];
+        if (typeof timerSeconds === 'number' && allowedTimers.includes(timerSeconds)) {
+            room.pendingSettings.timerSeconds = timerSeconds;
+        }
+
         emitRoomUpdate(io, room);
     });
 
@@ -142,8 +194,20 @@ io.on('connection', (socket) => {
 
         const result = submitGuess(room, socket.id, guess);
         if (result.error) { socket.emit(EVENTS.ERROR, { message: result.error }); return; }
+        emitGuessPreview(io, room, true);
         const transitioned = checkAllGuessed(room, io, emitRoomUpdate);
         if (!transitioned) emitRoomUpdate(io, room);
+    });
+
+    socket.on(EVENTS.SYNC_GUESS, (data) => {
+        const { guess } = data || {};
+        const room = getRoomBySocketId(socket.id);
+        if (!room || room.phase !== 'guessing') return;
+        const player = room.players[socket.id];
+        if (!player || player.hasGuessed) return;
+        if (!Array.isArray(guess)) return;
+        player.draftGuess = guess;
+        emitGuessPreview(io, room, false);
     });
 
     socket.on(EVENTS.REVEAL_NEXT, (data) => {
@@ -180,6 +244,80 @@ io.on('connection', (socket) => {
         const result = playAgain(room, io, emitRoomUpdate);
         if (result.error) { socket.emit(EVENTS.ERROR, { message: result.error }); return; }
         emitRoomUpdate(io, room);
+    });
+
+    socket.on(EVENTS.KICK_PLAYER, (data) => {
+        const { targetId } = data || {};
+        const room = getRoomBySocketId(socket.id);
+        if (!room) { socket.emit(EVENTS.ERROR, { message: 'Not in a room' }); return; }
+        if (room.hostId !== socket.id) { socket.emit(EVENTS.ERROR, { message: 'Only host can kick' }); return; }
+        if (targetId === socket.id) { socket.emit(EVENTS.ERROR, { message: 'Cannot kick yourself' }); return; }
+        if (!room.players[targetId]) { socket.emit(EVENTS.ERROR, { message: 'Player not found' }); return; }
+
+        // If kicking the hot seat player during reveal, auto-reveal remaining
+        const wasHotSeatInReveal = room.phase === 'reveal' &&
+            room.hotSeat && room.hotSeat.playerId === targetId;
+
+        const updatedRoom = removePlayer(targetId, io);
+        if (!updatedRoom) return;
+
+        // End game if fewer than 2 connected players
+        const connectedCount = Object.values(updatedRoom.players).filter(p => p.connected).length;
+        if (connectedCount < 2 && updatedRoom.phase !== 'lobby') {
+            updatedRoom.phase = 'game_end';
+        }
+
+        if (wasHotSeatInReveal) {
+            scheduleAutoReveal(updatedRoom, io, emitRoomUpdate);
+        }
+
+        emitRoomUpdate(io, updatedRoom);
+    });
+
+    socket.on(EVENTS.END_GAME, () => {
+        const room = getRoomBySocketId(socket.id);
+        if (!room) { socket.emit(EVENTS.ERROR, { message: 'Not in a room' }); return; }
+        if (room.hostId !== socket.id) { socket.emit(EVENTS.ERROR, { message: 'Only host can end game' }); return; }
+        if (room.phase === 'lobby' || room.phase === 'game_end') { socket.emit(EVENTS.ERROR, { message: 'No active game to end' }); return; }
+
+        clearRoomTimer(room.code);
+        room.timerEndAt = null;
+        room.phase = 'game_end';
+        emitRoomUpdate(io, room);
+    });
+
+    socket.on(EVENTS.REJOIN_AS, (data) => {
+        const { targetPlayerId } = data || {};
+        const room = getRoomBySocketId(socket.id);
+        if (!room) { socket.emit(EVENTS.ERROR, { message: 'Not in a room' }); return; }
+        if (!targetPlayerId) { socket.emit(EVENTS.ERROR, { message: 'Target player required' }); return; }
+
+        const result = rejoinAsPlayer(room, socket.id, targetPlayerId);
+        if (result.error) { socket.emit(EVENTS.ERROR, { message: result.error }); return; }
+
+        // Cancel auto-reveal if rejoin player is the hot seat
+        if (room.phase === 'reveal' && room.hotSeat &&
+            room.hotSeat.playerId === socket.id) {
+            cancelAutoReveal(room);
+        }
+
+        // Check if this unblocks phase transitions
+        let transitioned = false;
+        if (room.phase === 'ranking') transitioned = checkAllRanked(room, io, emitRoomUpdate);
+        else if (room.phase === 'guessing') transitioned = checkAllGuessed(room, io, emitRoomUpdate);
+        if (!transitioned) emitRoomUpdate(io, room);
+    });
+
+    socket.on(EVENTS.JOIN_AS_GUESSER, () => {
+        const room = getRoomBySocketId(socket.id);
+        if (!room) { socket.emit(EVENTS.ERROR, { message: 'Not in a room' }); return; }
+
+        const result = joinAsGuesser(room, socket.id);
+        if (result.error) { socket.emit(EVENTS.ERROR, { message: result.error }); return; }
+
+        let transitioned = false;
+        if (room.phase === 'ranking') transitioned = checkAllRanked(room, io, emitRoomUpdate);
+        if (!transitioned) emitRoomUpdate(io, room);
     });
 
     socket.on('disconnect', () => {

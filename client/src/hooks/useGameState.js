@@ -3,7 +3,7 @@ import { GameContext } from '../context/GameContext.jsx';
 
 export default function useGameState() {
     const ctx = useContext(GameContext);
-    const { room } = ctx;
+    const { room, guessPreview } = ctx;
 
     return useMemo(() => {
         if (!room) {
@@ -15,6 +15,7 @@ export default function useGameState() {
                 currentPhase: null,
                 playerCount: 0,
                 players: [],
+                guessPreview: null,
             };
         }
 

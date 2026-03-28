@@ -1,10 +1,25 @@
 import { v4 as uuidv4 } from 'uuid';
+import { shuffle } from './deckManager.js';
 
 const rooms = new Map();
 const socketToRoom = new Map();
 const disconnectTimers = new Map();
 
 const LETTERS = 'ABCDEFGHJKLMNPQRSTUVWXYZ'; // no I or O (avoidable confusion)
+
+// Remap oldId → newId in all gameHistory entries
+function remapGameHistory(room, oldId, newId) {
+    if (!room.gameHistory) return;
+    for (const entry of room.gameHistory) {
+        if (entry.spotlightId === oldId) entry.spotlightId = newId;
+        for (const obj of [entry.guessScores, entry.guesses]) {
+            if (obj && obj[oldId] !== undefined) {
+                obj[newId] = obj[oldId];
+                delete obj[oldId];
+            }
+        }
+    }
+}
 
 function generateRoomCode() {
     let code;
@@ -39,6 +54,7 @@ export function createRoom(playerName, socketId) {
     const room = {
         code,
         hostId: socketId,
+        originalHostId: socketId,
         phase: 'lobby',
         players: { [socketId]: player },
         playerOrder: [socketId],
@@ -53,6 +69,10 @@ export function createRoom(playerName, socketId) {
             rankingTimerSeconds: 60,
             guessingTimerSeconds: 90,
         },
+        pendingSettings: {
+            totalRounds: 1,
+            timerSeconds: 60,
+        },
         timerEndAt: null,
     };
     rooms.set(code, room);
@@ -64,13 +84,105 @@ export function joinRoom(code, playerName, socketId) {
     const upperCode = code.toUpperCase();
     const room = rooms.get(upperCode);
     if (!room) return { error: 'Room not found' };
-    if (room.phase !== 'lobby') return { error: 'Game already started' };
-    if (Object.keys(room.players).length >= 10) return { error: 'Room is full' };
+    if (Object.keys(room.players).length >= 15) return { error: 'Room is full' };
 
     const player = createPlayer(playerName, socketId);
+
+    // Mid-game join: mark as pending choice so they don't block current phase
+    if (room.phase !== 'lobby') {
+        player.hasRanked = true;
+        player.hasGuessed = true;
+        player.pendingMidGameChoice = true;
+    }
+
     room.players[socketId] = player;
     room.playerOrder.push(socketId);
     socketToRoom.set(socketId, upperCode);
+    return { room };
+}
+
+export function rejoinAsPlayer(room, socketId, targetPlayerId) {
+    const joiner = room.players[socketId];
+    if (!joiner || !joiner.pendingMidGameChoice) return { error: 'Not pending choice' };
+
+    const target = room.players[targetPlayerId];
+    if (!target || target.connected) return { error: 'Player not available to take over' };
+
+    // Clear disconnect timer for the target
+    const timerId = disconnectTimers.get(targetPlayerId);
+    if (timerId) {
+        clearTimeout(timerId);
+        disconnectTimers.delete(targetPlayerId);
+    }
+
+    // Transfer target's game state to joiner's socket
+    const joinerName = joiner.name;
+    delete room.players[socketId];
+    delete room.players[targetPlayerId];
+
+    target.id = socketId;
+    target.name = joinerName;
+    target.sessionToken = joiner.sessionToken;
+    target.connected = true;
+    room.players[socketId] = target;
+
+    // Update playerOrder: replace target with new socketId, remove joiner's original entry
+    const targetIdx = room.playerOrder.indexOf(targetPlayerId);
+    if (targetIdx !== -1) room.playerOrder[targetIdx] = socketId;
+    // Remove the joiner's original entry (added at end by joinRoom)
+    const joinerOrigIdx = room.playerOrder.lastIndexOf(socketId);
+    if (joinerOrigIdx !== -1 && joinerOrigIdx !== targetIdx) {
+        room.playerOrder.splice(joinerOrigIdx, 1);
+    }
+
+    // Update hostId if needed
+    if (room.hostId === targetPlayerId) room.hostId = socketId;
+
+    // Update hotSeat references
+    if (room.hotSeat) {
+        if (room.hotSeat.playerId === targetPlayerId) room.hotSeat.playerId = socketId;
+        if (room.hotSeat.coopSecondId === targetPlayerId) room.hotSeat.coopSecondId = socketId;
+        if (room.hotSeat.roundScores[targetPlayerId] !== undefined) {
+            room.hotSeat.roundScores[socketId] = room.hotSeat.roundScores[targetPlayerId];
+            delete room.hotSeat.roundScores[targetPlayerId];
+        }
+        if (room.hotSeat.playerShuffles && room.hotSeat.playerShuffles[targetPlayerId]) {
+            room.hotSeat.playerShuffles[socketId] = room.hotSeat.playerShuffles[targetPlayerId];
+            delete room.hotSeat.playerShuffles[targetPlayerId];
+        }
+    }
+
+    // Remap socketToRoom
+    socketToRoom.delete(targetPlayerId);
+    socketToRoom.set(socketId, room.code);
+
+    // Update gameHistory references
+    remapGameHistory(room, targetPlayerId, socketId);
+
+    return { room };
+}
+
+export function joinAsGuesser(room, socketId) {
+    const player = room.players[socketId];
+    if (!player || !player.pendingMidGameChoice) return { error: 'Not pending choice' };
+
+    player.guesserOnly = true;
+    player.pendingMidGameChoice = false;
+    player.hasRanked = true; // never ranks
+
+    // If joining during guessing phase, allow them to guess this turn
+    if (room.phase === 'guessing' && room.hotSeat) {
+        player.hasGuessed = false;
+        player.currentGuess = null;
+        room.hotSeat.roundScores[socketId] = 0;
+        // Assign a stable shuffle for this new guesser
+        const hotSeatPlayer = room.players[room.hotSeat.playerId];
+        if (hotSeatPlayer && !room.hotSeat.playerShuffles) room.hotSeat.playerShuffles = {};
+        if (hotSeatPlayer) {
+            room.hotSeat.playerShuffles[socketId] = shuffle([...hotSeatPlayer.cards]);
+        }
+    }
+
     return { room };
 }
 
@@ -114,9 +226,18 @@ export function reconnectPlayer(sessionToken, roomCode, newSocketId) {
     // Update hostId if needed
     if (room.hostId === oldSocketId) room.hostId = newSocketId;
 
+    // Restore host role if original host reconnects
+    if (room.originalHostId === oldSocketId) {
+        room.originalHostId = newSocketId;
+        room.hostId = newSocketId;
+    }
+
     // Update hotSeat playerId if needed
     if (room.hotSeat && room.hotSeat.playerId === oldSocketId) {
         room.hotSeat.playerId = newSocketId;
+    }
+    if (room.hotSeat && room.hotSeat.coopSecondId === oldSocketId) {
+        room.hotSeat.coopSecondId = newSocketId;
     }
 
     // Update roundScores keys
@@ -125,9 +246,18 @@ export function reconnectPlayer(sessionToken, roomCode, newSocketId) {
         delete room.hotSeat.roundScores[oldSocketId];
     }
 
+    // Update playerShuffles keys
+    if (room.hotSeat && room.hotSeat.playerShuffles && room.hotSeat.playerShuffles[oldSocketId]) {
+        room.hotSeat.playerShuffles[newSocketId] = room.hotSeat.playerShuffles[oldSocketId];
+        delete room.hotSeat.playerShuffles[oldSocketId];
+    }
+
     // Remap socketToRoom
     socketToRoom.delete(oldSocketId);
     socketToRoom.set(newSocketId, roomCode.toUpperCase());
+
+    // Update gameHistory references
+    remapGameHistory(room, oldSocketId, newSocketId);
 
     return { room };
 }
@@ -154,6 +284,11 @@ export function removePlayer(socketId, io) {
         room.hostId = room.playerOrder[0];
     }
 
+    // Clear originalHostId if original host permanently left
+    if (room.originalHostId === socketId) {
+        room.originalHostId = null;
+    }
+
     return room;
 }
 
@@ -167,32 +302,37 @@ export function handleDisconnect(socketId, io, emitRoomUpdate) {
     const player = room.players[socketId];
     if (!player) return;
 
-    // In lobby, remove immediately
-    if (room.phase === 'lobby') {
-        const updatedRoom = removePlayer(socketId, io);
-        if (updatedRoom) emitRoomUpdate(io, updatedRoom);
-        return;
+    // Mark disconnected and temporarily reassign host
+    player.connected = false;
+
+    if (room.hostId === socketId) {
+        const nextHost = room.playerOrder.find(
+            (id) => id !== socketId && room.players[id]?.connected
+        );
+        if (nextHost) room.hostId = nextHost;
     }
 
-    // Mid-game: mark disconnected, start 60s timer
-    player.connected = false;
     emitRoomUpdate(io, room);
+
+    // Lobby: short grace period for refreshes; Mid-game: longer window
+    const timeout = room.phase === 'lobby' ? 15000 : 600000;
 
     const timerId = setTimeout(() => {
         disconnectTimers.delete(socketId);
         const updatedRoom = removePlayer(socketId, io);
         if (!updatedRoom) return;
 
-        // If fewer than 3 connected players remain, end game
-        const connectedCount = Object.values(updatedRoom.players).filter(
-            (p) => p.connected
-        ).length;
-        if (connectedCount < 3) {
-            updatedRoom.phase = 'game_end';
+        if (updatedRoom.phase !== 'lobby') {
+            const connectedCount = Object.values(updatedRoom.players).filter(
+                (p) => p.connected
+            ).length;
+            if (connectedCount < 2) {
+                updatedRoom.phase = 'game_end';
+            }
         }
 
         emitRoomUpdate(io, updatedRoom);
-    }, 60000);
+    }, timeout);
 
     disconnectTimers.set(socketId, timerId);
 }
@@ -202,13 +342,17 @@ export function filterRoomForPlayer(room, socketId) {
         code: room.code,
         hostId: room.hostId,
         phase: room.phase,
+        mode: room.mode || null,
+        coopStats: room.coopStats || null,
         playerOrder: room.playerOrder,
         hotSeatIndex: room.hotSeatIndex,
         currentRoundNumber: room.currentRoundNumber,
         totalRounds: room.totalRounds,
         roundType: room.roundType,
         settings: room.settings,
+        pendingSettings: room.pendingSettings || null,
         timerEndAt: room.timerEndAt,
+        gameHistory: room.gameHistory || [],
         hotSeat: null,
         players: {},
     };
@@ -229,7 +373,20 @@ export function filterRoomForPlayer(room, socketId) {
                 hasGuessed: player.hasGuessed,
                 connected: player.connected,
                 sessionToken: player.sessionToken,
+                guesserOnly: player.guesserOnly || false,
+                pendingMidGameChoice: player.pendingMidGameChoice || false,
             };
+
+            // If pending mid-game choice, include joinOptions
+            if (player.pendingMidGameChoice) {
+                const disconnectedPlayers = Object.values(room.players)
+                    .filter((p) => !p.connected && !p.pendingMidGameChoice)
+                    .map((p) => ({ id: p.id, name: p.name }));
+                filtered.players[id].joinOptions = {
+                    disconnectedPlayers,
+                    canJoinAsGuesser: room.mode !== 'coop',
+                };
+            }
         } else {
             // Other players: strip ranking, guess, assignment details, cards, sessionToken
             filtered.players[id] = {
@@ -239,14 +396,87 @@ export function filterRoomForPlayer(room, socketId) {
                 hasRanked: player.hasRanked,
                 hasGuessed: player.hasGuessed,
                 connected: player.connected,
+                guesserOnly: player.guesserOnly || false,
             };
         }
     }
 
     // During guessing/reveal/scores: include hot seat info
     if (room.hotSeat && (room.phase === 'guessing' || room.phase === 'reveal' || room.phase === 'scores')) {
+        const isCoop = room.mode === 'coop';
         const hotSeatPlayer = room.players[room.hotSeat.playerId];
-        if (hotSeatPlayer) {
+
+        if (isCoop) {
+            const isSecondReveal = room.hotSeat.coopPhase === 'reveal_second';
+            // During guessing: each player guesses the OTHER player's ranking
+            // During reveal: show whose ranking is being revealed
+            const revealPlayerId = isSecondReveal ? room.hotSeat.coopSecondId : room.hotSeat.playerId;
+            const revealPlayer = room.players[revealPlayerId];
+            const guesserId = isSecondReveal ? room.hotSeat.playerId : room.hotSeat.coopSecondId;
+
+            if (room.phase === 'guessing') {
+                // Each player sees the OTHER player's cards (shuffled) and assignment
+                const otherId = socketId === room.hotSeat.playerId
+                    ? room.hotSeat.coopSecondId
+                    : room.hotSeat.playerId;
+                const otherPlayer = room.players[otherId];
+                // Use the pre-shuffled cards for this player's target
+                const otherShuffledCards = otherId === room.hotSeat.playerId
+                    ? room.hotSeat.shuffledCards
+                    : room.hotSeat.coopSecondShuffledCards;
+
+                filtered.hotSeat = {
+                    playerId: room.hotSeat.playerId,
+                    coopSecondId: room.hotSeat.coopSecondId,
+                    coopPhase: room.hotSeat.coopPhase,
+                    revealIndex: room.hotSeat.revealIndex,
+                    revealedPositions: [],
+                    roundScores: room.hotSeat.roundScores,
+                    perfectGuessers: [],
+                    readyPlayers: room.hotSeat.readyPlayers || [],
+                    // Show the OTHER player's assignment and cards for guessing
+                    assignment: otherPlayer.assignment,
+                    cards: room.hotSeat.playerShuffles?.[socketId] || otherShuffledCards,
+                    targetPlayerId: otherId,
+                };
+            } else {
+                // reveal or scores phase
+                filtered.hotSeat = {
+                    playerId: room.hotSeat.playerId,
+                    coopSecondId: room.hotSeat.coopSecondId,
+                    coopPhase: room.hotSeat.coopPhase,
+                    revealIndex: room.hotSeat.revealIndex,
+                    revealedPositions: room.hotSeat.revealedPositions || [],
+                    roundScores: room.hotSeat.roundScores,
+                    perfectGuessers: room.hotSeat.perfectGuessers || [],
+                    readyPlayers: room.hotSeat.readyPlayers || [],
+                    assignment: revealPlayer.assignment,
+                    cards: revealPlayerId === room.hotSeat.playerId
+                        ? room.hotSeat.shuffledCards
+                        : room.hotSeat.coopSecondShuffledCards,
+                    targetPlayerId: revealPlayerId,
+                };
+
+                // Include revealed ranking
+                const fullRanking = revealPlayer.ranking || [];
+                const positions = room.hotSeat.revealedPositions || [];
+                const revealed = {};
+                for (const pos of positions) {
+                    revealed[pos] = fullRanking[pos];
+                }
+                filtered.hotSeat.revealedRanking = revealed;
+
+                // Include the guesser's guess
+                const guesserPlayer = room.players[guesserId];
+                if (guesserPlayer && guesserPlayer.currentGuess) {
+                    filtered.hotSeat.myGuess = guesserPlayer.currentGuess;
+                    filtered.hotSeat.guesserId = guesserId;
+                }
+            }
+        } else if (hotSeatPlayer) {
+            const baseCards = room.hotSeat.shuffledCards || hotSeatPlayer.cards;
+            // Each guesser gets their stable per-player shuffle; non-guessing phases keep stable order
+            const isGuesser = room.phase === 'guessing' && socketId !== room.hotSeat.playerId;
             filtered.hotSeat = {
                 playerId: room.hotSeat.playerId,
                 revealIndex: room.hotSeat.revealIndex,
@@ -255,7 +485,7 @@ export function filterRoomForPlayer(room, socketId) {
                 perfectGuessers: room.hotSeat.perfectGuessers || [],
                 readyPlayers: room.hotSeat.readyPlayers || [],
                 assignment: hotSeatPlayer.assignment,
-                cards: room.hotSeat.shuffledCards || hotSeatPlayer.cards,
+                cards: isGuesser ? (room.hotSeat.playerShuffles?.[socketId] || baseCards) : baseCards,
             };
 
             // During reveal: include revealed cards by position + player's own guess
@@ -273,6 +503,17 @@ export function filterRoomForPlayer(room, socketId) {
                 const requestingPlayer = room.players[socketId];
                 if (requestingPlayer && requestingPlayer.currentGuess && socketId !== room.hotSeat.playerId) {
                     filtered.hotSeat.myGuess = requestingPlayer.currentGuess;
+                }
+
+                // Send all guesses to the hot seat player so they can see guesser positions
+                if (socketId === room.hotSeat.playerId) {
+                    const allGuesses = {};
+                    for (const [id, player] of Object.entries(room.players)) {
+                        if (id !== room.hotSeat.playerId && player.currentGuess) {
+                            allGuesses[id] = player.currentGuess;
+                        }
+                    }
+                    filtered.hotSeat.allGuesses = allGuesses;
                 }
             }
         }
