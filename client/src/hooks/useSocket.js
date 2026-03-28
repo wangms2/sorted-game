@@ -32,13 +32,6 @@ export default function useSocket(onRoomUpdate, onError, onGuessPreview) {
         listenersAttached = true;
     }, []);
 
-    const ensureListeners = useCallback((s) => {
-        if (listenersAttached) return;
-        s.on(EVENTS.ROOM_UPDATED, (data) => onRoomUpdateRef.current?.(data));
-        s.on(EVENTS.ERROR, (data) => onErrorRef.current?.(data));
-        listenersAttached = true;
-    }, []);
-
     useEffect(() => {
         const s = getSocket();
         ensureListeners(s);
