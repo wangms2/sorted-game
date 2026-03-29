@@ -69,6 +69,7 @@ export default function HotSeatWaitingScreen() {
 
     const unguessedCount = guessers.filter((p) => !p.hasGuessed).length;
     const totalGuessers = guessers.length;
+    const useTwoRowLayout = totalGuessers >= 5;
 
     return (
         <PageLayout className="items-start">
@@ -103,38 +104,49 @@ export default function HotSeatWaitingScreen() {
                     <div className="space-y-2">
                         {rankedCardIds.map((cardId, index) => {
                             const card = cardMap[cardId];
+                            const badges = guessers.map((g) => {
+                                const draft = guessPreview?.[g.id];
+                                if (!draft) return null;
+                                const guessPos = draft.guess.indexOf(cardId);
+                                if (guessPos === -1) return null;
+                                const accuracy = Math.abs((guessPos + 1) - (index + 1));
+                                return (
+                                    <GuesserBadge
+                                        key={g.id}
+                                        position={guessPos + 1}
+                                        color={guesserColors[g.id]}
+                                        locked={draft.locked}
+                                        accuracy={accuracy}
+                                    />
+                                );
+                            });
                             return (
                                 <div
                                     key={cardId}
-                                    className="flex items-center gap-3 bg-card border-4 border-charcoal rounded-xl px-4 py-2.5"
+                                    className="bg-card border-4 border-charcoal rounded-xl"
                                 >
-                                    {/* Rank badge */}
-                                    <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-amber text-white font-bold text-sm">
-                                        {index + 1}
-                                    </span>
-                                    {/* Card text */}
-                                    <span className="text-charcoal font-medium text-base flex-1 min-w-0">
-                                        {card?.text || cardId}
-                                    </span>
-                                    {/* Guesser position badges */}
-                                    <div className="flex flex-wrap gap-1 shrink-0">
-                                        {guessers.map((g) => {
-                                            const draft = guessPreview?.[g.id];
-                                            if (!draft) return null;
-                                            const guessPos = draft.guess.indexOf(cardId);
-                                            if (guessPos === -1) return null;
-                                            const accuracy = Math.abs((guessPos + 1) - (index + 1));
-                                            return (
-                                                <GuesserBadge
-                                                    key={g.id}
-                                                    position={guessPos + 1}
-                                                    color={guesserColors[g.id]}
-                                                    locked={draft.locked}
-                                                    accuracy={accuracy}
-                                                />
-                                            );
-                                        })}
+                                    <div className="flex items-center gap-3 px-4 py-2.5">
+                                        {/* Rank badge */}
+                                        <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-amber text-white font-bold text-sm">
+                                            {index + 1}
+                                        </span>
+                                        {/* Card text */}
+                                        <span className="text-charcoal font-medium text-base flex-1 min-w-0">
+                                            {card?.text || cardId}
+                                        </span>
+                                        {/* Inline badges for ≤4 guessers */}
+                                        {!useTwoRowLayout && (
+                                            <div className="flex flex-wrap gap-1 shrink-0">
+                                                {badges}
+                                            </div>
+                                        )}
                                     </div>
+                                    {/* Below-text badges for 5+ guessers */}
+                                    {useTwoRowLayout && (
+                                        <div className="flex flex-wrap gap-1.5 px-4 pb-2.5 -mt-1 ml-11">
+                                            {badges}
+                                        </div>
+                                    )}
                                 </div>
                             );
                         })}

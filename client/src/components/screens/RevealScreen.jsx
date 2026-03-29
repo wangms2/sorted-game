@@ -119,6 +119,34 @@ export default function RevealScreen() {
     // All guesses (only available to hot seat player)
     const allGuesses = hotSeat.allGuesses || null;
 
+    // Determine guesser count for two-row badge layout
+    const guesserIds = allGuesses
+        ? (room.playerOrder || []).filter(id => id !== hotSeat.playerId && allGuesses[id])
+        : [];
+    const useTwoRowBadges = guesserIds.length >= 5;
+
+    // Helper to render guesser badges for a slot
+    function guesserBadgesFor(slot) {
+        return guesserIds.map(id => {
+            const guessPos = allGuesses[id].indexOf(slot.card?.id);
+            if (guessPos === -1) return null;
+            const accuracy = Math.abs((guessPos + 1) - slot.position);
+            return (
+                <span
+                    key={id}
+                    className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold text-white
+                        ${accuracy === 0 ? 'ring-1 ring-amber ring-offset-1 ring-offset-white shadow-md' : ''}`}
+                    style={{
+                        backgroundColor: playerColors[id],
+                        opacity: accuracy >= 2 ? 0.35 : 1,
+                    }}
+                >
+                    {guessPos + 1}
+                </span>
+            );
+        });
+    }
+
     // Score entries — all players, ordered by playerOrder (spotlight order)
     const roundScores = hotSeat.roundScores || {};
     const scoreEntries = (room.playerOrder || [])
@@ -269,63 +297,52 @@ export default function RevealScreen() {
                             <div
                                 key={slot.position}
                                 onClick={() => canReveal && !slot.revealed && !allRevealed && revealNext(slot.index)}
-                                className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-300
+                                className={`rounded-xl transition-all duration-300
                                     ${slot.revealed
                                         ? `bg-card ${bgAccent} border-4 ${borderColor} shadow-card ${slot.isNew ? 'animate-card-flip' : ''}`
                                         : `bg-surface border-4 border-surface ${canReveal && !allRevealed ? 'cursor-pointer hover:border-amber/30 hover:bg-surface/80 active:scale-[0.98]' : ''}`}`}
                             >
-                                {slot.revealed && slot.myGuessedPos !== null ? (
-                                    <span title="Your guessed position" className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg font-bold text-xs
-                                        ${slot.pointsEarned === 2 ? 'bg-amber/20 text-amber' : slot.pointsEarned === 1 ? 'bg-amber/10 text-amber/60' : 'bg-charcoal/5 text-charcoal/30'}`}>
-                                        {slot.myGuessedPos}
-                                    </span>
-                                ) : (
-                                    <span className="flex-shrink-0 w-8 h-8" />
-                                )}
+                                <div className="flex items-center gap-3 px-4 py-3">
+                                    {slot.revealed && slot.myGuessedPos !== null ? (
+                                        <span title="Your guessed position" className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg font-bold text-xs
+                                            ${slot.pointsEarned === 2 ? 'bg-amber/20 text-amber' : slot.pointsEarned === 1 ? 'bg-amber/10 text-amber/60' : 'bg-charcoal/5 text-charcoal/30'}`}>
+                                            {slot.myGuessedPos}
+                                        </span>
+                                    ) : (
+                                        <span className="flex-shrink-0 w-8 h-8" />
+                                    )}
 
-                                <span className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg font-bold text-sm
-                                    ${slot.revealed ? 'bg-amber text-white' : 'bg-charcoal/10 text-charcoal/30'}`}>
-                                    {slot.position}
-                                </span>
-                                {slot.revealed ? (
-                                    <span className="text-charcoal font-medium text-lg flex-1 min-w-0">
-                                        {slot.card?.text}
+                                    <span className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg font-bold text-sm
+                                        ${slot.revealed ? 'bg-amber text-white' : 'bg-charcoal/10 text-charcoal/30'}`}>
+                                        {slot.position}
                                     </span>
-                                ) : (
-                                    <span className="text-charcoal/20 italic text-lg flex-1">???</span>
-                                )}
+                                    {slot.revealed ? (
+                                        <span className="text-charcoal font-medium text-lg flex-1 min-w-0">
+                                            {slot.card?.text}
+                                        </span>
+                                    ) : (
+                                        <span className="text-charcoal/20 italic text-lg flex-1">???</span>
+                                    )}
 
-                                {/* Guesser position badges (spotlight player only) */}
-                                {slot.revealed && allGuesses && (
-                                    <div className="flex flex-wrap gap-1 shrink-0">
-                                        {(room.playerOrder || [])
-                                            .filter(id => id !== hotSeat.playerId && allGuesses[id])
-                                            .map(id => {
-                                                const guessPos = allGuesses[id].indexOf(slot.card?.id);
-                                                if (guessPos === -1) return null;
-                                                const accuracy = Math.abs((guessPos + 1) - slot.position);
-                                                return (
-                                                    <span
-                                                        key={id}
-                                                        className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold text-white
-                                                            ${accuracy === 0 ? 'ring-1 ring-amber ring-offset-1 ring-offset-white shadow-md' : ''}`}
-                                                        style={{
-                                                            backgroundColor: playerColors[id],
-                                                            opacity: accuracy >= 2 ? 0.35 : 1,
-                                                        }}
-                                                    >
-                                                        {guessPos + 1}
-                                                    </span>
-                                                );
-                                            })}
+                                    {/* Inline guesser badges for ≤4 guessers */}
+                                    {!useTwoRowBadges && slot.revealed && allGuesses && (
+                                        <div className="flex flex-wrap gap-1 shrink-0">
+                                            {guesserBadgesFor(slot)}
+                                        </div>
+                                    )}
+
+                                    {slot.revealed && slot.pointsEarned !== null && (
+                                        <span className={`flex-shrink-0 text-xs font-bold px-2 py-0.5 rounded-lg
+                                            ${slot.pointsEarned === 2 ? 'bg-amber text-white' : slot.pointsEarned === 1 ? 'bg-amber/30 text-amber' : 'bg-charcoal/10 text-charcoal/30'}`}>
+                                            +{slot.pointsEarned}
+                                        </span>
+                                    )}
+                                </div>
+                                {/* Below-text guesser badges for 5+ guessers */}
+                                {useTwoRowBadges && slot.revealed && allGuesses && (
+                                    <div className="flex flex-wrap gap-1.5 px-4 pb-3 -mt-1 ml-[4.25rem]">
+                                        {guesserBadgesFor(slot)}
                                     </div>
-                                )}
-
-                                {slot.revealed && slot.pointsEarned !== null && (
-                                    <span className={`flex-shrink-0 text-xs font-bold px-2 py-0.5 rounded-lg
-                                        ${slot.pointsEarned === 2 ? 'bg-amber text-white' : slot.pointsEarned === 1 ? 'bg-amber/30 text-amber' : 'bg-charcoal/10 text-charcoal/30'}`}>
-                                        +{slot.pointsEarned}
-                                    </span>
                                 )}
                             </div>
                         );

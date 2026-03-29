@@ -53,7 +53,7 @@ export function dealRound(room) {
     playerIds.forEach((socketId, i) => {
         const entry = selected[i];
         const isCategory = entry.scale !== undefined; // categories have 'scale', situations have 'prompt'
-        const cards = shuffle(entry.cards).slice(0, 5);
+        const cards = shuffle(entry.cards).slice(0, 5).sort((a, b) => a.id.localeCompare(b.id));
 
         room.players[socketId].assignment = {
             type: isCategory ? 'category' : 'situation',
@@ -65,6 +65,8 @@ export function dealRound(room) {
         room.players[socketId].ranking = null;
         room.players[socketId].hasRanked = false;
         room.players[socketId].currentGuess = null;
+        room.players[socketId].draftGuess = null;
+        room.players[socketId].draftRanking = null;
         room.players[socketId].hasGuessed = false;
 
         if (isCategory) {

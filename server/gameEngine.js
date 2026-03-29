@@ -99,10 +99,10 @@ export function checkAllRanked(room, io, emitRoomUpdate) {
 }
 
 function handleRankingTimeout(room, io, emitRoomUpdate) {
-    // Auto-submit for players who haven't ranked
+    // Auto-submit for players who haven't ranked — use synced draft if available
     for (const player of Object.values(room.players)) {
         if (!player.hasRanked && player.connected) {
-            player.ranking = player.cards.map((c) => c.id); // default order
+            player.ranking = player.draftRanking || player.cards.map((c) => c.id);
             player.hasRanked = true;
         }
     }
@@ -230,6 +230,12 @@ export function submitGuess(room, socketId, guess) {
 
     const player = room.players[socketId];
     if (!player) return { error: 'Player not found' };
+
+    // Check hot seat role before hasGuessed (hot seat has hasGuessed=true preemptively)
+    if (room.mode !== 'coop' && room.hotSeat && room.hotSeat.playerId === socketId) {
+        return { error: 'Hot seat player cannot guess' };
+    }
+
     if (player.hasGuessed) return { error: 'Already submitted guess' };
 
     if (room.mode === 'coop') {
@@ -247,10 +253,6 @@ export function submitGuess(room, socketId, guess) {
             return { error: 'Invalid guess: must contain exactly the other player\'s cards' };
         }
     } else {
-        if (room.hotSeat && room.hotSeat.playerId === socketId) {
-            return { error: 'Hot seat player cannot guess' };
-        }
-
         // Validate guess contains exactly the hot seat player's card IDs
         const hotSeatPlayer = room.players[room.hotSeat.playerId];
         const hotSeatCardIds = hotSeatPlayer.cards.map((c) => c.id).sort();

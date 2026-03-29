@@ -8,6 +8,7 @@ export const EVENTS = {
     START_GAME: 'start_game',
     UPDATE_SETTINGS: 'update_settings',
     SUBMIT_RANKING: 'submit_ranking',
+    SYNC_RANKING: 'sync_ranking',
     SUBMIT_GUESS: 'submit_guess',
     SYNC_GUESS: 'sync_guess',
     REVEAL_NEXT: 'reveal_next',

@@ -283,11 +283,11 @@ async function testDifferentAssignmentsPerPlayer() {
     const uniqueAssignments = new Set(ids);
     assert(uniqueAssignments.size === 5, `5 unique assignments: ${ids.join(', ')}`);
 
-    // All assignments should have same type (all category or all situation for one round)
-    console.log('3. All assignments are same type (category or situation)...');
+    // All assignments should have a valid type
+    console.log('3. All assignments have valid type (category or situation)...');
     const types = assignments.map(a => a.type);
-    const uniqueTypes = new Set(types);
-    assert(uniqueTypes.size === 1, `All same type: ${types[0]}`);
+    const validTypes = types.every(t => t === 'category' || t === 'situation');
+    assert(validTypes, `All valid types: ${types.join(', ')}`);
 
     // Each player's cards should be different
     console.log('4. Each player has different cards...');

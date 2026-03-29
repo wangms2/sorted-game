@@ -382,9 +382,9 @@ async function testRoomCapacity() {
 
     const sockets = [host];
 
-    // Join 9 more players (total 10)
-    console.log('1. Filling room to 10 players...');
-    for (let i = 2; i <= 10; i++) {
+    // Join 14 more players (total 15)
+    console.log('1. Filling room to 15 players...');
+    for (let i = 2; i <= 15; i++) {
         const s = await connect();
         const jp = waitFor(s, 'room_updated');
         s.emit('join_room', { roomCode: room.code, playerName: `P${i}` });
@@ -393,12 +393,12 @@ async function testRoomCapacity() {
     }
     console.log(`   Room has ${sockets.length} players`);
 
-    // 11th player should be rejected
-    console.log('2. Rejecting 11th player...');
+    // 16th player should be rejected
+    console.log('2. Rejecting 16th player...');
     const extra = await connect();
     extra.emit('join_room', { roomCode: room.code, playerName: 'Extra' });
     const capErr = await waitFor(extra, 'error');
-    assert(capErr.message === 'Room is full', '11th player rejected');
+    assert(capErr.message === 'Room is full', '16th player rejected');
     console.log(`   ${capErr.message}`);
 
     extra.disconnect();
@@ -417,12 +417,17 @@ async function testStartGameValidation() {
     bob.emit('join_room', { roomCode: room.code, playerName: 'Bob' });
     await waitFor(bob, 'room_updated');
 
-    // Start with only 2 players
-    console.log('1. Start with 2 players (need 3)...');
-    alice.emit('start_game', { totalRounds: 1 });
-    const err1 = await waitFor(alice, 'error');
-    assert(err1.message === 'Need at least 3 players to start', 'Need 3 players');
+    // Start with only 1 player (need at least 2)
+    console.log('1. Start with 1 player (need 2)...');
+    const soloHost = await connect();
+    const sp = waitFor(soloHost, 'room_updated');
+    soloHost.emit('create_room', { playerName: 'Solo' });
+    const { room: soloRoom } = await sp;
+    soloHost.emit('start_game', { totalRounds: 1 });
+    const err1 = await waitFor(soloHost, 'error');
+    assert(err1.message === 'Need at least 2 players to start', 'Need 2 players');
     console.log(`   ${err1.message}`);
+    soloHost.disconnect();
 
     // Invalid round count
     console.log('2. Invalid round count (0)...');
@@ -432,25 +437,27 @@ async function testStartGameValidation() {
 
     alice.emit('start_game', { totalRounds: 0 });
     const err2 = await waitFor(alice, 'error');
-    assert(err2.message === 'Rounds must be between 1 and 3', 'Invalid round count 0');
+    assert(err2.message === 'Rounds must be between 1 and 10', 'Invalid round count 0');
     console.log(`   ${err2.message}`);
 
-    console.log('3. Invalid round count (4)...');
-    alice.emit('start_game', { totalRounds: 4 });
+    console.log('3. Invalid round count (11)...');
+    alice.emit('start_game', { totalRounds: 11 });
     const err3 = await waitFor(alice, 'error');
-    assert(err3.message === 'Rounds must be between 1 and 3', 'Invalid round count 4');
+    assert(err3.message === 'Rounds must be between 1 and 10', 'Invalid round count 11');
     console.log(`   ${err3.message}`);
 
-    // Join after game started
-    console.log('4. Join after game started...');
+    // Join after game started (mid-game join is allowed)
+    console.log('4. Join after game started (mid-game join)...');
     alice.emit('start_game', { totalRounds: 1 });
     await waitFor(alice, 'room_updated');
 
     const latecomer = await connect();
+    const lateP = waitFor(latecomer, 'room_updated');
     latecomer.emit('join_room', { roomCode: room.code, playerName: 'Late' });
-    const err4 = await waitFor(latecomer, 'error');
-    assert(err4.message === 'Game already started', 'Cannot join mid-game');
-    console.log(`   ${err4.message}`);
+    const { room: lateRoom } = await lateP;
+    const latePlayer = Object.values(lateRoom.players).find(p => p.sessionToken);
+    assert(latePlayer.pendingMidGameChoice === true, 'Mid-game joiner is pending choice');
+    console.log(`   Mid-game join allowed, pending choice: ${latePlayer.pendingMidGameChoice}`);
 
     // Start again while game running
     console.log('5. Start again while game running...');

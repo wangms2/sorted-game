@@ -82,6 +82,11 @@ export function GameProvider({ children }) {
         [emit]
     );
 
+    const syncRanking = useCallback(
+        (ranking) => emit(EVENTS.SYNC_RANKING, { ranking }),
+        [emit]
+    );
+
     const syncGuess = useCallback(
         (guess) => emit(EVENTS.SYNC_GUESS, { guess }),
         [emit]
@@ -137,6 +142,7 @@ export function GameProvider({ children }) {
                 startGame,
                 updateSettings,
                 submitRanking,
+                syncRanking,
                 submitGuess,
                 syncGuess,
                 revealNext,

@@ -59,13 +59,14 @@ async function test() {
     console.log(`4. Session token present: ${!!myPlayer.sessionToken}`);
     console.assert(myPlayer.sessionToken, 'Should have session token');
 
-    // Test 5: Reconnection (lobby removes immediately, so rejoin instead)
-    console.log('5. Testing rejoin after disconnect in lobby...');
+    // Test 5: Reconnection via session token
+    console.log('5. Testing reconnect after disconnect in lobby...');
+    const charlieToken = myPlayer.sessionToken;
     charlie.disconnect();
     await new Promise(r => setTimeout(r, 500));
     const charlie2 = await connect('Charlie');
     const rejoinPromise = waitFor(charlie2, 'room_updated');
-    charlie2.emit('join_room', { roomCode: room.code, playerName: 'Charlie' });
+    charlie2.emit('reconnect', { sessionToken: charlieToken, roomCode: room.code });
     const { room: room4 } = await rejoinPromise;
     console.log(`   Rejoined. Players: ${Object.values(room4.players).map(p => p.name).join(', ')}`);
     console.assert(Object.keys(room4.players).length === 3, 'Should have 3 players');

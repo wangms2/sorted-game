@@ -51,11 +51,18 @@ function SortableCard({ id, text, rank }) {
 }
 
 export default function RankingScreen() {
-    const { room, myPlayer, submitRanking, players } = useGameState();
+    const { room, myPlayer, submitRanking, syncRanking, players } = useGameState();
     const [items, setItems] = useState(() => myPlayer?.cards?.map((c) => c.id) || []);
     const [pulsing, setPulsing] = useState(false);
     const itemsRef = useRef(items);
     itemsRef.current = items;
+
+    // Sync initial card order to server as draft ranking
+    useEffect(() => {
+        if (items.length > 0 && room?.phase === 'ranking' && !myPlayer?.hasRanked) {
+            syncRanking(items);
+        }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     // Auto-submit current order if phase transitions away before lock-in
     const hasRankedRef = useRef(myPlayer?.hasRanked);
@@ -85,10 +92,12 @@ export default function RankingScreen() {
             setItems((prev) => {
                 const oldIndex = prev.indexOf(active.id);
                 const newIndex = prev.indexOf(over.id);
-                return arrayMove(prev, oldIndex, newIndex);
+                const newItems = arrayMove(prev, oldIndex, newIndex);
+                syncRanking(newItems);
+                return newItems;
             });
         }
-    }, []);
+    }, [syncRanking]);
 
     const handleLockIn = useCallback(() => {
         setPulsing(true);

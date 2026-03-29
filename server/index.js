@@ -199,6 +199,16 @@ io.on('connection', (socket) => {
         if (!transitioned) emitRoomUpdate(io, room);
     });
 
+    socket.on(EVENTS.SYNC_RANKING, (data) => {
+        const { ranking } = data || {};
+        const room = getRoomBySocketId(socket.id);
+        if (!room || room.phase !== 'ranking') return;
+        const player = room.players[socket.id];
+        if (!player || player.hasRanked) return;
+        if (!Array.isArray(ranking)) return;
+        player.draftRanking = ranking;
+    });
+
     socket.on(EVENTS.SYNC_GUESS, (data) => {
         const { guess } = data || {};
         const room = getRoomBySocketId(socket.id);
