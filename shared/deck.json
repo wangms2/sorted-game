@@ -46,63 +46,63 @@
           "text": "Ice cream on a hot day"
         },
         {
-          "id": "foods_011",
+          "id": "food_011",
           "text": "A perfectly crispy French fry"
         },
         {
-          "id": "foods_012",
+          "id": "food_012",
           "text": "Pad Thai from your favorite place"
         },
         {
-          "id": "foods_013",
+          "id": "food_013",
           "text": "A warm bowl of pho on a cold day"
         },
         {
-          "id": "foods_014",
+          "id": "food_014",
           "text": "A really good cheeseburger"
         },
         {
-          "id": "foods_015",
+          "id": "food_015",
           "text": "Fresh guacamole with warm chips"
         },
         {
-          "id": "foods_016",
+          "id": "food_016",
           "text": "A slice of New York pizza"
         },
         {
-          "id": "foods_017",
+          "id": "food_017",
           "text": "Chicken tikka masala"
         },
         {
-          "id": "foods_018",
+          "id": "food_018",
           "text": "A smoothie that actually tastes good"
         },
         {
-          "id": "foods_019",
+          "id": "food_019",
           "text": "Waffles with butter and syrup"
         },
         {
-          "id": "foods_020",
+          "id": "food_020",
           "text": "A bagel with cream cheese"
         },
         {
-          "id": "foods_021",
+          "id": "food_021",
           "text": "Grandma's cooking, whatever it is"
         },
         {
-          "id": "foods_022",
+          "id": "food_022",
           "text": "A charcuterie board you didn't have to make"
         },
         {
-          "id": "foods_023",
+          "id": "food_023",
           "text": "Freshly squeezed orange juice"
         },
         {
-          "id": "foods_024",
+          "id": "food_024",
           "text": "Fried chicken that's still crispy"
         },
         {
-          "id": "foods_025",
+          "id": "food_025",
           "text": "Chocolate cake with too much frosting"
         }
       ]
@@ -260,63 +260,63 @@
           "text": "Forgetting someone's name right after they told you"
         },
         {
-          "id": "social_dread_011",
+          "id": "social_011",
           "text": "Your card declining at the register"
         },
         {
-          "id": "social_dread_012",
+          "id": "social_012",
           "text": "Being called on in class when you weren't paying attention"
         },
         {
-          "id": "social_dread_013",
+          "id": "social_013",
           "text": "Telling a joke and nobody laughing"
         },
         {
-          "id": "social_dread_014",
+          "id": "social_014",
           "text": "Walking into a glass door in front of people"
         },
         {
-          "id": "social_dread_015",
+          "id": "social_015",
           "text": "Accidentally liking a three-year-old Instagram post"
         },
         {
-          "id": "social_dread_016",
+          "id": "social_016",
           "text": "Having food stuck in your teeth and nobody told you"
         },
         {
-          "id": "social_dread_017",
+          "id": "social_017",
           "text": "Showing someone a photo and they swipe too far"
         },
         {
-          "id": "social_dread_018",
+          "id": "social_018",
           "text": "Being the only one who dressed up — or didn't"
         },
         {
-          "id": "social_dread_019",
+          "id": "social_019",
           "text": "Calling a teacher 'Mom' by accident"
         },
         {
-          "id": "social_dread_020",
+          "id": "social_020",
           "text": "Realizing you've been pronouncing a word wrong for years"
         },
         {
-          "id": "social_dread_021",
+          "id": "social_021",
           "text": "Being on speakerphone and not knowing it"
         },
         {
-          "id": "social_dread_022",
+          "id": "social_022",
           "text": "The moment of silence when no one volunteers"
         },
         {
-          "id": "social_dread_023",
+          "id": "social_023",
           "text": "Accidentally texting someone about them"
         },
         {
-          "id": "social_dread_024",
+          "id": "social_024",
           "text": "Being asked 'so what do you do?' at a party"
         },
         {
-          "id": "social_dread_025",
+          "id": "social_025",
           "text": "Sending a voice note to the wrong person"
         }
       ]
@@ -367,63 +367,63 @@
           "text": "A long drive with good music and no destination"
         },
         {
-          "id": "activities_011",
+          "id": "act_011",
           "text": "Swimming in a lake on a hot summer day"
         },
         {
-          "id": "activities_012",
+          "id": "act_012",
           "text": "Dancing at a wedding when the DJ plays your song"
         },
         {
-          "id": "activities_013",
+          "id": "act_013",
           "text": "An afternoon nap that was supposed to be 20 minutes"
         },
         {
-          "id": "activities_014",
+          "id": "act_014",
           "text": "Trying a restaurant you've walked past a hundred times"
         },
         {
-          "id": "activities_015",
+          "id": "act_015",
           "text": "Going to a museum and actually enjoying it"
         },
         {
-          "id": "activities_016",
+          "id": "act_016",
           "text": "Flying a kite on a windy day"
         },
         {
-          "id": "activities_017",
+          "id": "act_017",
           "text": "Staying up late talking with a good friend"
         },
         {
-          "id": "activities_018",
+          "id": "act_018",
           "text": "Going to a flea market and finding a treasure"
         },
         {
-          "id": "activities_019",
+          "id": "act_019",
           "text": "People-watching at a coffee shop"
         },
         {
-          "id": "activities_020",
+          "id": "act_020",
           "text": "Running through sprinklers"
         },
         {
-          "id": "activities_021",
+          "id": "act_021",
           "text": "Ice skating — or trying to"
         },
         {
-          "id": "activities_022",
+          "id": "act_022",
           "text": "Going for a walk with no destination in mind"
         },
         {
-          "id": "activities_023",
+          "id": "act_023",
           "text": "Painting or drawing, even if you're terrible"
         },
         {
-          "id": "activities_024",
+          "id": "act_024",
           "text": "A karaoke night where everyone commits"
         },
         {
-          "id": "activities_025",
+          "id": "act_025",
           "text": "Watching a sunset and actually being present for it"
         }
       ]
@@ -474,63 +474,63 @@
           "text": "Waking up naturally refreshed every single morning"
         },
         {
-          "id": "upgrades_011",
+          "id": "upg_011",
           "text": "A cleaning service that comes every week"
         },
         {
-          "id": "upgrades_012",
+          "id": "upg_012",
           "text": "Teeth that never need work again"
         },
         {
-          "id": "upgrades_013",
+          "id": "upg_013",
           "text": "A wardrobe that always fits perfectly"
         },
         {
-          "id": "upgrades_014",
+          "id": "upg_014",
           "text": "Being fluent in any language you want"
         },
         {
-          "id": "upgrades_015",
+          "id": "upg_015",
           "text": "Never losing your keys, wallet, or phone"
         },
         {
-          "id": "upgrades_016",
+          "id": "upg_016",
           "text": "A metabolism that handles anything"
         },
         {
-          "id": "upgrades_017",
+          "id": "upg_017",
           "text": "Always having the exact amount of cash you need"
         },
         {
-          "id": "upgrades_018",
+          "id": "upg_018",
           "text": "A parking spot right in front, every time"
         },
         {
-          "id": "upgrades_019",
+          "id": "upg_019",
           "text": "Perfect vision forever"
         },
         {
-          "id": "upgrades_020",
+          "id": "upg_020",
           "text": "Knowing exactly which decisions to make"
         },
         {
-          "id": "upgrades_021",
+          "id": "upg_021",
           "text": "Hair that looks great without effort"
         },
         {
-          "id": "upgrades_022",
-          "text": "No more awkward silences — you always know what to say"
+          "id": "upg_022",
+          "text": "A body that heals twice as fast"
         },
         {
-          "id": "upgrades_023",
+          "id": "upg_023",
           "text": "Free first-class flights for life"
         },
         {
-          "id": "upgrades_024",
+          "id": "upg_024",
           "text": "A photographic memory"
         },
         {
-          "id": "upgrades_025",
+          "id": "upg_025",
           "text": "Never feeling jet-lagged"
         }
       ]
@@ -581,63 +581,63 @@
           "text": "Sending a message to the wrong person"
         },
         {
-          "id": "annoyances_011",
+          "id": "ann_011",
           "text": "Getting a paper cut on your finger"
         },
         {
-          "id": "annoyances_012",
+          "id": "ann_012",
           "text": "Your headphones getting yanked out by a doorknob"
         },
         {
-          "id": "annoyances_013",
+          "id": "ann_013",
           "text": "Forgetting what you walked into a room for"
         },
         {
-          "id": "annoyances_014",
+          "id": "ann_014",
           "text": "A song stuck in your head all day — one you hate"
         },
         {
-          "id": "annoyances_015",
+          "id": "ann_015",
           "text": "Someone eating your clearly labeled food from the fridge"
         },
         {
-          "id": "annoyances_016",
+          "id": "ann_016",
           "text": "Accidentally closing a tab you needed"
         },
         {
-          "id": "annoyances_017",
+          "id": "ann_017",
           "text": "Autocorrect changing a word to something embarrassing"
         },
         {
-          "id": "annoyances_018",
+          "id": "ann_018",
           "text": "Sitting on your sunglasses"
         },
         {
-          "id": "annoyances_019",
+          "id": "ann_019",
           "text": "Rain the minute you step outside"
         },
         {
-          "id": "annoyances_020",
+          "id": "ann_020",
           "text": "A rock in your shoe that you can't find"
         },
         {
-          "id": "annoyances_021",
+          "id": "ann_021",
           "text": "Hitting every red light on the way somewhere"
         },
         {
-          "id": "annoyances_022",
+          "id": "ann_022",
           "text": "Your pen running out of ink mid-signature"
         },
         {
-          "id": "annoyances_023",
+          "id": "ann_023",
           "text": "Someone parking too close for you to open your door"
         },
         {
-          "id": "annoyances_024",
+          "id": "ann_024",
           "text": "A hangnail that catches on everything"
         },
         {
-          "id": "annoyances_025",
+          "id": "ann_025",
           "text": "Someone leaving one sip of milk in the carton"
         }
       ]
@@ -688,63 +688,63 @@
           "text": "A movie with a twist ending you never saw coming"
         },
         {
-          "id": "movies_tv_011",
+          "id": "mtv_011",
           "text": "An animated movie that hits harder as an adult"
         },
         {
-          "id": "movies_tv_012",
+          "id": "mtv_012",
           "text": "A horror movie that genuinely scared you"
         },
         {
-          "id": "movies_tv_013",
+          "id": "mtv_013",
           "text": "A show with the perfect series finale"
         },
         {
-          "id": "movies_tv_014",
+          "id": "mtv_014",
           "text": "A movie you can quote word for word"
         },
         {
-          "id": "movies_tv_015",
+          "id": "mtv_015",
           "text": "A miniseries you watched in one sitting"
         },
         {
-          "id": "movies_tv_016",
+          "id": "mtv_016",
           "text": "A show you recommend to literally everyone"
         },
         {
-          "id": "movies_tv_017",
+          "id": "mtv_017",
           "text": "A movie with a soundtrack that slaps"
         },
         {
-          "id": "movies_tv_018",
+          "id": "mtv_018",
           "text": "A foreign film that blew your mind"
         },
         {
-          "id": "movies_tv_019",
+          "id": "mtv_019",
           "text": "A feel-good show you watch when sick"
         },
         {
-          "id": "movies_tv_020",
+          "id": "mtv_020",
           "text": "A villain you low-key rooted for"
         },
         {
-          "id": "movies_tv_021",
+          "id": "mtv_021",
           "text": "A pilot episode that hooked you immediately"
         },
         {
-          "id": "movies_tv_022",
+          "id": "mtv_022",
           "text": "A movie that made you think for days"
         },
         {
-          "id": "movies_tv_023",
+          "id": "mtv_023",
           "text": "A show you watched entirely for one character"
         },
         {
-          "id": "movies_tv_024",
+          "id": "mtv_024",
           "text": "A sequel that was actually better than the original"
         },
         {
-          "id": "movies_tv_025",
+          "id": "mtv_025",
           "text": "A movie you watch every holiday season"
         }
       ]
@@ -795,63 +795,63 @@
           "text": "A sad song that feels like it was written about your life"
         },
         {
-          "id": "music_011",
+          "id": "mus_011",
           "text": "Dancing alone in your room to your favorite song"
         },
         {
-          "id": "music_012",
+          "id": "mus_012",
           "text": "A song that perfectly captures a specific era of your life"
         },
         {
-          "id": "music_013",
+          "id": "mus_013",
           "text": "Hearing a song you forgot existed and it all comes back"
         },
         {
-          "id": "music_014",
+          "id": "mus_014",
           "text": "A road trip playlist that makes the drive fly by"
         },
         {
-          "id": "music_015",
+          "id": "mus_015",
           "text": "An album you listened to front to back with no skips"
         },
         {
-          "id": "music_016",
+          "id": "mus_016",
           "text": "The first song that made you love music"
         },
         {
-          "id": "music_017",
+          "id": "mus_017",
           "text": "A concert where the crowd was just as good as the artist"
         },
         {
-          "id": "music_018",
+          "id": "mus_018",
           "text": "A bass drop that hits you in the chest"
         },
         {
-          "id": "music_019",
+          "id": "mus_019",
           "text": "A song you play on repeat and never get tired of"
         },
         {
-          "id": "music_020",
+          "id": "mus_020",
           "text": "The emotional gut punch of a song at a funeral or wedding"
         },
         {
-          "id": "music_021",
+          "id": "mus_021",
           "text": "A remix that's better than the original"
         },
         {
-          "id": "music_022",
+          "id": "mus_022",
           "text": "Bonding with someone over the same music taste"
         },
         {
-          "id": "music_023",
+          "id": "mus_023",
           "text": "A soundtrack that elevated the movie or show"
         },
         {
-          "id": "music_024",
+          "id": "mus_024",
           "text": "Finding the perfect song for a specific moment"
         },
         {
-          "id": "music_025",
+          "id": "mus_025",
           "text": "Crying in the car to a song and feeling better after"
         }
       ]
@@ -902,63 +902,63 @@
           "text": "A safari in East Africa"
         },
         {
-          "id": "travel_011",
+          "id": "trv_011",
           "text": "A train ride through the countryside"
         },
         {
-          "id": "travel_012",
+          "id": "trv_012",
           "text": "A market in a foreign country where you can't read anything"
         },
         {
-          "id": "travel_013",
+          "id": "trv_013",
           "text": "An island with turquoise water and white sand"
         },
         {
-          "id": "travel_014",
+          "id": "trv_014",
           "text": "A road trip through the American Southwest"
         },
         {
-          "id": "travel_015",
+          "id": "trv_015",
           "text": "A small Italian village with incredible food"
         },
         {
-          "id": "travel_016",
+          "id": "trv_016",
           "text": "Iceland in the winter for the Northern Lights"
         },
         {
-          "id": "travel_017",
+          "id": "trv_017",
           "text": "Hiking to a waterfall in the jungle"
         },
         {
-          "id": "travel_018",
+          "id": "trv_018",
           "text": "A Greek island with nothing to do but eat and swim"
         },
         {
-          "id": "travel_019",
+          "id": "trv_019",
           "text": "A music festival in a beautiful location"
         },
         {
-          "id": "travel_020",
+          "id": "trv_020",
           "text": "Camping under the stars in the desert"
         },
         {
-          "id": "travel_021",
+          "id": "trv_021",
           "text": "A hot spring in the mountains"
         },
         {
-          "id": "travel_022",
+          "id": "trv_022",
           "text": "Exploring ancient ruins on a perfect weather day"
         },
         {
-          "id": "travel_023",
+          "id": "trv_023",
           "text": "A vineyard in wine country"
         },
         {
-          "id": "travel_024",
+          "id": "trv_024",
           "text": "Christmas markets in Europe"
         },
         {
-          "id": "travel_025",
+          "id": "trv_025",
           "text": "A lighthouse on a remote coastline"
         }
       ]
@@ -1009,63 +1009,63 @@
           "text": "Not knowing or caring what time it was"
         },
         {
-          "id": "nostalgia_011",
+          "id": "nos_011",
           "text": "Your first bike and the freedom it gave you"
         },
         {
-          "id": "nostalgia_012",
+          "id": "nos_012",
           "text": "The last day of school before summer"
         },
         {
-          "id": "nostalgia_013",
+          "id": "nos_013",
           "text": "A toy you begged your parents for and finally got"
         },
         {
-          "id": "nostalgia_014",
+          "id": "nos_014",
           "text": "Making up games with rules only you understood"
         },
         {
-          "id": "nostalgia_015",
+          "id": "nos_015",
           "text": "Halloween costumes your parents made"
         },
         {
-          "id": "nostalgia_016",
+          "id": "nos_016",
           "text": "Book fairs at school"
         },
         {
-          "id": "nostalgia_017",
+          "id": "nos_017",
           "text": "Going to the pool every day in summer"
         },
         {
-          "id": "nostalgia_018",
+          "id": "nos_018",
           "text": "The sound of a dial-up modem connecting"
         },
         {
-          "id": "nostalgia_019",
+          "id": "nos_019",
           "text": "Trading cards at recess"
         },
         {
-          "id": "nostalgia_020",
+          "id": "nos_020",
           "text": "Coming home to a snack waiting for you"
         },
         {
-          "id": "nostalgia_021",
+          "id": "nos_021",
           "text": "The excitement of a new school year — briefly"
         },
         {
-          "id": "nostalgia_022",
+          "id": "nos_022",
           "text": "Family road trips crammed in the back seat"
         },
         {
-          "id": "nostalgia_023",
+          "id": "nos_023",
           "text": "Running through the sprinklers in the yard"
         },
         {
-          "id": "nostalgia_024",
+          "id": "nos_024",
           "text": "The feeling of a Friday afternoon with the whole weekend ahead"
         },
         {
-          "id": "nostalgia_025",
+          "id": "nos_025",
           "text": "Renting a movie on a Friday night"
         }
       ]
@@ -1116,63 +1116,63 @@
           "text": "Never needing to sleep"
         },
         {
-          "id": "superpowers_011",
+          "id": "pow_011",
           "text": "Shapeshifting into anyone or anything"
         },
         {
-          "id": "superpowers_012",
+          "id": "pow_012",
           "text": "Super strength"
         },
         {
-          "id": "superpowers_013",
+          "id": "pow_013",
           "text": "Breathing underwater"
         },
         {
-          "id": "superpowers_014",
+          "id": "pow_014",
           "text": "Knowing the right answer to any question"
         },
         {
-          "id": "superpowers_015",
+          "id": "pow_015",
           "text": "Moving things with your mind"
         },
         {
-          "id": "superpowers_016",
+          "id": "pow_016",
           "text": "Running at the speed of light"
         },
         {
-          "id": "superpowers_017",
+          "id": "pow_017",
           "text": "Seeing the future — but only 5 minutes ahead"
         },
         {
-          "id": "superpowers_018",
+          "id": "pow_018",
           "text": "Communicating with animals"
         },
         {
-          "id": "superpowers_019",
+          "id": "pow_019",
           "text": "Making anyone tell the truth"
         },
         {
-          "id": "superpowers_020",
+          "id": "pow_020",
           "text": "Stopping time for everyone but yourself"
         },
         {
-          "id": "superpowers_021",
+          "id": "pow_021",
           "text": "Creating force fields"
         },
         {
-          "id": "superpowers_022",
+          "id": "pow_022",
           "text": "Duplicating yourself"
         },
         {
-          "id": "superpowers_023",
+          "id": "pow_023",
           "text": "Absorbing any skill just by watching someone do it"
         },
         {
-          "id": "superpowers_024",
+          "id": "pow_024",
           "text": "Being immune to fire and extreme heat"
         },
         {
-          "id": "superpowers_025",
+          "id": "pow_025",
           "text": "Making yourself and anything you touch weightless"
         }
       ]
@@ -1223,63 +1223,63 @@
           "text": "Being completely alone for a month"
         },
         {
-          "id": "fears_011",
+          "id": "fear_011",
           "text": "Something grabbing your foot from under the bed"
         },
         {
-          "id": "fears_012",
+          "id": "fear_012",
           "text": "Losing all your memories"
         },
         {
-          "id": "fears_013",
+          "id": "fear_013",
           "text": "Your brakes failing on a steep hill"
         },
         {
-          "id": "fears_014",
+          "id": "fear_014",
           "text": "A doctor saying 'we need to run more tests'"
         },
         {
-          "id": "fears_015",
+          "id": "fear_015",
           "text": "Walking alone in a parking garage at night"
         },
         {
-          "id": "fears_016",
+          "id": "fear_016",
           "text": "Hearing footsteps behind you on an empty street"
         },
         {
-          "id": "fears_017",
+          "id": "fear_017",
           "text": "A roller coaster that feels like it's breaking"
         },
         {
-          "id": "fears_018",
+          "id": "fear_018",
           "text": "An earthquake while you're on a high floor"
         },
         {
-          "id": "fears_019",
+          "id": "fear_019",
           "text": "Being trapped in an elevator"
         },
         {
-          "id": "fears_020",
+          "id": "fear_020",
           "text": "A tornado warning when you're driving"
         },
         {
-          "id": "fears_021",
+          "id": "fear_021",
           "text": "The deep end of the ocean at night"
         },
         {
-          "id": "fears_022",
+          "id": "fear_022",
           "text": "Waking up and not being able to move"
         },
         {
-          "id": "fears_023",
+          "id": "fear_023",
           "text": "A knocking on your door at 3 AM"
         },
         {
-          "id": "fears_024",
+          "id": "fear_024",
           "text": "Being buried alive"
         },
         {
-          "id": "fears_025",
+          "id": "fear_025",
           "text": "Your biggest secret becoming public"
         }
       ]
@@ -1330,63 +1330,63 @@
           "text": "Movie night at home with homemade popcorn"
         },
         {
-          "id": "date_night_011",
+          "id": "date_011",
           "text": "A drive-in movie on a warm night"
         },
         {
-          "id": "date_night_012",
+          "id": "date_012",
           "text": "A pottery or painting class together"
         },
         {
-          "id": "date_night_013",
+          "id": "date_013",
           "text": "Stargazing from a hilltop"
         },
         {
-          "id": "date_night_014",
+          "id": "date_014",
           "text": "A surprise date with no hint of what's planned"
         },
         {
-          "id": "date_night_015",
+          "id": "date_015",
           "text": "A beach bonfire with just the two of you"
         },
         {
-          "id": "date_night_016",
+          "id": "date_016",
           "text": "Going to a local food festival and trying everything"
         },
         {
-          "id": "date_night_017",
+          "id": "date_017",
           "text": "An escape room"
         },
         {
-          "id": "date_night_018",
+          "id": "date_018",
           "text": "Ice skating at an outdoor rink"
         },
         {
-          "id": "date_night_019",
+          "id": "date_019",
           "text": "A ferry ride with great views"
         },
         {
-          "id": "date_night_020",
+          "id": "date_020",
           "text": "Dancing — salsa, swing, or just slow dancing at home"
         },
         {
-          "id": "date_night_021",
+          "id": "date_021",
           "text": "Visiting a botanical garden"
         },
         {
-          "id": "date_night_022",
+          "id": "date_022",
           "text": "A themed dinner night at home — Italian, Japanese, etc."
         },
         {
-          "id": "date_night_023",
+          "id": "date_023",
           "text": "A late-night dessert crawl"
         },
         {
-          "id": "date_night_024",
+          "id": "date_024",
           "text": "A sunset sail on a boat"
         },
         {
-          "id": "date_night_025",
+          "id": "date_025",
           "text": "An arcade or bowling alley — keeping it competitive"
         }
       ]
@@ -1437,63 +1437,63 @@
           "text": "A 7-minute workout at home because you're 'busy'"
         },
         {
-          "id": "workouts_011",
+          "id": "wrk_011",
           "text": "A boxing class where you hit stuff"
         },
         {
-          "id": "workouts_012",
+          "id": "wrk_012",
           "text": "A peaceful stretching session before bed"
         },
         {
-          "id": "workouts_013",
+          "id": "wrk_013",
           "text": "Ultimate frisbee or beach volleyball"
         },
         {
-          "id": "workouts_014",
+          "id": "wrk_014",
           "text": "A stair climb that makes your legs burn"
         },
         {
-          "id": "workouts_015",
+          "id": "wrk_015",
           "text": "A hike that rewards you with a view"
         },
         {
-          "id": "workouts_016",
+          "id": "wrk_016",
           "text": "Pilates — harder than it looks"
         },
         {
-          "id": "workouts_017",
+          "id": "wrk_017",
           "text": "Jump roping like you did as a kid"
         },
         {
-          "id": "workouts_018",
+          "id": "wrk_018",
           "text": "A plank hold that feels like eternity"
         },
         {
-          "id": "workouts_019",
+          "id": "wrk_019",
           "text": "Cycling through a scenic route"
         },
         {
-          "id": "workouts_020",
+          "id": "wrk_020",
           "text": "A martial arts class"
         },
         {
-          "id": "workouts_021",
+          "id": "wrk_021",
           "text": "A workout with a friend who pushes you"
         },
         {
-          "id": "workouts_022",
+          "id": "wrk_022",
           "text": "Hot yoga that makes you question your life choices"
         },
         {
-          "id": "workouts_023",
+          "id": "wrk_023",
           "text": "Kayaking or paddleboarding"
         },
         {
-          "id": "workouts_024",
+          "id": "wrk_024",
           "text": "A treadmill session with a great show on your phone"
         },
         {
-          "id": "workouts_025",
+          "id": "wrk_025",
           "text": "Shoveling snow — it counts, right?"
         }
       ]
@@ -1544,63 +1544,63 @@
           "text": "Your notes app full of random lists"
         },
         {
-          "id": "apps_011",
+          "id": "app_011",
           "text": "A podcast app for long commutes"
         },
         {
-          "id": "apps_012",
+          "id": "app_012",
           "text": "Your photo gallery — years of memories in your pocket"
         },
         {
-          "id": "apps_013",
+          "id": "app_013",
           "text": "A rideshare app when you need a ride NOW"
         },
         {
-          "id": "apps_014",
+          "id": "app_014",
           "text": "A language-learning app you open once a month"
         },
         {
-          "id": "apps_015",
+          "id": "app_015",
           "text": "YouTube for that random thing you need to learn"
         },
         {
-          "id": "apps_016",
+          "id": "app_016",
           "text": "A banking app — depositing a check from your couch"
         },
         {
-          "id": "apps_017",
+          "id": "app_017",
           "text": "A messaging app your whole family uses"
         },
         {
-          "id": "apps_018",
+          "id": "app_018",
           "text": "The flashlight on your phone"
         },
         {
-          "id": "apps_019",
+          "id": "app_019",
           "text": "A fitness tracker that makes you walk more"
         },
         {
-          "id": "apps_020",
+          "id": "app_020",
           "text": "An alarm app — the most hated but most needed"
         },
         {
-          "id": "apps_021",
+          "id": "app_021",
           "text": "A recipe app that saves you from 'what's for dinner?'"
         },
         {
-          "id": "apps_022",
+          "id": "app_022",
           "text": "Venmo or a payment app that splits bills perfectly"
         },
         {
-          "id": "apps_023",
+          "id": "app_023",
           "text": "A meditation or breathing app"
         },
         {
-          "id": "apps_024",
+          "id": "app_024",
           "text": "Your email app — love it or hate it"
         },
         {
-          "id": "apps_025",
+          "id": "app_025",
           "text": "A scanner app that replaced your printer entirely"
         }
       ]
@@ -1651,63 +1651,63 @@
           "text": "Running a farm with animals"
         },
         {
-          "id": "dream_jobs_011",
+          "id": "job_011",
           "text": "Running a cozy bed and breakfast"
         },
         {
-          "id": "dream_jobs_012",
+          "id": "job_012",
           "text": "Wildlife photographer for National Geographic"
         },
         {
-          "id": "dream_jobs_013",
+          "id": "job_013",
           "text": "Theme park ride designer"
         },
         {
-          "id": "dream_jobs_014",
+          "id": "job_014",
           "text": "Brewmaster or winemaker"
         },
         {
-          "id": "dream_jobs_015",
+          "id": "job_015",
           "text": "Voice actor for animated movies"
         },
         {
-          "id": "dream_jobs_016",
+          "id": "job_016",
           "text": "Travel writer who gets paid to explore"
         },
         {
-          "id": "dream_jobs_017",
+          "id": "job_017",
           "text": "Astronaut or space mission planner"
         },
         {
-          "id": "dream_jobs_018",
+          "id": "job_018",
           "text": "Chocolate taster or ice cream flavor inventor"
         },
         {
-          "id": "dream_jobs_019",
+          "id": "job_019",
           "text": "Rescue animal shelter owner"
         },
         {
-          "id": "dream_jobs_020",
+          "id": "job_020",
           "text": "Professional video game streamer"
         },
         {
-          "id": "dream_jobs_021",
+          "id": "job_021",
           "text": "Movie director"
         },
         {
-          "id": "dream_jobs_022",
+          "id": "job_022",
           "text": "Personal shopper for celebrities"
         },
         {
-          "id": "dream_jobs_023",
+          "id": "job_023",
           "text": "Festival organizer"
         },
         {
-          "id": "dream_jobs_024",
+          "id": "job_024",
           "text": "Marine biologist working with dolphins"
         },
         {
-          "id": "dream_jobs_025",
+          "id": "job_025",
           "text": "Owning a food truck with a cult following"
         }
       ]
@@ -1758,63 +1758,63 @@
           "text": "Reading someone's entire social media from years ago"
         },
         {
-          "id": "guilty_pleasures_011",
+          "id": "gp_011",
           "text": "Stalking real estate listings for houses you can't afford"
         },
         {
-          "id": "guilty_pleasures_012",
+          "id": "gp_012",
           "text": "Eating cookie dough straight from the package"
         },
         {
-          "id": "guilty_pleasures_013",
+          "id": "gp_013",
           "text": "Watching makeup or cooking tutorials you'll never follow"
         },
         {
-          "id": "guilty_pleasures_014",
+          "id": "gp_014",
           "text": "Singing power ballads in the car at full volume"
         },
         {
-          "id": "guilty_pleasures_015",
+          "id": "gp_015",
           "text": "A midday nap that completely derails your schedule"
         },
         {
-          "id": "guilty_pleasures_016",
+          "id": "gp_016",
           "text": "Judging outfits at the airport"
         },
         {
-          "id": "guilty_pleasures_017",
+          "id": "gp_017",
           "text": "A long, hot shower that's 20 minutes too long"
         },
         {
-          "id": "guilty_pleasures_018",
+          "id": "gp_018",
           "text": "Rewatching your own social media posts"
         },
         {
-          "id": "guilty_pleasures_019",
+          "id": "gp_019",
           "text": "An energy drink even though you know it's terrible for you"
         },
         {
-          "id": "guilty_pleasures_020",
+          "id": "gp_020",
           "text": "Ordering takeout when you have food at home"
         },
         {
-          "id": "guilty_pleasures_021",
+          "id": "gp_021",
           "text": "A pint of ice cream eaten straight from the container"
         },
         {
-          "id": "guilty_pleasures_022",
+          "id": "gp_022",
           "text": "Binging a kids' show and genuinely enjoying it"
         },
         {
-          "id": "guilty_pleasures_023",
+          "id": "gp_023",
           "text": "Singing in the elevator when you think you're alone"
         },
         {
-          "id": "guilty_pleasures_024",
+          "id": "gp_024",
           "text": "Googling yourself"
         },
         {
-          "id": "guilty_pleasures_025",
+          "id": "gp_025",
           "text": "Staying up way too late for no reason"
         }
       ]
@@ -1822,7 +1822,7 @@
     {
       "id": "morning_routines",
       "name": "Morning Routines",
-      "scale": "How essential this is to starting your day right",
+      "scale": "How essential this is to your morning",
       "cards": [
         {
           "id": "morn_001",
@@ -1865,63 +1865,63 @@
           "text": "Knowing exactly what you're wearing ahead of time"
         },
         {
-          "id": "morning_routines_011",
+          "id": "morn_011",
           "text": "A leisurely scroll through the news"
         },
         {
-          "id": "morning_routines_012",
+          "id": "morn_012",
           "text": "Stepping outside to feel the fresh air"
         },
         {
-          "id": "morning_routines_013",
+          "id": "morn_013",
           "text": "A quick meditation or deep breathing"
         },
         {
-          "id": "morning_routines_014",
+          "id": "morn_014",
           "text": "Packing a lunch the night before (future you says thanks)"
         },
         {
-          "id": "morning_routines_015",
+          "id": "morn_015",
           "text": "A glass of cold water first thing"
         },
         {
-          "id": "morning_routines_016",
+          "id": "morn_016",
           "text": "Opening the blinds to let the sunlight in"
         },
         {
-          "id": "morning_routines_017",
+          "id": "morn_017",
           "text": "Writing a to-do list for the day"
         },
         {
-          "id": "morning_routines_018",
+          "id": "morn_018",
           "text": "Feeding a pet who acts like they've never been fed"
         },
         {
-          "id": "morning_routines_019",
+          "id": "morn_019",
           "text": "A warm cup of tea with honey"
         },
         {
-          "id": "morning_routines_020",
+          "id": "morn_020",
           "text": "Picking your outfit the night before"
         },
         {
-          "id": "morning_routines_021",
+          "id": "morn_021",
           "text": "A short walk around the block"
         },
         {
-          "id": "morning_routines_022",
+          "id": "morn_022",
           "text": "Catching up on texts you missed overnight"
         },
         {
-          "id": "morning_routines_023",
+          "id": "morn_023",
           "text": "Brushing your teeth as the very first thing"
         },
         {
-          "id": "morning_routines_024",
+          "id": "morn_024",
           "text": "A protein-heavy breakfast that actually keeps you full"
         },
         {
-          "id": "morning_routines_025",
+          "id": "morn_025",
           "text": "Checking the weather so you know what to wear"
         }
       ]
@@ -1972,63 +1972,63 @@
           "text": "People who are always five minutes late"
         },
         {
-          "id": "pet_peeves_011",
+          "id": "peev_011",
           "text": "People who walk slowly in groups and block the whole sidewalk"
         },
         {
-          "id": "pet_peeves_012",
+          "id": "peev_012",
           "text": "Getting a notification that turns out to be spam"
         },
         {
-          "id": "pet_peeves_013",
+          "id": "peev_013",
           "text": "Someone saying 'relax' when you're already annoyed"
         },
         {
-          "id": "pet_peeves_014",
+          "id": "peev_014",
           "text": "Loud phone conversations in public"
         },
         {
-          "id": "pet_peeves_015",
+          "id": "peev_015",
           "text": "People who leave gym equipment sweaty"
         },
         {
-          "id": "pet_peeves_016",
+          "id": "peev_016",
           "text": "Clickbait articles that waste your time"
         },
         {
-          "id": "pet_peeves_017",
+          "id": "peev_017",
           "text": "An unopened email notification that won't go away"
         },
         {
-          "id": "pet_peeves_018",
+          "id": "peev_018",
           "text": "Someone who keeps one-upping your stories"
         },
         {
-          "id": "pet_peeves_019",
+          "id": "peev_019",
           "text": "A squeaky door or chair that nobody fixes"
         },
         {
-          "id": "pet_peeves_020",
+          "id": "peev_020",
           "text": "Waiting for someone who said 'be there in 5' 20 minutes ago"
         },
         {
-          "id": "pet_peeves_021",
+          "id": "peev_021",
           "text": "People who don't say thank you when you hold the door"
         },
         {
-          "id": "pet_peeves_022",
+          "id": "peev_022",
           "text": "Someone tapping your shoulder repeatedly to get your attention"
         },
         {
-          "id": "pet_peeves_023",
+          "id": "peev_023",
           "text": "Unnecessary 'reply all' emails"
         },
         {
-          "id": "pet_peeves_024",
+          "id": "peev_024",
           "text": "Someone eating loudly on a phone call"
         },
         {
-          "id": "pet_peeves_025",
+          "id": "peev_025",
           "text": "Leaving the shopping cart in the parking spot"
         }
       ]
@@ -2079,63 +2079,63 @@
           "text": "Going to a concert or festival"
         },
         {
-          "id": "weekend_plans_011",
+          "id": "wknd_011",
           "text": "A sunrise hike with coffee at the top"
         },
         {
-          "id": "weekend_plans_012",
+          "id": "wknd_012",
           "text": "Volunteering somewhere and feeling good about it"
         },
         {
-          "id": "weekend_plans_013",
+          "id": "wknd_013",
           "text": "Organizing a closet or room — weirdly satisfying"
         },
         {
-          "id": "weekend_plans_014",
+          "id": "wknd_014",
           "text": "A picnic at the park with a good book"
         },
         {
-          "id": "weekend_plans_015",
+          "id": "wknd_015",
           "text": "A friend's house for movie night with snacks"
         },
         {
-          "id": "weekend_plans_016",
+          "id": "wknd_016",
           "text": "Taking a cooking class and eating what you made"
         },
         {
-          "id": "weekend_plans_017",
+          "id": "wknd_017",
           "text": "Going thrift shopping and scoring something great"
         },
         {
-          "id": "weekend_plans_018",
+          "id": "wknd_018",
           "text": "A morning at a coffee shop with your laptop"
         },
         {
-          "id": "weekend_plans_019",
+          "id": "wknd_019",
           "text": "Going to a local comedy show"
         },
         {
-          "id": "weekend_plans_020",
+          "id": "wknd_020",
           "text": "A full spa day, even if it's a bubble bath at home"
         },
         {
-          "id": "weekend_plans_021",
+          "id": "wknd_021",
           "text": "Visiting a museum or art gallery you've been meaning to see"
         },
         {
-          "id": "weekend_plans_022",
+          "id": "wknd_022",
           "text": "Playing sports at the park — even just tossing a ball"
         },
         {
-          "id": "weekend_plans_023",
+          "id": "wknd_023",
           "text": "Catching up on sleep — the whole morning, no alarm"
         },
         {
-          "id": "weekend_plans_024",
+          "id": "wknd_024",
           "text": "A daytime bar crawl with friends"
         },
         {
-          "id": "weekend_plans_025",
+          "id": "wknd_025",
           "text": "Meal prepping for the week while listening to a podcast"
         }
       ]
@@ -2143,7 +2143,7 @@
     {
       "id": "milestones",
       "name": "Life Milestones",
-      "scale": "How much you're looking forward to this (or were)",
+      "scale": "How much this milestone means to you",
       "cards": [
         {
           "id": "mile_001",
@@ -2186,63 +2186,63 @@
           "text": "Saying no to something you used to always say yes to"
         },
         {
-          "id": "milestones_011",
+          "id": "mile_011",
           "text": "Voting for the first time"
         },
         {
-          "id": "milestones_012",
+          "id": "mile_012",
           "text": "Having someone genuinely look up to you"
         },
         {
-          "id": "milestones_013",
+          "id": "mile_013",
           "text": "Getting your driver's license"
         },
         {
-          "id": "milestones_014",
+          "id": "mile_014",
           "text": "Running a race — or maybe just finishing one"
         },
         {
-          "id": "milestones_015",
+          "id": "mile_015",
           "text": "Living through something hard and coming out stronger"
         },
         {
-          "id": "milestones_016",
+          "id": "mile_016",
           "text": "Reconnecting with someone you'd lost touch with"
         },
         {
-          "id": "milestones_017",
+          "id": "mile_017",
           "text": "Getting your first apartment key"
         },
         {
-          "id": "milestones_018",
+          "id": "mile_018",
           "text": "Seeing your name in print or on a screen — for something good"
         },
         {
-          "id": "milestones_019",
+          "id": "mile_019",
           "text": "Paying for a round of drinks for the first time"
         },
         {
-          "id": "milestones_020",
+          "id": "mile_020",
           "text": "Getting a passport and realizing the world is huge"
         },
         {
-          "id": "milestones_021",
+          "id": "mile_021",
           "text": "Cooking Thanksgiving dinner (or your family's big meal) solo"
         },
         {
-          "id": "milestones_022",
+          "id": "mile_022",
           "text": "Making a decision everyone doubted — and it worked"
         },
         {
-          "id": "milestones_023",
+          "id": "mile_023",
           "text": "Watching a younger sibling or cousin grow up"
         },
         {
-          "id": "milestones_024",
+          "id": "mile_024",
           "text": "Realizing you no longer need approval from certain people"
         },
         {
-          "id": "milestones_025",
+          "id": "mile_025",
           "text": "Buying furniture that isn't from your college dorm"
         }
       ]
@@ -2293,63 +2293,63 @@
           "text": "Graduation day"
         },
         {
-          "id": "college_011",
+          "id": "col_011",
           "text": "The first meal in the dining hall — and the last"
         },
         {
-          "id": "college_012",
+          "id": "col_012",
           "text": "A friend group that forms in the first week"
         },
         {
-          "id": "college_013",
+          "id": "col_013",
           "text": "The dorm room you made weirdly cozy"
         },
         {
-          "id": "college_014",
+          "id": "col_014",
           "text": "A spontaneous trip during a break"
         },
         {
-          "id": "college_015",
+          "id": "col_015",
           "text": "That one professor everyone warned you about"
         },
         {
-          "id": "college_016",
+          "id": "col_016",
           "text": "Getting through a group project where only you did the work"
         },
         {
-          "id": "college_017",
+          "id": "col_017",
           "text": "A class you took on a whim and it changed your life"
         },
         {
-          "id": "college_018",
+          "id": "col_018",
           "text": "A campus tradition you didn't expect to care about"
         },
         {
-          "id": "college_019",
+          "id": "col_019",
           "text": "Meeting someone who became your best friend"
         },
         {
-          "id": "college_020",
+          "id": "col_020",
           "text": "Moving day — the chaos and the emotions"
         },
         {
-          "id": "college_021",
+          "id": "col_021",
           "text": "A job or internship that opened a door"
         },
         {
-          "id": "college_022",
+          "id": "col_022",
           "text": "Learning to do your own laundry — finally"
         },
         {
-          "id": "college_023",
+          "id": "col_023",
           "text": "That one café or spot that felt like your office"
         },
         {
-          "id": "college_024",
+          "id": "col_024",
           "text": "A lecture that made everything click"
         },
         {
-          "id": "college_025",
+          "id": "col_025",
           "text": "Walking across campus on a perfect fall day"
         }
       ]
@@ -2357,7 +2357,7 @@
     {
       "id": "wfh",
       "name": "Work From Home Perks",
-      "scale": "How much you'd miss this if you had to go back to the office",
+      "scale": "How much you'd miss this at the office",
       "cards": [
         {
           "id": "wfh_001",
@@ -2507,63 +2507,63 @@
           "text": "A string cheese you peel apart slowly"
         },
         {
-          "id": "snacks_011",
+          "id": "snk_011",
           "text": "Tortilla chips still warm from the bag"
         },
         {
-          "id": "snacks_012",
+          "id": "snk_012",
           "text": "A rice cake with almond butter and honey"
         },
         {
-          "id": "snacks_013",
+          "id": "snk_013",
           "text": "Chocolate-covered pretzels"
         },
         {
-          "id": "snacks_014",
+          "id": "snk_014",
           "text": "A smoothie bowl that looks too pretty to eat"
         },
         {
-          "id": "snacks_015",
+          "id": "snk_015",
           "text": "That one sample at the grocery store you keep going back for"
         },
         {
-          "id": "snacks_016",
+          "id": "snk_016",
           "text": "A crispy granola bar that doesn't crumble everywhere"
         },
         {
-          "id": "snacks_017",
+          "id": "snk_017",
           "text": "Mini muffins — because they feel portion-controlled"
         },
         {
-          "id": "snacks_018",
+          "id": "snk_018",
           "text": "Mixed nuts with just the right cashew ratio"
         },
         {
-          "id": "snacks_019",
+          "id": "snk_019",
           "text": "A cheese stick you peel one string at a time"
         },
         {
-          "id": "snacks_020",
+          "id": "snk_020",
           "text": "Goldfish crackers, handful after handful"
         },
         {
-          "id": "snacks_021",
+          "id": "snk_021",
           "text": "Frozen grapes — weirdly refreshing"
         },
         {
-          "id": "snacks_022",
+          "id": "snk_022",
           "text": "Crackers with hummus"
         },
         {
-          "id": "snacks_023",
+          "id": "snk_023",
           "text": "Carrot sticks with ranch — healthy-ish"
         },
         {
-          "id": "snacks_024",
+          "id": "snk_024",
           "text": "A warm cinnamon roll"
         },
         {
-          "id": "snacks_025",
+          "id": "snk_025",
           "text": "Dark chocolate — just one square, you tell yourself"
         }
       ]
@@ -2614,63 +2614,63 @@
           "text": "That perfect hoodie weather — not hot, not cold"
         },
         {
-          "id": "weather_011",
+          "id": "wea_011",
           "text": "A quiet morning after fresh snowfall"
         },
         {
-          "id": "weather_012",
+          "id": "wea_012",
           "text": "A warm breeze that carries the smell of flowers"
         },
         {
-          "id": "weather_013",
+          "id": "wea_013",
           "text": "Double rainbow after a summer storm"
         },
         {
-          "id": "weather_014",
+          "id": "wea_014",
           "text": "The perfect temperature to sleep with windows open"
         },
         {
-          "id": "weather_015",
+          "id": "wea_015",
           "text": "A dramatic sunset painted across the sky"
         },
         {
-          "id": "weather_016",
+          "id": "wea_016",
           "text": "The smell of rain on hot pavement — petrichor"
         },
         {
-          "id": "weather_017",
+          "id": "wea_017",
           "text": "Waking up to sunshine streaming through the window"
         },
         {
-          "id": "weather_018",
+          "id": "wea_018",
           "text": "A misty morning that feels like a movie"
         },
         {
-          "id": "weather_019",
+          "id": "wea_019",
           "text": "The crunch of frost under your boots"
         },
         {
-          "id": "weather_020",
+          "id": "wea_020",
           "text": "Heat lightning on a summer night"
         },
         {
-          "id": "weather_021",
+          "id": "wea_021",
           "text": "A wind so strong it pushes you as you walk"
         },
         {
-          "id": "weather_022",
+          "id": "wea_022",
           "text": "The stillness right before a storm rolls in"
         },
         {
-          "id": "weather_023",
+          "id": "wea_023",
           "text": "A cloudless, star-filled night sky"
         },
         {
-          "id": "weather_024",
+          "id": "wea_024",
           "text": "That random 70-degree day in the middle of winter"
         },
         {
-          "id": "weather_025",
+          "id": "wea_025",
           "text": "A drizzle that's somehow calming, not annoying"
         }
       ]
@@ -2721,63 +2721,63 @@
           "text": "The midnight countdown on New Year's Eve"
         },
         {
-          "id": "holidays_011",
+          "id": "hol_011",
           "text": "Opening one gift on Christmas Eve"
         },
         {
-          "id": "holidays_012",
-          "text": "The countdown to midnight on New Year's Eve"
+          "id": "hol_012",
+          "text": "Secret Santa — the thrill of nailing someone's gift"
         },
         {
-          "id": "holidays_013",
+          "id": "hol_013",
           "text": "A Fourth of July barbecue and fireworks"
         },
         {
-          "id": "holidays_014",
+          "id": "hol_014",
           "text": "Thanksgiving leftovers — sometimes better than the meal"
         },
         {
-          "id": "holidays_015",
+          "id": "hol_015",
           "text": "Carving pumpkins on a chilly October night"
         },
         {
-          "id": "holidays_016",
+          "id": "hol_016",
           "text": "Decorating a Christmas tree while listening to music"
         },
         {
-          "id": "holidays_017",
+          "id": "hol_017",
           "text": "A holiday party with ugly sweaters"
         },
         {
-          "id": "holidays_018",
+          "id": "hol_018",
           "text": "Easter egg hunts — even if you're too old"
         },
         {
-          "id": "holidays_019",
+          "id": "hol_019",
           "text": "Valentine's Day candy on clearance the next day"
         },
         {
-          "id": "holidays_020",
+          "id": "hol_020",
           "text": "Watching the same holiday movie every single year"
         },
         {
-          "id": "holidays_021",
+          "id": "hol_021",
           "text": "Making holiday cookies and eating half the dough"
         },
         {
-          "id": "holidays_022",
+          "id": "hol_022",
           "text": "Friendsgiving with your chosen family"
         },
         {
-          "id": "holidays_023",
+          "id": "hol_023",
           "text": "A parade you watch every year"
         },
         {
-          "id": "holidays_024",
+          "id": "hol_024",
           "text": "Lighting candles during Hanukkah or Diwali"
         },
         {
-          "id": "holidays_025",
+          "id": "hol_025",
           "text": "That one holiday song that makes you feel something"
         }
       ]
@@ -2828,63 +2828,63 @@
           "text": "A signature scent that people remember you by"
         },
         {
-          "id": "fashion_011",
+          "id": "fash_011",
           "text": "A leather jacket that makes you feel invincible"
         },
         {
-          "id": "fashion_012",
-          "text": "White sneakers that go with everything"
+          "id": "fash_012",
+          "text": "A tailored blazer that fits perfectly"
         },
         {
-          "id": "fashion_013",
+          "id": "fash_013",
           "text": "A cozy oversized scarf"
         },
         {
-          "id": "fashion_014",
+          "id": "fash_014",
           "text": "Sunglasses that make you feel famous"
         },
         {
-          "id": "fashion_015",
+          "id": "fash_015",
           "text": "A perfectly fitted suit or dress"
         },
         {
-          "id": "fashion_016",
+          "id": "fash_016",
           "text": "A denim jacket covered in pins or patches"
         },
         {
-          "id": "fashion_017",
+          "id": "fash_017",
           "text": "That one t-shirt you've worn a hundred times"
         },
         {
-          "id": "fashion_018",
+          "id": "fash_018",
           "text": "Jewelry with sentimental meaning"
         },
         {
-          "id": "fashion_019",
+          "id": "fash_019",
           "text": "A good pair of boots that last forever"
         },
         {
-          "id": "fashion_020",
+          "id": "fash_020",
           "text": "Matching loungewear that looks put together"
         },
         {
-          "id": "fashion_021",
+          "id": "fash_021",
           "text": "A hat that becomes part of your identity"
         },
         {
-          "id": "fashion_022",
+          "id": "fash_022",
           "text": "Vintage pieces that nobody else has"
         },
         {
-          "id": "fashion_023",
+          "id": "fash_023",
           "text": "An outfit that gets compliments every time you wear it"
         },
         {
-          "id": "fashion_024",
+          "id": "fash_024",
           "text": "Comfortable heels — they exist, allegedly"
         },
         {
-          "id": "fashion_025",
+          "id": "fash_025",
           "text": "Pajamas so nice you'd answer the door in them"
         }
       ]
@@ -2935,63 +2935,63 @@
           "text": "They plan surprises just because"
         },
         {
-          "id": "relationships_011",
+          "id": "rel_011",
           "text": "Comfortable silence — no need to fill every gap"
         },
         {
-          "id": "relationships_012",
+          "id": "rel_012",
           "text": "They get along with your friends naturally"
         },
         {
-          "id": "relationships_013",
+          "id": "rel_013",
           "text": "They notice when something's off without you saying"
         },
         {
-          "id": "relationships_014",
+          "id": "rel_014",
           "text": "You laugh at the same dumb things"
         },
         {
-          "id": "relationships_015",
+          "id": "rel_015",
           "text": "They cheer for your wins like they're their own"
         },
         {
-          "id": "relationships_016",
+          "id": "rel_016",
           "text": "Disagreements are resolved, not avoided"
         },
         {
-          "id": "relationships_017",
+          "id": "rel_017",
           "text": "They show up when it matters, no questions asked"
         },
         {
-          "id": "relationships_018",
+          "id": "rel_018",
           "text": "You can be your weird self around them"
         },
         {
-          "id": "relationships_019",
+          "id": "rel_019",
           "text": "They text you something that made them think of you"
         },
         {
-          "id": "relationships_020",
+          "id": "rel_020",
           "text": "They respect your alone time without taking it personally"
         },
         {
-          "id": "relationships_021",
+          "id": "rel_021",
           "text": "Shared inside jokes that nobody else would understand"
         },
         {
-          "id": "relationships_022",
+          "id": "rel_022",
           "text": "They push you to be better without being pushy"
         },
         {
-          "id": "relationships_023",
+          "id": "rel_023",
           "text": "Saying sorry and meaning it — both ways"
         },
         {
-          "id": "relationships_024",
+          "id": "rel_024",
           "text": "Planning a future together feels exciting, not scary"
         },
         {
-          "id": "relationships_025",
+          "id": "rel_025",
           "text": "They make boring errands actually fun"
         }
       ]
@@ -3042,63 +3042,63 @@
           "text": "Your favorite person's scent on a pillow"
         },
         {
-          "id": "smells_011",
+          "id": "smell_011",
           "text": "The inside of a brand-new car"
         },
         {
-          "id": "smells_012",
+          "id": "smell_012",
           "text": "Pine trees in a forest"
         },
         {
-          "id": "smells_013",
+          "id": "smell_013",
           "text": "Vanilla candles on a winter evening"
         },
         {
-          "id": "smells_014",
+          "id": "smell_014",
           "text": "A campfire on a cool night"
         },
         {
-          "id": "smells_015",
+          "id": "smell_015",
           "text": "The ocean when you first arrive at the beach"
         },
         {
-          "id": "smells_016",
+          "id": "smell_016",
           "text": "Cinnamon rolls baking in the oven"
         },
         {
-          "id": "smells_017",
+          "id": "smell_017",
           "text": "Freshly ground coffee in the morning"
         },
         {
-          "id": "smells_018",
+          "id": "smell_018",
           "text": "Clean laundry right out of the dryer"
         },
         {
-          "id": "smells_019",
+          "id": "smell_019",
           "text": "Old books in a used bookstore"
         },
         {
-          "id": "smells_020",
+          "id": "smell_020",
           "text": "Thanksgiving dinner cooking all afternoon"
         },
         {
-          "id": "smells_021",
-          "text": "A bakery you walk past on the street"
+          "id": "smell_021",
+          "text": "Old books in a used bookstore"
         },
         {
-          "id": "smells_022",
+          "id": "smell_022",
           "text": "Your grandparent's house"
         },
         {
-          "id": "smells_023",
+          "id": "smell_023",
           "text": "Eucalyptus in a hot shower"
         },
         {
-          "id": "smells_024",
+          "id": "smell_024",
           "text": "A barbecue firing up on a summer evening"
         },
         {
-          "id": "smells_025",
+          "id": "smell_025",
           "text": "The first rain after a dry spell"
         }
       ]
@@ -3149,63 +3149,63 @@
           "text": "Never Have I Ever"
         },
         {
-          "id": "party_games_011",
+          "id": "party_011",
           "text": "A heated game of Monopoly that tests friendships"
         },
         {
-          "id": "party_games_012",
+          "id": "party_012",
           "text": "Pictionary — especially when someone can't draw"
         },
         {
-          "id": "party_games_013",
-          "text": "Mafia or Werewolf — the accusations fly"
+          "id": "party_013",
+          "text": "Trivia that gets surprisingly competitive"
         },
         {
-          "id": "party_games_014",
+          "id": "party_014",
           "text": "A dance-off nobody asked for but everyone needed"
         },
         {
-          "id": "party_games_015",
+          "id": "party_015",
           "text": "A roast battle where nothing is off limits"
         },
         {
-          "id": "party_games_016",
+          "id": "party_016",
           "text": "Musical chairs — somehow still chaotic as adults"
         },
         {
-          "id": "party_games_017",
+          "id": "party_017",
           "text": "A scavenger hunt around the neighborhood"
         },
         {
-          "id": "party_games_018",
+          "id": "party_018",
           "text": "A lip sync battle that gets way too competitive"
         },
         {
-          "id": "party_games_019",
+          "id": "party_019",
           "text": "A cooking competition with random ingredients"
         },
         {
-          "id": "party_games_020",
+          "id": "party_020",
           "text": "Sardines — like hide and seek, but better"
         },
         {
-          "id": "party_games_021",
+          "id": "party_021",
           "text": "A relay race that ends in someone falling"
         },
         {
-          "id": "party_games_022",
+          "id": "party_022",
           "text": "A puzzle race — first team to finish wins"
         },
         {
-          "id": "party_games_023",
+          "id": "party_023",
           "text": "Telephone but with drawings"
         },
         {
-          "id": "party_games_024",
+          "id": "party_024",
           "text": "A talent show where nobody has talent"
         },
         {
-          "id": "party_games_025",
+          "id": "party_025",
           "text": "A blindfolded taste test that goes wrong"
         }
       ]
@@ -3215,7 +3215,7 @@
     {
       "id": "sit_tiny_apartment",
       "name": "Tiny Apartment",
-      "prompt": "You're moving into a tiny apartment — rank what you'd give up last",
+      "prompt": "Rank what you'd give up last",
       "cards": [
         {
           "id": "sit_tiny_001",
@@ -3258,63 +3258,63 @@
           "text": "Storage for your stuff"
         },
         {
-          "id": "sit_tiny_apartment_011",
+          "id": "sit_tiny_011",
           "text": "A folding table that doubles as a desk"
         },
         {
-          "id": "sit_tiny_apartment_012",
+          "id": "sit_tiny_012",
           "text": "An air purifier you can hear from every room"
         },
         {
-          "id": "sit_tiny_apartment_013",
+          "id": "sit_tiny_013",
           "text": "A shoe rack that doesn't block the door"
         },
         {
-          "id": "sit_tiny_apartment_014",
+          "id": "sit_tiny_014",
           "text": "A window that actually gets sunlight"
         },
         {
-          "id": "sit_tiny_apartment_015",
+          "id": "sit_tiny_015",
           "text": "A bathroom with enough counter space"
         },
         {
-          "id": "sit_tiny_apartment_016",
+          "id": "sit_tiny_016",
           "text": "A kitchen with more than two burners"
         },
         {
-          "id": "sit_tiny_apartment_017",
+          "id": "sit_tiny_017",
           "text": "A couch that converts into a guest bed"
         },
         {
-          "id": "sit_tiny_apartment_018",
+          "id": "sit_tiny_018",
           "text": "Hooks on the back of every door"
         },
         {
-          "id": "sit_tiny_apartment_019",
+          "id": "sit_tiny_019",
           "text": "A dishwasher — any size, you're not picky"
         },
         {
-          "id": "sit_tiny_apartment_020",
+          "id": "sit_tiny_020",
           "text": "A full-length mirror squeezed in somewhere"
         },
         {
-          "id": "sit_tiny_apartment_021",
+          "id": "sit_tiny_021",
           "text": "A closet door that opens all the way"
         },
         {
-          "id": "sit_tiny_apartment_022",
+          "id": "sit_tiny_022",
           "text": "A nightstand that fits next to your bed"
         },
         {
-          "id": "sit_tiny_apartment_023",
+          "id": "sit_tiny_023",
           "text": "Under-bed storage containers"
         },
         {
-          "id": "sit_tiny_apartment_024",
+          "id": "sit_tiny_024",
           "text": "A ceiling fan because the AC doesn't reach"
         },
         {
-          "id": "sit_tiny_apartment_025",
+          "id": "sit_tiny_025",
           "text": "Walls thick enough that you can't hear your neighbors"
         }
       ]
@@ -3322,7 +3322,7 @@
     {
       "id": "sit_desert_island",
       "name": "Desert Island",
-      "prompt": "You're stranded on a desert island for a month — rank what you'd want most",
+      "prompt": "Stranded for a month — rank what you'd want most",
       "cards": [
         {
           "id": "sit_island_001",
@@ -3365,63 +3365,63 @@
           "text": "A friend to keep you company"
         },
         {
-          "id": "sit_desert_island_011",
+          "id": "sit_island_011",
           "text": "A journal and pen to pass the time"
         },
         {
-          "id": "sit_desert_island_012",
+          "id": "sit_island_012",
           "text": "A water purifier"
         },
         {
-          "id": "sit_desert_island_013",
+          "id": "sit_island_013",
           "text": "Your best friend to keep you sane"
         },
         {
-          "id": "sit_desert_island_014",
+          "id": "sit_island_014",
           "text": "A solar-powered radio"
         },
         {
-          "id": "sit_desert_island_015",
+          "id": "sit_island_015",
           "text": "A tarp for building shelter"
         },
         {
-          "id": "sit_desert_island_016",
+          "id": "sit_island_016",
           "text": "A box of matches"
         },
         {
-          "id": "sit_desert_island_017",
+          "id": "sit_island_017",
           "text": "Spices — because plain fish gets old fast"
         },
         {
-          "id": "sit_desert_island_018",
+          "id": "sit_island_018",
           "text": "A yoga mat for sleeping on"
         },
         {
-          "id": "sit_desert_island_019",
+          "id": "sit_island_019",
           "text": "An axe for chopping wood"
         },
         {
-          "id": "sit_desert_island_020",
+          "id": "sit_island_020",
           "text": "A deck of cards to play solitaire"
         },
         {
-          "id": "sit_desert_island_021",
+          "id": "sit_island_021",
           "text": "Aloe vera for the inevitable sunburn"
         },
         {
-          "id": "sit_desert_island_022",
+          "id": "sit_island_022",
           "text": "A signal mirror in case a plane flies by"
         },
         {
-          "id": "sit_desert_island_023",
+          "id": "sit_island_023",
           "text": "A large pot for boiling water"
         },
         {
-          "id": "sit_desert_island_024",
+          "id": "sit_island_024",
           "text": "Bug spray — lots of it"
         },
         {
-          "id": "sit_desert_island_025",
+          "id": "sit_island_025",
           "text": "A book long enough to last the whole month"
         }
       ]
@@ -3472,63 +3472,63 @@
           "text": "Sit quietly with the person who matters most"
         },
         {
-          "id": "sit_apocalypse_011",
+          "id": "sit_apoc_011",
           "text": "A phone call to someone you owe an apology"
         },
         {
-          "id": "sit_apocalypse_012",
+          "id": "sit_apoc_012",
           "text": "A road trip to your favorite place one last time"
         },
         {
-          "id": "sit_apocalypse_013",
+          "id": "sit_apoc_013",
           "text": "A massive bonfire party with everyone you love"
         },
         {
-          "id": "sit_apocalypse_014",
+          "id": "sit_apoc_014",
           "text": "Telling your crush exactly how you feel"
         },
         {
-          "id": "sit_apocalypse_015",
+          "id": "sit_apoc_015",
           "text": "Writing a letter to your future self — just in case"
         },
         {
-          "id": "sit_apocalypse_016",
+          "id": "sit_apoc_016",
           "text": "Eating the most ridiculous meal you can imagine"
         },
         {
-          "id": "sit_apocalypse_017",
+          "id": "sit_apoc_017",
           "text": "Watching the sunrise from somewhere spectacular"
         },
         {
-          "id": "sit_apocalypse_018",
+          "id": "sit_apoc_018",
           "text": "Going skinny dipping with no regrets"
         },
         {
-          "id": "sit_apocalypse_019",
+          "id": "sit_apoc_019",
           "text": "Deleting your search history — even now, it matters"
         },
         {
-          "id": "sit_apocalypse_020",
+          "id": "sit_apoc_020",
           "text": "Playing every song on your 'all-time favorites' playlist"
         },
         {
-          "id": "sit_apocalypse_021",
+          "id": "sit_apoc_021",
           "text": "Having a brutally honest conversation with your parents"
         },
         {
-          "id": "sit_apocalypse_022",
+          "id": "sit_apoc_022",
           "text": "Doing something you've always been too scared to try"
         },
         {
-          "id": "sit_apocalypse_023",
+          "id": "sit_apoc_023",
           "text": "Forgiving someone who hurt you — for your own peace"
         },
         {
-          "id": "sit_apocalypse_024",
+          "id": "sit_apoc_024",
           "text": "Staying up all night talking with the people who matter"
         },
         {
-          "id": "sit_apocalypse_025",
+          "id": "sit_apoc_025",
           "text": "A final dance, even if you don't know how"
         }
       ]
@@ -3536,7 +3536,7 @@
     {
       "id": "sit_meditation_retreat",
       "name": "Silent Retreat",
-      "prompt": "You're going on a silent retreat for two weeks — rank what you'd struggle to give up most",
+      "prompt": "Two weeks of silence — rank what you'd struggle to give up",
       "cards": [
         {
           "id": "sit_med_001",
@@ -3579,71 +3579,71 @@
           "text": "Privacy — having time alone"
         },
         {
-          "id": "sit_meditation_retreat_011",
-          "text": "The sound of a bell marking each session"
+          "id": "sit_med_011",
+          "text": "Social media — mindless scrolling is a coping mechanism"
         },
         {
-          "id": "sit_meditation_retreat_012",
-          "text": "Nature walks where you're alone with your thoughts"
+          "id": "sit_med_012",
+          "text": "Podcasts — you listen during literally everything"
         },
         {
-          "id": "sit_meditation_retreat_013",
-          "text": "A comfortable cushion — your back will thank you"
+          "id": "sit_med_013",
+          "text": "Snacking whenever the mood strikes"
         },
         {
-          "id": "sit_meditation_retreat_014",
-          "text": "Sunrise views that make the early mornings worth it"
+          "id": "sit_med_014",
+          "text": "Your own bed — retreat beds are a different experience"
         },
         {
-          "id": "sit_meditation_retreat_015",
-          "text": "A private room vs. a shared dormitory"
+          "id": "sit_med_015",
+          "text": "Background noise — always having something playing"
         },
         {
-          "id": "sit_meditation_retreat_016",
-          "text": "Access to a hot tub or sauna"
+          "id": "sit_med_016",
+          "text": "Complaining out loud about small things"
         },
         {
-          "id": "sit_meditation_retreat_017",
-          "text": "Journaling time between sessions"
+          "id": "sit_med_017",
+          "text": "Sarcasm — your primary love language"
         },
         {
-          "id": "sit_meditation_retreat_018",
-          "text": "Yoga sessions to complement the meditation"
+          "id": "sit_med_018",
+          "text": "A glass of wine at the end of the day"
         },
         {
-          "id": "sit_meditation_retreat_019",
-          "text": "Herbal tea served in silence"
+          "id": "sit_med_019",
+          "text": "Your pet"
         },
         {
-          "id": "sit_meditation_retreat_020",
-          "text": "A library of spiritual or philosophical books"
+          "id": "sit_med_020",
+          "text": "Group chats — they'll move on without you"
         },
         {
-          "id": "sit_meditation_retreat_021",
-          "text": "A view of mountains or water from the meditation hall"
+          "id": "sit_med_021",
+          "text": "Choosing what to eat for every meal"
         },
         {
-          "id": "sit_meditation_retreat_022",
-          "text": "A guide who actually helps, not just sits there"
+          "id": "sit_med_022",
+          "text": "Hot showers whenever you want"
         },
         {
-          "id": "sit_meditation_retreat_023",
-          "text": "One cheat hour where you can whisper to someone"
+          "id": "sit_med_023",
+          "text": "Checking the time every five minutes"
         },
         {
-          "id": "sit_meditation_retreat_024",
-          "text": "Comfortable silence with a stranger who gets it"
+          "id": "sit_med_024",
+          "text": "Venting to someone when something goes wrong"
         },
         {
-          "id": "sit_meditation_retreat_025",
-          "text": "That moment everything finally goes quiet in your head"
+          "id": "sit_med_025",
+          "text": "Wearing whatever you want"
         }
       ]
     },
     {
       "id": "sit_10k_windfall",
       "name": "$10K Windfall",
-      "prompt": "You just won $10k to spend entirely on yourself — rank what you'd spend it on first",
+      "prompt": "All on yourself — rank what you'd spend it on first",
       "cards": [
         {
           "id": "sit_10k_001",
@@ -3686,63 +3686,63 @@
           "text": "Throwing an incredible party for your friends"
         },
         {
-          "id": "sit_10k_windfall_011",
+          "id": "sit_10k_011",
           "text": "Paying off your credit card in one satisfying click"
         },
         {
-          "id": "sit_10k_windfall_012",
+          "id": "sit_10k_012",
           "text": "Surprising someone you love with something they need"
         },
         {
-          "id": "sit_10k_windfall_013",
+          "id": "sit_10k_013",
           "text": "A spontaneous weekend getaway"
         },
         {
-          "id": "sit_10k_windfall_014",
+          "id": "sit_10k_014",
           "text": "Finally getting that thing you've been eyeing for months"
         },
         {
-          "id": "sit_10k_windfall_015",
+          "id": "sit_10k_015",
           "text": "Investing it and pretending you're Warren Buffett"
         },
         {
-          "id": "sit_10k_windfall_016",
+          "id": "sit_10k_016",
           "text": "Donating to a cause that genuinely matters to you"
         },
         {
-          "id": "sit_10k_windfall_017",
+          "id": "sit_10k_017",
           "text": "A really nice mattress — you spend a third of your life on it"
         },
         {
-          "id": "sit_10k_windfall_018",
+          "id": "sit_10k_018",
           "text": "A professional massage — or ten"
         },
         {
-          "id": "sit_10k_windfall_019",
+          "id": "sit_10k_019",
           "text": "Concert tickets for your dream artist, front row"
         },
         {
-          "id": "sit_10k_windfall_020",
+          "id": "sit_10k_020",
           "text": "A wardrobe refresh you actually thought about"
         },
         {
-          "id": "sit_10k_windfall_021",
+          "id": "sit_10k_021",
           "text": "A cooking class or workshop you've always wanted to take"
         },
         {
-          "id": "sit_10k_windfall_022",
+          "id": "sit_10k_022",
           "text": "Putting it straight into savings and doing nothing"
         },
         {
-          "id": "sit_10k_windfall_023",
+          "id": "sit_10k_023",
           "text": "Buying a piece of art from a local artist"
         },
         {
-          "id": "sit_10k_windfall_024",
+          "id": "sit_10k_024",
           "text": "A month of someone else cleaning your house"
         },
         {
-          "id": "sit_10k_windfall_025",
+          "id": "sit_10k_025",
           "text": "A home improvement project that's been bugging you"
         }
       ]
@@ -3750,7 +3750,7 @@
     {
       "id": "sit_new_city",
       "name": "New City, No Friends",
-      "prompt": "You're starting fresh in a new city where you know nobody — rank what would help you feel at home fastest",
+      "prompt": "Rank what would help you feel at home fastest",
       "cards": [
         {
           "id": "sit_city_001",
@@ -3793,63 +3793,63 @@
           "text": "A reliable routine"
         },
         {
-          "id": "sit_new_city_011",
+          "id": "sit_city_011",
           "text": "Joining a recreational sports league"
         },
         {
-          "id": "sit_new_city_012",
+          "id": "sit_city_012",
           "text": "Becoming a regular at a local coffee shop"
         },
         {
-          "id": "sit_new_city_013",
+          "id": "sit_city_013",
           "text": "Finding a gym with group classes"
         },
         {
-          "id": "sit_new_city_014",
+          "id": "sit_city_014",
           "text": "Volunteering at a local organization"
         },
         {
-          "id": "sit_new_city_015",
+          "id": "sit_city_015",
           "text": "Saying yes to every invite for the first month"
         },
         {
-          "id": "sit_new_city_016",
+          "id": "sit_city_016",
           "text": "Adopting a pet — instant companionship"
         },
         {
-          "id": "sit_new_city_017",
+          "id": "sit_city_017",
           "text": "Going to a meetup for your hobby or interest"
         },
         {
-          "id": "sit_new_city_018",
+          "id": "sit_city_018",
           "text": "Striking up a conversation with a coworker at lunch"
         },
         {
-          "id": "sit_new_city_019",
+          "id": "sit_city_019",
           "text": "Joining a book club or trivia night"
         },
         {
-          "id": "sit_new_city_020",
+          "id": "sit_city_020",
           "text": "Exploring local food and finding your go-to spot"
         },
         {
-          "id": "sit_new_city_021",
+          "id": "sit_city_021",
           "text": "Going to a concert alone and meeting people there"
         },
         {
-          "id": "sit_new_city_022",
+          "id": "sit_city_022",
           "text": "Joining a community garden"
         },
         {
-          "id": "sit_new_city_023",
+          "id": "sit_city_023",
           "text": "Taking a class — cooking, pottery, improv, anything"
         },
         {
-          "id": "sit_new_city_024",
+          "id": "sit_city_024",
           "text": "Finding a walking buddy or dog park crew"
         },
         {
-          "id": "sit_new_city_025",
+          "id": "sit_city_025",
           "text": "Hosting a small dinner and inviting the few people you've met"
         }
       ]
@@ -3857,7 +3857,7 @@
     {
       "id": "sit_perfect_saturday",
       "name": "Perfect Saturday",
-      "prompt": "You have one perfect free Saturday with zero obligations — rank how you'd spend it",
+      "prompt": "Zero obligations — rank how you'd spend it",
       "cards": [
         {
           "id": "sit_sat_001",
@@ -3900,63 +3900,63 @@
           "text": "Work on a creative project you've been neglecting"
         },
         {
-          "id": "sit_perfect_saturday_011",
+          "id": "sit_sat_011",
           "text": "A farmer's market trip with a fresh pastry in hand"
         },
         {
-          "id": "sit_perfect_saturday_012",
+          "id": "sit_sat_012",
           "text": "A spontaneous day trip to a nearby town"
         },
         {
-          "id": "sit_perfect_saturday_013",
+          "id": "sit_sat_013",
           "text": "Reading in a hammock with a cold drink"
         },
         {
-          "id": "sit_perfect_saturday_014",
+          "id": "sit_sat_014",
           "text": "An afternoon nap with no guilt"
         },
         {
-          "id": "sit_perfect_saturday_015",
+          "id": "sit_sat_015",
           "text": "Watching your favorite movie for the hundredth time"
         },
         {
-          "id": "sit_perfect_saturday_016",
+          "id": "sit_sat_016",
           "text": "A walk through a botanical garden"
         },
         {
-          "id": "sit_perfect_saturday_017",
+          "id": "sit_sat_017",
           "text": "Trying a new restaurant everyone's been talking about"
         },
         {
-          "id": "sit_perfect_saturday_018",
+          "id": "sit_sat_018",
           "text": "Playing video games with zero time pressure"
         },
         {
-          "id": "sit_perfect_saturday_019",
+          "id": "sit_sat_019",
           "text": "A sunset picnic in the park"
         },
         {
-          "id": "sit_perfect_saturday_020",
+          "id": "sit_sat_020",
           "text": "Taking a long drive with the windows down"
         },
         {
-          "id": "sit_perfect_saturday_021",
+          "id": "sit_sat_021",
           "text": "Baking something you've never tried before"
         },
         {
-          "id": "sit_perfect_saturday_022",
+          "id": "sit_sat_022",
           "text": "A phone call with a friend you haven't spoken to in months"
         },
         {
-          "id": "sit_perfect_saturday_023",
+          "id": "sit_sat_023",
           "text": "Going to a matinee movie — the theater is always empty"
         },
         {
-          "id": "sit_perfect_saturday_024",
+          "id": "sit_sat_024",
           "text": "Sitting on a patio with a good drink and good weather"
         },
         {
-          "id": "sit_perfect_saturday_025",
+          "id": "sit_sat_025",
           "text": "Ending the night with a bonfire or fire pit"
         }
       ]
@@ -3964,7 +3964,7 @@
     {
       "id": "sit_eliminate_forever",
       "name": "Eliminate Forever",
-      "prompt": "You could eliminate one thing from your life forever — rank from most to least willing to eliminate",
+      "prompt": "Rank what you'd be most willing to live without",
       "cards": [
         {
           "id": "sit_elim_001",
@@ -4007,63 +4007,63 @@
           "text": "Monday mornings"
         },
         {
-          "id": "sit_eliminate_forever_011",
+          "id": "sit_elim_011",
           "text": "Mosquitoes"
         },
         {
-          "id": "sit_eliminate_forever_012",
+          "id": "sit_elim_012",
           "text": "Alarm clocks"
         },
         {
-          "id": "sit_eliminate_forever_013",
-          "text": "Hangovers"
+          "id": "sit_elim_013",
+          "text": "Small talk with strangers"
         },
         {
-          "id": "sit_eliminate_forever_014",
+          "id": "sit_elim_014",
           "text": "Traffic jams"
         },
         {
-          "id": "sit_eliminate_forever_015",
+          "id": "sit_elim_015",
           "text": "Mondays"
         },
         {
-          "id": "sit_eliminate_forever_016",
+          "id": "sit_elim_016",
           "text": "Doing taxes"
         },
         {
-          "id": "sit_eliminate_forever_017",
+          "id": "sit_elim_017",
           "text": "Slow WiFi"
         },
         {
-          "id": "sit_eliminate_forever_018",
+          "id": "sit_elim_018",
           "text": "Bad breath"
         },
         {
-          "id": "sit_eliminate_forever_019",
+          "id": "sit_elim_019",
           "text": "Student loans"
         },
         {
-          "id": "sit_eliminate_forever_020",
+          "id": "sit_elim_020",
           "text": "Meetings that should have been emails"
         },
         {
-          "id": "sit_eliminate_forever_021",
+          "id": "sit_elim_021",
           "text": "Getting a cold"
         },
         {
-          "id": "sit_eliminate_forever_022",
+          "id": "sit_elim_022",
           "text": "Losing socks in the laundry"
         },
         {
-          "id": "sit_eliminate_forever_023",
+          "id": "sit_elim_023",
           "text": "Spam calls"
         },
         {
-          "id": "sit_eliminate_forever_024",
+          "id": "sit_elim_024",
           "text": "Potholes"
         },
         {
-          "id": "sit_eliminate_forever_025",
+          "id": "sit_elim_025",
           "text": "Jet lag"
         }
       ]
@@ -4071,7 +4071,7 @@
     {
       "id": "sit_dinner_party",
       "name": "Perfect Dinner Party",
-      "prompt": "You're hosting a dinner party and want it to go perfectly — rank what matters most",
+      "prompt": "Rank what matters most for the perfect dinner",
       "cards": [
         {
           "id": "sit_dinner_001",
@@ -4114,71 +4114,71 @@
           "text": "People staying later than they planned because they're having fun"
         },
         {
-          "id": "sit_dinner_party_011",
-          "text": "An Olympic athlete with wild training stories"
+          "id": "sit_dinner_011",
+          "text": "A signature cocktail or welcome drink"
         },
         {
-          "id": "sit_dinner_party_012",
-          "text": "A detective who's worked on famous cases"
+          "id": "sit_dinner_012",
+          "text": "Everyone arriving on time — or at least close"
         },
         {
-          "id": "sit_dinner_party_013",
-          "text": "A food critic who's been everywhere"
+          "id": "sit_dinner_013",
+          "text": "A dessert that people talk about the next day"
         },
         {
-          "id": "sit_dinner_party_014",
-          "text": "Your favorite childhood teacher"
+          "id": "sit_dinner_014",
+          "text": "A theme that ties the whole evening together"
         },
         {
-          "id": "sit_dinner_party_015",
-          "text": "Someone who faked their own death and got away with it"
+          "id": "sit_dinner_015",
+          "text": "Someone volunteering to help clean up after"
         },
         {
-          "id": "sit_dinner_party_016",
-          "text": "A billionaire who started with nothing"
+          "id": "sit_dinner_016",
+          "text": "The host actually sitting down and enjoying it too"
         },
         {
-          "id": "sit_dinner_party_017",
-          "text": "A poet who can sum up life in four lines"
+          "id": "sit_dinner_017",
+          "text": "Enough room for everyone to mingle"
         },
         {
-          "id": "sit_dinner_party_018",
-          "text": "A spy — retired, of course"
+          "id": "sit_dinner_018",
+          "text": "Enough food that no one leaves hungry"
         },
         {
-          "id": "sit_dinner_party_019",
-          "text": "A deep-sea diver who's seen things"
+          "id": "sit_dinner_019",
+          "text": "A surprise dish that catches everyone off guard"
         },
         {
-          "id": "sit_dinner_party_020",
-          "text": "A circus performer with death-defying stories"
+          "id": "sit_dinner_020",
+          "text": "A toast that makes everyone laugh"
         },
         {
-          "id": "sit_dinner_party_021",
-          "text": "An astronaut who walked on the Moon"
+          "id": "sit_dinner_021",
+          "text": "Games or activities after the meal"
         },
         {
-          "id": "sit_dinner_party_022",
-          "text": "An inventor whose creation you use every day"
+          "id": "sit_dinner_022",
+          "text": "Fresh flowers or candles on the table"
         },
         {
-          "id": "sit_dinner_party_023",
-          "text": "A marine biologist with octopus facts"
+          "id": "sit_dinner_023",
+          "text": "A friend who brings something without being asked"
         },
         {
-          "id": "sit_dinner_party_024",
-          "text": "A historian who makes the past feel alive"
+          "id": "sit_dinner_024",
+          "text": "Not talking about work the entire time"
         },
         {
-          "id": "sit_dinner_party_025",
-          "text": "Your future self, 20 years from now"
+          "id": "sit_dinner_025",
+          "text": "The night ending naturally — no awkward goodbyes"
         }
       ]
     },
     {
       "id": "sit_off_grid",
       "name": "Off the Grid",
-      "prompt": "You're going fully off-grid for a month — rank what you'd miss most",
+      "prompt": "Fully off-grid for a month — rank what you'd miss most",
       "cards": [
         {
           "id": "sit_off_001",
@@ -4221,63 +4221,63 @@
           "text": "Your daily routine"
         },
         {
-          "id": "sit_off_grid_011",
+          "id": "sit_off_011",
           "text": "A reliable flashlight and extra batteries"
         },
         {
-          "id": "sit_off_grid_012",
+          "id": "sit_off_012",
           "text": "A fishing rod and basic tackle"
         },
         {
-          "id": "sit_off_grid_013",
+          "id": "sit_off_013",
           "text": "A stack of crossword or puzzle books"
         },
         {
-          "id": "sit_off_grid_014",
+          "id": "sit_off_014",
           "text": "A comfortable hammock between two trees"
         },
         {
-          "id": "sit_off_grid_015",
+          "id": "sit_off_015",
           "text": "A dutch oven for campfire cooking"
         },
         {
-          "id": "sit_off_grid_016",
+          "id": "sit_off_016",
           "text": "Binoculars for birdwatching and stargazing"
         },
         {
-          "id": "sit_off_grid_017",
+          "id": "sit_off_017",
           "text": "A well-stocked first aid kit"
         },
         {
-          "id": "sit_off_grid_018",
+          "id": "sit_off_018",
           "text": "A compass and a physical map"
         },
         {
-          "id": "sit_off_grid_019",
+          "id": "sit_off_019",
           "text": "A sketchbook and pencils"
         },
         {
-          "id": "sit_off_grid_020",
+          "id": "sit_off_020",
           "text": "A rain barrel for collecting water"
         },
         {
-          "id": "sit_off_grid_021",
+          "id": "sit_off_021",
           "text": "A wool blanket for cold nights"
         },
         {
-          "id": "sit_off_grid_022",
+          "id": "sit_off_022",
           "text": "A collection of classic novels"
         },
         {
-          "id": "sit_off_grid_023",
+          "id": "sit_off_023",
           "text": "A musical instrument you can carry"
         },
         {
-          "id": "sit_off_grid_024",
+          "id": "sit_off_024",
           "text": "A waterproof journal"
         },
         {
-          "id": "sit_off_grid_025",
+          "id": "sit_off_025",
           "text": "A canoe or kayak for exploring rivers"
         }
       ]
@@ -4328,63 +4328,63 @@
           "text": "Something spicy that makes you feel alive"
         },
         {
-          "id": "sit_last_meal_011",
+          "id": "sit_meal_011",
           "text": "A perfectly seared steak with a red wine reduction"
         },
         {
-          "id": "sit_last_meal_012",
+          "id": "sit_meal_012",
           "text": "Your mom's (or dad's) signature dish"
         },
         {
-          "id": "sit_last_meal_013",
+          "id": "sit_meal_013",
           "text": "A sushi omakase from the best chef in the world"
         },
         {
-          "id": "sit_last_meal_014",
+          "id": "sit_meal_014",
           "text": "Lobster tail dripping with butter"
         },
         {
-          "id": "sit_last_meal_015",
+          "id": "sit_meal_015",
           "text": "The perfect slice of Neapolitan pizza"
         },
         {
-          "id": "sit_last_meal_016",
+          "id": "sit_meal_016",
           "text": "A cheese board with bread, fruit, and honey"
         },
         {
-          "id": "sit_last_meal_017",
+          "id": "sit_meal_017",
           "text": "Freshly made pasta — tagliatelle with bolognese"
         },
         {
-          "id": "sit_last_meal_018",
+          "id": "sit_meal_018",
           "text": "Crispy fried chicken with all the fixings"
         },
         {
-          "id": "sit_last_meal_019",
+          "id": "sit_meal_019",
           "text": "A warm bowl of ramen with a soft-boiled egg"
         },
         {
-          "id": "sit_last_meal_020",
+          "id": "sit_meal_020",
           "text": "The dessert you'd sell your soul for"
         },
         {
-          "id": "sit_last_meal_021",
+          "id": "sit_meal_021",
           "text": "Fish and chips on the beach"
         },
         {
-          "id": "sit_last_meal_022",
+          "id": "sit_meal_022",
           "text": "A burrito the size of your forearm"
         },
         {
-          "id": "sit_last_meal_023",
+          "id": "sit_meal_023",
           "text": "Dim sum — all of it, unlimited"
         },
         {
-          "id": "sit_last_meal_024",
+          "id": "sit_meal_024",
           "text": "A Thanksgiving plate piled impossibly high"
         },
         {
-          "id": "sit_last_meal_025",
+          "id": "sit_meal_025",
           "text": "A bánh mì that hits every flavor at once"
         }
       ]
@@ -4392,7 +4392,7 @@
     {
       "id": "sit_dream_home",
       "name": "Dream Home",
-      "prompt": "You're designing your dream home — rank what matters most",
+      "prompt": "Rank what you'd prioritize first",
       "cards": [
         {
           "id": "sit_home_001",
@@ -4435,63 +4435,63 @@
           "text": "A garage or workshop for projects"
         },
         {
-          "id": "sit_dream_home_011",
+          "id": "sit_home_011",
           "text": "A wrap-around porch with rocking chairs"
         },
         {
-          "id": "sit_dream_home_012",
+          "id": "sit_home_012",
           "text": "A rooftop deck with city views"
         },
         {
-          "id": "sit_dream_home_013",
+          "id": "sit_home_013",
           "text": "A secret bookshelf door to a hidden room"
         },
         {
-          "id": "sit_dream_home_014",
+          "id": "sit_home_014",
           "text": "A fire pit in the backyard"
         },
         {
-          "id": "sit_dream_home_015",
+          "id": "sit_home_015",
           "text": "A slide from the second floor to the first"
         },
         {
-          "id": "sit_dream_home_016",
+          "id": "sit_home_016",
           "text": "A wine cellar you actually use"
         },
         {
-          "id": "sit_dream_home_017",
+          "id": "sit_home_017",
           "text": "Smart home automation that just works"
         },
         {
-          "id": "sit_dream_home_018",
+          "id": "sit_home_018",
           "text": "A breakfast nook with a window seat"
         },
         {
-          "id": "sit_dream_home_019",
+          "id": "sit_home_019",
           "text": "A sauna in the bathroom"
         },
         {
-          "id": "sit_dream_home_020",
+          "id": "sit_home_020",
           "text": "A music room or studio"
         },
         {
-          "id": "sit_dream_home_021",
+          "id": "sit_home_021",
           "text": "An outdoor shower surrounded by plants"
         },
         {
-          "id": "sit_dream_home_022",
+          "id": "sit_home_022",
           "text": "A treehouse for adults — why not"
         },
         {
-          "id": "sit_dream_home_023",
+          "id": "sit_home_023",
           "text": "A sunroom full of natural light and plants"
         },
         {
-          "id": "sit_dream_home_024",
+          "id": "sit_home_024",
           "text": "A workshop or maker space in the garage"
         },
         {
-          "id": "sit_dream_home_025",
+          "id": "sit_home_025",
           "text": "Heated floors throughout the house"
         }
       ]
@@ -4499,7 +4499,7 @@
     {
       "id": "sit_month_off",
       "name": "Month Off",
-      "prompt": "You've been given a free month off with full pay — rank how you'd spend it",
+      "prompt": "Full pay, no plans — rank how you'd spend it",
       "cards": [
         {
           "id": "sit_month_001",
@@ -4542,63 +4542,63 @@
           "text": "Cook your way through a cookbook"
         },
         {
-          "id": "sit_month_off_011",
+          "id": "sit_month_011",
           "text": "A solo camping trip in a national park"
         },
         {
-          "id": "sit_month_off_012",
+          "id": "sit_month_012",
           "text": "Writing that book you've been talking about for years"
         },
         {
-          "id": "sit_month_off_013",
+          "id": "sit_month_013",
           "text": "Learning to surf and doing nothing else"
         },
         {
-          "id": "sit_month_off_014",
+          "id": "sit_month_014",
           "text": "A road trip with no itinerary"
         },
         {
-          "id": "sit_month_off_015",
+          "id": "sit_month_015",
           "text": "Volunteering abroad and seeing a new part of the world"
         },
         {
-          "id": "sit_month_off_016",
+          "id": "sit_month_016",
           "text": "A deep dive into a hobby — woodworking, pottery, music"
         },
         {
-          "id": "sit_month_off_017",
+          "id": "sit_month_017",
           "text": "Visiting every friend and family member in different cities"
         },
         {
-          "id": "sit_month_off_018",
+          "id": "sit_month_018",
           "text": "A silent wellness retreat in the mountains"
         },
         {
-          "id": "sit_month_off_019",
+          "id": "sit_month_019",
           "text": "Decluttering every room in your house top to bottom"
         },
         {
-          "id": "sit_month_off_020",
+          "id": "sit_month_020",
           "text": "Taking an intensive language course"
         },
         {
-          "id": "sit_month_off_021",
+          "id": "sit_month_021",
           "text": "Training for a marathon — or at least a 5K"
         },
         {
-          "id": "sit_month_off_022",
+          "id": "sit_month_022",
           "text": "Reading one book per day for the whole month"
         },
         {
-          "id": "sit_month_off_023",
+          "id": "sit_month_023",
           "text": "Exploring a new country by train"
         },
         {
-          "id": "sit_month_off_024",
+          "id": "sit_month_024",
           "text": "Redoing your living space exactly how you want it"
         },
         {
-          "id": "sit_month_off_025",
+          "id": "sit_month_025",
           "text": "Doing absolutely nothing and seeing how that feels"
         }
       ]
@@ -4606,7 +4606,7 @@
     {
       "id": "sit_looking_back",
       "name": "Looking Back at 80",
-      "prompt": "You're 80 years old looking back — rank what you'd be most glad you did",
+      "prompt": "Rank what you'd be most glad you did",
       "cards": [
         {
           "id": "sit_80_001",
@@ -4649,63 +4649,63 @@
           "text": "Worried less about what other people thought"
         },
         {
-          "id": "sit_looking_back_011",
+          "id": "sit_80_011",
           "text": "The career you built — or the one you wish you'd pursued"
         },
         {
-          "id": "sit_looking_back_012",
+          "id": "sit_80_012",
           "text": "The place you called home the longest"
         },
         {
-          "id": "sit_looking_back_013",
+          "id": "sit_80_013",
           "text": "A risk you took that changed everything"
         },
         {
-          "id": "sit_looking_back_014",
+          "id": "sit_80_014",
           "text": "A friendship that stood the test of time"
         },
         {
-          "id": "sit_looking_back_015",
+          "id": "sit_80_015",
           "text": "A trip that fundamentally changed your perspective"
         },
         {
-          "id": "sit_looking_back_016",
+          "id": "sit_80_016",
           "text": "The moments you chose rest over hustle"
         },
         {
-          "id": "sit_looking_back_017",
+          "id": "sit_80_017",
           "text": "A hobby that became a core part of who you are"
         },
         {
-          "id": "sit_looking_back_018",
+          "id": "sit_80_018",
           "text": "A conversation that altered the course of your life"
         },
         {
-          "id": "sit_looking_back_019",
+          "id": "sit_80_019",
           "text": "Something you forgave that you thought you never would"
         },
         {
-          "id": "sit_looking_back_020",
+          "id": "sit_80_020",
           "text": "A tradition you started and kept going"
         },
         {
-          "id": "sit_looking_back_021",
+          "id": "sit_80_021",
           "text": "A lesson you learned the hard way"
         },
         {
-          "id": "sit_looking_back_022",
+          "id": "sit_80_022",
           "text": "A meal you can still taste in your memory"
         },
         {
-          "id": "sit_looking_back_023",
+          "id": "sit_80_023",
           "text": "Something you created that you're proud of"
         },
         {
-          "id": "sit_looking_back_024",
+          "id": "sit_80_024",
           "text": "A time you stood up for what was right"
         },
         {
-          "id": "sit_looking_back_025",
+          "id": "sit_80_025",
           "text": "The person who believed in you when you didn't"
         }
       ]
@@ -4713,7 +4713,7 @@
     {
       "id": "sit_two_suitcases",
       "name": "Two Suitcases",
-      "prompt": "You're moving to a new country and can only bring what fits in two suitcases — rank what makes the cut",
+      "prompt": "Moving abroad — rank what makes the cut",
       "cards": [
         {
           "id": "sit_suit_001",
@@ -4756,63 +4756,63 @@
           "text": "Something that smells like home"
         },
         {
-          "id": "sit_two_suitcases_011",
+          "id": "sit_suit_011",
           "text": "Running shoes — you might need to move fast or stay sane"
         },
         {
-          "id": "sit_two_suitcases_012",
+          "id": "sit_suit_012",
           "text": "A journal for documenting everything"
         },
         {
-          "id": "sit_two_suitcases_013",
+          "id": "sit_suit_013",
           "text": "Your most sentimental possession"
         },
         {
-          "id": "sit_two_suitcases_014",
+          "id": "sit_suit_014",
           "text": "A camera to capture it all"
         },
         {
-          "id": "sit_two_suitcases_015",
+          "id": "sit_suit_015",
           "text": "A versatile jacket that works in any weather"
         },
         {
-          "id": "sit_two_suitcases_016",
+          "id": "sit_suit_016",
           "text": "A power bank and all necessary cables"
         },
         {
-          "id": "sit_two_suitcases_017",
+          "id": "sit_suit_017",
           "text": "A small Bluetooth speaker"
         },
         {
-          "id": "sit_two_suitcases_018",
+          "id": "sit_suit_018",
           "text": "Your favorite pillow (worth the suitcase space)"
         },
         {
-          "id": "sit_two_suitcases_019",
+          "id": "sit_suit_019",
           "text": "A scarf that works as a blanket, towel, or pillow"
         },
         {
-          "id": "sit_two_suitcases_020",
+          "id": "sit_suit_020",
           "text": "Seasonings and hot sauce — you know why"
         },
         {
-          "id": "sit_two_suitcases_021",
+          "id": "sit_suit_021",
           "text": "A handful of family photos"
         },
         {
-          "id": "sit_two_suitcases_022",
+          "id": "sit_suit_022",
           "text": "A real book — not a Kindle, a REAL book"
         },
         {
-          "id": "sit_two_suitcases_023",
+          "id": "sit_suit_023",
           "text": "A Swiss Army knife"
         },
         {
-          "id": "sit_two_suitcases_024",
+          "id": "sit_suit_024",
           "text": "Your lucky charm, whatever it is"
         },
         {
-          "id": "sit_two_suitcases_025",
+          "id": "sit_suit_025",
           "text": "Comfortable walking shoes — broken in, not new"
         }
       ]
@@ -4820,7 +4820,7 @@
     {
       "id": "sit_one_hour",
       "name": "One Hour to Yourself",
-      "prompt": "You have one hour completely to yourself — rank how you'd spend it",
+      "prompt": "Rank how you'd spend it",
       "cards": [
         {
           "id": "sit_hour_001",
@@ -4863,63 +4863,63 @@
           "text": "Playing a game"
         },
         {
-          "id": "sit_one_hour_011",
+          "id": "sit_hour_011",
           "text": "A bath with candles and no interruptions"
         },
         {
-          "id": "sit_one_hour_012",
+          "id": "sit_hour_012",
           "text": "A phone call with someone you miss"
         },
         {
-          "id": "sit_one_hour_013",
+          "id": "sit_hour_013",
           "text": "A nap — the kind where you melt into the couch"
         },
         {
-          "id": "sit_one_hour_014",
+          "id": "sit_hour_014",
           "text": "A walk with no phone, no music, just thoughts"
         },
         {
-          "id": "sit_one_hour_015",
+          "id": "sit_hour_015",
           "text": "Playing an instrument or making music"
         },
         {
-          "id": "sit_one_hour_016",
+          "id": "sit_hour_016",
           "text": "Sitting in the sun with a cold drink and a good book"
         },
         {
-          "id": "sit_one_hour_017",
+          "id": "sit_hour_017",
           "text": "Doing a puzzle — surprisingly relaxing"
         },
         {
-          "id": "sit_one_hour_018",
+          "id": "sit_hour_018",
           "text": "Stretching and yoga without following a video"
         },
         {
-          "id": "sit_one_hour_019",
+          "id": "sit_hour_019",
           "text": "Writing — journaling, a letter, anything"
         },
         {
-          "id": "sit_one_hour_020",
+          "id": "sit_hour_020",
           "text": "Cooking something just for yourself, slowly"
         },
         {
-          "id": "sit_one_hour_021",
+          "id": "sit_hour_021",
           "text": "Playing your favorite video game with no guilt"
         },
         {
-          "id": "sit_one_hour_022",
+          "id": "sit_hour_022",
           "text": "Drawing, painting, or doodling whatever comes to mind"
         },
         {
-          "id": "sit_one_hour_023",
+          "id": "sit_hour_023",
           "text": "Lying on the floor listening to a full album"
         },
         {
-          "id": "sit_one_hour_024",
+          "id": "sit_hour_024",
           "text": "Organizing one drawer or shelf — oddly therapeutic"
         },
         {
-          "id": "sit_one_hour_025",
+          "id": "sit_hour_025",
           "text": "Just sitting outside and watching the world go by"
         }
       ]
@@ -4927,7 +4927,7 @@
     {
       "id": "sit_terrible_week",
       "name": "Terrible Week Recovery",
-      "prompt": "A terrible week just ended — rank what would help you recover most",
+      "prompt": "Rank what would help you recover most",
       "cards": [
         {
           "id": "sit_recov_001",
@@ -4970,63 +4970,63 @@
           "text": "A workout to burn it all off"
         },
         {
-          "id": "sit_terrible_week_011",
+          "id": "sit_recov_011",
           "text": "A call from that one friend who always makes you laugh"
         },
         {
-          "id": "sit_terrible_week_012",
+          "id": "sit_recov_012",
           "text": "Ordering your favorite takeout without looking at the price"
         },
         {
-          "id": "sit_terrible_week_013",
+          "id": "sit_recov_013",
           "text": "Canceling every plan and doing nothing"
         },
         {
-          "id": "sit_terrible_week_014",
+          "id": "sit_recov_014",
           "text": "A bath that's been running too long and you don't care"
         },
         {
-          "id": "sit_terrible_week_015",
+          "id": "sit_recov_015",
           "text": "Your comfort show from episode one"
         },
         {
-          "id": "sit_terrible_week_016",
+          "id": "sit_recov_016",
           "text": "A drive with no destination and the windows down"
         },
         {
-          "id": "sit_terrible_week_017",
+          "id": "sit_recov_017",
           "text": "Crying it out — really letting it go"
         },
         {
-          "id": "sit_terrible_week_018",
+          "id": "sit_recov_018",
           "text": "Buying yourself flowers for no reason"
         },
         {
-          "id": "sit_terrible_week_019",
+          "id": "sit_recov_019",
           "text": "A walk in nature that clears your head"
         },
         {
-          "id": "sit_terrible_week_020",
+          "id": "sit_recov_020",
           "text": "Sleeping in with zero guilt"
         },
         {
-          "id": "sit_terrible_week_021",
+          "id": "sit_recov_021",
           "text": "Venting to someone who just listens"
         },
         {
-          "id": "sit_terrible_week_022",
+          "id": "sit_recov_022",
           "text": "A playlist of songs that match your mood exactly"
         },
         {
-          "id": "sit_terrible_week_023",
+          "id": "sit_recov_023",
           "text": "An unplanned day off — calling in, guilt-free"
         },
         {
-          "id": "sit_terrible_week_024",
+          "id": "sit_recov_024",
           "text": "A really good hug from someone who means it"
         },
         {
-          "id": "sit_terrible_week_025",
+          "id": "sit_recov_025",
           "text": "A sunset that reminds you it's not all bad"
         }
       ]
@@ -5034,7 +5034,7 @@
     {
       "id": "sit_long_flight",
       "name": "12-Hour Flight",
-      "prompt": "You're about to spend 12 hours on a plane — rank what would make it bearable",
+      "prompt": "Rank what would make it bearable",
       "cards": [
         {
           "id": "sit_fly_001",
@@ -5077,63 +5077,63 @@
           "text": "A friendly seatmate who knows when to stop talking"
         },
         {
-          "id": "sit_long_flight_011",
+          "id": "sit_fly_011",
           "text": "A neck pillow that actually works"
         },
         {
-          "id": "sit_long_flight_012",
+          "id": "sit_fly_012",
           "text": "Noise-canceling headphones"
         },
         {
-          "id": "sit_long_flight_013",
+          "id": "sit_fly_013",
           "text": "A download of your favorite show — multiple seasons"
         },
         {
-          "id": "sit_long_flight_014",
+          "id": "sit_fly_014",
           "text": "A window seat so you can lean against the wall"
         },
         {
-          "id": "sit_long_flight_015",
+          "id": "sit_fly_015",
           "text": "Melatonin or whatever helps you sleep on planes"
         },
         {
-          "id": "sit_long_flight_016",
+          "id": "sit_fly_016",
           "text": "A crossword puzzle book or Sudoku"
         },
         {
-          "id": "sit_long_flight_017",
+          "id": "sit_fly_017",
           "text": "Compression socks — unglamorous but essential"
         },
         {
-          "id": "sit_long_flight_018",
+          "id": "sit_fly_018",
           "text": "A good novel you've been saving for this exact moment"
         },
         {
-          "id": "sit_long_flight_019",
+          "id": "sit_fly_019",
           "text": "An empty seat next to you"
         },
         {
-          "id": "sit_long_flight_020",
+          "id": "sit_fly_020",
           "text": "A travel blanket and cozy socks"
         },
         {
-          "id": "sit_long_flight_021",
+          "id": "sit_fly_021",
           "text": "A downloaded playlist that's exactly 12 hours long"
         },
         {
-          "id": "sit_long_flight_022",
+          "id": "sit_fly_022",
           "text": "Snacks from home — not the airline stuff"
         },
         {
-          "id": "sit_long_flight_023",
+          "id": "sit_fly_023",
           "text": "A pen for the arrival card and random journaling"
         },
         {
-          "id": "sit_long_flight_024",
+          "id": "sit_fly_024",
           "text": "An aisle seat for easy bathroom access"
         },
         {
-          "id": "sit_long_flight_025",
+          "id": "sit_fly_025",
           "text": "That perfect recline angle that doesn't bother the person behind you"
         }
       ]
@@ -5141,7 +5141,7 @@
     {
       "id": "sit_fame",
       "name": "Famous For...",
-      "prompt": "You're going to be famous — rank which kind of fame sounds best",
+      "prompt": "Rank which kind of fame sounds best",
       "cards": [
         {
           "id": "sit_fame_001",
@@ -5248,7 +5248,7 @@
     {
       "id": "sit_retirement",
       "name": "Ideal Retirement",
-      "prompt": "You're planning the ideal retirement — rank what matters most",
+      "prompt": "Rank what you'd want most",
       "cards": [
         {
           "id": "sit_ret_001",
@@ -5291,63 +5291,63 @@
           "text": "No alarm clocks ever again"
         },
         {
-          "id": "sit_retirement_011",
+          "id": "sit_ret_011",
           "text": "A small cottage near the water"
         },
         {
-          "id": "sit_retirement_012",
+          "id": "sit_ret_012",
           "text": "A workshop where you build things with your hands"
         },
         {
-          "id": "sit_retirement_013",
+          "id": "sit_ret_013",
           "text": "A daily routine of walking and coffee shop visits"
         },
         {
-          "id": "sit_retirement_014",
+          "id": "sit_ret_014",
           "text": "Volunteering at a cause you care about deeply"
         },
         {
-          "id": "sit_retirement_015",
+          "id": "sit_ret_015",
           "text": "A garden that feeds you and the neighbors"
         },
         {
-          "id": "sit_retirement_016",
+          "id": "sit_ret_016",
           "text": "Learning an instrument you always wanted to play"
         },
         {
-          "id": "sit_retirement_017",
+          "id": "sit_ret_017",
           "text": "Writing your memoirs — someone should know this story"
         },
         {
-          "id": "sit_retirement_018",
+          "id": "sit_ret_018",
           "text": "A group of friends who meet for cards every week"
         },
         {
-          "id": "sit_retirement_019",
+          "id": "sit_ret_019",
           "text": "Taking classes at the local college, just for fun"
         },
         {
-          "id": "sit_retirement_020",
+          "id": "sit_ret_020",
           "text": "Traveling to every continent"
         },
         {
-          "id": "sit_retirement_021",
+          "id": "sit_ret_021",
           "text": "A reading chair by the window with perfect light"
         },
         {
-          "id": "sit_retirement_022",
+          "id": "sit_ret_022",
           "text": "Hosting dinner parties where everyone has a story"
         },
         {
-          "id": "sit_retirement_023",
+          "id": "sit_ret_023",
           "text": "Adopting a rescue pet who becomes your best friend"
         },
         {
-          "id": "sit_retirement_024",
+          "id": "sit_ret_024",
           "text": "Painting or an art hobby that fills the walls"
         },
         {
-          "id": "sit_retirement_025",
+          "id": "sit_ret_025",
           "text": "Living somewhere with perfect weather year-round"
         }
       ]
@@ -5355,7 +5355,7 @@
     {
       "id": "sit_zombie",
       "name": "Zombie Apocalypse",
-      "prompt": "The zombie apocalypse has started — rank what you'd grab first",
+      "prompt": "It's started — rank what you'd grab first",
       "cards": [
         {
           "id": "sit_zom_001",
@@ -5398,63 +5398,63 @@
           "text": "A walkie-talkie set"
         },
         {
-          "id": "sit_zombie_011",
+          "id": "sit_zom_011",
           "text": "A rooftop garden for growing food above the horde"
         },
         {
-          "id": "sit_zombie_012",
+          "id": "sit_zom_012",
           "text": "A loyal, trained German Shepherd"
         },
         {
-          "id": "sit_zombie_013",
+          "id": "sit_zom_013",
           "text": "A pickup truck with extra fuel cans"
         },
         {
-          "id": "sit_zombie_014",
+          "id": "sit_zom_014",
           "text": "A group of five trustworthy survivors"
         },
         {
-          "id": "sit_zombie_015",
+          "id": "sit_zom_015",
           "text": "A crossbow — silent and reusable"
         },
         {
-          "id": "sit_zombie_016",
+          "id": "sit_zom_016",
           "text": "A fully stocked underground bunker"
         },
         {
-          "id": "sit_zombie_017",
+          "id": "sit_zom_017",
           "text": "A ham radio to find other survivors"
         },
         {
-          "id": "sit_zombie_018",
+          "id": "sit_zom_018",
           "text": "A leather jacket — functional armor and it looks cool"
         },
         {
-          "id": "sit_zombie_019",
+          "id": "sit_zom_019",
           "text": "Night vision goggles"
         },
         {
-          "id": "sit_zombie_020",
+          "id": "sit_zom_020",
           "text": "A book on field medicine and surgery"
         },
         {
-          "id": "sit_zombie_021",
+          "id": "sit_zom_021",
           "text": "A reliable bicycle — no fuel needed"
         },
         {
-          "id": "sit_zombie_022",
+          "id": "sit_zom_022",
           "text": "A water filtration system you can carry"
         },
         {
-          "id": "sit_zombie_023",
+          "id": "sit_zom_023",
           "text": "A crowbar — versatile and intimidating"
         },
         {
-          "id": "sit_zombie_024",
+          "id": "sit_zom_024",
           "text": "A map of your city's sewer system"
         },
         {
-          "id": "sit_zombie_025",
+          "id": "sit_zom_025",
           "text": "A wind-up flashlight that never needs batteries"
         }
       ]
@@ -5505,63 +5505,63 @@
           "text": "The day you were born, watching from the outside"
         },
         {
-          "id": "sit_time_travel_011",
+          "id": "sit_time_011",
           "text": "Your parents' wedding day"
         },
         {
-          "id": "sit_time_travel_012",
+          "id": "sit_time_012",
           "text": "The first moon landing — watching it live"
         },
         {
-          "id": "sit_time_travel_013",
+          "id": "sit_time_013",
           "text": "Your own birth — weird but you're curious"
         },
         {
-          "id": "sit_time_travel_014",
+          "id": "sit_time_014",
           "text": "The opening night of a Shakespeare play, actual Shakespeare"
         },
         {
-          "id": "sit_time_travel_015",
+          "id": "sit_time_015",
           "text": "Woodstock — the original one"
         },
         {
-          "id": "sit_time_travel_016",
+          "id": "sit_time_016",
           "text": "The building of the Great Pyramids"
         },
         {
-          "id": "sit_time_travel_017",
+          "id": "sit_time_017",
           "text": "A dinosaur sighting — from a safe distance"
         },
         {
-          "id": "sit_time_travel_018",
+          "id": "sit_time_018",
           "text": "The moment your favorite song was first performed"
         },
         {
-          "id": "sit_time_travel_019",
+          "id": "sit_time_019",
           "text": "Your grandparents as teenagers"
         },
         {
-          "id": "sit_time_travel_020",
+          "id": "sit_time_020",
           "text": "The first time someone laughed — ever, in human history"
         },
         {
-          "id": "sit_time_travel_021",
+          "id": "sit_time_021",
           "text": "A medieval feast in a real castle"
         },
         {
-          "id": "sit_time_travel_022",
+          "id": "sit_time_022",
           "text": "The signing of a document that changed the world"
         },
         {
-          "id": "sit_time_travel_023",
+          "id": "sit_time_023",
           "text": "The future — 100 years from now, just to peek"
         },
         {
-          "id": "sit_time_travel_024",
+          "id": "sit_time_024",
           "text": "A family reunion with ancestors you never met"
         },
         {
-          "id": "sit_time_travel_025",
+          "id": "sit_time_025",
           "text": "The first day the internet went live — and nobody cares yet"
         }
       ]
@@ -5612,63 +5612,63 @@
           "text": "Perfect memory, but you remember every cringe moment"
         },
         {
-          "id": "sit_superpower_catch_011",
-          "text": "You can fly, but only as fast as a bike"
+          "id": "sit_spow_011",
+          "text": "You can breathe underwater, but you're terrified of fish"
         },
         {
-          "id": "sit_superpower_catch_012",
-          "text": "You can read minds, but you can't turn it off"
+          "id": "sit_spow_012",
+          "text": "You can stop time, but everything smells terrible when frozen"
         },
         {
-          "id": "sit_superpower_catch_013",
+          "id": "sit_spow_013",
           "text": "You're invisible, but only when holding your breath"
         },
         {
-          "id": "sit_superpower_catch_014",
+          "id": "sit_spow_014",
           "text": "You can freeze time, but you age while it's frozen"
         },
         {
-          "id": "sit_superpower_catch_015",
+          "id": "sit_spow_015",
           "text": "You have super strength, but only in your left arm"
         },
         {
-          "id": "sit_superpower_catch_016",
+          "id": "sit_spow_016",
           "text": "You can see the future, but only in dreams you forget"
         },
         {
-          "id": "sit_superpower_catch_017",
-          "text": "You can talk to animals, but they're mostly boring"
+          "id": "sit_spow_017",
+          "text": "You can control the weather, but it matches your mood"
         },
         {
-          "id": "sit_superpower_catch_018",
+          "id": "sit_spow_018",
           "text": "You're fireproof, but always feel cold"
         },
         {
-          "id": "sit_superpower_catch_019",
+          "id": "sit_spow_019",
           "text": "You can teleport, but always arrive 3 feet off the ground"
         },
         {
-          "id": "sit_superpower_catch_020",
+          "id": "sit_spow_020",
           "text": "You have X-ray vision, but only through wood"
         },
         {
-          "id": "sit_superpower_catch_021",
+          "id": "sit_spow_021",
           "text": "You can shrink to ant-size, but it takes 10 minutes"
         },
         {
-          "id": "sit_superpower_catch_022",
+          "id": "sit_spow_022",
           "text": "You never age, but you have to move cities every 5 years"
         },
         {
-          "id": "sit_superpower_catch_023",
+          "id": "sit_spow_023",
           "text": "You can clone yourself, but your clone argues with you"
         },
         {
-          "id": "sit_superpower_catch_024",
+          "id": "sit_spow_024",
           "text": "You're a genius, but only between 2 and 4 AM"
         },
         {
-          "id": "sit_superpower_catch_025",
+          "id": "sit_spow_025",
           "text": "You can breathe underwater, but it tastes like chlorine"
         }
       ]
@@ -5676,7 +5676,7 @@
     {
       "id": "sit_bank_heist",
       "name": "Heist Crew",
-      "prompt": "You're assembling a heist crew — rank who you'd recruit first",
+      "prompt": "Rank who you'd recruit first",
       "cards": [
         {
           "id": "sit_heist_001",
@@ -5719,63 +5719,63 @@
           "text": "The wildcard — unpredictable but brilliant"
         },
         {
-          "id": "sit_bank_heist_011",
-          "text": "The hacker who disables every camera and alarm"
+          "id": "sit_heist_011",
+          "text": "The forger who can fake any document"
         },
         {
-          "id": "sit_bank_heist_012",
+          "id": "sit_heist_012",
           "text": "The safe cracker who can open anything"
         },
         {
-          "id": "sit_bank_heist_013",
-          "text": "The getaway driver with nerves of steel"
+          "id": "sit_heist_013",
+          "text": "The ex-cop who knows how they think"
         },
         {
-          "id": "sit_bank_heist_014",
-          "text": "The disguise expert who becomes anyone"
+          "id": "sit_heist_014",
+          "text": "The voice actor who can mimic anyone on a phone call"
         },
         {
-          "id": "sit_bank_heist_015",
+          "id": "sit_heist_015",
           "text": "The insider who knows the vault schedule"
         },
         {
-          "id": "sit_bank_heist_016",
-          "text": "The muscle who handles unexpected trouble"
+          "id": "sit_heist_016",
+          "text": "The clean-up crew — they make it like it never happened"
         },
         {
-          "id": "sit_bank_heist_017",
+          "id": "sit_heist_017",
           "text": "The planner who accounts for every variable"
         },
         {
-          "id": "sit_bank_heist_018",
+          "id": "sit_heist_018",
           "text": "The contortionist who fits through any vent"
         },
         {
-          "id": "sit_bank_heist_019",
-          "text": "The smooth talker who distracts the guards"
+          "id": "sit_heist_019",
+          "text": "The lookout who never misses a detail"
         },
         {
-          "id": "sit_bank_heist_020",
+          "id": "sit_heist_020",
           "text": "The demolitions expert — in case things go wrong"
         },
         {
-          "id": "sit_bank_heist_021",
+          "id": "sit_heist_021",
           "text": "The tech genius who loops the security footage"
         },
         {
-          "id": "sit_bank_heist_022",
+          "id": "sit_heist_022",
           "text": "The rookie who's eager and surprisingly useful"
         },
         {
-          "id": "sit_bank_heist_023",
+          "id": "sit_heist_023",
           "text": "The getaway pilot with a helicopter on standby"
         },
         {
-          "id": "sit_bank_heist_024",
+          "id": "sit_heist_024",
           "text": "The tunnel digger who's been at it for months"
         },
         {
-          "id": "sit_bank_heist_025",
+          "id": "sit_heist_025",
           "text": "The cleanup crew who makes it look like nothing happened"
         }
       ]
@@ -5783,7 +5783,7 @@
     {
       "id": "sit_dating_profile",
       "name": "Dating Profile",
-      "prompt": "You're writing your dating profile — rank what you'd highlight about yourself first",
+      "prompt": "Rank what you'd highlight about yourself",
       "cards": [
         {
           "id": "sit_date_001",
@@ -5826,63 +5826,63 @@
           "text": "Your ability to have deep conversations"
         },
         {
-          "id": "sit_dating_profile_011",
+          "id": "sit_date_011",
           "text": "A bio that's funny without trying too hard"
         },
         {
-          "id": "sit_dating_profile_012",
+          "id": "sit_date_012",
           "text": "A travel photo that shows you're adventurous"
         },
         {
-          "id": "sit_dating_profile_013",
+          "id": "sit_date_013",
           "text": "Mentioning your love of dogs — instant connection"
         },
         {
-          "id": "sit_dating_profile_014",
+          "id": "sit_date_014",
           "text": "A group photo that proves you have friends"
         },
         {
-          "id": "sit_dating_profile_015",
+          "id": "sit_date_015",
           "text": "A candid laugh photo vs. a perfectly posed one"
         },
         {
-          "id": "sit_dating_profile_016",
+          "id": "sit_date_016",
           "text": "A mention of your go-to comfort show"
         },
         {
-          "id": "sit_dating_profile_017",
+          "id": "sit_date_017",
           "text": "A prompt answer that shows emotional intelligence"
         },
         {
-          "id": "sit_dating_profile_018",
+          "id": "sit_date_018",
           "text": "A hobby that sounds fun to join — hiking, cooking, etc."
         },
         {
-          "id": "sit_dating_profile_019",
+          "id": "sit_date_019",
           "text": "A photo with a family member that shows your softer side"
         },
         {
-          "id": "sit_dating_profile_020",
+          "id": "sit_date_020",
           "text": "Saying what you're looking for upfront — refreshing"
         },
         {
-          "id": "sit_dating_profile_021",
+          "id": "sit_date_021",
           "text": "A gym photo — bold move, does it work?"
         },
         {
-          "id": "sit_dating_profile_022",
+          "id": "sit_date_022",
           "text": "A joke that reveals your specific sense of humor"
         },
         {
-          "id": "sit_dating_profile_023",
+          "id": "sit_date_023",
           "text": "Activity photos over selfies"
         },
         {
-          "id": "sit_dating_profile_024",
+          "id": "sit_date_024",
           "text": "Mentioning a niche interest that attracts the right people"
         },
         {
-          "id": "sit_dating_profile_025",
+          "id": "sit_date_025",
           "text": "A photo of you doing something you genuinely love"
         }
       ]
@@ -5890,7 +5890,7 @@
     {
       "id": "sit_talent_show",
       "name": "Talent Show",
-      "prompt": "You have to perform in a talent show — rank what you'd be most willing to do",
+      "prompt": "Rank what you'd be most willing to perform",
       "cards": [
         {
           "id": "sit_talent_001",
@@ -5933,63 +5933,63 @@
           "text": "Just confidently walk out and bow"
         },
         {
-          "id": "sit_talent_show_011",
-          "text": "An impressions act that nails at least three celebrities"
+          "id": "sit_talent_011",
+          "text": "Speed painting — finishing a portrait in under 3 minutes"
         },
         {
-          "id": "sit_talent_show_012",
-          "text": "A dance routine you choreographed yourself"
+          "id": "sit_talent_012",
+          "text": "A hula hoop act that's somehow mesmerizing"
         },
         {
-          "id": "sit_talent_show_013",
+          "id": "sit_talent_013",
           "text": "Stand-up comedy with five minutes of original material"
         },
         {
-          "id": "sit_talent_show_014",
-          "text": "A magic trick that genuinely fools the audience"
+          "id": "sit_talent_014",
+          "text": "A ventriloquist act that actually creeps people out"
         },
         {
-          "id": "sit_talent_show_015",
-          "text": "Singing your heart out — talent optional, passion required"
+          "id": "sit_talent_015",
+          "text": "A dramatic reading of a famous speech"
         },
         {
-          "id": "sit_talent_show_016",
+          "id": "sit_talent_016",
           "text": "A dramatic monologue that gives everyone chills"
         },
         {
-          "id": "sit_talent_show_017",
+          "id": "sit_talent_017",
           "text": "Beatboxing that makes people forget it's just your mouth"
         },
         {
-          "id": "sit_talent_show_018",
+          "id": "sit_talent_018",
           "text": "A gymnastics or acrobatics routine"
         },
         {
-          "id": "sit_talent_show_019",
+          "id": "sit_talent_019",
           "text": "Playing guitar and singing — the classic combo"
         },
         {
-          "id": "sit_talent_show_020",
+          "id": "sit_talent_020",
           "text": "A puppet show that's somehow hilarious"
         },
         {
-          "id": "sit_talent_show_021",
+          "id": "sit_talent_021",
           "text": "A cooking demo that ends with the audience eating"
         },
         {
-          "id": "sit_talent_show_022",
+          "id": "sit_talent_022",
           "text": "A poetry recital that makes the room go silent"
         },
         {
-          "id": "sit_talent_show_023",
+          "id": "sit_talent_023",
           "text": "A rap — freestyle, if you dare"
         },
         {
-          "id": "sit_talent_show_024",
+          "id": "sit_talent_024",
           "text": "Juggling — bonus points for unusual objects"
         },
         {
-          "id": "sit_talent_show_025",
+          "id": "sit_talent_025",
           "text": "A synchronized routine with a partner"
         }
       ]
@@ -5997,7 +5997,7 @@
     {
       "id": "sit_roommate",
       "name": "Ideal Roommate",
-      "prompt": "You're picking a roommate — rank what matters most",
+      "prompt": "Rank what matters most in a roommate",
       "cards": [
         {
           "id": "sit_room_001",
@@ -6040,63 +6040,63 @@
           "text": "They don't leave passive-aggressive notes"
         },
         {
-          "id": "sit_roommate_011",
+          "id": "sit_room_011",
           "text": "Does their dishes the same day — unheard of"
         },
         {
-          "id": "sit_roommate_012",
-          "text": "Respects quiet hours without being asked"
+          "id": "sit_room_012",
+          "text": "Warns you before having people over"
         },
         {
-          "id": "sit_roommate_013",
+          "id": "sit_room_013",
           "text": "Brings home leftovers for you sometimes"
         },
         {
-          "id": "sit_roommate_014",
-          "text": "Gives you space when you clearly need it"
+          "id": "sit_room_014",
+          "text": "Has a similar cleanliness standard"
         },
         {
-          "id": "sit_roommate_015",
+          "id": "sit_room_015",
           "text": "Is friends with you, not just your roommate"
         },
         {
-          "id": "sit_roommate_016",
+          "id": "sit_room_016",
           "text": "Splits groceries and household supplies fairly"
         },
         {
-          "id": "sit_roommate_017",
-          "text": "Doesn't touch your food — sacred boundary"
+          "id": "sit_room_017",
+          "text": "Doesn't hog the bathroom in the morning"
         },
         {
-          "id": "sit_roommate_018",
+          "id": "sit_room_018",
           "text": "Has a similar sleep schedule"
         },
         {
-          "id": "sit_roommate_019",
-          "text": "Doesn't bring unexpected guests over constantly"
+          "id": "sit_room_019",
+          "text": "Remembers to lock the door at night"
         },
         {
-          "id": "sit_roommate_020",
+          "id": "sit_room_020",
           "text": "Takes out the trash without a reminder"
         },
         {
-          "id": "sit_roommate_021",
+          "id": "sit_room_021",
           "text": "Is handy and can fix things around the apartment"
         },
         {
-          "id": "sit_roommate_022",
+          "id": "sit_room_022",
           "text": "Communicates when something bothers them"
         },
         {
-          "id": "sit_roommate_023",
+          "id": "sit_room_023",
           "text": "Watches the same shows — built-in viewing buddy"
         },
         {
-          "id": "sit_roommate_024",
+          "id": "sit_room_024",
           "text": "Keeps common areas clean without a passive-aggressive note"
         },
         {
-          "id": "sit_roommate_025",
+          "id": "sit_room_025",
           "text": "Is the kind of person you'd actually choose to live with again"
         }
       ]
@@ -6104,7 +6104,7 @@
     {
       "id": "sit_survival_skills",
       "name": "Survival Skills",
-      "prompt": "You need to survive in the wild — rank which skill you'd want most",
+      "prompt": "Rank which skill you'd want most",
       "cards": [
         {
           "id": "sit_surv_001",
@@ -6147,63 +6147,63 @@
           "text": "Tying knots for any purpose"
         },
         {
-          "id": "sit_survival_skills_011",
-          "text": "Building a fire from scratch with sticks"
+          "id": "sit_surv_011",
+          "text": "Foraging for mushrooms safely"
         },
         {
-          "id": "sit_survival_skills_012",
-          "text": "Identifying edible plants in the wild"
+          "id": "sit_surv_012",
+          "text": "Fishing with improvised gear"
         },
         {
-          "id": "sit_survival_skills_013",
-          "text": "Setting animal traps for food"
+          "id": "sit_surv_013",
+          "text": "Climbing trees quickly to escape danger"
         },
         {
-          "id": "sit_survival_skills_014",
-          "text": "Navigating by the stars at night"
+          "id": "sit_surv_014",
+          "text": "Making rope from plant fibers"
         },
         {
-          "id": "sit_survival_skills_015",
-          "text": "Building a shelter from natural materials"
+          "id": "sit_surv_015",
+          "text": "Preserving food by smoking or drying"
         },
         {
-          "id": "sit_survival_skills_016",
-          "text": "Purifying water using sand, charcoal, and cloth"
+          "id": "sit_surv_016",
+          "text": "Building a raft to cross water"
         },
         {
-          "id": "sit_survival_skills_017",
-          "text": "Basic wound care and first aid"
+          "id": "sit_surv_017",
+          "text": "Reading terrain to find the safest path"
         },
         {
-          "id": "sit_survival_skills_018",
-          "text": "Swimming across a river with a current"
+          "id": "sit_surv_018",
+          "text": "Knowing which insects are safe to eat"
         },
         {
-          "id": "sit_survival_skills_019",
+          "id": "sit_surv_019",
           "text": "Reading weather patterns to predict storms"
         },
         {
-          "id": "sit_survival_skills_020",
-          "text": "Tying knots — for climbing, fishing, and building"
+          "id": "sit_surv_020",
+          "text": "Camouflaging yourself from predators"
         },
         {
-          "id": "sit_survival_skills_021",
+          "id": "sit_surv_021",
           "text": "Tracking animals by their footprints"
         },
         {
-          "id": "sit_survival_skills_022",
+          "id": "sit_surv_022",
           "text": "Signaling for rescue with smoke or mirrors"
         },
         {
-          "id": "sit_survival_skills_023",
-          "text": "Staying calm during a crisis"
+          "id": "sit_surv_023",
+          "text": "Digging for water when there's no stream nearby"
         },
         {
-          "id": "sit_survival_skills_024",
+          "id": "sit_surv_024",
           "text": "Rationing supplies to last as long as possible"
         },
         {
-          "id": "sit_survival_skills_025",
+          "id": "sit_surv_025",
           "text": "Finding or building tools from rocks and wood"
         }
       ]
@@ -6211,7 +6211,7 @@
     {
       "id": "sit_billionaire_day",
       "name": "Billionaire for a Day",
-      "prompt": "You're a billionaire for exactly one day — rank what you'd do first",
+      "prompt": "One day only — rank what you'd do first",
       "cards": [
         {
           "id": "sit_bill_001",
@@ -6254,63 +6254,63 @@
           "text": "Buy something ridiculous — like a boat or a castle"
         },
         {
-          "id": "sit_billionaire_day_011",
+          "id": "sit_bill_011",
           "text": "Renting out an entire theme park for you and your friends"
         },
         {
-          "id": "sit_billionaire_day_012",
+          "id": "sit_bill_012",
           "text": "Buying your parents their dream house"
         },
         {
-          "id": "sit_billionaire_day_013",
+          "id": "sit_bill_013",
           "text": "A private jet to anywhere in the world"
         },
         {
-          "id": "sit_billionaire_day_014",
+          "id": "sit_bill_014",
           "text": "A shopping spree with no price tags visible"
         },
         {
-          "id": "sit_billionaire_day_015",
+          "id": "sit_bill_015",
           "text": "Tipping every service worker $1,000"
         },
         {
-          "id": "sit_billionaire_day_016",
+          "id": "sit_bill_016",
           "text": "A stadium concert featuring your favorite artist, just for you"
         },
         {
-          "id": "sit_billionaire_day_017",
+          "id": "sit_bill_017",
           "text": "Buying out a restaurant so your friends eat free all night"
         },
         {
-          "id": "sit_billionaire_day_018",
+          "id": "sit_bill_018",
           "text": "Setting up a full scholarship fund in one afternoon"
         },
         {
-          "id": "sit_billionaire_day_019",
+          "id": "sit_bill_019",
           "text": "A helicopter tour of a city at sunset"
         },
         {
-          "id": "sit_billionaire_day_020",
+          "id": "sit_bill_020",
           "text": "Commissioning a famous artist to paint your portrait"
         },
         {
-          "id": "sit_billionaire_day_021",
+          "id": "sit_bill_021",
           "text": "Renting a yacht and doing nothing but floating"
         },
         {
-          "id": "sit_billionaire_day_022",
+          "id": "sit_bill_022",
           "text": "Buying a building and naming it something ridiculous"
         },
         {
-          "id": "sit_billionaire_day_023",
+          "id": "sit_bill_023",
           "text": "Donating enough to actually change one community"
         },
         {
-          "id": "sit_billionaire_day_024",
+          "id": "sit_bill_024",
           "text": "A fireworks show in your backyard — the illegal kind"
         },
         {
-          "id": "sit_billionaire_day_025",
+          "id": "sit_bill_025",
           "text": "Paying off every friend's debt by the end of the day"
         }
       ]
@@ -6318,7 +6318,7 @@
     {
       "id": "sit_school_subjects",
       "name": "School Subjects",
-      "prompt": "You have to go back to school — rank which subject you'd actually enjoy taking again",
+      "prompt": "Rank which subject you'd actually enjoy again",
       "cards": [
         {
           "id": "sit_school_001",
@@ -6361,63 +6361,63 @@
           "text": "Home economics / Cooking"
         },
         {
-          "id": "sit_school_subjects_011",
+          "id": "sit_school_011",
           "text": "Creative writing — finally graded on imagination"
         },
         {
-          "id": "sit_school_subjects_012",
+          "id": "sit_school_012",
           "text": "Chemistry — explosions make everything better"
         },
         {
-          "id": "sit_school_subjects_013",
+          "id": "sit_school_013",
           "text": "Computer science — building things that actually work"
         },
         {
-          "id": "sit_school_subjects_014",
+          "id": "sit_school_014",
           "text": "Drama — being someone else for an hour"
         },
         {
-          "id": "sit_school_subjects_015",
+          "id": "sit_school_015",
           "text": "Psychology — understanding why people do what they do"
         },
         {
-          "id": "sit_school_subjects_016",
+          "id": "sit_school_016",
           "text": "Art history — looking at pretty things and calling it studying"
         },
         {
-          "id": "sit_school_subjects_017",
+          "id": "sit_school_017",
           "text": "Economics — suddenly the news makes more sense"
         },
         {
-          "id": "sit_school_subjects_018",
+          "id": "sit_school_018",
           "text": "Gym — a break from sitting, even if you hated dodgeball"
         },
         {
-          "id": "sit_school_subjects_019",
+          "id": "sit_school_019",
           "text": "Philosophy — asking questions with no answers"
         },
         {
-          "id": "sit_school_subjects_020",
+          "id": "sit_school_020",
           "text": "Biology — the miracle of being alive is mildly interesting"
         },
         {
-          "id": "sit_school_subjects_021",
+          "id": "sit_school_021",
           "text": "Music — band, orchestra, choir, or just listening"
         },
         {
-          "id": "sit_school_subjects_022",
+          "id": "sit_school_022",
           "text": "Statistics — the only math that feels useful in real life"
         },
         {
-          "id": "sit_school_subjects_023",
+          "id": "sit_school_023",
           "text": "Astronomy — space is objectively cool"
         },
         {
-          "id": "sit_school_subjects_024",
+          "id": "sit_school_024",
           "text": "Home economics — cooking and sewing are real skills"
         },
         {
-          "id": "sit_school_subjects_025",
+          "id": "sit_school_025",
           "text": "A language class — even if you forgot most of it"
         }
       ]

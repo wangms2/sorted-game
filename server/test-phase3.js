@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL = 'http://localhost:3001';
+const URL = 'http://localhost:3002';
 let passed = 0;
 let failed = 0;
 

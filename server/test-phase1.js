@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL = 'http://localhost:3001';
+const URL = 'http://localhost:3002';
 
 function connect(name) {
     return new Promise((resolve, reject) => {

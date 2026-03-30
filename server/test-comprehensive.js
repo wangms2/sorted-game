@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL = 'http://localhost:3001';
+const URL = 'http://localhost:3002';
 let passed = 0;
 let failed = 0;
 
@@ -830,7 +830,7 @@ async function testServerCrashResilience() {
 
     // Verify server is still alive
     console.log('7. Server still alive...');
-    const health = await fetch('http://localhost:3001/health').then(r => r.json());
+    const health = await fetch('http://localhost:3002/health').then(r => r.json());
     assert(health.status === 'ok', 'Server still running after bad inputs');
     console.log(`   Health: ${health.status}`);
 
