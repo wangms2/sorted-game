@@ -141,7 +141,7 @@ function deriveInsights(gameHistory, playerMap) {
     for (const entry of gameHistory) {
         const scores = Object.values(entry.guessScores);
         if (scores.length >= 2 && scores.every(s => s.points <= 3)) {
-            conditional.push({ emoji: '🤷', label: 'Stumped Everyone', text: `Nobody could figure out ${getName(entry.spotlightId)}'s ${entry.assignmentName}` });
+            conditional.push({ emoji: '🤷', label: 'Stumped Everyone', text: `Nobody could figure out ${getName(entry.spotlightId)}'s ${entry.assignmentLabel}` });
         }
     }
 
@@ -167,7 +167,7 @@ function deriveInsights(gameHistory, playerMap) {
     for (const entry of gameHistory) {
         const scores = Object.values(entry.guessScores);
         if (scores.length >= 2 && scores.every(s => s.points >= 8)) {
-            conditional.push({ emoji: '📖', label: 'Open Book', text: `Everyone could read ${getName(entry.spotlightId)}'s ${entry.assignmentName}` });
+            conditional.push({ emoji: '📖', label: 'Open Book', text: `Everyone could read ${getName(entry.spotlightId)}'s ${entry.assignmentLabel}` });
         }
     }
 

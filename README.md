@@ -6,11 +6,11 @@ A real-time multiplayer party game where players rank things, guess each other's
 
 ## How It Works
 
-1. **Rank** — Each player gets a different category (e.g. "Foods & Drinks") or situation (e.g. "Desert Island") with 5 cards to rank on a subjective scale.
+1. **Rank** — Each player gets a different deck (e.g. "Love Languages") with a single clear prompt and 5 cards to rank from most to least.
 2. **Guess** — One player at a time is in the "Spotlight." Everyone else sees their cards and tries to guess how they ranked them.
 3. **Reveal** — The Spotlight player reveals their ranking one card at a time, sparking debates and scoring points.
 4. **Score** — Exact match = 2 pts, off-by-one = 1 pt. Spotlight player earns 1 pt for each card someone guessed exactly.
-5. **Repeat** — Cycle through all players, then start a new round with fresh categories.
+5. **Repeat** — Cycle through all players, then start a new round with fresh decks.
 
 ## Tech Stack
 
@@ -65,7 +65,7 @@ The server serves the built client and runs on `PORT` (default 3001).
 │   ├── gameEngine.js  # Game logic, scoring, timers
 │   └── deckManager.js # Card dealing
 ├── shared/
-│   ├── deck.json      # 1,500 cards (30 categories + 30 situations)
+│   ├── deck.json      # 3,750 cards (150 decks x 25 cards), generated
 │   └── socketEvents.js
 ├── PLAN.md           # Full technical plan
 └── Procfile          # Deployment
@@ -73,8 +73,8 @@ The server serves the built client and runs on `PORT` (default 3001).
 
 ## Game Features
 
-- **Different content per player** — Each player gets a unique category or situation each round
-- **1–3 rounds** per game, alternating between categorical and situational rounds
+- **Different content per player** — Each player gets a unique deck each round
+- **150 decks** spanning deep (love languages, values), mid (habits, quirks) and light (foods, travel) themes
 - **Reconnection** — Session tokens allow rejoining after refresh or disconnect (60s grace period)
 - **Auto-reveal** — If the Spotlight player disconnects, cards auto-reveal after 10 seconds
 - **Mobile-friendly** — Touch drag-and-drop via dnd-kit sensors

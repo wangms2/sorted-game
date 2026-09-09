@@ -151,7 +151,7 @@ async function testFullGameLifecycle() {
     const charliePlayer = Object.values(cData.room.players).find(p => p.sessionToken);
     assert(alicePlayer.assignment.id !== bobPlayer.assignment.id, 'Alice and Bob have different assignments');
     assert(bobPlayer.assignment.id !== charliePlayer.assignment.id, 'Bob and Charlie have different assignments');
-    console.log(`   Assignments: Alice=${alicePlayer.assignment.name}, Bob=${bobPlayer.assignment.name}, Charlie=${charliePlayer.assignment.name}`);
+    console.log(`   Assignments: Alice=${alicePlayer.assignment.label}, Bob=${bobPlayer.assignment.label}, Charlie=${charliePlayer.assignment.label}`);
 
     // Submit rankings
     console.log('4. Submitting rankings...');
@@ -578,7 +578,7 @@ async function testMidGameReconnect() {
         const reconnCharlieWithToken = Object.values(reconnRoom.players).find(p => p.sessionToken);
         assert(reconnCharlieWithToken.cards.length === 5, 'Charlie still has 5 cards after reconnect');
         assert(reconnCharlieWithToken.assignment !== null, 'Charlie still has assignment after reconnect');
-        console.log(`   Cards preserved: ${reconnCharlieWithToken.cards.length}, Assignment: ${reconnCharlieWithToken.assignment?.name}`);
+        console.log(`   Cards preserved: ${reconnCharlieWithToken.cards.length}, Assignment: ${reconnCharlieWithToken.assignment?.label}`);
 
         charlie2.disconnect();
     } else {

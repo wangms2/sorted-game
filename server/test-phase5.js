@@ -137,7 +137,7 @@ async function testRevealPhaseDataShape() {
 
     console.log('6. Assignment still visible...');
     assert(room.hotSeat.assignment != null, 'Assignment exists');
-    assert(room.hotSeat.assignment.name != null, 'Assignment has name');
+    assert(room.hotSeat.assignment.label != null, 'Assignment has label');
 
     console.log('7. Timer is cleared...');
     assert(room.timerEndAt == null, 'No timer during reveal');

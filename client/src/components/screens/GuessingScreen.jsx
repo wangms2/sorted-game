@@ -161,8 +161,8 @@ export default function GuessingScreen() {
                     <p className="text-charcoal text-sm uppercase tracking-wide mb-1 font-medium">
                         Guess <span className="text-charcoal font-display font-bold text-lg normal-case">{targetName}</span>&apos;s ranking
                     </p>
-                    <h2 className="font-display text-2xl font-bold text-charcoal mb-1">{assignment?.name}</h2>
-                    <p className="text-charcoal text-sm">{assignment?.scale}</p>
+                    <p className="text-charcoal/40 text-xs font-semibold tracking-widest uppercase mb-1">{assignment?.label}</p>
+                    <h2 className="font-display text-xl font-bold text-charcoal leading-snug">{assignment?.prompt}</h2>
                 </div>
 
                 {/* Scale labels */}

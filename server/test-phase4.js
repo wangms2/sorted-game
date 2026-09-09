@@ -101,9 +101,9 @@ async function testGuessingPhaseData() {
     assert(room.hotSeat != null, 'Hot seat object exists');
     assert(room.hotSeat.playerId != null, 'Hot seat has playerId');
     assert(room.hotSeat.assignment != null, 'Hot seat has assignment');
-    assert(room.hotSeat.assignment.name != null, 'Hot seat assignment has name');
-    assert(room.hotSeat.assignment.scale != null, 'Hot seat assignment has scale');
-    assert(room.hotSeat.assignment.type != null, 'Hot seat assignment has type');
+    assert(room.hotSeat.assignment.label != null, 'Hot seat assignment has label');
+    assert(room.hotSeat.assignment.prompt != null, 'Hot seat assignment has prompt');
+    assert(room.hotSeat.assignment.tier != null, 'Hot seat assignment has tier');
 
     // Hot seat cards should be present and shuffled (5 cards)
     console.log('3. Hot seat cards present...');
@@ -330,7 +330,7 @@ async function testGuessingToRevealTransitionData() {
 
     console.log('3. Hot seat assignment still visible...');
     assert(revealRoom.hotSeat.assignment != null, 'Assignment still present');
-    assert(revealRoom.hotSeat.assignment.name != null, 'Assignment name present');
+    assert(revealRoom.hotSeat.assignment.label != null, 'Assignment label present');
 
     console.log('4. Hot seat cards still visible...');
     assert(revealRoom.hotSeat.cards.length === 5, 'All 5 cards still visible');

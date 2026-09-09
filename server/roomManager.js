@@ -61,9 +61,7 @@ export function createRoom(playerName, socketId) {
         hotSeatIndex: 0,
         currentRoundNumber: 0,
         totalRounds: 1,
-        roundType: null,
-        usedCategoryIds: [],
-        usedSituationIds: [],
+        usedDeckIds: [],
         hotSeat: null,
         settings: {
             rankingTimerSeconds: 60,
@@ -348,7 +346,6 @@ export function filterRoomForPlayer(room, socketId) {
         hotSeatIndex: room.hotSeatIndex,
         currentRoundNumber: room.currentRoundNumber,
         totalRounds: room.totalRounds,
-        roundType: room.roundType,
         settings: room.settings,
         pendingSettings: room.pendingSettings || null,
         timerEndAt: room.timerEndAt,

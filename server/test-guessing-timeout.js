@@ -50,7 +50,7 @@ function buildMockGuessingRoom() {
             playerId: 'alice',
             cards: shuffledHotSeatCards,  // what guessers see
             shuffledCards: shuffledHotSeatCards,
-            assignment: { name: 'Test Category', scale: 'Most to Least', type: 'categorical' },
+            assignment: { id: 'test_deck', label: 'Test Deck', prompt: 'Rank these from your favorite to your least favorite.', tier: 'light' },
             revealIndex: 0,
             revealedPositions: [],
             roundScores: {},

@@ -8,16 +8,6 @@ const __dirname = dirname(__filename);
 const deckPath = join(__dirname, '..', 'shared', 'deck.json');
 const deckData = JSON.parse(readFileSync(deckPath, 'utf8'));
 
-const categoriesById = new Map();
-for (const cat of deckData.categories) {
-    categoriesById.set(cat.id, cat);
-}
-
-const situationsById = new Map();
-for (const sit of deckData.situations) {
-    situationsById.set(sit.id, sit);
-}
-
 function shuffle(array) {
     const arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
@@ -34,32 +24,25 @@ export function dealRound(room) {
     );
     const numPlayers = playerIds.length;
 
-    // Build a combined pool of all unused categories and situations
-    const availableCats = deckData.categories.filter(
-        (c) => !room.usedCategoryIds.includes(c.id)
-    );
-    const availableSits = deckData.situations.filter(
-        (s) => !room.usedSituationIds.includes(s.id)
-    );
-    let pool = shuffle([...availableCats, ...availableSits]);
+    // Draw from the decks not yet used in this game
+    let pool = shuffle(deckData.decks.filter((d) => !room.usedDeckIds.includes(d.id)));
 
-    // Fallback: if not enough unused, allow reuse from full deck
+    // Fallback: if not enough unused, allow reuse from the full deck
     if (pool.length < numPlayers) {
-        pool = shuffle([...deckData.categories, ...deckData.situations]);
+        pool = shuffle([...deckData.decks]);
     }
 
     const selected = pool.slice(0, numPlayers);
 
     playerIds.forEach((socketId, i) => {
         const entry = selected[i];
-        const isCategory = entry.scale !== undefined; // categories have 'scale', situations have 'prompt'
         const cards = shuffle(entry.cards).slice(0, 5).sort((a, b) => a.id.localeCompare(b.id));
 
         room.players[socketId].assignment = {
-            type: isCategory ? 'category' : 'situation',
             id: entry.id,
-            name: entry.name,
-            scale: isCategory ? entry.scale : entry.prompt,
+            label: entry.label,
+            prompt: entry.prompt,
+            tier: entry.tier,
         };
         room.players[socketId].cards = cards;
         room.players[socketId].ranking = null;
@@ -69,12 +52,8 @@ export function dealRound(room) {
         room.players[socketId].draftRanking = null;
         room.players[socketId].hasGuessed = false;
 
-        if (isCategory) {
-            room.usedCategoryIds.push(entry.id);
-        } else {
-            room.usedSituationIds.push(entry.id);
-        }
+        room.usedDeckIds.push(entry.id);
     });
 }
 
-export { deckData, categoriesById, situationsById, shuffle };
+export { deckData, shuffle };

@@ -151,9 +151,9 @@ export default function RankingScreen() {
                     <div className="mb-3">
                         <Timer timerEndAt={room.timerEndAt} totalSeconds={room.settings?.rankingTimerSeconds} />
                     </div>
-                    <h2 className="font-display text-2xl font-bold text-charcoal mb-1">{assignment?.name}</h2>
-                    <p className="text-charcoal text-sm">{assignment?.scale}</p>
-                    <p className="text-charcoal/40 text-xs mt-2">Rank these for yourself — others will try to guess your order</p>
+                    <p className="text-charcoal/40 text-xs font-semibold tracking-widest uppercase mb-1">{assignment?.label}</p>
+                    <h2 className="font-display text-xl font-bold text-charcoal leading-snug">{assignment?.prompt}</h2>
+                    <p className="text-charcoal/40 text-xs mt-2">Others will try to guess your order</p>
                 </div>
 
                 {/* Scale labels */}

@@ -34,8 +34,7 @@ export function startGame(room, totalRounds, io, emitRoomUpdate) {
     room.totalRounds = totalRounds;
     room.currentRoundNumber = 1;
     room.hotSeatIndex = 0;
-    room.usedCategoryIds = [];
-    room.usedSituationIds = [];
+    room.usedDeckIds = [];
     room.coopStats = { exact: 0, offByOne: 0, missed: 0 };
     room.gameHistory = [];
 
@@ -481,7 +480,7 @@ function revealPosition(room, positionIndex) {
         const spotlightPlayer = room.players[revealPlayerId];
         room.gameHistory.push({
             spotlightId: revealPlayerId,
-            assignmentName: spotlightPlayer?.assignment?.name || '',
+            assignmentLabel: spotlightPlayer?.assignment?.label || '',
             guessScores: historyGuessScores,
             guesses: historyGuesses,
         });
@@ -685,9 +684,7 @@ export function playAgain(room, io, emitRoomUpdate) {
     room.mode = null;
     room.currentRoundNumber = 0;
     room.hotSeatIndex = 0;
-    room.roundType = null;
-    room.usedCategoryIds = [];
-    room.usedSituationIds = [];
+    room.usedDeckIds = [];
     room.hotSeat = null;
     room.timerEndAt = null;
     room.coopStats = { exact: 0, offByOne: 0, missed: 0 };

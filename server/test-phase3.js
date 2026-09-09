@@ -77,9 +77,9 @@ async function testRankingPhaseTransition() {
     const myPlayer = Object.values(startUpdate.room.players).find(p => p.sessionToken);
     assert(myPlayer != null, 'Found my player');
     assert(myPlayer.assignment != null, 'Player has assignment');
-    assert(myPlayer.assignment.name != null, 'Assignment has name');
-    assert(myPlayer.assignment.scale != null, 'Assignment has scale');
-    assert(typeof myPlayer.assignment.type === 'string', 'Assignment has type');
+    assert(myPlayer.assignment.label != null, 'Assignment has label');
+    assert(myPlayer.assignment.prompt != null, 'Assignment has prompt');
+    assert(typeof myPlayer.assignment.tier === 'string', 'Assignment has tier');
     assert(Array.isArray(myPlayer.cards), 'Player has cards array');
     assert(myPlayer.cards.length === 5, 'Player has 5 cards');
 
@@ -283,11 +283,11 @@ async function testDifferentAssignmentsPerPlayer() {
     const uniqueAssignments = new Set(ids);
     assert(uniqueAssignments.size === 5, `5 unique assignments: ${ids.join(', ')}`);
 
-    // All assignments should have a valid type
-    console.log('3. All assignments have valid type (category or situation)...');
-    const types = assignments.map(a => a.type);
-    const validTypes = types.every(t => t === 'category' || t === 'situation');
-    assert(validTypes, `All valid types: ${types.join(', ')}`);
+    // All assignments should have a valid tier
+    console.log('3. All assignments have a valid tier...');
+    const tiers = assignments.map(a => a.tier);
+    const validTiers = tiers.every(t => t === 'deep' || t === 'mid' || t === 'light');
+    assert(validTiers, `All valid tiers: ${tiers.join(', ')}`);
 
     // Each player's cards should be different
     console.log('4. Each player has different cards...');

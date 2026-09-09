@@ -214,8 +214,8 @@ export default function RevealScreen() {
                         {targetName}&apos;s Ranking
                         {isCoop && <span className="ml-2 text-amber">({isSecondReveal ? '2/2' : '1/2'})</span>}
                     </p>
-                    <h2 className="font-display text-2xl font-bold text-charcoal mb-1">{assignment?.name}</h2>
-                    <p className="text-charcoal text-sm">{assignment?.scale}</p>
+                    <p className="text-charcoal/40 text-xs font-semibold tracking-widest uppercase mb-1">{assignment?.label}</p>
+                    <h2 className="font-display text-xl font-bold text-charcoal leading-snug">{assignment?.prompt}</h2>
                     <button
                         onClick={() => setScoringOpen(!scoringOpen)}
                         className="text-charcoal/30 text-xs mt-2 cursor-pointer hover:text-charcoal/50 transition font-medium"

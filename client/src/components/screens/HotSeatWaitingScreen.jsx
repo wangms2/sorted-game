@@ -81,8 +81,8 @@ export default function HotSeatWaitingScreen() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-charcoal mb-1">You&apos;re in the Spotlight!</h2>
                     <p className="text-charcoal/50 text-sm mb-1">You ranked</p>
-                    <p className="font-display text-lg font-bold text-charcoal mb-0.5">{myPlayer.assignment?.name}</p>
-                    <p className="text-charcoal/40 text-xs">{myPlayer.assignment?.scale}</p>
+                    <p className="font-display text-lg font-bold text-charcoal mb-0.5">{myPlayer.assignment?.label}</p>
+                    <p className="text-charcoal/40 text-xs">{myPlayer.assignment?.prompt}</p>
                 </div>
 
                 {/* Player legend */}

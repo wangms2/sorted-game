@@ -43,14 +43,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - `gameEngine.js` – Game logic, scoring, timers
   - `deckManager.js` – Card dealing, round assignment
 - `shared/` – Shared between client and server
-  - `deck.json` – ~1,500 cards (30 categories × 25 cards + 30 situations × 25 cards)
+  - `deck.json` – 3,750 cards (150 decks × 25 cards). **Generated** — edit `scripts/deck-gen/` and run `npm run deck:build`.
   - `socketEvents.js` – Event constants (ESM)
 - `PLAN.md` – Full technical plan with detailed game flow, data model, and implementation phases
 - **ESM everywhere** – All `package.json` files have `"type": "module"`; use ES6 imports/exports.
 
 ### Game Flow
 1. **Lobby** – Host configures rounds (1–3), 3+ players required to start.
-2. **Per Round** – Server picks round type (categorical or situational), deals each player a unique category/situation with 5 cards.
+2. **Per Round** – Server deals each player a unique deck with 5 cards and a single ranking prompt.
 3. **Ranking Phase** – All players rank their own 5 cards on a subjective scale.
 4. **Hot Seat Cycle** – For each player:
    - **Guessing Phase** – Other players see hot seat's cards + scale, guess ranking.
@@ -72,9 +72,10 @@ Defined in `shared/socketEvents.js`. Key events:
 - **Server → Client**: `ROOM_UPDATED` (filtered room), `TIMER_SYNC`, `ERROR`
 
 ### Deck Structure
-- **Categories**: `id`, `name`, `scale`, `cards` (25 per category)
-- **Situations**: `id`, `name`, `prompt` (used as scale), `cards` (25 per situation)
-- Each player receives a unique category/situation per round; categories/situations are not reused across rounds.
+- **Decks**: `id`, `label`, `prompt`, `tier` (`deep`/`mid`/`light`), `cards` (25 per deck)
+- `label` is a short deck name; `prompt` is a self-contained one-sentence instruction that names the Most/Least axis. The UI renders the label small above the prompt.
+- Each player receives a unique deck per round; decks are not reused across rounds within a game.
+- **Do not hand-edit `shared/deck.json`.** It is assembled from `scripts/deck-gen/deck-specs.mjs` (labels/prompts/tiers) and `scripts/deck-gen/decks-*.mjs` (cards) via `npm run deck:build`, which also validates the style guide in `scripts/deck-gen/AUTHORING.md`.
 
 ### Scoring
 - **Guesser**: +2 exact match, +1 off‑by‑one (max 10 points per round)
